@@ -12,9 +12,10 @@ that project just works. See `SETUP-CARD.md` for the exact, tested steps.
 
 - `CLAUDE.md` — persona, house rules, first-run profile onboarding (self-deletes after first run; also has
   Claude fetch and save each tool skill below).
-- `SETUP-CARD.md` — the one-page install steps for a non-technical rep, tested end-to-end.
+- `SETUP-CARD.md` — the one-page install steps for a non-technical rep, tested end-to-end (Tier 1 only).
+- `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
 - `skills/` — the sales-rep tools, each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
-  verify it before rollout.
+  verify it before rollout (Tier 1 tools only — Tier 2 tools aren't live-tested yet, see below).
 
 ## Tools — status
 
@@ -29,14 +30,14 @@ Tier 1 (all reps, no connector, desktop):
 | 5 | `make-content` | Built |
 | 6 | `summarize-bid` | Built |
 
-Tier 2 (pilot, needs the read-only QuickBase connector — gated on scope confirmation):
+Tier 2 (pilot only, needs the read-only QuickBase connector — see `TIER2-SETUP.md`, all owned by Vish):
 
 | # | Tool | Status |
 |---|---|---|
 | 7 | `log-update` | Not started |
-| 8 | `my-pipeline` | Not started |
-| 9 | `my-new-leads` | Not started |
-| 10 | `forecast-update` | Owned by Vish |
+| 8 | `my-pipeline` | Built (by Vish) — not yet live-tested |
+| 9 | `my-new-leads` | Built (by Vish) — not yet live-tested |
+| 10 | `forecast-update` | Built (by Vish) — not yet live-tested |
 
 ## House rules worth knowing before adapting or adding a tool
 
