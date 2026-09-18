@@ -14,10 +14,11 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 2. Write the answers into a new file `PROFILE.md` in this project, using the template below.
 3. Fetch each URL in the "Tools to install" list below and save its content as a project file at the same path (e.g. `skills/lead-ideas/SKILL.md`), so the tool is available in this project without re-fetching from GitHub every session.
 4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
-5. Confirm to the rep in one short sentence that setup is done and tell them to try: "give me lead ideas for my county."
+5. Confirm to the rep in one short sentence that setup is done and tell them to try: "give me lead ideas for my county" or "summarize this bid" (with a bid document uploaded).
 
 Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/lead-ideas/SKILL.md → save as `skills/lead-ideas/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/summarize-bid/SKILL.md → save as `skills/summarize-bid/SKILL.md`
 
 `PROFILE.md` template:
 ```
