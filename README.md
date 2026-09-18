@@ -36,7 +36,7 @@ Tier 2 (pilot, needs the read-only QuickBase connector — gated on scope confir
 | 7 | `log-update` | Not started |
 | 8 | `my-pipeline` | Not started |
 | 9 | `my-new-leads` | Not started |
-| 10 | `forecast-update` | Scoped, not built — pending Tier 2 confirmation |
+| 10 | `forecast-update` | Owned by Vish |
 
 ## House rules worth knowing before adapting or adding a tool
 
