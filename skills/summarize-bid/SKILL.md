@@ -47,7 +47,7 @@ forms, or draft a bid response.
    - **Evaluation/scoring criteria** — how proposals are judged, if stated.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
    - **Mandatory requirements** — everything the documents label "mandatory," "required," or "must," as one failsafe list.
-4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present.
+4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
 5. **Present the breakdown, every time, in this structure** — a quick conversational reply without the
    headed sections below is not acceptable, even for a short or simple bid:
    - A short **gating snapshot** (due date, mandatory site visit, bonds, hard-gate forms).
