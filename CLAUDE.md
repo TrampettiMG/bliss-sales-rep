@@ -22,6 +22,7 @@ Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/make-content/SKILL.md → save as `skills/make-content/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/draft-outreach/SKILL.md → save as `skills/draft-outreach/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/prep-call/SKILL.md → save as `skills/prep-call/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/research/SKILL.md → save as `skills/research/SKILL.md`
 
 `PROFILE.md` template:
 ```

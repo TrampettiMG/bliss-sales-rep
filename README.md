@@ -23,7 +23,7 @@ Tier 1 (all reps, no connector, desktop):
 | # | Tool | Status |
 |---|---|---|
 | 1 | `find-leads` | Built |
-| 2 | `research` | Not started |
+| 2 | `research` | Built |
 | 3 | `prep-call` | Built |
 | 4 | `draft-outreach` | Built |
 | 5 | `make-content` | Built |
