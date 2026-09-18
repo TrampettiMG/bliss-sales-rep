@@ -19,6 +19,7 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/lead-ideas/SKILL.md → save as `skills/lead-ideas/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/summarize-bid/SKILL.md → save as `skills/summarize-bid/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/make-content/SKILL.md → save as `skills/make-content/SKILL.md`
 
 `PROFILE.md` template:
 ```
