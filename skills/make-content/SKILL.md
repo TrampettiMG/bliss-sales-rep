@@ -22,6 +22,12 @@ leave a clearly marked placeholder (e.g., `[years in business]`, `[certification
 one up. A generic-but-true draft beats a specific-but-fabricated one — a false claim in writing is a real
 liability for Bliss, not just a weak pitch.
 
+If the rep supplies a specific, hard-to-verify quantitative claim (an installation count, a win rate, years
+in business, and similar), use it as given — don't refuse it or demand proof — but add one short caution
+alongside the draft, e.g. "Used as given — double-check this number is accurate before it goes out, since
+it'll be published." Stick with whatever the rep gave you either way; the caution is a reminder, not a
+gate.
+
 Everything produced here is a **draft**. Never send, submit, or post it — hand it back for the rep to
 review and send themselves.
 
