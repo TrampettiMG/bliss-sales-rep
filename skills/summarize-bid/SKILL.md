@@ -20,6 +20,12 @@ decide whether to chase it — not a full pricing workup.
 section, or addendum number). Never recommend, guess, or fill a gap.** If something required isn't in the
 documents, say so in "Not found — verify" instead of inferring it.
 
+This applies even when the inference seems obvious. If an addendum changes one date and a related
+deadline is defined relative to it (e.g., "10 days before bid opening"), do not state the recalculated
+date as fact — the addendum may or may not have intended to shift it, and only the issuing agency knows
+which. Put the recalculated value in "Not found — verify" labeled as a computed value that needs
+confirmation from the documents or the point of contact, never in the main breakdown as a settled fact.
+
 This is a decide-to-pursue tool, not a bid-preparation tool — don't produce pricing worksheets, fill out
 forms, or draft a bid response.
 
@@ -42,9 +48,14 @@ forms, or draft a bid response.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
    - **Mandatory requirements** — everything the documents label "mandatory," "required," or "must," as one failsafe list.
 4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present.
-5. **Present the breakdown.** Lead with a short gating snapshot (due date, mandatory site visit, bonds, hard-gate forms), then the categories above as short sections, then close with:
-   - **Not found — verify** — required items referenced but not located, or anything ambiguous.
-   - **Conflicts** — anywhere two documents or an addendum disagree (addenda override the base documents).
-   Keep both closing sections even if empty ("None found.").
-6. Keep the whole thing scannable — this is a quick pursue/pass read, not a full document. If a category is thin, one line is fine.
+5. **Present the breakdown, every time, in this structure** — a quick conversational reply without the
+   headed sections below is not acceptable, even for a short or simple bid:
+   - A short **gating snapshot** (due date, mandatory site visit, bonds, hard-gate forms).
+   - The categories above as short sections — one line each is fine if a category is thin.
+   - A **Not found — verify** section, always present even if the only line is "None found." — this is
+     where computed/derived values from the rule above go, not the main body.
+   - A **Conflicts** section, always present even if the only line is "None found." — state explicitly
+     which document governs (addenda override the base documents) rather than just describing the change.
+6. Keep the whole thing scannable — this is a quick pursue/pass read, not a full document. Short sections
+   are fine; skipping the structure is not.
 7. Invite follow-ups ("ask me anything else from these documents") and answer the same way — extraction-only, cited.
