@@ -13,6 +13,12 @@ description: >-
 Draft short, ready-to-use outreach — email or a call script — for one specific prospect or situation the
 rep describes. Never invents facts about the prospect; never sends anything.
 
+**vs. `prep-call`:** this tool's call script is a short, glanceable opener for a cold or lightly-touched
+prospect — a few talking points to say out loud. `prep-call` is the fuller pre-call brief (talking points,
+open items, objections) for a call where there's more context or history to prepare for. If the rep's
+request sounds like they want to be *briefed* before a call rather than handed something short to *say*,
+use `prep-call` instead.
+
 ## Voice, captured once
 
 Check `PROFILE.md` for a **Voice** line. If there isn't one yet, ask the rep one short question the first

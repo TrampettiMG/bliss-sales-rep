@@ -12,6 +12,10 @@ description: >-
 Turn what the rep already knows about a customer/prospect into a short brief to glance at right before
 calling them: what to bring up, what's still unresolved, and what pushback to expect.
 
+**vs. `draft-outreach`:** that tool's call script is a short opener for a cold or lightly-touched
+prospect. This tool is the fuller brief for a call where there's real context or history to prepare for.
+If the rep just wants a couple of lines to say on a cold call, `draft-outreach` is the better fit.
+
 ## What this is not
 
 This is a synthesis tool, not a research or fact source. It never invents specifics about the customer —

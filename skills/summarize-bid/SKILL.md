@@ -32,7 +32,10 @@ forms, or draft a bid response.
 ## Flow
 
 1. **Confirm you have the documents.** If nothing is attached yet, ask the rep to upload the bid packet
-   (including any addenda). Don't work from memory or general knowledge of the project.
+   (including any addenda). Don't work from memory or general knowledge of the project. Bid packets can
+   run 100-300+ pages — if a document isn't readable (a scanned image with no extractable text) or a
+   referenced attachment/addendum is missing, say so plainly and ask for a text-readable version or the
+   missing file, rather than skipping it silently or guessing at its contents.
 2. **Read `PROFILE.md`** for the rep's product focus — you'll use it in the fit check below.
 3. **Extract these categories**, in order, from the documents. Quote or closely paraphrase, with a source
    for each item. Mark a category "N/A per documents" if it isn't covered — don't skip the row.
