@@ -17,8 +17,14 @@ opportunity is coming — not a generic list of categories, and not a per-contac
 
 This surfaces **signals** (a dated, cited, specific event or item), not accounts or contacts. It never
 invents a signal — if a search comes back thin for a category, say so plainly rather than padding the
-list with generic possibilities. Every signal needs a real source link and a real date; if either is
-missing, leave it out.
+list with generic possibilities. Every signal needs a real source link; if there's no real source, leave
+it out. If the source is real but a specific detail (like the exact date) isn't visible in what you can
+see of the page, include it anyway with an explicit flag ("date not visible — verify on the page") rather
+than dropping an otherwise-good lead over one missing detail.
+
+Also watch for wrong-location false positives — a search can easily return a same-named place in a
+different state (a "Clark County" or "Las Vegas" elsewhere). Confirm the state/region matches the rep's
+actual territory before including anything, and note what got excluded and why if it's not obvious.
 
 ## The log — what makes this repeatable
 
@@ -32,6 +38,9 @@ one-line description, and source URL. On every run:
    say so plainly: "Nothing new since your last run on [date]" — don't re-surface old items or pad the
    list to look productive.
 3. Append newly surfaced items to the log after reporting them, so the next run doesn't repeat them.
+   **Verify the write actually happened — read the file back, or otherwise confirm it — before telling the
+   rep it's saved.** Never state the log was updated unless you've confirmed it. A false "saved" claim is
+   worse than no log at all: it silently breaks every future run's ability to tell what's actually new.
 
 ## Usage budget — most reps are on a standard/basic Claude plan
 
