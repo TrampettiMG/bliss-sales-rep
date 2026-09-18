@@ -60,11 +60,12 @@ in one run across five categories. Stay disciplined:
 - **Check the log's last-run date first.** If the rep already ran this today, say so and ask if they still
   want to spend a fresh scan — most public sources don't change meaningfully within the same day, so a
   same-day re-run is usually not worth the usage. Still run it if they say yes.
-- **Multiple counties don't multiply the budget.** If the rep covers more than one county, the ~10-search
-  budget is shared across all of them, not per county — split it across categories and counties by
-  priority (whatever the rep's most active county is, or ask if unclear) rather than either blowing past
-  the budget or giving each county a token, unhelpfully thin search. Say plainly which counties got
-  covered this run and which didn't.
+- **Multiple counties don't multiply the budget.** If the rep covers more than one county, **combine them
+  into one query per category** (e.g., "Clark County Nevada OR Washoe County Nevada new park playground
+  2026") rather than running separate searches per county — this covers every county in the same ~10-search
+  budget instead of splitting it thin or blowing past it. Only fall back to prioritizing one county over
+  another if combined queries genuinely aren't working (e.g., too many counties for one query to stay
+  specific). If you do have to prioritize or skip a county, say so plainly.
 
 ## Flow
 
