@@ -4,3 +4,8 @@ find-leads-log.md
 
 # OS junk
 .DS_Store
+
+# Never public: real Bliss QuickBase config (realm/app/table/field IDs, live record counts).
+# This entire folder must never be pushed to the public repo, by name or by pattern.
+private/
+*.skill
