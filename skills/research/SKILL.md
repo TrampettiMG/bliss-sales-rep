@@ -51,6 +51,9 @@ silently stopping partway through.
    - **Suggested opener** — one short, natural conversation-starter line referencing the findings above,
      written in the rep's Voice from `PROFILE.md` if set.
    If research comes back thin, keep the same structure but say so honestly in "Why call now" rather than
-   inventing content to fill it.
+   inventing content to fill it. **End after the suggested opener — no added "bottom line," recommended
+   framing, or strategic take.** If a pattern is genuinely worth naming (e.g., "these two awards both
+   skipped playground scope"), it belongs as a factual note inside "Why call now," not as a separate
+   verdict on how the rep should approach the account.
 5. If the rep wants to act on this brief next (an email, a call), hand off to `draft-outreach` or
    `prep-call` rather than drafting those here — this tool's job stops at the research.
