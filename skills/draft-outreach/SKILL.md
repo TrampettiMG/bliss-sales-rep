@@ -21,10 +21,11 @@ use `prep-call` instead.
 
 ## Voice, captured once
 
-Check `PROFILE.md` for a **Voice** line. If there isn't one yet, ask the rep one short question the first
-time this tool runs: *"How do you like to sound in emails/calls — casual and short, or more formal?"*
-Save their answer as a **Voice** line in `PROFILE.md` so every future draft uses it without asking again.
-If they later say a draft doesn't sound like them, update the Voice line the same way.
+Check `PROFILE.md` for a **Voice** line. If there isn't one yet, ask the rep one short question **before
+drafting anything** — not after: *"How do you like to sound in emails/calls — casual and short, or more
+formal?"* Wait for their answer, save it as a **Voice** line in `PROFILE.md`, then draft using it — the
+first draft should reflect their voice too, not just future ones. If they later say a draft doesn't sound
+like them, update the Voice line the same way.
 
 ## What this is not
 
