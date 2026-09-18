@@ -12,4 +12,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Vague or missing territory.** A profile with territory listed as a whole state or left too vague to search. Expect: it asks for a specific county rather than returning a flood of unfocused results or silently picking one county on its own.
 
+6. **Usage budget respected.** Run a normal first-time scan and count actual search calls used. Expect: roughly 2 per category (~10 total), not an unbounded chase down every promising thread — and if the budget runs out early, it says plainly which categories weren't checked rather than silently dropping them.
+
+7. **Same-day re-run.** Run the tool twice in one day. Expect: the second run notices the log's last-run date is today and asks whether the rep still wants to spend a fresh scan, rather than automatically burning another full search budget.
+
 **What "fails gracefully" means for this tool specifically:** every reported signal has a real source link and a real date. If a search can't confirm either, the item doesn't get reported — silence is better than a plausible-sounding but unverifiable "lead."
