@@ -33,14 +33,19 @@ one-line description, and source URL. On every run:
 
 1. If `find-leads-log.md` doesn't exist yet, this is the rep's first run — search normally and treat
    everything found as new. Create the log with today's results.
-2. If it exists, search normally, then **compare against the log** by source URL (or by date + headline if
-   the URL isn't a stable identifier). Only report items not already in the log. If nothing new turns up,
-   say so plainly: "Nothing new since your last run on [date]" — don't re-surface old items or pad the
+2. If it exists, search normally, then **compare against the log by the underlying event, not just the
+   literal URL** — a different article covering the same groundbreaking, budget vote, or grant award is
+   still the same signal, not a new one. Only report items that are genuinely new. If nothing new turns
+   up, say so plainly: "Nothing new since your last run on [date]" — don't re-surface old items or pad the
    list to look productive.
 3. Append newly surfaced items to the log after reporting them, so the next run doesn't repeat them.
    **Verify the write actually happened — read the file back, or otherwise confirm it — before telling the
    rep it's saved.** Never state the log was updated unless you've confirmed it. A false "saved" claim is
    worse than no log at all: it silently breaks every future run's ability to tell what's actually new.
+4. **Keep the log from growing unbounded.** If entries older than ~90 days start making the log large
+   enough to burn significant context just to check for dupes, collapse them to a compact one-line-per-item
+   form (date + headline + URL, no extra detail) instead of dropping them — they're still needed for dedup,
+   just don't need full detail once they're old.
 
 ## Usage budget — most reps are on a standard/basic Claude plan
 
@@ -55,6 +60,11 @@ in one run across five categories. Stay disciplined:
 - **Check the log's last-run date first.** If the rep already ran this today, say so and ask if they still
   want to spend a fresh scan — most public sources don't change meaningfully within the same day, so a
   same-day re-run is usually not worth the usage. Still run it if they say yes.
+- **Multiple counties don't multiply the budget.** If the rep covers more than one county, the ~10-search
+  budget is shared across all of them, not per county — split it across categories and counties by
+  priority (whatever the rep's most active county is, or ask if unclear) rather than either blowing past
+  the budget or giving each county a token, unhelpfully thin search. Say plainly which counties got
+  covered this run and which didn't.
 
 ## Flow
 

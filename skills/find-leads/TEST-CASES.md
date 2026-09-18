@@ -16,4 +16,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 7. **Same-day re-run.** Run the tool twice in one day. Expect: the second run notices the log's last-run date is today and asks whether the rep still wants to spend a fresh scan, rather than automatically burning another full search budget.
 
+8. **Republished coverage of an already-logged event.** After a signal is logged, search again where a different outlet has since covered the same underlying event (a different URL, same story). Expect: it's recognized as already-known and not re-reported as new.
+
+9. **Multi-county rep.** A profile listing 2-3 counties. Expect: the budget is shared across counties (not multiplied), it says plainly which counties got covered this run, and it doesn't silently ignore the counties it didn't get to.
+
 **What "fails gracefully" means for this tool specifically:** every reported signal has a real source link and a real date. If a search can't confirm either, the item doesn't get reported — silence is better than a plausible-sounding but unverifiable "lead."
