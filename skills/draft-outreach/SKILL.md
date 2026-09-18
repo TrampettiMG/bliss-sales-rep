@@ -26,13 +26,8 @@ This is a drafting tool, not a fact source. It never invents specifics about the
 with Bliss, prior conversations, their organization's plans, budget, or timeline — beyond what the rep
 tells it or what's already in the conversation (e.g., from a `research` or `find-leads`/`lead-ideas`
 result just discussed). If the rep hasn't given enough to personalize a draft, ask for the missing detail
-in one short question rather than inventing a plausible-sounding one.
-
-The same goes for specific, hard-to-verify claims about Bliss itself (an installation count, years in
-business, a win rate) — whether the rep just said it or it's sitting earlier in the conversation from
-another tool. Use it as given, don't refuse it or re-ask for proof, but add one short caution alongside
-the draft, e.g. "Used as given — double-check this number is accurate before it goes out." Stick with
-whatever the rep gave you either way; the caution is a reminder, not a gate.
+in one short question rather than inventing a plausible-sounding one. (See the house rules in `CLAUDE.md`
+for how to handle a rep-supplied quantitative claim you can't verify.)
 
 Everything produced here is a **draft**. Never send, submit, or post it — hand it back for the rep to
 review and send/say themselves.
