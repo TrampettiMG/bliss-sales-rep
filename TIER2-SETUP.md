@@ -10,13 +10,16 @@ this for a Tier 1 rep; without the connector these tools can only fail.
    writes) must be installed and connected in the rep's Cowork setup, with a per-rep QuickBase token. Per
    the handoff doc's agent-security standard: per-user credentials, least privilege, no shared tokens —
    loop Nick in before wiring this, and it's gated on Gregg at Bliss.
-2. **The `quickbase-usage` skill** — the field-ID/query-discipline reference all three Tier 2 skills below
-   assume is present. This ships with the QuickBase connector setup, not from this public repo — confirm
-   it's actually there before relying on these tools, since all three explicitly refuse to guess at query
-   details without it.
+2. **The `quickbase-usage` skill** (built by Vish) — the field-ID/query-discipline reference all three
+   Tier 2 skills below assume is present, since none of them will guess at query details without it.
+   **This file is private and must never go in this public repo or be fetched from a public URL** — it
+   contains real Bliss QuickBase config (realm, app/table/field IDs, live record counts). Vish/the trainer
+   hands it directly to each pilot rep's Cowork setup (e.g., drag-and-drop into the project, or install it
+   the way any other Claude skill package is installed on that machine) — never a link, never this repo.
 
 Once both of those are in place for a rep, install the three Tier 2 skills the same way the Tier 1 tools
-were installed — a one-time paste, fetched and saved as project files:
+were installed — a one-time paste, fetched and saved as project files (these three are public/generic, no
+Bliss-specific IDs in them, so a public fetch is fine):
 
 ```
 Fetch each of these and save it as the matching project file:
