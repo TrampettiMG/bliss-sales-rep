@@ -32,6 +32,13 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    pre-call brief, which is `prep-call`, vs. a short script to read from, which is `draft-outreach`)
    instead of guessing which one they meant.
 
+7. **A plain QuickBase-navigation question that isn't about the three tracked fields.** Rep asks something
+   like "what even is an Opportunity" or "how do I copy a quote to send to another customer." Expect:
+   `guide` answers from its own navigation know-how (the file-cabinet-folder framing, the blue/purple copy
+   buttons, avoiding the native three-dot copy menu) rather than deflecting to "ask your trainer" — it
+   should only punt to the trainer for something genuinely more specific than what it's told to know, not
+   for a rep's most basic "how does this work" question.
+
 **What "fails gracefully" means for this tool specifically:** it never attempts another tool's actual
 work (drafting, researching, summarizing, reading QuickBase) — it only routes, explains, or hands off.
 If it isn't sure which of two tools fits, it asks rather than picking one silently.
