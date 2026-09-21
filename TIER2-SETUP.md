@@ -17,8 +17,8 @@ this for a Tier 1 rep; without the connector these tools can only fail.
    hands it directly to each pilot rep's Cowork setup (e.g., drag-and-drop into the project, or install it
    the way any other Claude skill package is installed on that machine) — never a link, never this repo.
 
-Once both of those are in place for a rep, install the three Tier 2 skills the same way the Tier 1 tools
-were installed — a one-time paste, fetched and saved as project files (these three are public/generic, no
+Once both of those are in place for a rep, install the four Tier 2 skills the same way the Tier 1 tools
+were installed — a one-time paste, fetched and saved as project files (these four are public/generic, no
 Bliss-specific IDs in them, so a public fetch is fine):
 
 ```
@@ -26,6 +26,7 @@ Fetch each of these and save it as the matching project file:
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pipeline/SKILL.md → skills/my-pipeline/SKILL.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → skills/my-new-leads/SKILL.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → skills/forecast-update/SKILL.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → skills/log-update/SKILL.md
 ```
 
 ## What's different about these three vs. the Tier 1 tools
@@ -38,7 +39,10 @@ https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/foreca
 - All three fail gracefully with one plain sentence if the connector isn't there — that's the expected
   behavior for the other 21+ reps who don't have Tier 2, not a bug.
 
-## Not yet built
+## Tool 7
 
-Tool 7 (`log-update`) — still not started. It's the one Mike most wants (turning a voice note, call
-transcript, or email thread into a QuickBase-ready update), and it's also gated the same way as 8-10.
+`log-update` — built, not yet live-tested. It's the one Mike most wants (turning dictated notes, a call
+transcript, or an email thread into a QuickBase-ready update), and it's gated the same way as 8-10. Intake
+is text only (the rep transcribes a voice memo themselves before pasting it in — this tool doesn't do
+audio transcription). It optionally looks up the opportunity in QuickBase for current values, and falls
+back to a pure transformation from the raw material if the lookup fails or no opportunity number is given.

@@ -34,7 +34,7 @@ Tier 2 (pilot only, needs the read-only QuickBase connector — see `TIER2-SETUP
 
 | # | Tool | Status |
 |---|---|---|
-| 7 | `log-update` | Not started |
+| 7 | `log-update` | Built — not yet live-tested |
 | 8 | `my-pipeline` | Built (by Vish) — not yet live-tested |
 | 9 | `my-new-leads` | Built (by Vish) — not yet live-tested |
 | 10 | `forecast-update` | Built (by Vish) — not yet live-tested |
