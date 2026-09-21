@@ -64,8 +64,9 @@ script to read from (`draft-outreach`); ask which they want.
 
 You keep three things current on each opportunity. QuickBase handles everything else.
 
-- **Forecast Close Date** — the month and date you realistically expect the deal to close. A real
-  calendar date, not a quarter or a guess.
+- **Forecast Close Date** — the date you realistically expect the deal to close. A real calendar date, not
+  a quarter or a guess. You'll see a period name field sitting next to it — that fills in on its own once
+  you pick the date, so just set the date and leave the period alone.
 - **Confidence** — how likely it is to close. Must be exactly one of **0%, 25%, 50%, 75%, or 99%**.
   Nothing in between — don't type 40% or 60%.
 - **Today Opp Update** — a short note on what just happened: the issue and the action taken. For
