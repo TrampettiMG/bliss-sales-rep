@@ -9,3 +9,6 @@ find-leads-log.md
 # This entire folder must never be pushed to the public repo, by name or by pattern.
 private/
 *.skill
+
+# Internal build-process notes, not something reps need to see.
+HANDOFF.md
