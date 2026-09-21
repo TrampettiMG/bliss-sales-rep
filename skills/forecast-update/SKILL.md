@@ -30,10 +30,11 @@ writes to QuickBase: the rep pastes the values into the grid themselves. An opp 
 once the rep has given or confirmed its values.
 
 ## What it produces
-A paste-ready table of forecast values — opportunity number, forecast close date, confidence, and a note —
-that the rep copies into QuickBase's bulk-edit forecast grid. Match the column order and date format to the
-rep's actual forecast grid (see the bulk-update video; if unsure, tell the rep to check with their trainer
-rather than guessing the format).
+A paste-ready table of forecast values — opportunity number, forecast close date, and confidence — that the
+rep copies into QuickBase's bulk-edit forecast grid. This tool doesn't handle notes at all; the note field
+(what happened on an opp, and what's next) is `log-update`'s job, not this one's. Match the column order and
+date format to the rep's actual forecast grid (see the bulk-update video; if unsure, tell the rep to check
+with their trainer rather than guessing the format).
 
 ## Whose opps, and how to pull them
 Follow the `quickbase-usage` skill for the query — it holds the Opportunities table and field IDs and the
@@ -52,9 +53,10 @@ without checking this first.
 - **Confidence must be one of five values: 0%, 25%, 50%, 75%, or 99%** (QuickBase stores them as 0, 0.25,
   0.5, 0.75, 0.99). If the rep gives anything else (say, 40%), ask them to pick one of the five — never
   round it silently.
-- **Forecast close date** must be a real calendar date. If the rep sets a date already in the past, flag it
-  ("that's already past — did you mean a later date?") instead of accepting it silently, and watch for
-  obvious typos (a wrong year).
+- **Forecast close date** must be a real calendar date. It's a plain date field, not a timestamp — compare
+  it to today's date from the current session (reps aren't all in one time zone; don't assume or convert to
+  Eastern). If the rep sets a date already in the past, flag it ("that's already past — did you mean a
+  later date?") instead of accepting it silently, and watch for obvious typos (a wrong year).
 
 ## The walkthrough — practical, not 60 rows one at a time
 A rep can have dozens to hundreds of open opps, and most are stale import backlog. Don't force a slog:
@@ -67,15 +69,10 @@ A rep can have dozens to hundreds of open opps, and most are stale import backlo
    aren't real month-end forecast — offer to skip them or handle them as one batch.
 4. Keep moving in small confirmable chunks; don't dump 60 questions at once.
 
-## Notes
-Capture the rep's own note per opp, in their words — never write a note for them. If they don't give one,
-leave it blank. (Where a note lands in QuickBase — a notes field vs. logging an Update — should be
-confirmed with the trainer; don't assume.)
-
 ## Present it — the grid-ready output
 - Lead with a one-line summary: "Ready to paste: N opportunities updated."
 - Then the table, one row per updated opp: opportunity number, customer, forecast close date, confidence
-  (%), note.
+  (%). No note column — if the rep wants to log what happened on an opp, point them to `log-update`.
 - Offer a tab-separated version for a direct paste into the grid.
 - Remind the rep plainly: this is a draft — they paste it into the QuickBase forecast grid themselves;
   nothing is written automatically.

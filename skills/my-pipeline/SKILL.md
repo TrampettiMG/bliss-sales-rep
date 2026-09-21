@@ -58,6 +58,9 @@ Never report "you have no opportunities" without first checking the name this wa
 - **Forecast close date is often blank or in the past, and some are outright typos** (real data has years
   like 0226 or 2003). Treat any blank or past date as a gap. If a date is clearly impossible (a year far
   in the past, or an implausible year), call it out as a likely typo — not just "overdue."
+- **Forecast close date is a plain date field, not a timestamp — there's no time zone to convert.** Compare
+  it to today's date from the current session (reps aren't all in one time zone; don't assume or convert to
+  Eastern). Use the same session-date basis for any "stale N days" or aging logic below.
 - **Opportunity value is a confidence-weighted rollup, not a number the rep types.** It only populates once
   the opp has a quote flagged to count toward value, so it's blank for New opps and even for some quoted
   ones. Show it when present, as information only. Never flag a blank value as a gap (the rep can't set it

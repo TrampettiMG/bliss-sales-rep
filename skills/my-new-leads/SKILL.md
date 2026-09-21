@@ -69,7 +69,8 @@ Never report "you have no new leads" without first checking the name this way.
 - **Lead source is free text and often blank** (~30% empty) — show it when present, put blanks under
   "(source not set)," and never guess a source.
 - Exclude any test records (your trainer's test accounts).
-- Timestamps are UTC — convert to the rep's local time (Eastern) before counting days.
+- Count "days since" off **today's date from the current session** — reps aren't all in one time zone, so
+  don't convert to or assume Eastern. A few hours' offset never changes a day count that matters here.
 
 ## Present it — keep it scannable
 - Lead with the split: "You have N fresh new leads and M from the bulk-import backlog."

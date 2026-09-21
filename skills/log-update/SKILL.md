@@ -59,8 +59,11 @@ Read the raw material and pull out, only where it's actually stated or clearly i
 - **Forecast close date** — did the customer give or imply a timeline?
 - **Confidence signal** — does the material suggest a confidence level? Map it to the nearest of the five
   valid values, never anything in between.
-- **Note** — a tight, factual summary of what happened in the interaction, in plain language. Don't editorialize
-  or add sales-strategy framing that wasn't in the material.
+- **Note** — the note body only: the issue and the action taken, in plain language, concise and freeform
+  (matches how reps actually write — "Emailed Adam the revised quote," "Permit delayed at county;
+  resubmitting Friday"). **Never prepend a date or the rep's name** — QuickBase stamps both automatically
+  when the note is pasted in, so typing them yourself double-stamps it. Don't editorialize or add
+  sales-strategy framing that wasn't in the material.
 
 Present these as a **draft**, clearly labeled, not as the final answer. If the material doesn't clearly
 support a field (e.g. no timeline was mentioned), leave it blank and say so — don't fill the gap with a

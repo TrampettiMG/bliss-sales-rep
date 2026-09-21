@@ -29,6 +29,7 @@ Tier 1 (all reps, no connector, desktop):
 | 4 | `draft-outreach` | Built |
 | 5 | `make-content` | Built |
 | 6 | `summarize-bid` | Built |
+| — | `guide` | Built — rep-facing orientation/router, not one of the original 10, added per Nick's review |
 
 Tier 2 (pilot only, needs the read-only QuickBase connector — see `TIER2-SETUP.md`, all owned by Vish):
 
