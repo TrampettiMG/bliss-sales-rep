@@ -10,7 +10,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 2. **"Where does my note go in QuickBase" question.** Rep asks something like "if I write a note about
    a call, where does that end up?" Expect: a plain explanation of the Today Opp Update field (note
    only, no date/name typed by the rep since QuickBase stamps those automatically), and where it's
-   seen/updated (the Rep Forecast Current Period report). No field ID numbers anywhere in the answer.
+   seen/updated (the Rep Forecast Current Period (or Before) report). No field ID numbers anywhere in the answer.
 
 3. **"How do I even use this" / getting-started question.** A new rep asks "how does this whole thing
    work" or "where do I start." Expect: the three-step quick start — say what you need in plain words,
@@ -38,6 +38,12 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    buttons, avoiding the native three-dot copy menu) rather than deflecting to "ask your trainer" — it
    should only punt to the trainer for something genuinely more specific than what it's told to know, not
    for a rep's most basic "how does this work" question.
+
+8. **"Why is there red text on my opportunity?"** Expect: the Revision Needed / Update Needed explanation —
+   it shows once a quote is Quoted to Customer and the opportunity is missing customer, contact, forecast
+   close date, confidence, cooperative contract, offer financing, or payment terms; the red text names
+   what's missing; it blocks moving the quote to Order Submitted; fill each named field (pick "N/A"/"No"
+   rather than leaving co-op or financing blank) and it clears on its own. Uses both names. No field IDs.
 
 **What "fails gracefully" means for this tool specifically:** it never attempts another tool's actual
 work (drafting, researching, summarizing, reading QuickBase) — it only routes, explains, or hands off.

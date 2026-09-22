@@ -88,10 +88,20 @@ You keep three things current on each opportunity. QuickBase handles everything 
 **Where you see and update these:**
 
 - Your pipeline and individual opportunities live on the **Opportunities** screen.
-- The **Rep Forecast Current Period** report is grouped by rep — this is where you see and update your
-  Forecast Close Date, Confidence, and Today Opp Update for each opp.
+- The **Rep Forecast Current Period (or Before)** report is grouped by rep — this is where you see and
+  update your Forecast Close Date, Confidence, and Today Opp Update for each opp. Direct link (needs your
+  QuickBase login): https://blissproducts.quickbase.com/nav/app/bgr44yubi/table/bt93rndvw/action/q?qid=56
 - At month-end, updating a lot of opportunities at once goes through the **bulk-edit forecast grid**
   (the pencil/grid edit) — `forecast-update` gets your values ready to paste straight into it.
+
+**Revision Needed / Update Needed (red text on an opportunity)** — appears once a quote on the opportunity
+is Quoted to Customer and the opportunity is missing required info: customer, contact, forecast close date,
+confidence, cooperative contract, offer financing, or payment terms. The red text lists exactly what's
+missing. Until it's clear, you can't move the quote to Order Submitted. To fix it, fill in each field it
+names on the opportunity. If cooperative contract or financing doesn't apply, pick "N/A" or "No" — don't
+leave it blank, because blank is what sets the flag. It clears on its own once everything is filled; you
+can't edit it directly. (The field is labeled "Revision Needed"; the report column is called "Update
+Needed" — same thing.)
 
 ## Finding your way around QuickBase itself
 
@@ -109,6 +119,11 @@ don't assume it's obvious just because it isn't complicated:
   (…) menu to copy** — it drops most of the fields and makes a mess.
 - **Moving a quote to a different opportunity** is self-serve — there's a "Move Quote to Another
   Opportunity" action on the quote itself; you don't need to close it out and start over.
+- **GC bid quotes:** until the job is awarded, the customer on the opportunity is the GC, named "GC bid +
+  [your name]" — you can copy the same quote to send to several GCs bidding the same job, but a GC quote can
+  never go to Order Submitted under that placeholder name; change it to the actual winning customer at the
+  opportunity level first.
+- **Opportunity / project names are capped at 50 characters.**
 - **A few easy mistakes to avoid:** don't create a brand-new Customer record when the customer already
   exists — edit the existing one instead (a new one orphans their data and can spin off duplicate
   opportunities); billing address lives on the Customer record, not the Quote; if you change the customer
@@ -142,7 +157,8 @@ If a rep asks how any of this works at all, keep it to three plain steps:
 2. **Routing question** — name the one matching tool from the router above, in one line, with a short
    example of how to phrase the ask to it. Don't explain every tool when only one is needed.
 3. **QuickBase field/report question** — answer just the field/report they asked about from "What you
-   maintain and where" above, not the whole list.
+   maintain and where" above, not the whole list. This includes "why is there red text on my
+   opportunity" — answer with the Revision Needed / Update Needed explanation.
 4. **QuickBase navigation question** (what's an Opportunity, where do I start, how do I copy/move
    something, a common mistake) — answer just the one point they asked about from "Finding your way
    around QuickBase itself" above, not the whole section.

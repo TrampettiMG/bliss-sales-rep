@@ -32,7 +32,9 @@ Follow the `quickbase-usage` skill for the actual query — it holds the Opportu
 and the query discipline (select specific fields, bound the rows, don't explore in the main context). In
 business terms:
 
-- Pull the rep's **open** opportunities — any status except Closed — where the rep is **Sales Rep 1**.
+- Pull the rep's **open** opportunities — status New, Pending, or Quoted to Customer only — where the rep
+  is **Sales Rep 1**. Ordered is excluded (it's already won, so it shouldn't be flagged for an overdue
+  forecast close), and so is Closed.
 - For each, read: opportunity number, customer, status, forecast close date, confidence, opportunity
   value, number of quotes, and date created.
 - A rep can have a large book — dozens to a few hundred open opps (the 2026 Opportunity rollout left many
@@ -72,7 +74,7 @@ Never report "you have no opportunities" without first checking the name this wa
 Group the rep's open opps into three buckets:
 
 - 🔴 **Needs attention now** — forecast close date is in the past (overdue) or clearly a typo, and the opp
-  is still open; or a quoted/ordered opp has no close date at all.
+  is still open; or a Quoted to Customer opp has no close date at all.
 - 🟡 **Worth a look** — confidence is blank or 0; or a New opp older than ~30 days still has no forecast
   close date.
 - 🟢 **Clean** — a future close date and a confidence above 0.

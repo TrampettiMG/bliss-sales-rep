@@ -49,3 +49,6 @@ Tier 2 (pilot only, needs the read-only QuickBase connector — see `TIER2-SETUP
 - **Zero Bliss/Trampetti-internal data.** No customer records, no QuickBase field/table/app IDs, no
   internal paths — this repo is public. Scrub before every push. A Tier 2 tool's skill file should talk
   about "the QuickBase connector" generically; real field mappings live in the private connector, not here.
+  **One allowed exception:** the direct link to the Rep Forecast Current Period (or Before) report in
+  `skills/guide/SKILL.md` contains the app and table IDs. It's approved to stay because it only opens after
+  a QuickBase login — don't strip it during a scrub.
