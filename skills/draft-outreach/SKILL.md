@@ -1,11 +1,11 @@
 ---
 name: draft-outreach
 description: >-
-  Draft an intro email, follow-up email, re-engagement email, or call script for a prospect, in the
-  rep's own voice. Use when the rep says "write an intro email for...", "draft a follow-up to...",
-  "write a re-engagement email for...", "give me a call script for...", or asks for something to send
-  or say to a prospect. Always a draft for the rep to review and send/use themselves — never sends
-  anything.
+  Draft an intro email, follow-up email, open-quote follow-up, re-engagement email, or call script for a
+  prospect, in the rep's own voice. Use when the rep says "write an intro email for...", "draft a
+  follow-up to...", "follow up on my quote to...", "write a re-engagement email for...", "give me a call
+  script for...", or asks for something to send or say to a prospect. Always a draft for the rep to
+  review and send/use themselves — never sends anything.
 ---
 
 # Draft outreach
@@ -41,8 +41,8 @@ review and send/say themselves.
 
 ## Flow
 
-1. **Identify the type** from the request: intro, follow-up, re-engagement email, or call script. If
-   ambiguous, ask in one short question.
+1. **Identify the type** from the request: intro, follow-up, open-quote follow-up, re-engagement email,
+   or call script. If ambiguous, ask in one short question.
 2. **Read `PROFILE.md`** for the rep's name, contact info, territory, product focus, and Voice line (see
    above — ask for Voice only if it's missing).
 3. **Gather what's specific to this prospect:** who they are, what's known about them or their
@@ -55,6 +55,11 @@ review and send/say themselves.
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.
    - **Follow-up email** — references the specific prior interaction the rep described (a call, a meeting,
      a proposal sent), restates the open item or next step, one clear ask.
+   - **Open-quote follow-up** — for a quote the rep sent that hasn't turned into an order or a no (often
+     flagged by `my-pipeline` as quoted 90+ days ago). Name the quote or project, ask one simple question
+     that gets a clear answer — still moving, timing changed, or went another way — and make "no" or
+     "not this year" easy to say, so the rep can update or close it out. No invented urgency or
+     discounts.
    - **Re-engagement email** — for a prospect gone quiet. Light touch, no guilt-tripping or fabricated
      urgency ("prices are going up," "limited availability") unless the rep says that's actually true.
      Give them an easy, low-pressure way to respond.

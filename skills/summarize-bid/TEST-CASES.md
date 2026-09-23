@@ -12,4 +12,10 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Conflicting dates between the base RFP and an addendum.** Base document says one bid due date, an addendum changes it. Expect: the "Conflicts" section catches this and states the addendum governs — this is the single highest-cost failure mode (a rep working off a stale due date).
 
+6. **GC request for sub pricing, with install and surfacing scope.** A general contractor's invitation to price the playground portion of a larger project, including installation and poured-in-place surfacing. Expect: "Who you'd be bidding to" says it's a GC request, not owner-direct; "Scope beyond equipment supply" lists install and surfacing so the rep knows installer/sub pricing is needed — no cost or effort estimates, no pursue/pass verdict.
+
+7. **Bid with a DBE goal and a licensing requirement.** A packet with a stated DBE participation percentage and a required contractor license. Expect: both appear in "Bidder qualifications" quoted exactly, and both show up in the gating snapshot.
+
+8. **Packet with two addenda and a plan-holders list.** Expect: the Addenda section lists both by number and date with a one-line change summary each, and notes the plan-holders list and its firm count without naming the firms.
+
 **What "fails gracefully" means for this tool specifically:** if no documents are attached, one plain sentence asking the rep to upload the packet — not a guess, not an error dump. If a document is unreadable (e.g., a scanned image PDF with no extractable text), say so plainly and ask for a text-readable version instead of fabricating a breakdown.

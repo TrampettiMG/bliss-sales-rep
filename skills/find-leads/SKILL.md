@@ -67,11 +67,38 @@ in one run across five categories. Stay disciplined:
   another if combined queries genuinely aren't working (e.g., too many counties for one query to stay
   specific). If you do have to prioritize or skip a county, say so plainly.
 
+## Search terms
+
+Use these to build each category's query and to judge whether a result is relevant. **Never run one search
+per term** — that blows the budget above. Pick the 3-5 terms that best fit the rep's product focus and
+combine them with OR into the category's query (e.g., `"playground" OR "splash pad" OR "shade structure"`).
+
+- **Play:** playground, inclusive playground, accessible / ADA playground, play structure, swings,
+  splash pad, spray park, spray ground, dog park, skate park
+- **Surfacing:** poured-in-place (PIP), rubber surfacing, rubber tile, engineered wood fiber (EWF),
+  playground mulch, synthetic turf, resurfacing
+- **Shade & structures:** shade structure, shade canopy, pavilion, shelter, gazebo, pole barn,
+  prefabricated / metal building, restroom building
+- **Site furnishings:** site furnishings, park benches, picnic tables, trash receptacles, bleachers,
+  grandstand, seating, drinking fountains, bike racks
+- **Sports & fitness:** athletic equipment, outdoor fitness, basketball / tennis / pickleball courts,
+  track & field equipment, walking track
+- **Parks & trails:** park improvements, park renovation, park amenities, trail, pedestrian bridge,
+  campground, pier
+
+Traps to avoid:
+- Never search on a bare broad word — "park" (matches parking), "site", "trash", "table", "courts" (matches
+  court buildings), "seating". Always pair it: "park playground," "site furnishings," "picnic table,"
+  "pickleball courts."
+- Buying often shows up as a co-op purchase instead of an open bid — a council or board agenda approving
+  a purchase "through Sourcewell / BuyBoard / TIPS / OMNIA" is a real signal. Count it under park projects.
+
 ## Flow
 
 1. **Read `PROFILE.md`** for the rep's counties/territory and product focus. If territory is missing or
    too broad to search meaningfully (e.g., just a state name), ask for the specific county or counties.
-2. **Search each category** for the rep's counties, recent activity only, within the usage budget above:
+2. **Search each category** for the rep's counties, recent activity only, within the usage budget above,
+   using terms from **Search terms**:
    - Park, playground, or splash-pad projects (new builds, renovations, RFPs, ribbon-cuttings).
    - Municipal capital improvement budgets or plans that mention parks/rec.
    - Grants awarded or applied for that touch parks/rec/playground equipment.

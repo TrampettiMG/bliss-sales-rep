@@ -40,12 +40,16 @@ forms, or draft a bid response.
 3. **Extract these categories**, in order, from the documents. Quote or closely paraphrase, with a source
    for each item. Mark a category "N/A per documents" if it isn't covered — don't skip the row.
    - **Project identification** — solicitation/bid number, project title, issuing agency/owner, site address, point of contact.
-   - **Dates & deadlines** — questions/RFI deadline; pre-bid meeting or site visit (mandatory or optional); bid due date and time (flag "LATE = REJECTED"); completion deadline.
+   - **Who you'd be bidding to** — directly to the owner/agency, or as a sub/supplier to a general contractor or prime bidder. Quote what the documents say; if it's a GC's request for pricing, say so.
+   - **Dates & deadlines** — questions/RFI deadline; pre-bid meeting or site visit (mandatory or optional); substitution / approved-equal request deadline; bid due date and time (flag "LATE = REJECTED"); completion deadline.
+   - **Addenda** — every addendum included in the upload, by number and date, with a one-line summary of what each changes. If the documents reference an addendum that isn't attached, list it in "Not found — verify." If a plan-holders list is included, say so and how many firms are on it — don't list the firms.
    - **Scope of work** — what's being built or bought, in the documents' own words. Call out anything specific to playgrounds, park/site amenities, or equipment procurement.
+   - **Scope beyond equipment supply** — list any work the documents include besides supplying equipment: installation, demolition/removal, surfacing, concrete or site work, permits, drawings/CAD submittals, material take-offs. This tells the rep what outside pricing (installer, subcontractor, vendor) they'd need to gather before the due date. List what's in the documents; don't estimate cost or effort.
    - **Materials, equipment & specs** — named products, brands, or model numbers; any "or approved equal" / substitution language and what it requires (this is the key fit signal — it tells you whether an equivalent product can be proposed).
    - **Bonds & insurance** — bid bond and payment/performance bond requirements, if any, and the amount/percentage.
    - **Submission logistics** — how and where to submit, format (sealed vs. portal), deadline for questions.
    - **Required forms** — the documents' required-forms list (e.g., bid form, W-9, insurance certificate, references).
+   - **Bidder qualifications** — licensing (contractor license, installer certification), DBE/MBE/WBE or small-business participation goals and the percentage, required years of experience or number of similar completed projects, and reference requirements. These are hard gates, so quote the exact requirement.
    - **Permits** — who's responsible, if the documents say.
    - **Evaluation/scoring criteria** — how proposals are judged, if stated.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
@@ -53,7 +57,7 @@ forms, or draft a bid response.
 4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
 5. **Present the breakdown, every time, in this structure** — a quick conversational reply without the
    headed sections below is not acceptable, even for a short or simple bid:
-   - A short **gating snapshot** (due date, mandatory site visit, bonds, hard-gate forms).
+   - A short **gating snapshot** (due date, mandatory site visit, substitution deadline, bonds, bidder qualifications like licensing or DBE goals, owner-direct vs. GC, hard-gate forms).
    - The categories above as short sections — one line each is fine if a category is thin.
    - A **Not found — verify** section, always present even if the only line is "None found." — this is
      where computed/derived values from the rule above go, not the main body.
