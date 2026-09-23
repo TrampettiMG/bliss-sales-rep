@@ -57,7 +57,7 @@ forms, or draft a bid response.
 4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
 5. **Present the breakdown, every time, in this structure** — a quick conversational reply without the
    headed sections below is not acceptable, even for a short or simple bid:
-   - A short **gating snapshot** (due date, mandatory site visit, substitution deadline, bonds, bidder qualifications like licensing or DBE goals, owner-direct vs. GC, hard-gate forms).
+   - A short **gating snapshot** (due date plus how many days from today's session date, mandatory site visit, substitution deadline, bonds, bidder qualifications like licensing or DBE goals, owner-direct vs. GC, hard-gate forms).
    - The categories above as short sections — one line each is fine if a category is thin.
    - A **Not found — verify** section, always present even if the only line is "None found." — this is
      where computed/derived values from the rule above go, not the main body.

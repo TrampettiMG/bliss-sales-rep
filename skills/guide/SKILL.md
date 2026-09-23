@@ -51,11 +51,13 @@ Ask what the rep is trying to do, then point to the matching tool below.
 - **prep-call** — get ready for a call or meeting you already have context on. *"Prep me for a call
   with Jane Rep."*
 - **draft-outreach** — write an email or call script. Always a draft — never sent automatically.
-  *"Draft an intro email to Acme Construction," "give me a call script for this."*
+  *"Draft an intro email to Acme Construction," "follow up on the quote I sent Riverside Parks," "check in
+  with a past customer," "give me a call script for this."*
 - **make-content** — one-pagers, bid cover letters, pitch content. *"Make me a one-pager for HOAs,"
   "write a cover letter for this bid."*
-- **summarize-bid** — break down an RFP or bid packet you upload. *"Summarize this bid," "what's in
-  this bid packet."*
+- **summarize-bid** — break down an RFP or bid packet you upload, including the gates (mandatory
+  pre-bid, bonds, licensing, DBE goals) and what outside pricing you'd need. *"Summarize this bid," "what
+  would it take to bid this."*
 
 ### QuickBase tools (only if your trainer set up the QuickBase connection)
 

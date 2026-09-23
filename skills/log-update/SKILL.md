@@ -64,6 +64,12 @@ Read the raw material and pull out, only where it's actually stated or clearly i
   resubmitting Friday"). **Never prepend a date or the rep's name** — QuickBase stamps both automatically
   when the note is pasted in, so typing them yourself double-stamps it. Don't editorialize or add
   sales-strategy framing that wasn't in the material.
+- **Reason, when it's a loss, a no-bid, or "went another way"** — if the material says why (price, another
+  brand specified, spec couldn't be matched, no budget, timing, a mandatory pre-bid missed, bond or
+  licensing, awarded to someone else), put the reason in the note in plain words. If the material shows a
+  loss or no-bid but not why, ask the rep one short question — "What was the reason?" — since QuickBase
+  only offers the Lost status once a reason is given, and these reasons are what the team learns from.
+  Never guess the reason.
 
 Present these as a **draft**, clearly labeled, not as the final answer. If the material doesn't clearly
 support a field (e.g. no timeline was mentioned), leave it blank and say so — don't fill the gap with a

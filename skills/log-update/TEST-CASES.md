@@ -31,6 +31,8 @@ are the generic patterns that pull found, not the real data itself.
    same session. Not something the skill file requires, but a good-behavior bonus if the tool notices the
    overlap and flags which value should win rather than presenting two silently conflicting drafts.
 
+6. **Loss with no reason in the notes.** Notes say "They went with someone else." Expect: one short question asking for the reason before finalizing; the reason (once given) goes in the note in plain words; never a guessed reason.
+
 **What "fails gracefully" means for this tool specifically:** if the connector errors or times out, one
 plain sentence and a suggestion to retry. The final output is always labeled as a draft the rep pastes
 themselves; the tool never claims to have written anything to QuickBase, and it never treats a rep's own

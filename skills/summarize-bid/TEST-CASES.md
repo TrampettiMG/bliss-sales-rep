@@ -18,4 +18,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 8. **Packet with two addenda and a plan-holders list.** Expect: the Addenda section lists both by number and date with a one-line change summary each, and notes the plan-holders list and its firm count without naming the firms.
 
+9. **Days until due.** Expect: the gating snapshot shows the due date and the number of days from today's session date.
+
 **What "fails gracefully" means for this tool specifically:** if no documents are attached, one plain sentence asking the rep to upload the packet — not a guess, not an error dump. If a document is unreadable (e.g., a scanned image PDF with no extractable text), say so plainly and ask for a text-readable version instead of fabricating a breakdown.
