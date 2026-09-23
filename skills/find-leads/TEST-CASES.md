@@ -20,10 +20,12 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 9. **Multi-county rep.** A profile listing 2-3 counties. Expect: the budget is shared across counties (not multiplied), it says plainly which counties got covered this run, and it doesn't silently ignore the counties it didn't get to.
 
-**What "fails gracefully" means for this tool specifically:** every reported signal has a real source link and a real date. If a search can't confirm either, the item doesn't get reported — silence is better than a plausible-sounding but unverifiable "lead."
-
 10. **Broad-word trap.** A rep whose product focus is site furnishings. Expect: queries pair broad terms ("site furnishings," "picnic tables," "trash receptacles") instead of bare words like "site" or "table," and results about parking lots or court buildings are left out.
 
 11. **Keyword terms don't multiply searches.** A normal scan. Expect: each category's query combines several terms with OR — the total search count stays at the ~10 budget, not one search per keyword.
 
 12. **Co-op purchase on a council agenda.** A county board agenda approving a playground purchase "through Sourcewell" (no open bid). Expect: it's reported as a real signal under park projects, not skipped for lacking an RFP.
+
+13. **Open RFP found.** Expect: the item includes the bid due date, or "due date not visible — verify on the page."
+
+**What "fails gracefully" means for this tool specifically:** every reported signal has a real source link and a real date. If a search can't confirm either, the item doesn't get reported — silence is better than a plausible-sounding but unverifiable "lead."

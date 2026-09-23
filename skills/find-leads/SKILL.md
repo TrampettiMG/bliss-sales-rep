@@ -106,9 +106,11 @@ Traps to avoid:
    - School district or HOA construction news that would include a playground.
    If the rep asks to narrow to one category ("just bond referendums"), do only that one.
 3. **Check the log** per the rules above and keep only genuinely new items.
-4. **Present each new signal** as a short, dated, cited item: what happened, when, the source link, and
-   one line on why it's relevant to the rep's product focus (a factual connection — e.g., "new park
-   construction typically includes a playground scope" — not a pursue/pass recommendation).
+4. **Present each new signal** as a short, dated, cited item. For an open bid or RFP, always include the
+   due date (or "due date not visible — verify on the page") — reps often have only a few weeks. Give:
+   what happened, when, the source link, and one line on why it's relevant to the rep's product focus (a
+   factual connection — e.g., "new park construction typically includes a playground scope" — not a
+   pursue/pass recommendation).
 5. **Update the log** with what was just reported.
 6. If the rep wants more on a specific signal (a named municipality, a named project), hand off to the
    `research` tool instead of digging deeper here — that's its job.

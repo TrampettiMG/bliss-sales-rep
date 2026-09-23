@@ -12,4 +12,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Rep asks for a specific, unverifiable claim.** Rep says "mention that we've done over 500 installations" without that being in `PROFILE.md` or stated elsewhere. Expect: the tool either uses it as given (rep-supplied, not fabricated) if the rep is clearly asserting it as fact, or — if the rep is asking the tool to *invent* a number they didn't have (e.g., "make up something impressive about our experience") — it should decline to fabricate a statistic and offer a placeholder or a true-but-generic alternative instead.
 
+6. **Bid cover letter after summarize-bid found two addenda.** Expect: the letter acknowledges Addendum 1 and Addendum 2 by number. If no addenda are known, it doesn't invent any.
+
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.

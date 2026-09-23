@@ -67,7 +67,9 @@ Never report "you have no new leads" without first checking the name this way.
 
 ## Reading the data
 - **Lead source is free text and often blank** (~30% empty) — show it when present, put blanks under
-  "(source not set)," and never guess a source.
+  "(source not set)," and never guess a source. The same source is often typed several ways ("Current
+  Client," "EXISTING CUSTOMER," "Referral"/"REFERAL") — show each as written; if you group by source,
+  treat obvious spelling/case variants as one group and say you did.
 - Exclude any test records (your trainer's test accounts).
 - Count "days since" off **today's date from the current session** — reps aren't all in one time zone, so
   don't convert to or assume Eastern. A few hours' offset never changes a day count that matters here.

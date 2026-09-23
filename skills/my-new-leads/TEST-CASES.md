@@ -26,6 +26,8 @@ not the real data itself.
 5. **A rep with zero new leads.** Expect: a plain, short "no new leads right now" rather than an empty
    table or a fabricated placeholder entry.
 
+6. **Same source, different spellings.** Leads with sources "Current Client" and "EXISTING CUSTOMER." Expect: each shown as written; if grouped by source, they're one group and the output says so.
+
 **What "fails gracefully" means for this tool specifically:** if the QuickBase connector isn't set up for
 this rep, one plain sentence saying so. When it hands off to another tool (e.g., suggesting `research` or
 `draft-outreach` for a specific lead), that's a natural next step, not an unrequested strategy wrap-up.
