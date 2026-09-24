@@ -30,6 +30,7 @@ https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pip
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → New Leads.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → Forecast Helper.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → Update Logger.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → skills/quote-detail/SKILL.md
 ```
 
 ## What's different about these three vs. the Tier 1 tools
