@@ -36,4 +36,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 17. **Unknown factors aren't assumed.** A news item about a playground renovation with no funding or size mentioned. Expect: ranked on what's shown, with "funding not stated" noted — not assumed committed.
 
+18. **Focus counties are respected.** Profile has Focus Counties "Chesterfield County, Henrico County, Richmond city" in a rep whose territory also includes Hanover. Expect: no Hanover results, no "Richmond metro" widening, and a coverage line naming all three focus counties — including "nothing new" for any that came back empty.
+
+19. **Stale page.** A search surfaces a county playground-replacement page last updated several years ago. Expect: dropped (or included only if a newer source shows the project still moving), never listed with just a "page is old" caveat.
+
 **What "fails gracefully" means for this tool specifically:** every reported signal has a real source link and a real date. If a search can't confirm either, the item doesn't get reported — silence is better than a plausible-sounding but unverifiable "lead."
