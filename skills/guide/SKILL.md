@@ -64,15 +64,17 @@ Ask what the rep is trying to do, then point to the matching tool below.
 - **Update Logger** (`log-update`) — turn notes, a transcript, or an email from a customer into a paste-ready QuickBase
   update. *"Turn these call notes into a QuickBase update."*
 - **Pipeline Check** (`my-pipeline`) — see what in your pipeline needs attention before your manager calls about it.
-  *"What's in my pipeline," "what needs attention."*
+  *"What's in my pipeline," "what needs attention," "who should I check in with."*
 - **New Leads** (`my-new-leads`) — your unworked New opportunities, oldest first. *"What leads do I have," "my new
   leads."*
 - **Forecast Helper** (`forecast-update`) — month-end walkthrough that gets your whole pipeline grid-ready. *"Help me
   update my forecast," "get my opps grid-ready."*
+- **Quote Details** (`quote-detail`) — what's in one of your quotes: the total, the main line items, and
+  any bond or permit lines. *"What's in the quote on opp 12345," "what's the bond on this one."*
 
 ### Housekeeping (not a tool — just ask)
 
-- **Update my tools** — gets the latest version of all 11 tools. *"Update my tools," "what version am I
+- **Update my tools** — gets the latest version of all 12 tools. *"Update my tools," "what version am I
   on?"*
 - **Change your profile** — focus counties, contact info, product focus. *"Change my focus counties to
   Henrico and Chesterfield," "update my phone number."*

@@ -33,7 +33,7 @@ actual territory before including anything, and note what got excluded and why i
 ## The log — what makes this repeatable
 
 Keep a project file `find-leads-log.md` — one entry per signal ever surfaced, each with its date, county,
-one-line description, tier, and source URL. On every run:
+one-line description, stage (plan, design, funded, bid/RFP, awarded), tier, and source URL. On every run:
 
 1. **Look for the log anywhere in the project first**, including a subfolder like `claude/` — some
    setups save files there. Use and update it where you find it; never start a second log. If
@@ -41,7 +41,15 @@ one-line description, tier, and source URL. On every run:
    everything found as new. Create the log with today's results.
 2. If it exists, search normally, then **compare against the log by the underlying event, not just the
    literal URL** — a different article covering the same groundbreaking, budget vote, or grant award is
-   still the same signal, not a new one. Only report items that are genuinely new. If nothing new turns
+   still the same signal, not a new one. Only report items that are genuinely new.
+   **Exception — the same project at a later stage is news.** If a result is a project already in the
+   log but the source shows it has clearly moved forward (plan or design → money budgeted or awarded;
+   funded → an RFP, bid, or purchase approval; bid → award), report it under a separate **"Moved up since
+   your last scan"** heading above the tiers: one line each with the old stage, the new stage, date and
+   source ("Tuckahoe District Park, Henrico: FY27 design money → construction RFP posted Oct 3"). Re-rank
+   it in the tiers only if it now fits a higher one. Update its log entry with the new stage rather than
+   adding a second entry (older entries with no stage: judge it from their description). This uses the normal searches — never spend extra searches re-checking old
+   items. If nothing new turns
    up, say so plainly: "Nothing new since your last run on [date]" — don't re-surface old items or pad the
    list to look productive.
 3. Append newly surfaced items to the log after reporting them, so the next run doesn't repeat them.
@@ -180,3 +188,7 @@ deadline or most recent item first.
 5. **Update the log** with what was just reported.
 6. If the rep wants more on a specific signal (a named municipality, a named project), hand off to the
    `research` tool instead of digging deeper here — that's its job.
+7. End with one line offering both next steps: "Want more on one of these? That's the Research Brief. Or
+   an intro email built around one of them? That's the Email Writer." An email that mentions a specific,
+   recent signal gets far more replies than a cold one, so when the rep picks one, pass the signal (what,
+   when, source) to the Email Writer as known context.

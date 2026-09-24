@@ -69,7 +69,10 @@ Read the raw material and pull out, only where it's actually stated or clearly i
   licensing, awarded to someone else), put the reason in the note in plain words. If the material shows a
   loss or no-bid but not why, ask the rep one short question — "What was the reason?" — since QuickBase
   only offers the Lost status once a reason is given, and these reasons are what the team learns from.
-  Never guess the reason.
+  For a no-bid you can list the common ones as choices (spec can't be matched or proprietary, no
+  installer or vendor pricing in time, missed the mandatory pre-bid, bond / DBE / licensing, too small or
+  out of scope, price, cancelled or re-bid, partner bidding direct, or something else). Never guess the
+  reason or pick one for the rep.
 
 Present these as a **draft**, clearly labeled, not as the final answer. If the material doesn't clearly
 support a field (e.g. no timeline was mentioned), leave it blank and say so — don't fill the gap with a

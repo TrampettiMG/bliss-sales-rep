@@ -19,7 +19,7 @@ this for a Tier 1 rep; without the connector these tools can only fail.
    hands it directly to each pilot rep's Cowork setup (e.g., drag-and-drop into the project, or install it
    the way any other Claude skill package is installed on that machine) — never a link, never this repo.
 
-**The four Tier 2 skills are now installed for every rep during the normal setup** (they're
+**The five Tier 2 skills (Quote Details added 2026-09-25) are now installed for every rep during the normal setup** (they're
 public/generic, no Bliss-specific IDs, and they fail gracefully without the connector). So for a rep set up
 after 2026-09-24, the two prerequisites above are all that's needed. Only a project set up **before** that
 date needs this one-time paste to add them:
@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pip
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → New Leads.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → Forecast Helper.md
 https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → Update Logger.md
-https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → skills/quote-detail/SKILL.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → Quote Details.md
 ```
 
 ## What's different about these three vs. the Tier 1 tools

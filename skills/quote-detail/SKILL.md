@@ -8,7 +8,7 @@ description: >-
   full pipeline health check use `my-pipeline`; to break down an uploaded bid document use `summarize-bid`.
 ---
 
-# Quote detail
+# Quote Details
 
 A read-only look at the quote and line items behind one opportunity: the quote total, the main line items,
 and any bond or permit related lines. It lets the rep see what is actually in a deal without opening
@@ -16,7 +16,7 @@ QuickBase and clicking through. It reads; it never writes.
 
 ## Requires the QuickBase connection
 This tool only works if the read-only QuickBase connector and the `quickbase-usage` skill are set up in this
-project (your trainer sets this up for pilot reps). If they aren't available, say so in one plain sentence,
+project (your trainer sets this up). If they aren't available, say so in one plain sentence,
 "This needs the QuickBase connection your trainer sets up; it isn't on your account yet," and stop. Never
 guess or fabricate quote data.
 
@@ -47,6 +47,11 @@ so stay tight:
   description.
 - Line prices can be blank on note or subtotal lines and negative on discounts. Show them as they are.
 - The quote grand total is the figure to lead with for "how big is this deal."
+- **⚠ More than one quote on the opportunity** (often options — e.g. a base design and an upgraded one):
+  show each quote's total on its own line and **never add them together** into one deal size. Put a
+  warning line above them: "⚠ This opportunity has N quotes — these may be options, so the totals aren't
+  added together. Check which one the customer is weighing." (Flagged for testing: confirm against a
+  real multi-quote opportunity that the tool keeps totals separate and shows this warning.)
 
 ## Present it
 - Lead with the opportunity and its quote(s): quote number as a clickable link to the record (build the link
@@ -56,8 +61,8 @@ so stay tight:
   many; the rep wants the shape of the deal, not every note line.
 - Call out any bond or permit related lines separately, with the "identified by description" caveat.
 - Keep it scannable. No strategy wrap-up, no "bottom line."
-- Offer next steps as offers only: "Want a cover letter for this? That's `make-content`." and "Want a full
-  bid document broken down? Upload it and use `summarize-bid`."
+- Offer next steps as offers only, by friendly name: "Want a cover letter for this? That's the Content
+  Builder." and "Want a full bid document broken down? Upload it and ask the Bid Breakdown."
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment. If

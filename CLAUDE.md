@@ -56,8 +56,9 @@ Tools to install (fetch each URL and save it as a project file with exactly the 
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pipeline/SKILL.md → save as `Pipeline Check.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → save as `New Leads.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `Forecast Helper.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → save as `Quote Details.md`
 
-(The last four are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
+(The last five are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
 sentence saying so.)
 
 `PROFILE.md` template:
@@ -92,6 +93,7 @@ use when they mention each other). They mean the same tool.
 | Pipeline Check | `my-pipeline` | `Pipeline Check.md` |
 | New Leads | `my-new-leads` | `New Leads.md` |
 | Forecast Helper | `forecast-update` | `Forecast Helper.md` |
+| Quote Details | `quote-detail` | `Quote Details.md` |
 
 - When you talk to the rep, always use the **friendly name** ("that's the Bid Breakdown"), never the short
   name. When a tool file says to hand off to `draft-outreach`, that means the Email Writer.
@@ -102,7 +104,7 @@ use when they mention each other). They mean the same tool.
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-25**
+**Tools version: 2026-09-25c**
 
 - **"Update my tools"** (or "get the latest tools"): for every row in the name table above, fetch
   `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
@@ -111,7 +113,7 @@ use when they mention each other). They mean the same tool.
   `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md`, remove its "First run"
   block (everything between the START/END markers), and replace this file's contents with the rest.
   Never touch `PROFILE.md` or `find-leads-log.md` — those are the rep's own. Confirm each file actually
-  saved, then reply in one line: "Updated all 11 tools to version <new version line>." If any fetch
+  saved, then reply in one line: "Updated all 12 tools to version <new version line>." If any fetch
   failed, name which tool didn't update and ask the rep to tell their trainer.
 - **"What version am I on?"** Answer with the Tools version line above.
 - **Changing the profile** ("change my focus counties," "add Hanover," "update my phone number," "I

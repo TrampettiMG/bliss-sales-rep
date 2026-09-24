@@ -19,6 +19,10 @@ with a real opportunity number that has a quote.
 5. **No opportunity given.** The rep asks "what's the bond" with no opp number and none in the conversation.
    Expect: it asks for the opportunity number instead of guessing.
 
+6. **⚠ Opportunity with several quotes (options).** An opportunity with 2+ quotes. Expect: each quote's
+   total on its own line, the "⚠ This opportunity has N quotes — these may be options" warning, and no
+   combined deal-size figure. **Not yet tested — run this before rollout.**
+
 **What "fails gracefully" means for this tool specifically:** if the connector or `quickbase-usage` skill
 isn't set up, one plain sentence and stop. If a query would pull too much from the huge Quote tables, it
 narrows or delegates to a subagent rather than dumping raw data. Errors come back as one plain sentence, no

@@ -12,7 +12,7 @@ that project just works. See `SETUP-CARD.md` for the exact, tested steps.
 
 - `CLAUDE.md` — persona, house rules, first-run profile onboarding (self-deletes after first run; also has
   Claude fetch and save each tool skill below).
-- `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 11 tools (Tier 1
+- `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 12 tools (Tier 1
   tested end-to-end).
 - `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
 - `skills/` — the sales-rep tools (saved in a rep's project under friendly names like `Lead Finder.md` — see

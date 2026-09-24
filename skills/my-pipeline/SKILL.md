@@ -5,7 +5,8 @@ description: >-
   missing forecast close dates, blank or zero confidence, and stale opps. The "what your manager sees
   before he calls you" health check. Read-only from QuickBase; never writes. Use when the rep says "my
   pipeline", "what's in my pipeline", "what needs attention", "what would my manager flag", "check my
-  opportunities", or "my open opps". To turn the fixes into paste-ready QuickBase values use
+  opportunities", or "my open opps". Also lists past customers with nothing open, for check-ins ("who
+  should I check in with", "my past customers"). To turn the fixes into paste-ready QuickBase values use
   `forecast-update`; to see only unworked New leads use `my-new-leads`.
 ---
 
@@ -96,10 +97,6 @@ adjust them.
 ## Present it — keep it scannable even with 50+ opps
 - Lead with one summary line and the bucket counts: "You have N open opportunities — X 🔴 need attention
   now, Y 🟡 worth a look, Z 🟢 clean."
-- Then a "your numbers" line: the total value across the rep's quoted deals and the weighted forecast
-  (value × confidence), plus a count by stage (New / Pending / Quoted to Customer). Follow the totals rule
-  above — say how many opps have a value vs. blank, label a total with blanks as partial, and never present
-  it as the rep's whole book when most of it is unvalued.
 - List the 🔴 items in full, one line each: the opportunity number as a clickable link to its QuickBase
   record (build the link from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the
   realm/app/table IDs), then customer, status, close date (or "no close date," or "date looks wrong:
@@ -113,7 +110,28 @@ adjust them.
   totals. If everything is clean, say so plainly.
 - Offer the next steps as offers only: "Want these turned into paste-ready QuickBase values? That's the
   Forecast Helper." and "Want a follow-up drafted to one of these contacts? That's the Email Writer." (For
-  "quoted 90+ days ago" items especially, an email nudge is the natural move.)
+  "quoted 90+ days ago" items especially, an email nudge is the natural move.) If the rep
+  wants emails for several of them at once, hand off to the Email Writer's "Several check-ins or
+  follow-ups at once" (up to 5 per reply), oldest first.
+
+## Past customers to check in with
+
+Most repeat business comes from customers who have bought before, so on request ("who should I check in
+with," "my past customers," "who haven't I heard from") — or as a one-line offer at the end of a pipeline
+check ("Want your past customers with nothing open right now? Good for check-ins.") — list them. Don't
+run this unasked; it's a second read.
+
+- **Who counts:** the rep's own customers (the customer's assigned sales rep is this rep) with at least
+  one won order in roughly the last 3 years and **no open opportunity right now** (New, Pending, or
+  Quoted to Customer). Follow the `quickbase-usage` skill for the tables and fields — won orders from
+  before the mid-2026 Opportunity rollout live in the quote history, not on Opportunities, so both have to
+  be checked. This is one rep's slice: bounded, with an explicit field list; never scan the whole table.
+- **Show:** customer, last won order date, and that order's project or quote name if QuickBase has one —
+  one line each, longest since the last order first. Up to 10, then "and N more — want the rest?"
+- Same rules as above: real data only, read only, exclude test records, no ranking by guessed value or
+  "best bets." If the rep has none, say so plainly.
+- Offer: "Want check-in emails for some of these? The Email Writer can draft up to 5 at once." If yes,
+  hand off to the Email Writer's "Several check-ins or follow-ups at once" with the chosen customers.
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —
