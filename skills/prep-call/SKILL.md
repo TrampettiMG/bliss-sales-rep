@@ -36,6 +36,14 @@ conversation actually said the customer raised it before.
    know — prior conversations, where things stand, what they want out of this call. Pull in anything
    already sitting in the conversation from another tool (a bid summary, research brief, lead) instead of
    re-asking for it.
+   **If the rep mentions a quote or opportunity of theirs** ("my playground quote to Chesterfield") and
+   the QuickBase connection is set up, look it up first instead of asking about it: pull the rep's open
+   opportunities the way the Pipeline Check tool file does (its "Whose opportunities" section), and match
+   on the customer and what the rep described. If exactly one matches, use its customer, status, value,
+   date created and forecast close date as known facts, and ask only for what QuickBase doesn't hold
+   (who they're calling, past conversations, what they want from the call). If several match, list them
+   in one line each and ask which. If none match or QuickBase isn't connected, just ask as above. Read
+   only — never write to QuickBase.
 2. **Read `PROFILE.md`** for the rep's product focus and territory, to keep talking points relevant to
    what they actually sell.
 3. **Build the brief, three short sections:**
@@ -58,6 +66,8 @@ conversation actually said the customer raised it before.
      includes," not a list of inclusions.
 4. **Keep it short** — this is a glance-at-before-dialing brief, not a full account history. Aim for 3-4
    talking points, 1-3 open items, and 2-4 objections, one line each (a sub-bullet only when it carries
-   a specific fact, like a project name or date).
+   a specific fact, like a project name or date). Don't repeat a point across sections or list two
+   objections that are really the same one (e.g., "budget is tight" and "no money until next fiscal
+   year") — merge them.
 5. If the rep gives more context mid-conversation ("oh, they also mentioned X"), fold it in and regenerate
    rather than leaving it out.

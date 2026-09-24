@@ -20,6 +20,11 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    searches to focus on:
    *"Here's what I found in QuickBase — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
    right? Optional: the products you focus on, and a few counties you want me to focus lead searches on."*
+   If the rep answers the focus question with a region instead of counties ("Richmond metro," "the
+   coast"), don't pick the counties yourself. Reply with the counties **from their own QuickBase
+   assignments** you think they mean and wait for a yes before saving: *"By Richmond metro, do you mean
+   Chesterfield, Henrico and Richmond city? Anything to add or drop?"* Never add a county they aren't
+   assigned unless they name it themselves.
    **If the login doesn't match a rep** (for example, an admin or shared login), ask one question only —
    their name as it appears in QuickBase — and look them up by that name instead. **Never suggest,
    list, or hint at other reps' names** (not even as an example or "for a test"), and don't browse the
