@@ -35,8 +35,10 @@ business terms:
 - Pull the rep's **open** opportunities — status New, Pending, or Quoted to Customer only — where the rep
   is **Sales Rep 1**. Ordered is excluded (it's already won, so it shouldn't be flagged for an overdue
   forecast close), and so is Closed.
-- For each, read: opportunity number, customer, status, forecast close date, confidence, opportunity
-  value, number of quotes, and date created.
+- For each, read: opportunity number, customer, customer contact (name, phone, email), status, forecast
+  close date, confidence, opportunity value, number of quotes, date created, and last activity (the
+  last-modified date and the most-recent-update date). The contact and activity fields live in the
+  `quickbase-usage` skill; do not hardcode field IDs here.
 - A rep can have a large book — dozens to a few hundred open opps (the 2026 Opportunity rollout left many
   reps with a big backlog of untouched "New" opps). Page through the rep's full open set with an explicit
   field list and a sane cap (around 300); if there are still more, say so. This is one rep's slice —
@@ -71,6 +73,8 @@ Never report "you have no opportunities" without first checking the name this wa
   ("5 of 5 have a value" or "12 of 30 have a value — this total leaves out the 18 blank ones"), label a
   total with any blanks as partial, and say what the value is based on (subtotal incl. freight before
   tax; one option per opp counts; weighted = value × confidence).
+- **Customer contact and last activity** come from the fields the `quickbase-usage` skill maps. Show the
+  contact so the rep can act; use last activity for a plain "last touched N days ago." Never invent either.
 - If any test records appear (your trainer's test accounts), exclude them.
 
 ## What to flag — the health buckets
@@ -92,17 +96,24 @@ adjust them.
 ## Present it — keep it scannable even with 50+ opps
 - Lead with one summary line and the bucket counts: "You have N open opportunities — X 🔴 need attention
   now, Y 🟡 worth a look, Z 🟢 clean."
-- List the 🔴 items in full, one line each: opportunity number, customer, status, close date (or "no close
-  date," or "date looks wrong: <value>"), confidence as a %. These are what to fix first.
+- Then a "your numbers" line: the total value across the rep's quoted deals and the weighted forecast
+  (value × confidence), plus a count by stage (New / Pending / Quoted to Customer). Follow the totals rule
+  above — say how many opps have a value vs. blank, label a total with blanks as partial, and never present
+  it as the rep's whole book when most of it is unvalued.
+- List the 🔴 items in full, one line each: the opportunity number as a clickable link to its QuickBase
+  record (build the link from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the
+  realm/app/table IDs), then customer, status, close date (or "no close date," or "date looks wrong:
+  <value>"), confidence as a %, and last activity ("last touched N days ago"). Put the customer contact
+  (name, phone, email) with each item so the rep can act without opening QuickBase. These are what to fix
+  first.
 - For 🟡, give the count and the top few examples, then offer to list them all rather than dumping every
   one.
 - For 🟢, just the count (offer the list if they want it).
 - This is a status list, not a strategy memo — no recommended approach, no "bottom line," no invented
   totals. If everything is clean, say so plainly.
-- Offer the next step as an offer only: "Want these turned into paste-ready QuickBase values? That's
-  the Forecast Helper." If there are "quoted 90+ days ago" items, also offer: "Want follow-up emails for
-  the old quotes? The Email Writer can draft up to 5 at once." If the rep says yes, hand off to the Email
-  Writer's "Several old-quote follow-ups at once" with the flagged quotes, oldest first.
+- Offer the next steps as offers only: "Want these turned into paste-ready QuickBase values? That's the
+  Forecast Helper." and "Want a follow-up drafted to one of these contacts? That's the Email Writer." (For
+  "quoted 90+ days ago" items especially, an email nudge is the natural move.)
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —
