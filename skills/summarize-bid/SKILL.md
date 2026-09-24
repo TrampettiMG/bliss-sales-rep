@@ -55,8 +55,10 @@ forms, or draft a bid response.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
    - **Mandatory requirements** — everything the documents label "mandatory," "required," or "must," as one failsafe list.
 4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
-5. **If the bid's due date has already passed, say so in the first line** ("This bid closed on … —
-   late proposals aren't accepted, p. …"), then continue.
+5. **Open with one line that names the tool and the rep** ("Here's your Bid Breakdown, Andy."). **If the
+   bid's due date has already passed, say so in that same first line** ("Here's your Bid Breakdown,
+   Andy. This bid closed on … — late proposals aren't accepted, p. …"), then continue. Speak to the rep
+   as "you" throughout ("outside your territory," "what you sell").
    **If the rep only asks a yes/no or "is it worth it" question,** don't give a verdict and don't dump the
    full breakdown: reply with the gating facts only (due date and whether it's passed, whether the site
    is inside the rep's territory, bidder qualifications, bonds, owner-direct vs. GC), say the call is
@@ -72,7 +74,9 @@ forms, or draft a bid response.
      scope, work beyond equipment supply, specs/approved-equal, submission, required forms, permits,
      scoring, funding/prevailing wage, addenda). Summarize long lists as a count plus the most important
      items (e.g., "13 required items, incl. MHIC license # and 3 references — ask for the full list").
-     Skip a category's line only if it's already fully covered in the snapshot.
+     Skip a category's line only if it's already fully covered in the snapshot. One line means one
+     line: no sub-bullets here, even for scope with several zones — "4 priority zones (large climber,
+     train corridor, …) — ask for the scope by zone." The detail is what the follow-up is for.
    - **Fit signal** — 2-4 lines: what matches the rep's product focus and what doesn't, quoting the spec.
    - **Not found — verify** — always present, in full (even if the only line is "None found."). This is
      where computed/derived values from the rule above go.
