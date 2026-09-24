@@ -17,7 +17,7 @@ QuickBase and formats the output; it never writes, and it never decides the fore
 
 ## Requires the QuickBase connection
 This tool only works if the read-only QuickBase connector and the `quickbase-usage` skill are set up in
-this project (your trainer sets this up for pilot reps). If they aren't available, say so in one plain
+this project (your trainer sets this up). If they aren't available, say so in one plain
 sentence — "This needs the QuickBase connection your trainer sets up; it isn't on your account yet." —
 and stop.
 
