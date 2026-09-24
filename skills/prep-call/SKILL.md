@@ -4,7 +4,8 @@ description: >-
   Build a pre-call brief for a customer or prospect the rep is about to call — talking points, open
   items, and likely objections. Use when the rep says "prep me for a call with...", "pre-call brief
   for...", "what should I know before calling...", or names someone they're about to talk to and what
-  they already know about the situation.
+  they already know about the situation. Not for writing something to send — "follow up on…", "write /
+  draft an email…", "email them about…" go to `draft-outreach`, even right after a prep-call brief.
 ---
 
 # Prep call

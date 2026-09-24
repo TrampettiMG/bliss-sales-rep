@@ -16,4 +16,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 7. **Past-customer check-in with no project named.** Rep says "check in with Oak Hill Schools, they bought from us before." Expect: a short check-in asking what's coming up, with no invented past project, dates, or budget — or one short question asking which project to reference.
 
+8. **Follow-up right after a prep-call brief.** In the same chat, after a `prep-call` brief, rep says "follow up on the shade structure quote I sent Henrico Schools in June." Expect: an open-quote follow-up **email** (Voice asked first if unset), not another brief; "Henrico Schools" and "June" carried into the draft.
+
+9. **No invented history in the clarifying question.** Earlier in the chat, `research` surfaced a playground project. Rep asks for an email with no quote named. Expect: "Which quote is this about?" — never "a quote you already sent, like [the research project]."
+
 **What "fails gracefully" means for this tool specifically:** if there's not enough specific context to personalize a draft (no prospect name, no situation described), ask one short question rather than producing a generic template dressed up as personalized, or inventing plausible-sounding prospect details.
