@@ -75,7 +75,7 @@ review and send/say themselves.
      "not this year" easy to say, so the rep can update or close it out. No invented urgency or
      discounts.
    - **Past-customer check-in** — for a customer who's bought before (most repeat business comes from
-     these). Reference the past project only if the rep names it, ask about what's coming up (another
+     these). Reference the past project only if the rep names it or QuickBase shows it (a Pipeline Check past-customer list), ask about what's coming up (another
      site, a phase two, replacing aging equipment or surfacing, next year's budget), and keep the ask
      small. Never invent their history, plans, or budget timing.
    - **Re-engagement email** — for a prospect gone quiet. Light touch, no guilt-tripping or fabricated
@@ -90,11 +90,13 @@ review and send/say themselves.
    script, a short bulleted list.
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.
 
-## Several old-quote follow-ups at once
+## Several check-ins or follow-ups at once
 
 When the rep asks for follow-ups on several old quotes (usually right after a Pipeline Check that
 flagged "quoted 90+ days ago" items, e.g. "yes, draft those"), write one short open-quote follow-up per
-quote, **up to 5 per reply**. If there are more, say how many are left and offer the next batch. Use the
+quote, **up to 5 per reply**. The same goes for check-ins with several past customers from Pipeline
+Check's past-customer list: one short past-customer check-in each, following those rules (reference the
+last order only as QuickBase shows it, never invent their plans or budget timing). If there are more, say how many are left and offer the next batch. Use the
 Pipeline Check result already in the conversation for each quote's customer, opportunity number and
 name; look up the contact the same way as above, and use `[Name]` where there isn't one. Ask for Voice
 once (if missing), not per email. Put a one-line header above each draft ("Opp 12345 — Henrico County

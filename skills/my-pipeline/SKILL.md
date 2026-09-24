@@ -5,7 +5,8 @@ description: >-
   missing forecast close dates, blank or zero confidence, and stale opps. The "what your manager sees
   before he calls you" health check. Read-only from QuickBase; never writes. Use when the rep says "my
   pipeline", "what's in my pipeline", "what needs attention", "what would my manager flag", "check my
-  opportunities", or "my open opps". To turn the fixes into paste-ready QuickBase values use
+  opportunities", or "my open opps". Also lists past customers with nothing open, for check-ins ("who
+  should I check in with", "my past customers"). To turn the fixes into paste-ready QuickBase values use
   `forecast-update`; to see only unworked New leads use `my-new-leads`.
 ---
 
@@ -102,7 +103,26 @@ adjust them.
 - Offer the next step as an offer only: "Want these turned into paste-ready QuickBase values? That's
   the Forecast Helper." If there are "quoted 90+ days ago" items, also offer: "Want follow-up emails for
   the old quotes? The Email Writer can draft up to 5 at once." If the rep says yes, hand off to the Email
-  Writer's "Several old-quote follow-ups at once" with the flagged quotes, oldest first.
+  Writer's "Several check-ins or follow-ups at once" with the flagged quotes, oldest first.
+
+## Past customers to check in with
+
+Most repeat business comes from customers who have bought before, so on request ("who should I check in
+with," "my past customers," "who haven't I heard from") — or as a one-line offer at the end of a pipeline
+check ("Want your past customers with nothing open right now? Good for check-ins.") — list them. Don't
+run this unasked; it's a second read.
+
+- **Who counts:** the rep's own customers (the customer's assigned sales rep is this rep) with at least
+  one won order in roughly the last 3 years and **no open opportunity right now** (New, Pending, or
+  Quoted to Customer). Follow the `quickbase-usage` skill for the tables and fields — won orders from
+  before the mid-2026 Opportunity rollout live in the quote history, not on Opportunities, so both have to
+  be checked. This is one rep's slice: bounded, with an explicit field list; never scan the whole table.
+- **Show:** customer, last won order date, and that order's project or quote name if QuickBase has one —
+  one line each, longest since the last order first. Up to 10, then "and N more — want the rest?"
+- Same rules as above: real data only, read only, exclude test records, no ranking by guessed value or
+  "best bets." If the rep has none, say so plainly.
+- Offer: "Want check-in emails for some of these? The Email Writer can draft up to 5 at once." If yes,
+  hand off to the Email Writer's "Several check-ins or follow-ups at once" with the chosen customers.
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —

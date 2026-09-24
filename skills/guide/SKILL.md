@@ -64,7 +64,7 @@ Ask what the rep is trying to do, then point to the matching tool below.
 - **Update Logger** (`log-update`) — turn notes, a transcript, or an email from a customer into a paste-ready QuickBase
   update. *"Turn these call notes into a QuickBase update."*
 - **Pipeline Check** (`my-pipeline`) — see what in your pipeline needs attention before your manager calls about it.
-  *"What's in my pipeline," "what needs attention."*
+  *"What's in my pipeline," "what needs attention," "who should I check in with."*
 - **New Leads** (`my-new-leads`) — your unworked New opportunities, oldest first. *"What leads do I have," "my new
   leads."*
 - **Forecast Helper** (`forecast-update`) — month-end walkthrough that gets your whole pipeline grid-ready. *"Help me
