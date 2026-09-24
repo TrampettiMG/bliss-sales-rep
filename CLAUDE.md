@@ -102,7 +102,7 @@ use when they mention each other). They mean the same tool.
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-25**
+**Tools version: 2026-09-25b**
 
 - **"Update my tools"** (or "get the latest tools"): for every row in the name table above, fetch
   `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
