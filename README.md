@@ -12,7 +12,8 @@ that project just works. See `SETUP-CARD.md` for the exact, tested steps.
 
 - `CLAUDE.md` — persona, house rules, first-run profile onboarding (self-deletes after first run; also has
   Claude fetch and save each tool skill below).
-- `SETUP-CARD.md` — the one-page install steps for a non-technical rep, tested end-to-end (Tier 1 only).
+- `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 11 tools (Tier 1
+  tested end-to-end).
 - `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
 - `skills/` — the sales-rep tools, each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
   verify it before rollout.
@@ -31,7 +32,9 @@ Tier 1 (all reps, no connector, desktop):
 | 6 | `summarize-bid` | Built |
 | — | `guide` | Built — rep-facing orientation/router, not one of the original 10, added per Nick's review |
 
-Tier 2 (pilot only, needs the read-only QuickBase connector — see `TIER2-SETUP.md`, all owned by Vish):
+Tier 2 (installed for every rep during setup, but only works for pilot reps with the read-only QuickBase
+connector — see `TIER2-SETUP.md`, all owned by Vish; without the connector each replies with one plain
+sentence):
 
 | # | Tool | Status |
 |---|---|---|
