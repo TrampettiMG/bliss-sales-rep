@@ -100,8 +100,9 @@ adjust them.
 - This is a status list, not a strategy memo — no recommended approach, no "bottom line," no invented
   totals. If everything is clean, say so plainly.
 - Offer the next step as an offer only: "Want these turned into paste-ready QuickBase values? That's
-  the Forecast Helper." If there are "quoted 90+ days ago" items, also offer: "Want a follow-up email for
-  any of the old quotes? That's the Email Writer."
+  the Forecast Helper." If there are "quoted 90+ days ago" items, also offer: "Want follow-up emails for
+  the old quotes? The Email Writer can draft up to 5 at once." If the rep says yes, hand off to the Email
+  Writer's "Several old-quote follow-ups at once" with the flagged quotes, oldest first.
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —

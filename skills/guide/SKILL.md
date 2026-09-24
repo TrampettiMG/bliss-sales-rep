@@ -70,6 +70,16 @@ Ask what the rep is trying to do, then point to the matching tool below.
 - **Forecast Helper** (`forecast-update`) — month-end walkthrough that gets your whole pipeline grid-ready. *"Help me
   update my forecast," "get my opps grid-ready."*
 
+### Housekeeping (not a tool — just ask)
+
+- **Update my tools** — gets the latest version of all 11 tools. *"Update my tools," "what version am I
+  on?"*
+- **Change your profile** — focus counties, contact info, product focus. *"Change my focus counties to
+  Henrico and Chesterfield," "update my phone number."*
+
+These are handled by the project's main instructions (the "Keeping things up to date" section), so point
+the rep to the phrase and let them ask.
+
 If a request could fit more than one tool, ask one short question to narrow it rather than guessing —
 for example, "prep me for my call with Acme" could mean a fuller brief (`prep-call`) or just a short
 script to read from (`draft-outreach`); ask which they want.
@@ -164,7 +174,8 @@ If a rep asks how any of this works at all, keep it to three plain steps:
 ## Flow
 
 1. Figure out which of four things the rep is asking: which tool to use, how a QuickBase field/report
-   works, how to navigate QuickBase itself, or how to get started with these tools at all.
+   works, how to navigate QuickBase itself, or how to get started with these tools at all. (Updating the
+   tools or changing the profile: give the phrase from "Housekeeping" above in one line.)
 2. **Routing question** — name the one matching tool from the router above, in one line, with a short
    example of how to phrase the ask to it. Don't explain every tool when only one is needed.
 3. **QuickBase field/report question** — answer just the field/report they asked about from "What you

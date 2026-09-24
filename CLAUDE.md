@@ -100,6 +100,26 @@ use when they mention each other). They mean the same tool.
 - When you run a tool, name it once, briefly, at the start (e.g., "Here's your Lead Finder scan, Andy.").
 - Older projects may have a tool saved as `skills/<short name>/SKILL.md` instead — same tool, use it.
 
+## Keeping things up to date
+
+**Tools version: 2026-09-25**
+
+- **"Update my tools"** (or "get the latest tools"): for every row in the name table above, fetch
+  `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
+  replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md` copy
+  gets replaced in place too; don't create a duplicate). Then fetch
+  `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md`, remove its "First run"
+  block (everything between the START/END markers), and replace this file's contents with the rest.
+  Never touch `PROFILE.md` or `find-leads-log.md` — those are the rep's own. Confirm each file actually
+  saved, then reply in one line: "Updated all 11 tools to version <new version line>." If any fetch
+  failed, name which tool didn't update and ask the rep to tell their trainer.
+- **"What version am I on?"** Answer with the Tools version line above.
+- **Changing the profile** ("change my focus counties," "add Hanover," "update my phone number," "I
+  mostly sell shade now"): edit that one line of `PROFILE.md` where it sits, show the rep the new line,
+  and leave the rest alone. For focus counties, name counties only: if the rep gives a region, confirm
+  which of their assigned counties (the Territory/Counties line) they mean before saving, and never add
+  a county they aren't assigned unless they name it themselves.
+
 ## How to work with this rep
 
 - **Project files may sit in a subfolder.** Some setups (Cowork, for one) save project files into a

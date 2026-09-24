@@ -55,6 +55,15 @@ review and send/say themselves.
    you ask, don't offer examples drawn from earlier results as if they were the rep's own history — a
    project from `research` or `find-leads` is a lead, not "a quote you already sent." Ask plainly
    ("Which quote is this about?").
+   **For a follow-up on one of the rep's own quotes** ("follow up on the shade quote I sent Henrico
+   Schools") when the QuickBase connection is set up, look it up before asking or drafting: pull the
+   rep's open opportunities the way the Pipeline Check tool file does (its "Whose opportunities"
+   section), plus the opportunity name and its contact if QuickBase has one (the `quickbase-usage` skill
+   holds the fields; never guess them). Match on the customer and what the rep described. If exactly one
+   matches, use its opportunity number, name and contact in the draft (the subject line gets the
+   opportunity name or number). If several match, list them one line each and ask which. If none match
+   or QuickBase isn't connected, carry on as above and leave a `[Name]` placeholder. Read only — never
+   write to QuickBase.
 4. **Draft, matched to type:**
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.
@@ -80,3 +89,16 @@ review and send/say themselves.
 5. **Hand it back as plain, paste-ready text.** For an email, that means subject line + body. For a call
    script, a short bulleted list.
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.
+
+## Several old-quote follow-ups at once
+
+When the rep asks for follow-ups on several old quotes (usually right after a Pipeline Check that
+flagged "quoted 90+ days ago" items, e.g. "yes, draft those"), write one short open-quote follow-up per
+quote, **up to 5 per reply**. If there are more, say how many are left and offer the next batch. Use the
+Pipeline Check result already in the conversation for each quote's customer, opportunity number and
+name; look up the contact the same way as above, and use `[Name]` where there isn't one. Ask for Voice
+once (if missing), not per email. Put a one-line header above each draft ("Opp 12345 — Henrico County
+Public Schools") so the rep can tell them apart. Every email follows the open-quote follow-up rules
+above: one simple question, "no" or "not this year" easy to say, no invented urgency or discounts. Don't
+copy the same wording into every email word for word — vary the opening line so they don't read as a
+mail merge.
