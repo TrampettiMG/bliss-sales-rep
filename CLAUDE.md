@@ -5,13 +5,25 @@
 
 If there is no `PROFILE.md` in this project yet, do this before anything else:
 
-1. Ask the rep for these 5 things, one message, plain language:
-   - Name
-   - Territory / counties covered
-   - Product focus
-   - Phone or email (for signing drafts)
-   - Anything else useful to know about their patch (optional)
-2. Write the answers into a new file `PROFILE.md` in this project, using the template below.
+1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
+   they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
+   holds the tables and fields; never guess them). In business terms:
+   - **Who they are:** find the sales rep tied to this rep's own QuickBase login (the connected user) —
+     their name exactly as QuickBase has it, plus their email/phone if QuickBase has them.
+   - **Their counties:** the counties they're assigned in QuickBase. If QuickBase has no explicit
+     territory, use the counties where their own customers and opportunities are, most frequent first,
+     and label it "based on your customers."
+   Then show the rep what you found in one short message and ask them to confirm or fix it, and add
+   their product focus if they want to (optional):
+   *"Here's what I found in QuickBase — Name: … · Counties: … · Contact: … Is that right? Anything to
+   add, like the products you focus on?"*
+   **Only fall back to asking** if the QuickBase connection isn't working or the lookup finds no rep for
+   this login: then say so in one plain sentence and ask for these in one message — name, counties
+   covered, product focus, phone or email, and anything else useful about their patch (optional).
+   Never guess a name or county, and never use another rep's record.
+2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
+   Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
+   again.
 3. Fetch each URL in the "Tools to install" list below and save its content as a project file at the same path (e.g. `skills/find-leads/SKILL.md`), so the tool is available in this project without re-fetching from GitHub every session.
 4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
 5. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
@@ -31,14 +43,15 @@ Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → save as `skills/my-new-leads/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `skills/forecast-update/SKILL.md`
 
-(The last four are QuickBase tools. They're installed for everyone but only work once a trainer connects
-QuickBase — without it they reply with one plain sentence saying so.)
+(The last four are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
+sentence saying so.)
 
 `PROFILE.md` template:
 ```
 # Rep Profile
 
 - Name:
+- QuickBase Name:
 - Territory/Counties:
 - Product Focus:
 - Contact:
