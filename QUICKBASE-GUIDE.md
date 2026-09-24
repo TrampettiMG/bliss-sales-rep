@@ -61,12 +61,16 @@ a mess. Use the blue button on the COPY tab instead.
 On the quote, in the Opportunity/Customer section, click the yellow **Move Quote to Another Opportunity**
 button. No need to close the quote and start over.
 
-## 9. Don't copy a quote from the More menu
+## 9. Copying a quote — the purple button
 
-![Quote More menu](docs/quickbase/10-quote-more-menu-native-copy.png)
+![Copy Quote for this Opportunity button](docs/quickbase/11-copy-quote-purple-button.png)
 
-**Don't use More ▾ → "Copy this Quote."** It's the built-in copy and drops most of the fields. If you need
-to copy a quote and can't find the right button, ask your trainer.
+To copy a quote within the same opportunity (for example, to present options), click the purple **Copy
+Quote for this Opportunity** button on the quote.
+
+**Don't use More ▾ → "Copy this Quote"** instead — that's the built-in copy and drops most of the fields.
+
+![Quote More menu — don't use Copy this Quote](docs/quickbase/10-quote-more-menu-native-copy.png)
 
 ## 10. Adding a quote
 

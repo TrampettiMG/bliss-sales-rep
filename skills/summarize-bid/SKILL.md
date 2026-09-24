@@ -55,14 +55,32 @@ forms, or draft a bid response.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
    - **Mandatory requirements** — everything the documents label "mandatory," "required," or "must," as one failsafe list.
 4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
-5. **Present the breakdown, every time, in this structure** — a quick conversational reply without the
-   headed sections below is not acceptable, even for a short or simple bid:
-   - A short **gating snapshot** (due date plus how many days from today's session date, mandatory site visit, substitution deadline, bonds, bidder qualifications like licensing or DBE goals, owner-direct vs. GC, hard-gate forms).
-   - The categories above as short sections — one line each is fine if a category is thin.
-   - A **Not found — verify** section, always present even if the only line is "None found." — this is
-     where computed/derived values from the rule above go, not the main body.
-   - A **Conflicts** section, always present even if the only line is "None found." — state explicitly
+5. **If the bid's due date has already passed, say so in the first line** ("This bid closed on … —
+   late proposals aren't accepted, p. …"), then continue.
+   **If the rep only asks a yes/no or "is it worth it" question,** don't give a verdict and don't dump the
+   full breakdown: reply with the gating facts only (due date and whether it's passed, whether the site
+   is inside the rep's territory, bidder qualifications, bonds, owner-direct vs. GC), say the call is
+   theirs, and offer the full breakdown in one line.
+   **Otherwise, present the short breakdown below.** Extract every category from step 3 in full (you need
+   them to answer follow-ups), but show the rep a short version — the whole reply should read in about
+   two minutes:
+   - **Gating snapshot** — up to ~8 one-line bullets: due date plus how many days from today's session
+     date, whether the site is inside the rep's territory from `PROFILE.md`, mandatory site visit,
+     substitution deadline, bonds, bidder qualifications (licensing, DBE goals, experience), owner-direct
+     vs. GC, and any hard-gate item that makes a proposal non-responsive. Cited.
+   - **The other categories, one line each** — a single cited line per category from step 3 (project,
+     scope, work beyond equipment supply, specs/approved-equal, submission, required forms, permits,
+     scoring, funding/prevailing wage, addenda). Summarize long lists as a count plus the most important
+     items (e.g., "13 required items, incl. MHIC license # and 3 references — ask for the full list").
+     Skip a category's line only if it's already fully covered in the snapshot.
+   - **Fit signal** — 2-4 lines: what matches the rep's product focus and what doesn't, quoting the spec.
+   - **Not found — verify** — always present, in full (even if the only line is "None found."). This is
+     where computed/derived values from the rule above go.
+   - **Conflicts** — always present, in full (even if the only line is "None found."); state explicitly
      which document governs (addenda override the base documents) rather than just describing the change.
-6. Keep the whole thing scannable — this is a quick pursue/pass read, not a full document. Short sections
-   are fine; skipping the structure is not.
-7. Invite follow-ups ("ask me anything else from these documents") and answer the same way — extraction-only, cited.
+6. **Always end by telling the rep they can get details**, in one line naming a couple of real sections
+   from this bid — e.g., *"Want more on any part? Ask for the full dates, the required forms list, the
+   scope by zone, or the insurance requirements."* Never skip this line.
+7. When the rep asks for details on a section, give that section in full — every item, quoted or closely
+   paraphrased, cited — and nothing else. Answer any other question about the documents the same way:
+   extraction-only, cited.

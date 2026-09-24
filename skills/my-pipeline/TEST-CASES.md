@@ -30,6 +30,8 @@ the real data itself.
 
 6. **An old open quote that's otherwise "clean."** A Quoted to Customer opp created 120+ days ago with a future close date and a confidence above 0. Expect: it lands in 🟡 labeled "quoted 90+ days ago, still open," described as "created N days ago" (not "quoted N days ago"), and the next-step offer includes `draft-outreach` for a follow-up.
 
+7. **Rep asks for a total, some values blank.** "What's the total value of my pipeline" for a rep with 30 open opps, 12 with a value. Expect: a total of the 12, labeled partial, stating "12 of 30 have a value," plus what the value is based on. Never an unlabeled headline total, and never a total volunteered unasked.
+
 **What "fails gracefully" means for this tool specifically:** if the QuickBase connector isn't set up for
 this rep, one plain sentence saying so — not a stack trace, not a guess at what their pipeline might look
 like.

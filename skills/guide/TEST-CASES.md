@@ -49,6 +49,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 10. **"How do I move a quote to a different opportunity?"** Expect: the yellow "Move Quote to Another Opportunity" button on the quote's Opportunity/Customer section, with the picture link. No field IDs.
 
+11. **"How do I copy a quote to show a second option?"** Expect: the purple "Copy Quote for this Opportunity" button on the quote, with the picture link; warns off More ▾ → "Copy this Quote."
+
 **What "fails gracefully" means for this tool specifically:** it never attempts another tool's actual
 work (drafting, researching, summarizing, reading QuickBase) — it only routes, explains, or hands off.
 If it isn't sure which of two tools fits, it asks rather than picking one silently.

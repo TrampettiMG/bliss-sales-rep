@@ -125,8 +125,8 @@ don't assume it's obvious just because it isn't complicated:
 - **Never copy from the built-in menus** — "Duplicate this Opportunity" in the three-dot (…) menu, or
   More ▾ → "Copy this Quote" on a quote. They drop most of the fields and make a mess. Pictures:
   https://github.com/TrampettiMG/bliss-sales-rep/blob/main/docs/quickbase/6-three-dot-menu.png and https://github.com/TrampettiMG/bliss-sales-rep/blob/main/docs/quickbase/10-quote-more-menu-native-copy.png
-- **To copy a quote within the same opportunity:** if the rep can't find the right copy button on the
-  quote, tell them to ask their trainer — don't point them to a button you can't name.
+- **To copy a quote within the same opportunity** (for example, to present options): on the quote, click
+  the purple **Copy Quote for this Opportunity** button. Picture: https://github.com/TrampettiMG/bliss-sales-rep/blob/main/docs/quickbase/11-copy-quote-purple-button.png
 - **Moving a quote to a different opportunity** is self-serve — on the quote, in the Opportunity/Customer
   section, click the yellow **Move Quote to Another Opportunity** button; no need to close it out and
   start over. Picture: https://github.com/TrampettiMG/bliss-sales-rep/blob/main/docs/quickbase/9-quote-move-quote-button.png

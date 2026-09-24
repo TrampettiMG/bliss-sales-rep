@@ -134,7 +134,9 @@ deadline or most recent item first.
 ## Flow
 
 1. **Read `PROFILE.md`** for the rep's counties/territory and product focus. If a **Focus Counties** line
-   is filled in, search those. If not and the rep has more than about 10 counties, ask once which few to
+   is filled in, search **only those** — don't widen to neighboring counties or a metro/region, even ones
+   in the rep's territory. If the rep wants a wider scan, they'll ask ("scan all my counties," "add
+   Hanover"). If not and the rep has more than about 10 counties, ask once which few to
    focus on this run (and offer to save them as Focus Counties) rather than searching a long list thin.
    If territory is missing or too broad to search meaningfully (e.g., just a state name), ask for the
    specific county or counties.
@@ -149,14 +151,20 @@ deadline or most recent item first.
    matches are already covered. In the park/playground search, include purchase approvals on
    council/board agendas (co-op or direct), not just RFPs.
    If the rep asks to narrow to one category ("just bond referendums"), do only that one.
-3. **Check the log** per the rules above and keep only genuinely new items.
+3. **Check the log** per the rules above and keep only genuinely new items. Also drop anything whose most
+   recent dated activity is more than about 12 months old (an old project page, a stale plan) unless a
+   newer source shows it's still moving — "recent activity only" means the item, not just the search.
 4. **Rank the new signals** using **Ranking** above, then **present them grouped by tier** — Strongest
    match first, then Good match, then Early or weaker match — each as a short, dated, cited item. For an
    open bid or RFP, always include the due date (or "due date not visible — verify on the page") — reps
    often have only a few weeks. Give: what happened, when, the source link, and one line on why it's
    relevant to the rep's product focus (a factual connection — e.g., "new park construction typically includes a playground scope" — not a
    pursue/pass recommendation), plus the tier reason in a few words (e.g., "grant awarded + playground
-   scope + city buyer"). If a tier is empty, skip it rather than padding it.
+   scope + city buyer"). If a tier is empty, skip it rather than padding it. Every item carries a date;
+   if the source doesn't show one, write "date not visible — verify on the page."
+   End with one coverage line naming **each** searched county and whether it had anything new (e.g.,
+   "Chesterfield: 2 · Henrico: 2 · Richmond city: nothing new"), plus any categories that came back
+   empty or weren't reached.
 5. **Update the log** with what was just reported.
 6. If the rep wants more on a specific signal (a named municipality, a named project), hand off to the
    `research` tool instead of digging deeper here — that's its job.

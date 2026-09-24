@@ -5,7 +5,8 @@ description: >-
   email, or call script for a prospect, in the rep's own voice. Use when the rep says "write an intro
   email for...", "draft a follow-up to...", "follow up on my quote to...", "check in with a past
   customer...", "write a re-engagement email for...", "give me a call script for...", or asks for
-  something to send or say to a prospect. Always a draft for the rep to review and send/use themselves —
+  something to send or say to a prospect. "Follow up on [a quote/proposal]" means an email here, not a
+  pre-call brief — even if the previous message in the chat was a `prep-call` brief. Always a draft for the rep to review and send/use themselves —
   never sends anything.
 ---
 
@@ -50,7 +51,10 @@ review and send/say themselves.
    organization, and the situation (cold intro, following up on X, gone quiet since Y). Pull this from
    what the rep just told you or from a tool result already in this conversation (a lead, a research
    brief, a bid summary) — don't ask the rep to repeat something already said. If there isn't enough to
-   personalize the draft beyond a generic template, ask one short question for the missing piece.
+   personalize the draft beyond a generic template, ask one short question for the missing piece. When
+   you ask, don't offer examples drawn from earlier results as if they were the rep's own history — a
+   project from `research` or `find-leads` is a lead, not "a quote you already sent." Ask plainly
+   ("Which quote is this about?").
 4. **Draft, matched to type:**
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.

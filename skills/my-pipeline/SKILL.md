@@ -18,7 +18,7 @@ values that fix these gaps, hand off to `forecast-update`.
 
 ## Requires the QuickBase connection
 This tool only works if the read-only QuickBase connector and the `quickbase-usage` skill are set up in
-this project (your trainer sets this up for pilot reps). If they aren't available, say so in one plain
+this project (your trainer sets this up). If they aren't available, say so in one plain
 sentence — "This needs the QuickBase connection your trainer sets up; it isn't on your account yet." —
 and stop. Never guess or fabricate pipeline data.
 
@@ -66,8 +66,11 @@ Never report "you have no opportunities" without first checking the name this wa
 - **Opportunity value is a confidence-weighted rollup, not a number the rep types.** It only populates once
   the opp has a quote flagged to count toward value, so it's blank for New opps and even for some quoted
   ones. Show it when present, as information only. Never flag a blank value as a gap (the rep can't set it
-  directly), and never add field values into a headline "total pipeline value" as if it were the rep's
-  whole book — it isn't.
+  directly), and never add field values into a headline "total pipeline value" unprompted.
+  **If the rep asks for a total,** give it — but always say how many open opps have a value vs. blank
+  ("5 of 5 have a value" or "12 of 30 have a value — this total leaves out the 18 blank ones"), label a
+  total with any blanks as partial, and say what the value is based on (subtotal incl. freight before
+  tax; one option per opp counts; weighted = value × confidence).
 - If any test records appear (your trainer's test accounts), exclude them.
 
 ## What to flag — the health buckets
