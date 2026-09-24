@@ -8,7 +8,7 @@ description: >-
   another tool's work itself — it routes, explains, and hands off.
 ---
 
-# Guide
+# Help Desk
 
 Helps a rep find their way around these tools — which one to use, how the QuickBase fields they
 maintain actually work, and how to get started. This tool doesn't do the work itself. It points to the
@@ -44,30 +44,30 @@ Ask what the rep is trying to do, then point to the matching tool below.
 
 ### Everyday tools (every rep has these)
 
-- **find-leads** — find new opportunities in your counties. *"Find leads for my county," "what's new
+- **Lead Finder** (`find-leads`) — find new opportunities in your counties. *"Find leads for my county," "what's new
   in my territory."*
-- **research** — background on a company or person, plus a reason to call them. *"Research Acme
+- **Research Brief** (`research`) — background on a company or person, plus a reason to call them. *"Research Acme
   Construction," "give me a dossier on this city."*
-- **prep-call** — get ready for a call or meeting you already have context on. *"Prep me for a call
+- **Call Prep** (`prep-call`) — get ready for a call or meeting you already have context on. *"Prep me for a call
   with Jane Rep."*
-- **draft-outreach** — write an email or call script. Always a draft — never sent automatically.
+- **Email Writer** (`draft-outreach`) — write an email or call script. Always a draft — never sent automatically.
   *"Draft an intro email to Acme Construction," "follow up on the quote I sent Riverside Parks," "check in
   with a past customer," "give me a call script for this."*
-- **make-content** — one-pagers, bid cover letters, pitch content. *"Make me a one-pager for HOAs,"
+- **Content Builder** (`make-content`) — one-pagers, bid cover letters, pitch content. *"Make me a one-pager for HOAs,"
   "write a cover letter for this bid."*
-- **summarize-bid** — break down an RFP or bid packet you upload, including the gates (mandatory
+- **Bid Breakdown** (`summarize-bid`) — break down an RFP or bid packet you upload, including the gates (mandatory
   pre-bid, bonds, licensing, DBE goals) and what outside pricing you'd need. *"Summarize this bid," "what
   would it take to bid this."*
 
 ### QuickBase tools (only if your trainer set up the QuickBase connection)
 
-- **log-update** — turn notes, a transcript, or an email from a customer into a paste-ready QuickBase
+- **Update Logger** (`log-update`) — turn notes, a transcript, or an email from a customer into a paste-ready QuickBase
   update. *"Turn these call notes into a QuickBase update."*
-- **my-pipeline** — see what in your pipeline needs attention before your manager calls about it.
+- **Pipeline Check** (`my-pipeline`) — see what in your pipeline needs attention before your manager calls about it.
   *"What's in my pipeline," "what needs attention."*
-- **my-new-leads** — your unworked New opportunities, oldest first. *"What leads do I have," "my new
+- **New Leads** (`my-new-leads`) — your unworked New opportunities, oldest first. *"What leads do I have," "my new
   leads."*
-- **forecast-update** — month-end walkthrough that gets your whole pipeline grid-ready. *"Help me
+- **Forecast Helper** (`forecast-update`) — month-end walkthrough that gets your whole pipeline grid-ready. *"Help me
   update my forecast," "get my opps grid-ready."*
 
 If a request could fit more than one tool, ask one short question to narrow it rather than guessing —

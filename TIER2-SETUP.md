@@ -26,10 +26,10 @@ date needs this one-time paste to add them:
 
 ```
 Fetch each of these and save it as the matching project file:
-https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pipeline/SKILL.md → skills/my-pipeline/SKILL.md
-https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → skills/my-new-leads/SKILL.md
-https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → skills/forecast-update/SKILL.md
-https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → skills/log-update/SKILL.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pipeline/SKILL.md → Pipeline Check.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → New Leads.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → Forecast Helper.md
+https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → Update Logger.md
 ```
 
 ## What's different about these three vs. the Tier 1 tools

@@ -8,7 +8,7 @@ description: >-
   draft an email…", "email them about…" go to `draft-outreach`, even right after a prep-call brief.
 ---
 
-# Prep call
+# Call Prep
 
 Turn what the rep already knows about a customer/prospect into a short brief to glance at right before
 calling them: what to bring up, what's still unresolved, and what pushback to expect.

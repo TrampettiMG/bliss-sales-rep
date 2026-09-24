@@ -9,7 +9,7 @@ description: >-
   `forecast-update`; to see only unworked New leads use `my-new-leads`.
 ---
 
-# My pipeline
+# Pipeline Check
 
 A read-only health check on the rep's own open opportunities in QuickBase. It surfaces the data gaps a
 sales manager would call about — overdue or missing forecast close dates, blank or zero confidence, and
@@ -100,8 +100,8 @@ adjust them.
 - This is a status list, not a strategy memo — no recommended approach, no "bottom line," no invented
   totals. If everything is clean, say so plainly.
 - Offer the next step as an offer only: "Want these turned into paste-ready QuickBase values? That's
-  `forecast-update`." If there are "quoted 90+ days ago" items, also offer: "Want a follow-up email for
-  any of the old quotes? That's `draft-outreach`."
+  the Forecast Helper." If there are "quoted 90+ days ago" items, also offer: "Want a follow-up email for
+  any of the old quotes? That's the Email Writer."
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —

@@ -9,7 +9,7 @@ description: >-
   open pipeline instead of one interaction, use `forecast-update`.
 ---
 
-# Log update
+# Update Logger
 
 Takes raw material from one customer interaction — dictated notes, a call or meeting transcript, or an
 email thread — and derives a paste-ready QuickBase update from it: forecast close date, confidence, status

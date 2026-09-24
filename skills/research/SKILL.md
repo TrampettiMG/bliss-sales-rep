@@ -7,7 +7,7 @@ description: >-
   the rep's territory instead of one named target, use `find-leads` instead.
 ---
 
-# Research
+# Research Brief
 
 Build a short, cited "reason to call" brief on one specific, named target — a person, a company, or a
 municipality/agency. This is the deep-dive tool for something specific; scanning a whole territory for
