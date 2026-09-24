@@ -52,7 +52,11 @@ conversation actually said the customer raised it before.
      sales patterns otherwise — labeled as such. The common ones in playground/park sales: "another brand
      is already specified," "we have to put it out to bid," "your price is higher," "no budget until next
      fiscal year," and "we need it installed by a fixed date." Pick only the ones that fit this call.
-4. **Keep it short** — this is a glance-at-before-dialing brief, not a full account history. A few lines
-   per section is usually enough.
+     Response angles must not assume what's in the rep's quote or what Bliss offers (installation,
+     surfacing, a warranty, a co-op contract) unless the rep said so — say "walk through what your quote
+     includes," not a list of inclusions.
+4. **Keep it short** — this is a glance-at-before-dialing brief, not a full account history. Aim for 3-4
+   talking points, 1-3 open items, and 2-4 objections, one line each (a sub-bullet only when it carries
+   a specific fact, like a project name or date).
 5. If the rep gives more context mid-conversation ("oh, they also mentioned X"), fold it in and regenerate
    rather than leaving it out.
