@@ -61,15 +61,26 @@ forms, or draft a bid response.
    full breakdown: reply with the gating facts only (due date and whether it's passed, whether the site
    is inside the rep's territory, bidder qualifications, bonds, owner-direct vs. GC), say the call is
    theirs, and offer the full breakdown in one line.
-   **Otherwise, present the breakdown in this structure** — a quick conversational reply without the
-   headed sections below is not acceptable, even for a short or simple bid:
-   - A short **gating snapshot** (due date plus how many days from today's session date, whether the site
-     is inside the rep's territory from `PROFILE.md`, mandatory site visit, substitution deadline, bonds, bidder qualifications like licensing or DBE goals, owner-direct vs. GC, hard-gate forms).
-   - The categories above as short sections — one line each is fine if a category is thin.
-   - A **Not found — verify** section, always present even if the only line is "None found." — this is
-     where computed/derived values from the rule above go, not the main body.
-   - A **Conflicts** section, always present even if the only line is "None found." — state explicitly
+   **Otherwise, present the short breakdown below.** Extract every category from step 3 in full (you need
+   them to answer follow-ups), but show the rep a short version — the whole reply should read in about
+   two minutes:
+   - **Gating snapshot** — up to ~8 one-line bullets: due date plus how many days from today's session
+     date, whether the site is inside the rep's territory from `PROFILE.md`, mandatory site visit,
+     substitution deadline, bonds, bidder qualifications (licensing, DBE goals, experience), owner-direct
+     vs. GC, and any hard-gate item that makes a proposal non-responsive. Cited.
+   - **The other categories, one line each** — a single cited line per category from step 3 (project,
+     scope, work beyond equipment supply, specs/approved-equal, submission, required forms, permits,
+     scoring, funding/prevailing wage, addenda). Summarize long lists as a count plus the most important
+     items (e.g., "13 required items, incl. MHIC license # and 3 references — ask for the full list").
+     Skip a category's line only if it's already fully covered in the snapshot.
+   - **Fit signal** — 2-4 lines: what matches the rep's product focus and what doesn't, quoting the spec.
+   - **Not found — verify** — always present, in full (even if the only line is "None found."). This is
+     where computed/derived values from the rule above go.
+   - **Conflicts** — always present, in full (even if the only line is "None found."); state explicitly
      which document governs (addenda override the base documents) rather than just describing the change.
-6. Keep the whole thing scannable — this is a quick pursue/pass read, not a full document. Short sections
-   are fine; skipping the structure is not.
-7. Invite follow-ups ("ask me anything else from these documents") and answer the same way — extraction-only, cited.
+6. **Always end by telling the rep they can get details**, in one line naming a couple of real sections
+   from this bid — e.g., *"Want more on any part? Ask for the full dates, the required forms list, the
+   scope by zone, or the insurance requirements."* Never skip this line.
+7. When the rep asks for details on a section, give that section in full — every item, quoted or closely
+   paraphrased, cited — and nothing else. Answer any other question about the documents the same way:
+   extraction-only, cited.
