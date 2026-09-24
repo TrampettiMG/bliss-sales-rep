@@ -35,7 +35,9 @@ actual territory before including anything, and note what got excluded and why i
 Keep a project file `find-leads-log.md` — one entry per signal ever surfaced, each with its date, county,
 one-line description, tier, and source URL. On every run:
 
-1. If `find-leads-log.md` doesn't exist yet, this is the rep's first run — search normally and treat
+1. **Look for the log anywhere in the project first**, including a subfolder like `claude/` — some
+   setups save files there. Use and update it where you find it; never start a second log. If
+   `find-leads-log.md` truly doesn't exist yet, this is the rep's first run — search normally and treat
    everything found as new. Create the log with today's results.
 2. If it exists, search normally, then **compare against the log by the underlying event, not just the
    literal URL** — a different article covering the same groundbreaking, budget vote, or grant award is
@@ -44,7 +46,10 @@ one-line description, tier, and source URL. On every run:
    list to look productive.
 3. Append newly surfaced items to the log after reporting them, so the next run doesn't repeat them.
    **Verify the write actually happened — read the file back, or otherwise confirm it — before telling the
-   rep it's saved.** Never state the log was updated unless you've confirmed it. A false "saved" claim is
+   rep it's saved.** Count the entries you just added in the file you read back, and put that count in
+   the saved line ("Saved 10 new items to your lead log.") so it can be checked. If the count doesn't
+   match what you reported, say the save didn't fully work instead. Never state the log was updated
+   unless you've confirmed it. A false "saved" claim is
    worse than no log at all: it silently breaks every future run's ability to tell what's actually new.
 4. **Keep the log from growing unbounded.** If entries older than ~90 days start making the log large
    enough to burn significant context just to check for dupes, collapse them to a compact one-line-per-item
@@ -163,8 +168,12 @@ deadline or most recent item first.
    often have only a few weeks. Give: what happened, when, the source link, and one line on why it's
    relevant to the rep's product focus (a factual connection — e.g., "new park construction typically includes a playground scope" — not a
    pursue/pass recommendation) — on **every** item, not just the first few — plus the tier reason in a few words (e.g., "grant awarded + playground
-   scope + city buyer"). If a tier is empty, skip it rather than padding it. Every item carries a date;
-   if the source doesn't show one, write "date not visible — verify on the page."
+   scope + city buyer"). If a tier is empty, skip it rather than padding it. Every item carries a date.
+   A budget or capital plan that names its fiscal year counts as dated. Write the fiscal year and what
+   it covers ("FY27 budget, July 2026–June 2027") when the document shows the fiscal-year dates or the
+   locality's fiscal year is stated on the page; otherwise just the fiscal-year label ("FY27 budget").
+   Only if the source shows no date and no fiscal year, write "date not visible — verify on the page."
+   A fiscal year also counts for the ~12-month freshness rule: a current or upcoming fiscal year is fresh.
    End with one coverage line naming **each** searched county and whether it had anything new (e.g.,
    "Chesterfield: 2 · Henrico: 2 · Richmond city: nothing new"), plus any categories that came back
    empty or weren't reached.
