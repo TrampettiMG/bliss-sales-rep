@@ -10,7 +10,7 @@ description: >-
   never sends anything.
 ---
 
-# Draft outreach
+# Email Writer
 
 Draft short, ready-to-use outreach — email or a call script — for one specific prospect or situation the
 rep describes. Never invents facts about the prospect; never sends anything.

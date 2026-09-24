@@ -9,7 +9,7 @@ description: >-
   `research` or `draft-outreach`.
 ---
 
-# My new leads
+# New Leads
 
 A read-only look at the rep's unworked "New" opportunities in QuickBase — the leads assigned to them that
 haven't been worked yet — sorted so the ones going cold surface first, each with a suggested next step. It
@@ -86,7 +86,7 @@ Never report "you have no new leads" without first checking the name this way.
 
 ## The suggested next step — no fabrication
 For each fresh lead, suggest a real next action without inventing anything about the account:
-- "Start with `research` to build a reason to call, then `draft-outreach` for the intro."
+- "Start with the Research Brief to build a reason to call, then the Email Writer for the intro."
 - Keep it to which tool to use next. Never invent the account's situation, needs, or a sales strategy. And
   remember: a lead only leaves "New" once the rep logs an update or a quote in QuickBase — this tool
   drafts, the rep logs.

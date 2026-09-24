@@ -8,7 +8,7 @@ description: >-
   similar. Repeatable: each run only surfaces items not already logged.
 ---
 
-# Find leads
+# Lead Finder
 
 Scan public sources for new, dated signals in the rep's territory that suggest a playground/site-amenity
 opportunity is coming — not a generic list of categories, and not a per-contact brief (that's the

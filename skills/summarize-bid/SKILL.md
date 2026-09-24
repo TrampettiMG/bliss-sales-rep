@@ -9,7 +9,7 @@ description: >-
   anything required that it can't find.
 ---
 
-# Summarize bid
+# Bid Breakdown
 
 Turn an uploaded bid/RFP packet into a short, cited breakdown a sales rep can scan in a couple minutes to
 decide whether to chase it — not a full pricing workup.

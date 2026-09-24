@@ -9,7 +9,7 @@ description: >-
   `my-pipeline`.
 ---
 
-# Forecast update
+# Forecast Helper
 
 A month-end walkthrough of the rep's open opportunities that turns their decisions into paste-ready values
 for QuickBase's bulk-edit forecast grid — forecast close date and confidence. It reads

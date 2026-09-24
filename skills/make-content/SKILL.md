@@ -8,7 +8,7 @@ description: >-
   review, edit, and send themselves — never sends or submits anything.
 ---
 
-# Make content
+# Content Builder
 
 Draft short, ready-to-use written content for a rep to hand a prospect, attach to a bid, or use as talking
 points. Three content types, one flow.

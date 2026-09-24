@@ -15,7 +15,8 @@ that project just works. See `SETUP-CARD.md` for the exact, tested steps.
 - `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 11 tools (Tier 1
   tested end-to-end).
 - `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
-- `skills/` — the sales-rep tools, each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
+- `skills/` — the sales-rep tools (saved in a rep's project under friendly names like `Lead Finder.md` — see
+  the name table in `CLAUDE.md`), each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
   verify it before rollout.
 
 ## Tools — status
