@@ -12,9 +12,11 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    - Phone or email (for signing drafts)
    - Anything else useful to know about their patch (optional)
 2. Write the answers into a new file `PROFILE.md` in this project, using the template below.
-3. Fetch each URL in the "Tools to install" list below and save its content as a project file at the same path (e.g. `skills/lead-ideas/SKILL.md`), so the tool is available in this project without re-fetching from GitHub every session.
+3. Fetch each URL in the "Tools to install" list below and save its content as a project file at the same path (e.g. `skills/find-leads/SKILL.md`), so the tool is available in this project without re-fetching from GitHub every session.
 4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
-5. Confirm to the rep in one short sentence that setup is done and tell them to try: "find leads for my county" or "summarize this bid" (with a bid document uploaded).
+5. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
+   say which tool didn't install and ask the rep to tell their trainer. Then confirm in one short sentence
+   that setup is done and tell them to try: "find leads for my county" or "summarize this bid" (with a bid document uploaded).
 
 Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/SKILL.md → save as `skills/find-leads/SKILL.md`
@@ -24,6 +26,13 @@ Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/prep-call/SKILL.md → save as `skills/prep-call/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/research/SKILL.md → save as `skills/research/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/guide/SKILL.md → save as `skills/guide/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/log-update/SKILL.md → save as `skills/log-update/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-pipeline/SKILL.md → save as `skills/my-pipeline/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → save as `skills/my-new-leads/SKILL.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `skills/forecast-update/SKILL.md`
+
+(The last four are QuickBase tools. They're installed for everyone but only work once a trainer connects
+QuickBase — without it they reply with one plain sentence saying so.)
 
 `PROFILE.md` template:
 ```

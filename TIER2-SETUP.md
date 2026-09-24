@@ -19,9 +19,10 @@ this for a Tier 1 rep; without the connector these tools can only fail.
    hands it directly to each pilot rep's Cowork setup (e.g., drag-and-drop into the project, or install it
    the way any other Claude skill package is installed on that machine) — never a link, never this repo.
 
-Once both of those are in place for a rep, install the four Tier 2 skills the same way the Tier 1 tools
-were installed — a one-time paste, fetched and saved as project files (these four are public/generic, no
-Bliss-specific IDs in them, so a public fetch is fine):
+**The four Tier 2 skills are now installed for every rep during the normal setup** (they're
+public/generic, no Bliss-specific IDs, and they fail gracefully without the connector). So for a rep set up
+after 2026-09-24, the two prerequisites above are all that's needed. Only a project set up **before** that
+date needs this one-time paste to add them:
 
 ```
 Fetch each of these and save it as the matching project file:
