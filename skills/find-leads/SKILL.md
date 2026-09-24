@@ -21,7 +21,10 @@ invents a signal — if a search comes back thin for a category, say so plainly 
 list with generic possibilities. Every signal needs a real source link; if there's no real source, leave
 it out. If the source is real but a specific detail (like the exact date) isn't visible in what you can
 see of the page, include it anyway with an explicit flag ("date not visible — verify on the page") rather
-than dropping an otherwise-good lead over one missing detail.
+than dropping an otherwise-good lead over one missing detail. That only covers a page you could
+actually read. If a source wouldn't open at all, it isn't a signal yet. Leave it out of the tiers and,
+if it looks relevant from its title, list it on one line under the coverage line: "Couldn't open: [title]
+([link]) — check it yourself." Don't add it to the log, so the next run tries it again.
 
 Also watch for wrong-location false positives — a search can easily return a same-named place in a
 different state (a "Clark County" or "Las Vegas" elsewhere). Confirm the state/region matches the rep's
@@ -159,7 +162,7 @@ deadline or most recent item first.
    open bid or RFP, always include the due date (or "due date not visible — verify on the page") — reps
    often have only a few weeks. Give: what happened, when, the source link, and one line on why it's
    relevant to the rep's product focus (a factual connection — e.g., "new park construction typically includes a playground scope" — not a
-   pursue/pass recommendation), plus the tier reason in a few words (e.g., "grant awarded + playground
+   pursue/pass recommendation) — on **every** item, not just the first few — plus the tier reason in a few words (e.g., "grant awarded + playground
    scope + city buyer"). If a tier is empty, skip it rather than padding it. Every item carries a date;
    if the source doesn't show one, write "date not visible — verify on the page."
    End with one coverage line naming **each** searched county and whether it had anything new (e.g.,
