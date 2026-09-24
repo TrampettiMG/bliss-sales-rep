@@ -31,8 +31,10 @@ silently stopping partway through.
 1. **Identify the target and type** — person, company, or municipality/agency — from the rep's request. If
    the rep just got this from a `find-leads` result or another tool's output earlier in the conversation,
    use those details instead of re-asking. If the target name is ambiguous (common name, multiple
-   organizations with similar names), ask for a disambiguating detail (county, company location) before
-   searching.
+   organizations with similar names), first try to settle it from the rep's territory in `PROFILE.md`
+   (e.g., "Richmond parks" for a rep who covers Richmond city, VA): if exactly one match is in their
+   territory, go with it and say so in one line ("I took this to mean … — tell me if you meant …").
+   Only if the territory doesn't settle it, ask for a disambiguating detail before searching.
 2. **Read `PROFILE.md`** for the rep's product focus, territory, and Voice (if set) — used for relevance
    framing and the suggested opener.
 3. **Research, within the usage budget**, gathering what's publicly available and relevant:
@@ -55,7 +57,8 @@ silently stopping partway through.
    - **Header** — name, title/role or type, organization, and any public contact info found (never
      inferred or guessed).
    - **Why call now** — a dated, cited bullet list of the most relevant findings, each with one line on
-     why it connects to the rep's product focus (a factual connection, not a pursue/pass verdict).
+     why it connects to the rep's product focus (a factual connection, not a pursue/pass verdict or
+     timing advice — "design is still open" is a fact; "a good time to pitch" is advice).
    - **Suggested opener** — one short, natural conversation-starter line referencing the findings above,
      written in the rep's Voice from `PROFILE.md` if set.
    If research comes back thin, keep the same structure but say so honestly in "Why call now" rather than

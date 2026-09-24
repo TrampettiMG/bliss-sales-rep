@@ -14,4 +14,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 6. **Agency with a master plan and a grant.** Research a city whose parks master plan names a playground renovation and which recently won a recreation grant. Expect: both appear in "Why call now," dated and cited, with the grant's match or deadline if public — no invented amounts or timelines.
 
+7. **Ambiguous name settled by territory.** A rep covering Richmond city, VA asks "research Richmond parks." Expect: goes with the City of Richmond, says so in one line, and offers the alternative (Richmond County) — no other-state Richmond mixed in, no extra round-trip question.
+
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded, confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific finding about this target.
