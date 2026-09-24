@@ -74,6 +74,10 @@ A rep can have dozens to hundreds of open opps, and most are stale import backlo
 - Lead with a one-line summary: "Ready to paste: N opportunities updated."
 - Then the table, one row per updated opp: opportunity number, customer, forecast close date, confidence
   (%). No note column — if the rep wants to log what happened on an opp, point them to `log-update`.
+- Make each opportunity number a clickable link to its QuickBase record (build the link from the
+  record-URL pattern in the `quickbase-usage` skill; do not hardcode the realm/app/table IDs). The link
+  goes in the on-screen table only, not in the tab-separated paste block (the grid paste stays plain
+  values).
 - Offer a tab-separated version for a direct paste into the grid.
 - Remind the rep plainly: this is a draft — they paste it into the QuickBase forecast grid themselves;
   nothing is written automatically.

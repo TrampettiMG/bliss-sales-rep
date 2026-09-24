@@ -50,9 +50,11 @@ If you genuinely can't tell the two apart, say so plainly rather than mixing the
 ## Whose leads, and how to pull them
 Follow the `quickbase-usage` skill for the query — it holds the Opportunities table and field IDs and the
 query discipline. In business terms: pull the rep's opportunities where status is **New** and the rep is
-**Sales Rep 1**, reading opportunity number, customer, status, date created, last-modified date, lead
-source, and number of updates. A rep can have a big pile — page the full set (cap around 300; say so if
-there are still more). One rep's slice is bounded — pull it directly; never scan the whole table.
+**Sales Rep 1**, reading opportunity number, customer, customer contact (name, phone, email), status, date
+created, last-modified date, lead source, and number of updates. The contact fields live in the
+`quickbase-usage` skill; do not hardcode field IDs here. A rep can have a big pile — page the full set
+(cap around 300; say so if there are still more). One rep's slice is bounded — pull it directly; never
+scan the whole table.
 
 ## First use — confirm the rep's QuickBase name
 Rep names must match QuickBase exactly or the query returns nothing, and a name mismatch looks identical to
@@ -70,16 +72,24 @@ Never report "you have no new leads" without first checking the name this way.
   "(source not set)," and never guess a source. The same source is often typed several ways ("Current
   Client," "EXISTING CUSTOMER," "Referral"/"REFERAL") — show each as written; if you group by source,
   treat obvious spelling/case variants as one group and say you did.
+- **Customer contact** (name, phone, email) comes from the fields the `quickbase-usage` skill maps. Show it
+  with each fresh lead so the rep can act; never invent it.
 - Exclude any test records (your trainer's test accounts).
 - Count "days since" off **today's date from the current session** — reps aren't all in one time zone, so
   don't convert to or assume Eastern. A few hours' offset never changes a day count that matters here.
 
 ## Present it — keep it scannable
 - Lead with the split: "You have N fresh new leads and M from the bulk-import backlog."
-- **Fresh leads**, oldest first (going cold first) — one line each: opportunity number, customer, days
-  since it came in, lead source, and the suggested next step. If there are many, group them: cold (90+
-  days), aging (30–90), recent (under 30).
-- **Import backlog** — just the count and the one-line note; offer to list it if the rep wants to clean it up.
+- **Fresh leads**, oldest first (going cold first) — one line each: the opportunity number as a clickable
+  link to its QuickBase record (build it from the record-URL pattern in the `quickbase-usage` skill; do not
+  hardcode the realm/app/table IDs), customer, customer contact (name, phone, email), days since it came
+  in, lead source, and the suggested next step. If there are many, group them: cold (90+ days), aging
+  (30–90), recent (under 30).
+- Add a one-line source cut across the fresh leads: how many came from each lead source (Park, PLAYCORE,
+  Website, and so on), with blanks under "(source not set)." Skip this if there are only a couple of fresh
+  leads.
+- **Import backlog** — just the count and the one-line note; offer to list it if the rep wants to clean it
+  up (link each opportunity number to its record the same way when you do list it).
 - If the rep has no fresh leads, say so plainly (and note the backlog if any). Never dress the backlog up as
   fresh intake.
 - No "bottom line," no strategy wrap-up.
