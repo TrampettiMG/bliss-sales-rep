@@ -21,7 +21,9 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    *"Here's what I found in QuickBase — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
    right? Optional: the products you focus on, and a few counties you want me to focus lead searches on."*
    **If the login doesn't match a rep** (for example, an admin or shared login), ask one question only —
-   their name as it appears in QuickBase — and look them up by that name instead. **Only fall back to the
+   their name as it appears in QuickBase — and look them up by that name instead. **Never suggest,
+   list, or hint at other reps' names** (not even as an example or "for a test"), and don't browse the
+   rep list trying to guess who they are — just ask. **Only fall back to the
    full questions** if the QuickBase connection isn't working or no active rep matches: say so in one
    plain sentence and ask in one message for name, counties covered, product focus, phone or email, and
    anything else useful about their patch (optional). Never guess a name or county, and never use
