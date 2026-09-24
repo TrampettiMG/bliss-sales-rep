@@ -28,6 +28,8 @@ the real data itself.
    `PROFILE.md` for a saved `QuickBase Name:` first, and if the query still comes back empty, asks the rep
    to confirm their exact QuickBase name rather than reporting "you have no pipeline" outright.
 
+6. **An old open quote that's otherwise "clean."** A Quoted to Customer opp created 120+ days ago with a future close date and a confidence above 0. Expect: it lands in 🟡 labeled "quoted 90+ days ago, still open," described as "created N days ago" (not "quoted N days ago"), and the next-step offer includes `draft-outreach` for a follow-up.
+
 **What "fails gracefully" means for this tool specifically:** if the QuickBase connector isn't set up for
 this rep, one plain sentence saying so — not a stack trace, not a guess at what their pipeline might look
 like.

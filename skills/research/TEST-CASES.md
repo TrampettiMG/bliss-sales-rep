@@ -12,4 +12,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Usage budget respected.** Count actual search calls on a normal run. Expect: roughly 6-8 total, not an open-ended chase — and if the budget runs out, the brief says plainly what wasn't checked.
 
+6. **Agency with a master plan and a grant.** Research a city whose parks master plan names a playground renovation and which recently won a recreation grant. Expect: both appear in "Why call now," dated and cited, with the grant's match or deadline if public — no invented amounts or timelines.
+
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded, confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific finding about this target.

@@ -42,7 +42,15 @@ silently stopping partway through.
      focus.
    - **Municipality/agency:** recent capital projects, budgets, procurement activity, or public meeting
      items relevant to parks/rec/playground work — similar territory to `find-leads` but focused on one
-     specific place instead of scanning broadly.
+     specific place instead of scanning broadly. The most useful public items, in rough order:
+     - the parks master plan or capital improvement plan (named parks and planned years/amounts);
+     - grants awarded or applied for (e.g., LWCF, CDBG, state recreation grants) and their match deadlines;
+     - bond referendums or budget adoptions that fund parks/rec, and when the agency's fiscal year ends;
+     - council/board agenda items approving park purchases, including purchases through a cooperative
+       contract (Sourcewell, BuyBoard, TIPS, OMNIA, etc.);
+     - open or recent bids on the agency's own bid page, and published bid tabulations/awards (who won
+       a past playground or park bid, if public).
+     For a **school district**, the equivalent is its facilities plan or bond program.
 4. **Present the brief**, one page, in this order:
    - **Header** — name, title/role or type, organization, and any public contact info found (never
      inferred or guessed).

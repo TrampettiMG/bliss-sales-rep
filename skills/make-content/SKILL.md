@@ -30,7 +30,8 @@ review and send themselves.
 
 1. **Identify the content type** from the request:
    - **Value-prop one-pager** — a short standalone piece about why to work with Bliss, for a named
-     prospect type (e.g., "parks departments," "HOAs," "school districts").
+     prospect type (e.g., "parks departments," "city/county government," "school districts," "HOAs,"
+     "churches," "property management," "general contractors").
    - **Bid cover letter** — a letter to attach to a specific bid submission.
    - **Pitch content** — shorter, more flexible: an elevator pitch, a few talking points, a short intro
      paragraph, for a named prospect type or situation.
@@ -53,7 +54,9 @@ review and send themselves.
      to the named prospect type (why this matters to *them*, not generic marketing copy), a brief
      why-Bliss paragraph, and a contact block from the profile.
    - **Bid cover letter** (standard business-letter format): addressed to the agency/point of contact if
-     known, references the bid/solicitation number and project title, one paragraph on fit and interest,
+     known, references the bid/solicitation number and project title, acknowledges each addendum by number
+     if the addenda are known (e.g., from `summarize-bid`) — never guess addendum numbers — one paragraph
+     on fit and interest,
      closes with the rep's name/contact from the profile. Keep it short — one page.
    - **Pitch content**: match the length the rep actually asked for (an elevator pitch is a few sentences,
      talking points are a short bulleted list) — don't pad it into a one-pager they didn't ask for.

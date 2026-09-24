@@ -12,4 +12,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Call script, short ask.** Rep says "give me a script for a call with a school district that hasn't responded to two emails." Expect: bullet-form talking points (opening line, 2-3 points, objection handling) — not a rigid word-for-word script, and not padded into something longer than a glanceable call-prep list.
 
+6. **Open-quote follow-up.** Rep says "follow up on the quote I sent Riverside Parks in May for the shade structure." Expect: names the quote/project, asks one clear question (still moving / timing changed / went another way), makes "no" easy to say, and adds no invented urgency or discounts.
+
+7. **Past-customer check-in with no project named.** Rep says "check in with Oak Hill Schools, they bought from us before." Expect: a short check-in asking what's coming up, with no invented past project, dates, or budget — or one short question asking which project to reference.
+
 **What "fails gracefully" means for this tool specifically:** if there's not enough specific context to personalize a draft (no prospect name, no situation described), ask one short question rather than producing a generic template dressed up as personalized, or inventing plausible-sounding prospect details.

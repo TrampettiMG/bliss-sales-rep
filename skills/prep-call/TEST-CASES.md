@@ -12,4 +12,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 5. **Objections grounded vs. generic, side by side.** A rich-context case (test 1) and a thin-context case (test 3) run back to back. Expect: the objections in test 1 read as connected to the stated situation (already has a vendor for smaller stuff), while test 3's read as clearly general/labeled — the two should be visibly different in specificity, not identical boilerplate.
 
+6. **Call on a quote already sent, bid unclear.** Rep says "I'm calling the parks director about the quote I sent last month — they may have to bid it." Expect: talking points cover confirming the quote is still active, what's holding the decision, and how they plan to buy — without naming a co-op contract the rep didn't mention; objections include "we have to put it out to bid," labeled as a general pattern.
+
 **What "fails gracefully" means for this tool specifically:** when context is thin, the brief should look thin and general — not confidently specific. A generic-but-honest brief beats a specific-but-fabricated one, same principle as make-content and draft-outreach.

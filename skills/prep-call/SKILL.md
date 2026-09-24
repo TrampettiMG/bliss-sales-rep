@@ -39,13 +39,19 @@ conversation actually said the customer raised it before.
    what they actually sell.
 3. **Build the brief, three short sections:**
    - **Talking points** — what to bring up on this call, grounded in what the rep described (the
-     situation, the product fit, anything time-sensitive like a bid deadline or site visit).
+     situation, the product fit, anything time-sensitive like a bid deadline or site visit). Where it fits
+     the situation, include: how the project is funded and when (a grant, bond, or budget year —
+     only if known from the conversation or a `research`/`find-leads` result); whether they plan to bid it
+     or buy another way — mention a specific cooperative contract only if the rep says Bliss holds it;
+     and for a quote already sent, confirm it's still active and what's holding the decision.
    - **Open items** — anything unresolved from what the rep described: a quote they owe, a question the
      customer asked, a decision still pending, a follow-up they promised. If the rep didn't mention any,
      say "None mentioned — ask if there's anything outstanding" rather than inventing one.
    - **Likely objections** — 2-4 objections this kind of call commonly gets, each with a short response
      angle. Grounded in the situation where possible (e.g., a named competitor from a bid summary), general
-     sales patterns otherwise — labeled as such.
+     sales patterns otherwise — labeled as such. The common ones in playground/park sales: "another brand
+     is already specified," "we have to put it out to bid," "your price is higher," "no budget until next
+     fiscal year," and "we need it installed by a fixed date." Pick only the ones that fit this call.
 4. **Keep it short** — this is a glance-at-before-dialing brief, not a full account history. A few lines
    per section is usually enough.
 5. If the rep gives more context mid-conversation ("oh, they also mentioned X"), fold it in and regenerate

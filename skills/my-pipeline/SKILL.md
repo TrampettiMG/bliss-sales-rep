@@ -32,7 +32,9 @@ Follow the `quickbase-usage` skill for the actual query — it holds the Opportu
 and the query discipline (select specific fields, bound the rows, don't explore in the main context). In
 business terms:
 
-- Pull the rep's **open** opportunities — any status except Closed — where the rep is **Sales Rep 1**.
+- Pull the rep's **open** opportunities — status New, Pending, or Quoted to Customer only — where the rep
+  is **Sales Rep 1**. Ordered is excluded (it's already won, so it shouldn't be flagged for an overdue
+  forecast close), and so is Closed.
 - For each, read: opportunity number, customer, status, forecast close date, confidence, opportunity
   value, number of quotes, and date created.
 - A rep can have a large book — dozens to a few hundred open opps (the 2026 Opportunity rollout left many
@@ -72,12 +74,17 @@ Never report "you have no opportunities" without first checking the name this wa
 Group the rep's open opps into three buckets:
 
 - 🔴 **Needs attention now** — forecast close date is in the past (overdue) or clearly a typo, and the opp
-  is still open; or a quoted/ordered opp has no close date at all.
+  is still open; or a Quoted to Customer opp has no close date at all.
 - 🟡 **Worth a look** — confidence is blank or 0; or a New opp older than ~30 days still has no forecast
-  close date.
-- 🟢 **Clean** — a future close date and a confidence above 0.
+  close date; or a **Quoted to Customer opp created more than ~90 days ago** that's still open (label it
+  "quoted 90+ days ago, still open"). This one goes in 🟡 even if its close date and confidence are clean:
+  most quotes that turn into orders do so within a couple of months, so an old open quote usually needs a
+  follow-up or a close-out. Age is measured from the opp's date created — say "created N days ago," not
+  "quoted N days ago," since the quote-sent date isn't in this read.
+- 🟢 **Clean** — a future close date and a confidence above 0 (and not an old open quote).
 
-The overdue window and the ~30-day aging threshold are starting defaults — your trainer can adjust them.
+The overdue window and the ~30-day and ~90-day aging thresholds are starting defaults — your trainer can
+adjust them.
 
 ## Present it — keep it scannable even with 50+ opps
 - Lead with one summary line and the bucket counts: "You have N open opportunities — X 🔴 need attention
@@ -90,7 +97,8 @@ The overdue window and the ~30-day aging threshold are starting defaults — you
 - This is a status list, not a strategy memo — no recommended approach, no "bottom line," no invented
   totals. If everything is clean, say so plainly.
 - Offer the next step as an offer only: "Want these turned into paste-ready QuickBase values? That's
-  `forecast-update`."
+  `forecast-update`." If there are "quoted 90+ days ago" items, also offer: "Want a follow-up email for
+  any of the old quotes? That's `draft-outreach`."
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —

@@ -2,7 +2,7 @@
 name: forecast-update
 description: >-
   Month-end walkthrough of the rep's open opportunities that produces paste-ready forecast values —
-  forecast close date, confidence, and a note per opp — formatted for QuickBase's bulk-edit forecast grid.
+  forecast close date and confidence — formatted for QuickBase's bulk-edit forecast grid.
   Read-only; never writes, and never invents a forecast (the rep sets the values). Use when the rep says
   "forecast update", "month-end forecast", "update my forecast", "get my opps grid-ready", "clean up my
   forecast", or "help me update my pipeline for the month". To just see what needs fixing first, use
@@ -12,7 +12,7 @@ description: >-
 # Forecast update
 
 A month-end walkthrough of the rep's open opportunities that turns their decisions into paste-ready values
-for QuickBase's bulk-edit forecast grid — forecast close date, confidence, and a note per opp. It reads
+for QuickBase's bulk-edit forecast grid — forecast close date and confidence. It reads
 QuickBase and formats the output; it never writes, and it never decides the forecast for the rep.
 
 ## Requires the QuickBase connection
@@ -38,7 +38,8 @@ with their trainer rather than guessing the format).
 
 ## Whose opps, and how to pull them
 Follow the `quickbase-usage` skill for the query — it holds the Opportunities table and field IDs and the
-query discipline. In business terms: pull the rep's **open** opportunities (any status except Closed) where
+query discipline. In business terms: pull the rep's **open** opportunities (status New, Pending, or Quoted to Customer only — Ordered
+is excluded because it's already won, and Closed is excluded) where
 the rep is **Sales Rep 1**, reading opportunity number, customer, status, current forecast close date,
 current confidence, and number of quotes. Page the rep's full open set (cap around 300; say so if there's
 more). One rep's slice is bounded — pull it directly; never scan the whole table.
