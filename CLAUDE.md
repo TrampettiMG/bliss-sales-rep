@@ -5,13 +5,30 @@
 
 If there is no `PROFILE.md` in this project yet, do this before anything else:
 
-1. Ask the rep for these 5 things, one message, plain language:
-   - Name
-   - Territory / counties covered
-   - Product focus
-   - Phone or email (for signing drafts)
-   - Anything else useful to know about their patch (optional)
-2. Write the answers into a new file `PROFILE.md` in this project, using the template below.
+1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
+   they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
+   holds the tables and fields; never guess them). In business terms:
+   - **Who they are:** find the active sales rep record tied to this rep's own QuickBase login (the
+     connected user) — their name exactly as QuickBase has it, plus their email (and cell if stored).
+   - **Their counties:** every active county assigned to them in QuickBase's county sales-team
+     assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
+     no assignments, use the counties where their own customers are, most frequent first, labeled
+     "based on your customers."
+   Then show the rep what you found in one short message and ask them to confirm or fix it. For a long
+   county list, show the count and states rather than every name. Also ask, optionally, for their
+   product focus and — if they have more than about 10 counties — which few counties they want lead
+   searches to focus on:
+   *"Here's what I found in QuickBase — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
+   right? Optional: the products you focus on, and a few counties you want me to focus lead searches on."*
+   **If the login doesn't match a rep** (for example, an admin or shared login), ask one question only —
+   their name as it appears in QuickBase — and look them up by that name instead. **Only fall back to the
+   full questions** if the QuickBase connection isn't working or no active rep matches: say so in one
+   plain sentence and ask in one message for name, counties covered, product focus, phone or email, and
+   anything else useful about their patch (optional). Never guess a name or county, and never use
+   another rep's record.
+2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
+   Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
+   again.
 3. Fetch each URL in the "Tools to install" list below and save its content as a project file at the same path (e.g. `skills/find-leads/SKILL.md`), so the tool is available in this project without re-fetching from GitHub every session.
 4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
 5. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
@@ -31,15 +48,17 @@ Tools to install (fetch and save each):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/my-new-leads/SKILL.md → save as `skills/my-new-leads/SKILL.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `skills/forecast-update/SKILL.md`
 
-(The last four are QuickBase tools. They're installed for everyone but only work once a trainer connects
-QuickBase — without it they reply with one plain sentence saying so.)
+(The last four are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
+sentence saying so.)
 
 `PROFILE.md` template:
 ```
 # Rep Profile
 
 - Name:
+- QuickBase Name:
 - Territory/Counties:
+- Focus Counties:
 - Product Focus:
 - Contact:
 - Notes:
@@ -49,6 +68,7 @@ QuickBase — without it they reply with one plain sentence saying so.)
 ## How to work with this rep
 
 - Read `PROFILE.md` before answering anything that depends on who the rep is or where they work. Never ask the rep to re-state their name/territory if it's already in the profile.
+- **Always address the rep by their first name**, taken from the `Name` line in `PROFILE.md` (e.g., "Andy Smith" → "Andy"). Use it naturally when you speak to them, not in every sentence. This is only how you talk *to* the rep: drafts they'll send still sign off with the full name and contact info from the profile. If the profile has no name yet, don't guess one.
 - Before answering a request, check whether a matching `skills/*/SKILL.md` project file exists and follow it. If the rep asks for something that sounds like a tool but no matching skill file exists yet, say so plainly and don't improvise a fake version of it.
 - Never ask the rep to paste customer lists, contact databases, or other bulk customer data into chat. Work from what they tell you directly, or public information.
 - Anything that would send, submit, or post on the rep's behalf (an email, a QuickBase update) is always a draft for the rep to review and send/paste themselves. Never send or submit anything automatically.

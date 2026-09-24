@@ -11,8 +11,8 @@ Follow these steps in order. It should take about 5-10 minutes.
    Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md
    ```
 
-5. Claude will ask you 5 quick questions (name, territory/counties, product focus, phone or email, and anything else useful). Answer them in plain language, one message.
-6. Claude will install all 11 tools and confirm setup is done. (Four of them — your pipeline, new leads, forecast, and QuickBase updates — only work once your trainer connects QuickBase for you. Until then they'll just tell you so.) Try typing: **"find leads for my county"** or **"summarize this bid"** (with a bid document uploaded). Other things you can try once you're set up: "research [a company/person/municipality]", "prep me for a call with [someone]", "draft an intro email to [someone]", "make me a one-pager for [HOAs/school districts/etc.]", or if you're not sure where to start, just ask "what should I use for..." or "how does this work."
+5. Claude will look you up in QuickBase and show you your name, counties, and contact info. Check them and reply "yes" or fix anything that's wrong. You can also add the products you focus on, and — if you cover a lot of counties — the few you want lead searches to focus on. (If it can't reach QuickBase, it'll ask you a few quick questions instead.)
+6. Claude will install all 11 tools and confirm setup is done. Try typing: **"find leads for my county"** or **"summarize this bid"** (with a bid document uploaded). Other things you can try once you're set up: "research [a company/person/municipality]", "prep me for a call with [someone]", "draft an intro email to [someone]", "make me a one-pager for [HOAs/school districts/etc.]", or if you're not sure where to start, just ask "what should I use for..." or "how does this work."
 7. From now on, just start new chats inside this same **Bliss Sales Rep** project — you never need to paste that link again.
 8. If something doesn't work, stop and tell your trainer — don't try to fix it yourself.
 

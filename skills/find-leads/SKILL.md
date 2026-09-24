@@ -133,8 +133,11 @@ deadline or most recent item first.
 
 ## Flow
 
-1. **Read `PROFILE.md`** for the rep's counties/territory and product focus. If territory is missing or
-   too broad to search meaningfully (e.g., just a state name), ask for the specific county or counties.
+1. **Read `PROFILE.md`** for the rep's counties/territory and product focus. If a **Focus Counties** line
+   is filled in, search those. If not and the rep has more than about 10 counties, ask once which few to
+   focus on this run (and offer to save them as Focus Counties) rather than searching a long list thin.
+   If territory is missing or too broad to search meaningfully (e.g., just a state name), ask for the
+   specific county or counties.
 2. **Search each category** for the rep's counties, recent activity only, within the usage budget above,
    using terms from **Search terms**:
    1. Park, playground, or splash-pad projects — new builds, renovations, RFPs, and purchase approvals.
