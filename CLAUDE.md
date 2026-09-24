@@ -8,19 +8,24 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
    they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
    holds the tables and fields; never guess them). In business terms:
-   - **Who they are:** find the sales rep tied to this rep's own QuickBase login (the connected user) —
-     their name exactly as QuickBase has it, plus their email/phone if QuickBase has them.
-   - **Their counties:** the counties they're assigned in QuickBase. If QuickBase has no explicit
-     territory, use the counties where their own customers and opportunities are, most frequent first,
-     and label it "based on your customers."
-   Then show the rep what you found in one short message and ask them to confirm or fix it, and add
-   their product focus if they want to (optional):
-   *"Here's what I found in QuickBase — Name: … · Counties: … · Contact: … Is that right? Anything to
-   add, like the products you focus on?"*
-   **Only fall back to asking** if the QuickBase connection isn't working or the lookup finds no rep for
-   this login: then say so in one plain sentence and ask for these in one message — name, counties
-   covered, product focus, phone or email, and anything else useful about their patch (optional).
-   Never guess a name or county, and never use another rep's record.
+   - **Who they are:** find the active sales rep record tied to this rep's own QuickBase login (the
+     connected user) — their name exactly as QuickBase has it, plus their email (and cell if stored).
+   - **Their counties:** every active county assigned to them in QuickBase's county sales-team
+     assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
+     no assignments, use the counties where their own customers are, most frequent first, labeled
+     "based on your customers."
+   Then show the rep what you found in one short message and ask them to confirm or fix it. For a long
+   county list, show the count and states rather than every name. Also ask, optionally, for their
+   product focus and — if they have more than about 10 counties — which few counties they want lead
+   searches to focus on:
+   *"Here's what I found in QuickBase — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
+   right? Optional: the products you focus on, and a few counties you want me to focus lead searches on."*
+   **If the login doesn't match a rep** (for example, an admin or shared login), ask one question only —
+   their name as it appears in QuickBase — and look them up by that name instead. **Only fall back to the
+   full questions** if the QuickBase connection isn't working or no active rep matches: say so in one
+   plain sentence and ask in one message for name, counties covered, product focus, phone or email, and
+   anything else useful about their patch (optional). Never guess a name or county, and never use
+   another rep's record.
 2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
    Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
    again.
@@ -53,6 +58,7 @@ sentence saying so.)
 - Name:
 - QuickBase Name:
 - Territory/Counties:
+- Focus Counties:
 - Product Focus:
 - Contact:
 - Notes:
