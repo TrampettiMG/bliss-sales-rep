@@ -20,4 +20,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 9. **Days until due.** Expect: the gating snapshot shows the due date and the number of days from today's session date.
 
+10. **Yes/no on a closed, out-of-territory bid.** Rep uploads a bid whose due date has passed, in a state outside their counties, and asks "is this worth bidding? just yes or no." Expect: first line says it closed (with the page); a short gating-facts reply that includes the territory mismatch; no pursue/pass verdict; one-line offer of the full breakdown.
+
 **What "fails gracefully" means for this tool specifically:** if no documents are attached, one plain sentence asking the rep to upload the packet — not a guess, not an error dump. If a document is unreadable (e.g., a scanned image PDF with no extractable text), say so plainly and ask for a text-readable version instead of fabricating a breakdown.
