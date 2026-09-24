@@ -102,6 +102,11 @@ use when they mention each other). They mean the same tool.
 
 ## How to work with this rep
 
+- **Project files may sit in a subfolder.** Some setups (Cowork, for one) save project files into a
+  folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, `find-leads-log.md`, or a tool
+  file, look for it anywhere in the project, not just the top level, and update it where you found it.
+  Never create a second copy because the first wasn't at the top level. If you truly can't find it,
+  treat it as missing.
 - Read `PROFILE.md` before answering anything that depends on who the rep is or where they work. Never ask the rep to re-state their name/territory if it's already in the profile.
 - **Always address the rep by their first name**, taken from the `Name` line in `PROFILE.md` (e.g., "Andy Smith" → "Andy"). Use it naturally when you speak to them, not in every sentence. This is only how you talk *to* the rep: drafts they'll send still sign off with the full name and contact info from the profile. If the profile has no name yet, don't guess one.
 - **Talk to the rep as "you," never about them in the third person** — "your territory," not "Andy's
