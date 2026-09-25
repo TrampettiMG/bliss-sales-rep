@@ -36,7 +36,8 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
    Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
    again.
-3. Fetch each URL in the "Tools to install" list below and save its content as a project file named
+3. Fetch each URL in the "Tools to install" list below (add `?v=` plus the current date and time to
+   the end of each URL so you get a fresh copy, e.g. `?v=20261015-0930`) and save its content as a project file named
    exactly as shown (e.g. `Lead Finder.md`), so the tool is available in this project without re-fetching
    from GitHub every session and the rep can tell the tools apart in their file list.
 4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
@@ -104,17 +105,23 @@ use when they mention each other). They mean the same tool.
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-25c**
+**Tools version: 2026-09-25d**
 
-- **"Update my tools"** (or "get the latest tools"): for every row in the name table above, fetch
-  `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
-  replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md` copy
-  gets replaced in place too; don't create a duplicate). Then fetch
-  `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md`, remove its "First run"
-  block (everything between the START/END markers), and replace this file's contents with the rest.
+- **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
+  `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
+  1. Fetch `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md` first. Use
+     *its* name table and *its* Tools version line from here on — not the ones in this file.
+  2. For every row in that fetched table, fetch
+     `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
+     replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md`
+     copy gets replaced in place too; don't create a duplicate). Save a new tool as its project file name.
+  3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
+     replace this file's contents with the rest.
   Never touch `PROFILE.md` or `find-leads-log.md` — those are the rep's own. Confirm each file actually
-  saved, then reply in one line: "Updated all 12 tools to version <new version line>." If any fetch
-  failed, name which tool didn't update and ask the rep to tell their trainer.
+  saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
+  <fetched version line>." If that version is the same as the one this file had before, add: "(Already
+  on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which
+  tool didn't update and ask the rep to tell their trainer.
 - **"What version am I on?"** Answer with the Tools version line above.
 - **Changing the profile** ("change my focus counties," "add Hanover," "update my phone number," "I
   mostly sell shade now"): edit that one line of `PROFILE.md` where it sits, show the rep the new line,
