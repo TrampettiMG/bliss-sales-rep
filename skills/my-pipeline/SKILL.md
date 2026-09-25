@@ -104,7 +104,8 @@ adjust them.
   (name, phone, email) with each item so the rep can act without opening QuickBase. These are what to fix
   first.
 - For 🟡, give the count and the top few examples, then offer to list them all rather than dumping every
-  one.
+  one. Each 🟡 line shows the opp's status and why it's there — e.g. "Quoted to Customer — quoted 90+
+  days ago, still open (created 91 days ago)," "no confidence set," or "New, no close date."
 - For 🟢, just the count (offer the list if they want it).
 - This is a status list, not a strategy memo — no recommended approach, no "bottom line," no invented
   totals. If everything is clean, say so plainly.
@@ -121,9 +122,13 @@ with," "my past customers," "who haven't I heard from") — or as a one-line off
 check ("Want your past customers with nothing open right now? Good for check-ins.") — list them. Don't
 run this unasked; it's a second read.
 
-- **Who counts:** the rep's own customers (the customer's assigned sales rep is this rep) with at least
-  one won order in roughly the last 3 years and **no open opportunity right now** (New, Pending, or
-  Quoted to Customer). Follow the `quickbase-usage` skill for the tables and fields — won orders from
+- **Open with the tool name and the rep's first name** ("Here are your past customers, Andy — from the
+  Pipeline Check."), even when this is the only thing asked for in a new chat.
+- **Who counts:** a customer is the rep's if the rep was Sales Rep 1 on one of their won orders **or**
+  the customer's assigned sales rep is this rep — the assigned rep alone misses customers the rep
+  actually sells to. Then keep only those with at least one won order in roughly the last 3 years, a
+  last won order **more than about 6 months ago** (a recent buyer isn't a check-in — their project may
+  still be in install), and **no open opportunity right now** (New, Pending, or Quoted to Customer). Follow the `quickbase-usage` skill for the tables and fields — won orders from
   before the mid-2026 Opportunity rollout live in the quote history, not on Opportunities, so both have to
   be checked. This is one rep's slice: bounded, with an explicit field list; never scan the whole table.
 - **Show:** customer, last won order date, and that order's project or quote name if QuickBase has one —
