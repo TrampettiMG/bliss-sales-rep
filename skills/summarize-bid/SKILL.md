@@ -109,5 +109,5 @@ re-pitch it. Offer one line: "Want the Update Logger to write the No Bid reason 
 say yes, hand off to the Update Logger with the bid and the rep's reason. If the rep didn't give a
 reason, the Update Logger asks for one. It can offer the common ones as choices — spec can't be matched
 or proprietary, no installer or vendor pricing in time, missed the mandatory pre-bid, bond / DBE /
-licensing, too small or out of scope, price, cancelled or re-bid, partner bidding direct — but never
+licensing, out of territory, too small or out of scope, price, cancelled or re-bid, partner bidding direct — but never
 picks one for the rep. A recorded reason is how the team learns which bids to skip.
