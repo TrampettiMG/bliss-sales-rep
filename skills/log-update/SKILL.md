@@ -37,8 +37,11 @@ and paste the text in. Work only from what's actually in the material — never 
 or email thread doesn't contain.
 
 ## Step 1 — identify the opportunity
-Ask the rep which opportunity this is for if it isn't obvious from the material (an opportunity number, a
-customer name, or context that makes it clear). Then look it up via the `quickbase-usage` skill the same
+Open with one line naming the tool and the rep ("Here's the Update Logger, Andy."). If the customer is
+clear from the material or the conversation (a bid just broken down, an email thread naming the owner),
+look it up yourself first — don't ask the rep for an opportunity number QuickBase can find. If a Bid
+Breakdown earlier in the conversation already reported "no opportunity for this owner," use that rather
+than asking. Ask the rep which opportunity this is for only if it still isn't clear. Then look it up via the `quickbase-usage` skill the same
 way `forecast-update` does — pull that one opportunity's current status, forecast close date, confidence,
 and customer name, using the rep's QuickBase name (see below) to confirm it's theirs.
 
@@ -70,9 +73,10 @@ Read the raw material and pull out, only where it's actually stated or clearly i
   loss or no-bid but not why, ask the rep one short question — "What was the reason?" — since QuickBase
   only offers the Lost status once a reason is given, and these reasons are what the team learns from.
   For a no-bid you can list the common ones as choices (spec can't be matched or proprietary, no
-  installer or vendor pricing in time, missed the mandatory pre-bid, bond / DBE / licensing, too small or
-  out of scope, price, cancelled or re-bid, partner bidding direct, or something else). Never guess the
-  reason or pick one for the rep.
+  installer or vendor pricing in time, missed the mandatory pre-bid, bond / DBE / licensing, out of
+  territory, too small or out of scope, price, cancelled or re-bid, partner bidding direct, or something
+  else). List the choices once per conversation — if they're already on screen, just ask again in one
+  line. Never guess the reason or pick one for the rep.
 
 Present these as a **draft**, clearly labeled, not as the final answer. If the material doesn't clearly
 support a field (e.g. no timeline was mentioned), leave it blank and say so — don't fill the gap with a

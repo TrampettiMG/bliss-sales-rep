@@ -60,8 +60,9 @@ review and send/say themselves.
    rep's open opportunities the way the Pipeline Check tool file does (its "Whose opportunities"
    section), plus the opportunity name and its contact if QuickBase has one (the `quickbase-usage` skill
    holds the fields; never guess them). Match on the customer and what the rep described. If exactly one
-   matches, use its opportunity number, name and contact in the draft (the subject line gets the
-   opportunity name or number). If several match, list them one line each and ask which. If none match
+   matches, use its opportunity name and contact in the draft. The subject line gets the opportunity
+   name only — never the "Opp ####" number, which is internal and means nothing to the customer; the
+   number goes only in what you say to the rep. If several match, list them one line each and ask which. If none match
    or QuickBase isn't connected, carry on as above and leave a `[Name]` placeholder. Read only — never
    write to QuickBase.
 4. **Draft, matched to type:**
@@ -92,6 +93,12 @@ review and send/say themselves.
 
 ## Several check-ins or follow-ups at once
 
+Never write an open-quote follow-up ("still moving?") for an opportunity that already has an ordered
+quote — the customer has bought, so that email would look out of touch. If the rep asks for one (alone
+or in a batch), skip it and say why in one line ("Skipped Opp 12345 — 2 of its quotes are already
+ordered; its status in QuickBase may need updating."). Check quote statuses the way the Pipeline Check
+tool file does if they aren't already in the conversation.
+
 When the rep asks for follow-ups on several old quotes (usually right after a Pipeline Check that
 flagged "quoted 90+ days ago" items, e.g. "yes, draft those"), write one short open-quote follow-up per
 quote, **up to 5 per reply**. The same goes for check-ins with several past customers from Pipeline
@@ -103,4 +110,6 @@ once (if missing), not per email. Put a one-line header above each draft ("Opp 1
 Public Schools") so the rep can tell them apart. Every email follows the open-quote follow-up rules
 above: one simple question, "no" or "not this year" easy to say, no invented urgency or discounts. Don't
 copy the same wording into every email word for word — vary the opening line so they don't read as a
-mail merge.
+mail merge. Never put the "Opp ####" number in a subject line or email body — it belongs only in
+the header the rep sees. If two or more drafts go to the same contact, say so after the drafts and
+offer to merge them into one email ("Pat gets two of these — want them as one email?").

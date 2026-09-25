@@ -54,6 +54,7 @@ so stay tight:
   real multi-quote opportunity that the tool keeps totals separate and shows this warning.)
 
 ## Present it
+- Open with one line naming the tool and the rep ("Here's your Quote Details, Andy — Opp 12345, [customer].").
 - Lead with the opportunity and its quote(s): quote number as a clickable link to the record (build the link
   from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the realm/app/table IDs),
   quote status, and grand total.
