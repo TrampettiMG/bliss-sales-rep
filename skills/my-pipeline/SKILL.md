@@ -40,6 +40,9 @@ business terms:
   close date, confidence, opportunity value, number of quotes, date created, and last activity (the
   last-modified date and the most-recent-update date). The contact and activity fields live in the
   `quickbase-usage` skill; do not hardcode field IDs here.
+- For every opp that has quotes, also read its quotes' statuses (one small, filtered read — the
+  `quickbase-usage` skill has it). An opp can still say Quoted to Customer while one or more of its quotes
+  is already won (Order Submitted, Invoiced, or Commission Paid) — real data has these.
 - A rep can have a large book — dozens to a few hundred open opps (the 2026 Opportunity rollout left many
   reps with a big backlog of untouched "New" opps). Page through the rep's full open set with an explicit
   field list and a sane cap (around 300); if there are still more, say so. This is one rep's slice —
@@ -83,6 +86,10 @@ Group the rep's open opps into three buckets:
 
 - 🔴 **Needs attention now** — forecast close date is in the past (overdue) or clearly a typo, and the opp
   is still open; or a Quoted to Customer opp has no close date at all.
+- **Has ordered quotes** — any open opp with at least one quote already won goes here instead of any other
+  bucket, labeled "N of M quotes already ordered — the opportunity status may be out of date." Don't call
+  it overdue or stale, and don't offer a "still moving?" follow-up for it: the customer already ordered.
+  The fix is updating the opportunity in QuickBase (offer the Forecast Helper). List these right after 🔴.
 - 🟡 **Worth a look** — confidence is blank or 0; or a New opp older than ~30 days still has no forecast
   close date; or a **Quoted to Customer opp created more than ~90 days ago** that's still open (label it
   "quoted 90+ days ago, still open"). This one goes in 🟡 even if its close date and confidence are clean:

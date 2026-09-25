@@ -93,6 +93,12 @@ review and send/say themselves.
 
 ## Several check-ins or follow-ups at once
 
+Never write an open-quote follow-up ("still moving?") for an opportunity that already has an ordered
+quote — the customer has bought, so that email would look out of touch. If the rep asks for one (alone
+or in a batch), skip it and say why in one line ("Skipped Opp 12345 — 2 of its quotes are already
+ordered; its status in QuickBase may need updating."). Check quote statuses the way the Pipeline Check
+tool file does if they aren't already in the conversation.
+
 When the rep asks for follow-ups on several old quotes (usually right after a Pipeline Check that
 flagged "quoted 90+ days ago" items, e.g. "yes, draft those"), write one short open-quote follow-up per
 quote, **up to 5 per reply**. The same goes for check-ins with several past customers from Pipeline
