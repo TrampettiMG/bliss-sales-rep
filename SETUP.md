@@ -12,7 +12,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Cowork.
 
 3. Code-execution network access
-   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. If this setting is unavailable, ask your trainer before continuing.
+   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. The exact setting location depends on your account type and is confirmed during setup testing. If you can't find this setting, tell your trainer.
    You should now see network access enabled for code execution.
 
 4. QuickBase extension
