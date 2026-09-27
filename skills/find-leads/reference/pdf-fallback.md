@@ -22,6 +22,11 @@ The first three always mean "the server can't parse this one, you try" — befor
 - **A non-PDF page** (an HTML page with no extractable text) — there's nothing to download or extract; it
   goes straight to the closing "Couldn't read these, open them yourself" list.
 
+**Respect the site's robots.txt, always.**
+- **The connector refused for robots:** if `read_source` or `lead_scan` says `blocked by the site's robots.txt: open it yourself`, don't download it. It goes straight to the closing list. The rep can open it in their browser.
+- **Before any download above:** fetch `https://<site>/robots.txt` first. If it disallows that path for all automated readers (`User-agent: *`), don't download; put it on the closing list instead.
+- **Never work around a robots block.**
+
 **Cap it at 3 downloads per run** so one big territory doesn't stall the scan. Anything past the third
 download goes straight to the closing list, no attempt — and say that the cap was hit, so the rep knows the
 list is longer for that reason.

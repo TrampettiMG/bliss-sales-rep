@@ -86,71 +86,77 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 24. **Connector returns "no readable text" on a non-PDF page.** Same reason, but the link is an HTML page
     with no extractable text. Expect: no download attempt — it goes straight to the closing "Couldn't read
     these, open them yourself" list.
+25. **Connector refuses for robots.txt.** `read_source` returns `blocked by the site's robots.txt: open it
+    yourself`. Expect: no download attempt; the link goes straight to the closing list for the rep to open
+    in their browser.
+26. **Robots check before a fallback download.** A scanned-PDF link whose site's robots.txt disallows the
+    path for `User-agent: *`. Expect: Claude checks robots.txt first, doesn't download, and lists the link
+    on the closing list instead.
 
 ## Stages and scoring
 
-25. **Stage-7 exclusion.** A result where a lead is already awarded/under construction. Expect: it never
+27. **Stage-7 exclusion.** A result where a lead is already awarded/under construction. Expect: it never
     appears in the output at all (zero stage-7 leads).
-26. **Every lead carries stage, date, source.** A normal run. Expect: each lead shows its stage number,
+28. **Every lead carries stage, date, source.** A normal run. Expect: each lead shows its stage number,
     its document date, and a source link.
-27. **Currency.** A stale project page or a budget from a previous fiscal year. Expect: dropped, unless a
+29. **Currency.** A stale project page or a budget from a previous fiscal year. Expect: dropped, unless a
     newer source shows the project still moving.
-28. **Score and reason.** A run with several real leads. Expect: each has a 0–100 score with a one-line
+30. **Score and reason.** A run with several real leads. Expect: each has a 0–100 score with a one-line
     reason, highest first, and the list opens with "Found N, call these X now."
-29. **Unknown factors aren't assumed.** A playground renovation with no funding or size stated. Expect:
+31. **Unknown factors aren't assumed.** A playground renovation with no funding or size stated. Expect:
     scored on what's shown, with "funding not stated" — never assumed committed.
-30. **Interim weights flagged.** Rep asks "where do these weights come from?" Expect: it says the rubric
+32. **Interim weights flagged.** Rep asks "where do these weights come from?" Expect: it says the rubric
     is interim, pending the bid team's guide.
 
 ## QuickBase cross-reference
 
-31. **First use resolves and caches.** First run with the QuickBase extension connected. Expect: table
+33. **First use resolves and caches.** First run with the QuickBase extension connected. Expect: table
     names resolved to IDs and written into `PROFILE.md` under a "QuickBase tables" section, with targeted
     field-label lookups (one per table, no full field dump) — and no ID printed into any repo/skill file.
-32. **Second run reads the cache.** The next run. Expect: IDs read from `PROFILE.md`, no re-resolution.
-33. **Lead already in the pipeline.** A lead whose jurisdiction has an open opportunity. Expect: labeled
+34. **Second run reads the cache.** The next run. Expect: IDs read from `PROFILE.md`, no re-resolution.
+35. **Lead already in the pipeline.** A lead whose jurisdiction has an open opportunity. Expect: labeled
     "in pipeline" with the record number, never shown as new.
-34. **Lead found through the design firm.** A document naming the design firm/engineer but not matching
+36. **Lead found through the design firm.** A document naming the design firm/engineer but not matching
     on jurisdiction. Expect: the cross-reference searches both the jurisdiction and the firm name.
-35. **BLISS INVOLVED.** A public document naming "Play and Park Structures" (as distributed by Bliss
+37. **BLISS INVOLVED.** A public document naming "Play and Park Structures" (as distributed by Bliss
     Products). Expect: the lead is labeled BLISS INVOLVED ahead of the cross-reference label, with one
     line telling the rep to check with the rep of record rather than pitch it.
-36. **QB extension unplugged.** Same ask with QuickBase not connected. Expect: one clear "QuickBase isn't
+38. **QB extension unplugged.** Same ask with QuickBase not connected. Expect: one clear "QuickBase isn't
     connected" line, no labels guessed, and the scan still delivers graded, staged, scored leads.
 
 ## Degradation, budget, and output
 
-37. **Connector unplugged.** Ask with no registry connector. Expect: it skips the connector steps, runs
+39. **Connector unplugged.** Ask with no registry connector. Expect: it skips the connector steps, runs
     the search pass for all counties, and says **once** that the registry connector would read the rep's
     sources directly.
-38. **Usage budget respected.** A connector-missing run. Expect: roughly 2 searches per category (~10
+40. **Usage budget respected.** A connector-missing run. Expect: roughly 2 searches per category (~10
     total), and if the budget runs out it names the counties/categories not reached.
-39. **Same-day re-run.** Two runs in one day. Expect: the second notices the board's last-checked dates are
+41. **Same-day re-run.** Two runs in one day. Expect: the second notices the board's last-checked dates are
     today and asks whether the rep still wants to spend a fresh scan.
-40. **Broad-word trap.** Product focus is site furnishings. Expect: queries pair broad terms ("site
+42. **Broad-word trap.** Product focus is site furnishings. Expect: queries pair broad terms ("site
     furnishings," "picnic tables," "trash receptacles") instead of bare "site"/"table," and parking-lot or
     court-building results are excluded.
-41. **Co-op purchase on a council agenda.** A board agenda approving a playground purchase "through
+43. **Co-op purchase on a council agenda.** A board agenda approving a playground purchase "through
     Sourcewell" (no open bid). Expect: reported as a real signal, and it scores on the cooperative-contract
     factor.
-42. **Open RFP found.** Expect: the item includes the bid due date, or "due date not visible — verify on
+44. **Open RFP found.** Expect: the item includes the bid due date, or "due date not visible — verify on
     the page."
-43. **Vague or missing territory.** Territory listed as a whole state. Expect: it asks for the specific
+45. **Vague or missing territory.** Territory listed as a whole state. Expect: it asks for the specific
     county/counties rather than returning a flood of unfocused results.
-44. **Coverage line.** Any multi-county run. Expect: one coverage line naming every county scanned and
+46. **Coverage line.** Any multi-county run. Expect: one coverage line naming every county scanned and
     whether each had anything new.
-45. **Output order.** Any run that produces results. Expect, in order: moved-up leads (if any), the ranked
+47. **Output order.** Any run that produces results. Expect, in order: moved-up leads (if any), the ranked
     leads with the "Found N, call these X now" opener, the coverage line, the couldn't-read list, the
     verified "Saved N new items" line, the closing offer of the Research Brief / Email Writer, and — as
     the last line of the output — the one count-only routine line ("Set aside N routine items"), with
     nothing after it.
-46. **Ron test.** A rep's first plain ask — "find leads in my counties" — with no further setup. Expect:
+48. **Ron test.** A rep's first plain ask — "find leads in my counties" — with no further setup. Expect:
     the full run completes from that one ask, the only question being the first-run profile fill.
 
-47. **Demo territory.** Ask for leads in Nassau County, Florida. Expect: the run reproduces the
+49. **Demo territory.** Ask for leads in Nassau County, Florida. Expect: the run reproduces the
     Nassau County and Fernandina Beach leads from the PRD demo, each with a dated source link, a
     stage, and a score.
-48. **Territory not loaded yet.** A rep whose territory Trampetti hasn't finished loading asks, plainly,
+50. **Territory not loaded yet.** A rep whose territory Trampetti hasn't finished loading asks, plainly,
     "find leads for my county." The connector returns the literal `TERRITORY_PENDING` message ("Your
     territory isn't set up yet. Trampetti is loading it; your sources will appear here."). Expect: it stops
     the run — one plain line saying the territory is still loading and to try again later today or
