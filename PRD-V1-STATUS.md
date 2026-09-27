@@ -1,29 +1,29 @@
 # PRD-V1 status
 
 Branch: `prd-v1` from `main` at `8fa565a`.
-Head before Wave 4: `7809af9`.
-Push status: pending Wave 5 completion.
+Wave 4 commits: `edbc7a7`, `6519dc8`, `90954c6`.
+Wave 5 feature commit: `6777479`.
+Push status: `prd-v1` pushed; PR #15 is open to `main`.
 
-Commits before Wave 4:
+Completed:
 
-- `5b8dba1` — find-leads: registry-first scan, REAL/ROUTINE gate, staging/scoring, QB cross-reference, PDF fallback, and tests.
-- `4a2aa72` — research/prep-call: QB cross-reference, public-role contacts, and research-dossier call prep.
-- `0cc5ffd` — find-leads: TERRITORY_PENDING stop branch, compact references, and Claude review fixes.
-- `7809af9` — leads: shared `lead-board.xlsx` replaces the markdown tracker across find-leads and my-new-leads.
+- Registry-first Lead Finder workflow, REAL/ROUTINE grading, stage ladder, interim scoring, QuickBase cross-reference guidance, PDF fallback, and shared `lead-board.xlsx` workflow.
+- QuickBase IDs removed from the public repo; table/field resolution is by name and cached only in each rep's local `PROFILE.md`.
+- Setup and guide rework, including connector detection, registry-first counties, QuickBase assignment fallback, and delivered Lead Finder reference files.
+- Additional unreadable-PDF fallback uses the same download → text → page-image ladder and three-download cap.
+- Per-skill test coverage audited. CoWork runtime checks remain for Claude.
 
-Wave 4:
+Verification before push:
 
-- `edbc7a7` — setup, guide, README, and status changes.
-- `6519dc8` — Claude-side connector detection, registry-first counties, QuickBase table cache template, and lead-board wording.
-- `90954c6` — Claude-side Lead Finder reference-file installation and update flow.
+- Required public-repo scrub returned zero hits.
+- All 12 `SKILL.md` files are at or below 200 lines; descriptions are at or below 1024 characters with no angle brackets.
+- No backslash paths or tracked hooks.
+- `git diff --check` passed.
 
-Wave 5 in progress:
+PR:
 
-- SETUP profile wording now matches the registry-first, QuickBase-assignment fallback.
-- Lead Finder uses saved project-file names for all six references and fetches a missing one from its retained repo path.
-- PDF fallback recognizes the additional unreadable-PDF literal and tests its shared three-download cap.
-- Guide test coverage includes Ron and connection-degradation cases.
+- https://github.com/TrampettiMG/bliss-sales-rep/pull/15
 
-Next:
+Exact next step:
 
-- Commit, re-run the scrub and packaging checks, push `prd-v1`, open the PR to `main`, and write the implementation handoff.
+Claude runs the CoWork checks, reviews PR #15, and Nick merges. Do not push to `main` or merge from this branch.
