@@ -4,8 +4,8 @@ description: >-
   Scan the rep's counties for new lead signals — registry agendas and public PDFs first, then a web-search
   pass — grade each hit, stage it on the 0-7 ladder, score it 0-100, and cross-reference QuickBase. Reports
   what's new since the last run. Use when the rep says "find leads for my county", "what's new in my
-  territory", "scan for leads", "any new signals", or similar. Repeatable: each run only surfaces items not
-  already logged.
+  territory", "scan for leads", "any new signals", or similar. Repeatable: each run surfaces only items not
+  already on the shared lead board (`lead-board.xlsx`).
 ---
 
 # Lead Finder
@@ -31,8 +31,8 @@ Six files sit alongside this one. Never paraphrase them or restate them from mem
   before that document goes on the closing list. Holds the download/extract/page-image ladder.
 - **`reference/search-terms.md`** — read when you build the search pass in step 3, and when you judge whether
   a hit is relevant. Holds the grouped keyword list, the query traps, and the usage budget.
-- **`reference/log-and-dedupe.md`** — read before you check or update the log, every run. Holds the dedupe
-  rule, the moved-up heading, the write-verification rule, and the 90-day collapse.
+- **`reference/board-reconciliation.md`** — read before you check or update the lead board, every run. Holds the
+  column-ownership map, the reconcile-by-lead rule, the stage-move heading, and write verification.
 
 ## What this is not
 
@@ -42,10 +42,10 @@ possibilities. Every signal needs a real source link; no real source, no lead. I
 detail (like the exact date) isn't visible in what you can read of the page, include it anyway with an
 explicit flag ("date not visible — verify on the page") rather than drop a good lead over one missing detail.
 A source that wouldn't open at all isn't a signal yet: leave it out, and if its title looked relevant list it
-on one line in the closing "Couldn't read these, open them yourself" list with its link — don't log it, so the
-next run tries it again. Watch for wrong-location false positives — a source can easily return a same-named
-place in a different state (a "Clark County" or "Las Vegas" elsewhere). Confirm the state/region matches the
-rep's actual territory before including anything, and note what got excluded and why if it isn't obvious.
+on one line in the closing "Couldn't read these, open them yourself" list with its link — don't add it to the
+board, so the next run tries it again. Watch for wrong-location false positives — a source can easily return a
+same-named place in a different state (a "Clark County" or "Las Vegas" elsewhere). Confirm the state/region
+matches the rep's actual territory and note what got excluded and why if it isn't obvious.
 
 ## Reading order — where leads come from
 
@@ -61,7 +61,7 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
   `TERRITORY_PENDING` message ("Your territory isn't set up yet. Trampetti is loading it; your sources will
   appear here."), **stop the run**. Tell the rep plainly that their territory is still loading, that their
   sources will appear once Trampetti finishes, and to try again later today or tomorrow. Do **not** run the
-  web-search pass, do **not** report an empty or thin result, and do **not** write the log.
+  web-search pass, do **not** report an empty or thin result, and do **not** write the board.
 
 1. **`lead_scan` first.** One call over the rep's agenda sources is the cheapest, broadest first pass — run it
    before anything else, with a `since:` about 60 days back (widen it if the rep asks for a longer look). Page
@@ -149,13 +149,16 @@ distributor of a listed playground or shelter) means label the lead **BLISS INVO
 cross-reference returns, and tell the rep to **check with the rep of record rather than pitch it**. It's still
 worth surfacing — just not one to walk into cold.
 
-## The log — what makes this repeatable
+## The lead board — what makes this repeatable
 
-Keep a project file `find-leads-log.md` — one entry per signal ever surfaced, with its date, county, one-line
-description, stage, score, QuickBase label, and source URL. Read `reference/log-and-dedupe.md` before you
-check or update the log, and follow it: look for the log anywhere in the project first, including a subfolder
-like `claude/`; never start a second log; report only genuinely new items; and verify the write before you
-tell the rep anything is saved.
+The tracker is `lead-board.xlsx` — the shared spreadsheet `my-new-leads` also keeps: one row per lead the rep
+has seen, the same columns, in the project folder. It replaces the old markdown log: never keep, start, or
+append to `find-leads-log.md`, and never start a second board. Read `reference/board-reconciliation.md` before
+you check or update it, and follow it: look for the board anywhere in the project first, including a subfolder
+like `claude/`; reconcile by the underlying lead (same agency, project, and county — not the literal URL),
+never re-adding a known lead as new; update a stage move in place; refresh the current check date on the rows
+you actually checked; and verify the spreadsheet write by reading it back before you tell the rep anything is
+saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and then left untouched.
 
 ## Output shape — in this order
 
@@ -169,7 +172,7 @@ tell the rep anything is saved.
    Richmond city: nothing new"), plus any categories not reached and any county covered only by search.
 4. **"Couldn't read these, open them yourself"** — one line per source: title, county, link, reason. Mention
    the download cap if it was hit.
-5. **"Saved N new items to your lead log."** — only after the write is verified.
+5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
 6. One closing line offering both next steps: "Want more on one of these? That's the Research Brief. Or an
    intro email built around one of them? That's the Email Writer." When the rep picks one, pass that lead
    (what, when, stage, source) to the Email Writer as known context.
@@ -189,9 +192,9 @@ tell the rep anything is saved.
 2. **Run the reading order** (steps 1–4 above) for those counties.
 3. **Grade** every `lead_scan` hit REAL/ROUTINE, then **drop** anything that fails the stage-7 exclusion or
    the currency rule.
-4. **Check the log** and keep only genuinely new items, marking moved-up leads separately.
+4. **Check the board** and keep only genuinely new items, marking stage moves separately.
 5. **Stage and score** the survivors, and **cross-reference** each one against QuickBase.
 6. **Present** in the output shape above.
-7. **Update the log** and verify the write.
+7. **Update the board** and verify the spreadsheet write.
 8. If the rep wants more on a specific signal (a named municipality, a named project), hand off to the
    `research` tool instead of digging deeper here — that's its job.

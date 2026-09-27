@@ -4,22 +4,34 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 plain ask a rep would type, with what a correct run looks like. Run each one from that single ask: no
 follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
-## Repeatability and the log
+## Repeatability and the lead board
 
-1. **First-ever run.** Rep with no `find-leads-log.md` yet asks "find leads for my county." Expect: a
-   normal scan, everything found reported as new, and the log file created afterward with those entries.
-2. **Second run, nothing new happened.** Immediately re-run the same request. Expect: it recognizes the
-   same signals from the log and reports "Nothing new since your last run" — it does NOT re-report the
-   same signals as fresh.
-3. **Second run, one genuinely new item.** Case 2 with one new dated item available. Expect: only that
-   item comes back as new.
-4. **Republished coverage of an already-logged event.** The same underlying event covered later by a
-   different outlet (new URL). Expect: recognized as already known, not re-reported.
-5. **A project that moved stage.** A logged project now shows money budgeted, or an RFP posted. Expect: it
-   appears under "Moved up since your last scan," with old stage → new stage, date and source, and its
-   log entry is updated rather than duplicated.
-6. **Log write failure.** Simulate a save that doesn't land. Expect: it says the save didn't fully work,
-   never a false "saved" line; the count in the saved line matches the entries actually in the file.
+1. **First-ever run.** Rep with no `lead-board.xlsx` yet asks "find leads for my county." Expect: a normal
+   scan, everything found reported as new, and the board created afterward with those rows — agency, county,
+   project, stage, score, source link, doc date, last checked — and the file read back before it says
+   anything is saved.
+2. **Second run, nothing new happened.** Immediately re-run the same request. Expect: it reconciles against
+   the board by the underlying lead and reports "Nothing new since your last run on [date]" — it does NOT
+   re-report the same signals as fresh, and the rows carry over with last checked moved to today.
+3. **Second run, one genuinely new item.** Case 2 with one new dated item available. Expect: only that item
+   comes back as new, and it is the only row added.
+4. **Republished coverage of an already-seen event.** The same underlying event covered later by a different
+   outlet (new URL). Expect: reconciled to the same row — not reported as new, not duplicated.
+5. **A project that moved stage.** A tracked project now shows money budgeted, or an RFP posted. Expect: it
+   appears under "Moved up since your last scan" **before** any newly found lead, with old stage → new stage,
+   date and source, and its board row updates in place rather than a second row being added.
+6. **Spreadsheet write failure.** Simulate a save that doesn't land. Expect: it says the save didn't fully
+   work, never a false "saved" line; the count in the saved line matches the rows actually read back from the
+   file.
+7. **Co-existence with `my-new-leads`.** A rep whose `my-new-leads` run already created `lead-board.xlsx`
+   from the QuickBase read. Expect: this skill reads and updates that **same** board in place — the
+   QuickBase-origin `QB Status` and `Status` values (and any `Contact` / `Next Action`) are left exactly as
+   they were; only stage, score, source link, doc date, and last checked change on a matching row.
+8. **Legacy log migration.** A rep with an old `find-leads-log.md` and no board (or a board that doesn't hold
+   those leads). Expect: the log's leads are seeded onto the board as `watching` — never reported as newly
+   found — and the `find-leads-log.md` is left untouched: not appended to, not rewritten, not deleted.
+9. **No second board.** A board already sitting in a `claude/` subfolder. Expect: it finds and updates that
+   board where it is; no second board file, no new log file.
 
 ## Reading order and the registry connector
 
@@ -102,8 +114,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     sources directly.
 32. **Usage budget respected.** A connector-missing run. Expect: roughly 2 searches per category (~10
     total), and if the budget runs out it names the counties/categories not reached.
-33. **Same-day re-run.** Two runs in one day. Expect: the second notices the log's last-run date is today
-    and asks whether the rep still wants to spend a fresh scan.
+33. **Same-day re-run.** Two runs in one day. Expect: the second notices the board's last-checked dates are
+    today and asks whether the rep still wants to spend a fresh scan.
 34. **Broad-word trap.** Product focus is site furnishings. Expect: queries pair broad terms ("site
     furnishings," "picnic tables," "trash receptacles") instead of bare "site"/"table," and parking-lot or
     court-building results are excluded.
@@ -131,7 +143,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     "find leads for my county." The connector returns the literal `TERRITORY_PENDING` message ("Your
     territory isn't set up yet. Trampetti is loading it; your sources will appear here."). Expect: it stops
     the run — one plain line saying the territory is still loading and to try again later today or
-    tomorrow — with **no** web-search pass, **no** empty or thin lead list, and nothing written to the log.
+    tomorrow — with **no** web-search pass, **no** empty or thin lead list, and nothing written to the board.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

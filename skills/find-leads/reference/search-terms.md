@@ -36,8 +36,8 @@ connector run the pass is small; on the connector-missing route it's the whole s
 - **Multiple counties don't multiply the budget.** Combine counties into one query per category (e.g.,
   "Clark County Nevada OR Washoe County Nevada new park playground 2026"), not separate searches per county.
   If you have to prioritize or skip a county, say so plainly.
-- **Check the log's last-run date first.** If the rep already ran this today, say so and ask if they still
-  want to spend a fresh scan. Still run it if they say yes.
+- **Check the board's last-checked dates first.** If the rep already ran this today, say so and ask if they
+  still want to spend a fresh scan. Still run it if they say yes.
 - If the budget runs out before covering every county, **stop and report what you found**, and say plainly
   which counties weren't checked ("Didn't get to Columbia County this time — ask again to pick it up.")
   rather than silently skipping them.
