@@ -33,7 +33,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Claude checking your connections and setting up your profile and tools.
 
 7. Profile
-   Confirm your name, counties when the registry connector is available, product focus, and notes. If the registry connector is not available, give the counties you cover so Lead Finder has a fallback.
+   Confirm your name, counties, product focus, and notes. Counties come from the registry connector when it is connected; otherwise Claude reads your QuickBase county assignments. You only confirm or correct what it found.
    You should now see your saved profile.
 
 8. Smoke test

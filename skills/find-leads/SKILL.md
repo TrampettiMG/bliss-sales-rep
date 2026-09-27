@@ -16,23 +16,16 @@ tool, for a target the rep already has).
 
 ## Reference files — read these, don't re-derive them
 
-Six files sit alongside this one. Never paraphrase them or restate them from memory.
+Read these saved project files at the stated step. Their repo paths remain the `reference/...` paths shown below.
 
-- **`reference/stage-ladder-and-scoring.md`** — read at the **start of every run**, before you stage or score
-  anything. Holds the F1 stage ladder (0–7) and the F2 Bliss rubric, marked **interim** pending the bid team's
-  "what we look for" guide — say "interim" if the rep asks where the weights come from, and never present them
-  as final.
-- **`reference/lead-grading.md`** — read as soon as you have `lead_scan` hits in hand, and **before you report
-  anything that came out of `lead_scan`**. Holds the REAL/ROUTINE definitions, examples, and edge cases.
-- **`reference/qb-cross-reference.md`** — read **before the cross-reference step of any run**, and again when
-  a call fails because a table or field moved. Holds the resolve-and-cache procedure, what to search, and the
-  query rules that always hold.
-- **`reference/pdf-fallback.md`** — read **when `read_source` returns the scanned-PDF or large-PDF string**,
-  before that document goes on the closing list. Holds the download/extract/page-image ladder.
-- **`reference/search-terms.md`** — read when you build the search pass in step 3, and when you judge whether
-  a hit is relevant. Holds the grouped keyword list, the query traps, and the usage budget.
-- **`reference/board-reconciliation.md`** — read before you check or update the lead board, every run. Holds the
-  column-ownership map, the reconcile-by-lead rule, the stage-move heading, and write verification.
+- **`Lead Finder - Stages and Scoring.md`** (`reference/stage-ladder-and-scoring.md`) — at the **start of every run**, before staging or scoring; F1 ladder and interim F2 rubric.
+- **`Lead Finder - Lead Grading.md`** (`reference/lead-grading.md`) — as soon as `lead_scan` returns hits, before reporting them; REAL/ROUTINE definitions and edge cases.
+- **`Lead Finder - QuickBase Check.md`** (`reference/qb-cross-reference.md`) — before cross-reference, and when a table or field moved; resolve/cache procedure and query rules.
+- **`Lead Finder - PDF Fallback.md`** (`reference/pdf-fallback.md`) — when `read_source` returns a scanned-PDF, large-PDF, or unreadable-PDF fallback; download/extract/page-image ladder.
+- **`Lead Finder - Search Terms.md`** (`reference/search-terms.md`) — when building the search pass or judging relevance; keyword groups, query traps, and budget.
+- **`Lead Finder - Lead Board.md`** (`reference/board-reconciliation.md`) — before checking or updating the board; ownership, reconciliation, stage moves, and write verification.
+
+If a named file is not in the project, look in subfolders. If still missing, fetch `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/<file>.md`, save it under its named project-file name, then continue.
 
 ## What this is not
 
@@ -77,7 +70,7 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
 3. **Web search pass — only for counties with no readable source.** If `my_sources` shows every county in the
    rep's territory with at least one readable source, skip the search pass entirely and say so in one line.
    Run it only for counties the registry can't cover (no rows, or every row "open it yourself" / failed),
-   inside the usage budget in `reference/search-terms.md`. A county the registry covers with agendas gets its
+   inside the usage budget in `Lead Finder - Search Terms.md` (`reference/search-terms.md`). A county the registry covers with agendas gets its
    agendas read, not searched — that's the point of the registry.
 4. **Close with the "Couldn't read these, open them yourself" list** — every manual source, robots refusal,
    fetch failure, and unreadable document from steps 1–3, one line each: title, county, link, reason in a few
@@ -98,7 +91,7 @@ verify on the page."
 
 `lead_scan` matches a keyword list against whole agenda documents, so most hits are ordinary business that
 happens to contain one of the words. Server precision is roughly 30%. **Grade every hit yourself**, using
-`reference/lead-grading.md` for the full definitions and edge cases: **REAL** is a specific project,
+`Lead Finder - Lead Grading.md` (`reference/lead-grading.md`) for the full definitions and edge cases: **REAL** is a specific project,
 procurement, grant, bond, CIP, or budget line that could buy what Bliss sells (playground, shade structure or
 canopy, splash pad, surfacing, site furnishings, pavilion, bleachers, courts, fitness, trail amenities) at
 planning, funding, design, or bid stage; **ROUTINE** is minutes approvals, maintenance or repair of existing
@@ -113,7 +106,7 @@ was set aside, say "Set aside 0 routine items."
 
 ## Stage and score
 
-Read `reference/stage-ladder-and-scoring.md` before this step, every run.
+Read `Lead Finder - Stages and Scoring.md` (`reference/stage-ladder-and-scoring.md`) before this step, every run.
 
 - **Stage (F1):** give every REAL lead a stage number 0–7 from the ladder, on what the source actually shows —
   don't promote a lead on a guess. **Stage 7 is excluded automatically**: a lead that's already awarded, under
@@ -133,7 +126,7 @@ Read `reference/stage-ladder-and-scoring.md` before this step, every run.
 
 Every REAL lead is checked against QuickBase **before** it's shown as new. Tables are referenced by **name**,
 never by ID (this public skill file carries no QuickBase IDs): Opportunities, Quote Pipeline, Sales Reps,
-County Sales Teams. Read `reference/qb-cross-reference.md` before the cross-reference step of any run — it
+County Sales Teams. Read `Lead Finder - QuickBase Check.md` (`reference/qb-cross-reference.md`) before the cross-reference step of any run — it
 holds the resolve-and-cache procedure (IDs cached in the rep's `PROFILE.md` under a **QuickBase tables**
 section, nowhere else), what to search (the jurisdiction first, then any design firm or engineer named in the
 public document), and the query rules that always hold (`select`/`where`/`max_records`; group by the **Sales
@@ -153,7 +146,7 @@ worth surfacing — just not one to walk into cold.
 
 The tracker is `lead-board.xlsx` — the shared spreadsheet `my-new-leads` also keeps: one row per lead the rep
 has seen, the same columns, in the project folder. It replaces the old markdown log: never keep, start, or
-append to `find-leads-log.md`, and never start a second board. Read `reference/board-reconciliation.md` before
+append to `find-leads-log.md`, and never start a second board. Read `Lead Finder - Lead Board.md` (`reference/board-reconciliation.md`) before
 you check or update it, and follow it: look for the board anywhere in the project first, including a subfolder
 like `claude/`; reconcile by the underlying lead (same agency, project, and county — not the literal URL),
 never re-adding a known lead as new; update a stage move in place; refresh the current check date on the rows

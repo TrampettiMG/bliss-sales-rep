@@ -1,11 +1,12 @@
 # PDF fallback ladder — when `read_source` can't parse a document
 
-Read this when `read_source` returns either literal string:
+Read this when `read_source` returns any of these literal strings:
 
 - `scanned PDF: download it and read the page images`
 - `large PDF: open it yourself`
+- `PDF couldn't be read here: download it and extract the text`
 
-Both mean "the server can't parse this one, you try". For either, before giving up:
+All three mean "the server can't parse this one, you try". For any of them, before giving up:
 
 1. **Download the PDF and extract its text** (CoWork code execution). Many of these have a text layer the
    server can't parse, and the extraction works fine.

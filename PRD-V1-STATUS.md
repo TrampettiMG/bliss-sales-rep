@@ -2,7 +2,7 @@
 
 Branch: `prd-v1` from `main` at `8fa565a`.
 Head before Wave 4: `7809af9`.
-Push status: not pushed.
+Push status: pending Wave 5 completion.
 
 Commits before Wave 4:
 
@@ -13,16 +13,17 @@ Commits before Wave 4:
 
 Wave 4:
 
-- Removed the guide's QuickBase deep link and scrub exception; guide now explains the reworked skills and manual-open list.
-- Replaced `SETUP-CARD.md` and `TIER2-SETUP.md` with `SETUP.md` based on the 05 source.
-- Updated the guide's test cases and README.
-- `CLAUDE.proposed.md` holds the intended `CLAUDE.md` replacement. It is deliberately uncommitted for Claude to review and move into place.
+- `edbc7a7` — setup, guide, README, and status changes.
+- `6519dc8` — Claude-side connector detection, registry-first counties, QuickBase table cache template, and lead-board wording.
+- `90954c6` — Claude-side Lead Finder reference-file installation and update flow.
 
-What remains:
+Wave 5 in progress:
 
-- Claude reviews and applies `CLAUDE.proposed.md` to `CLAUDE.md`, then commits it.
-- Wave 5: final scrub, packaging, per-skill `TEST-CASES.md`, PR creation, and the exact implementation handoff.
+- SETUP profile wording now matches the registry-first, QuickBase-assignment fallback.
+- Lead Finder uses saved project-file names for all six references and fetches a missing one from its retained repo path.
+- PDF fallback recognizes the additional unreadable-PDF literal and tests its shared three-download cap.
+- Guide test coverage includes Ron and connection-degradation cases.
 
-Exact next step:
+Next:
 
-Wait for Claude's `CLAUDE.md` review-and-apply commit, then resume Wave 5 from this branch.
+- Commit, re-run the scrub and packaging checks, push `prd-v1`, open the PR to `main`, and write the implementation handoff.

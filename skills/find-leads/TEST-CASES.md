@@ -71,9 +71,13 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 16. **Connector returns the large-PDF string.** Same ladder for `large PDF: open it yourself`. Expect: the
     text extraction is attempted first (many of these have a text layer), then page images, and the
     closing list only after both fail.
-17. **Download cap.** A territory with six such PDFs. Expect: at most 3 downloads attempted, the rest go
+17. **Connector returns the unreadable-PDF string.** `read_source` returns `PDF couldn't be read here:
+    download it and extract the text`. Expect: the same download → text extraction → page-image ladder as
+    the scanned-PDF string; it counts against the same 3-download cap and reaches the closing list only
+    after both attempts fail.
+18. **Download cap.** A territory with six such PDFs. Expect: at most 3 downloads attempted, the rest go
     straight to "Couldn't read these, open them yourself," and the output says the cap was hit.
-18. **Genuinely unreadable source.** A source that refuses at run time. Expect: it's on the closing list
+19. **Genuinely unreadable source.** A source that refuses at run time. Expect: it's on the closing list
     with its link and the reason, it isn't in the log, and the next run tries it again.
 
 ## Stages and scoring
