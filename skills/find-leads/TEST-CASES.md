@@ -79,6 +79,13 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     straight to "Couldn't read these, open them yourself," and the output says the cap was hit.
 19. **Genuinely unreadable source.** A source that refuses at run time. Expect: it's on the closing list
     with its link and the reason, it isn't in the log, and the next run tries it again.
+20. **Connector returns "no readable text" on a PDF link.** `read_source` returns the empty-body
+    no-readable-text reason (or `lead_scan`'s footer reads `Couldn't read: <url> - no readable text; open
+    it yourself`) for a link that is a PDF. Expect: the same download → text extraction → page-image
+    ladder as the other PDF strings, counted against the same 3-download cap.
+21. **Connector returns "no readable text" on a non-PDF page.** Same reason, but the link is an HTML page
+    with no extractable text. Expect: no download attempt — it goes straight to the closing "Couldn't read
+    these, open them yourself" list.
 
 ## Stages and scoring
 
