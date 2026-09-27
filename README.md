@@ -1,58 +1,36 @@
 # Bliss Sales Rep
 
-A public GitHub repo a Bliss sales rep's Claude (Cowork) sets itself up from — one pasted message, no
-download, no folder picker. Built for the Bliss Products sales-rep AI training (Atlanta, ~Oct 2026).
+A public GitHub repo a Bliss sales rep's Claude (Cowork) sets itself up from with one pasted message. It supports the Bliss Products sales-rep AI training.
 
-**Confirmed mechanism (Stage A):** Cowork can't mount a folder from a repo URL, so setup is a single pasted
-message that has Claude fetch `CLAUDE.md` directly (`WebFetch`) and follow its instructions. Profile and
-fetched skill files are saved as project files, so setup only happens once per rep; every later chat in
-that project just works. See `SETUP-CARD.md` for the exact, tested steps.
+Cowork fetches `CLAUDE.md` directly, then saves the profile and skill files in the rep's project. Setup runs once; later chats use the saved files. See `SETUP.md`.
 
 ## What's here
 
-- `CLAUDE.md` — persona, house rules, first-run profile onboarding (self-deletes after first run; also has
-  Claude fetch and save each tool skill below).
-- `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 12 tools (Tier 1
-  tested end-to-end).
-- `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
-- `skills/` — the sales-rep tools (saved in a rep's project under friendly names like `Lead Finder.md` — see
-  the name table in `CLAUDE.md`), each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
-  verify it before rollout.
+- `CLAUDE.md` — house rules, first-run profile onboarding, connector checks, and tool fetch instructions.
+- `SETUP.md` — the one-page setup path for the rep.
+- `skills/` — 12 sales-rep tools. Each has a `SKILL.md` and `TEST-CASES.md`.
 
-## Tools — status
+## Tools
 
-Tier 1 (all reps, no connector, desktop):
+| Tool | What it does |
+|---|---|
+| `find-leads` | Finds, grades, stages, scores, and tracks public lead signals. |
+| `research` | Builds a cited reason-to-call dossier and public-role contacts. |
+| `prep-call` | Builds a short pre-call brief from known context. |
+| `draft-outreach` | Drafts outreach; never sends it. |
+| `make-content` | Builds one-pagers and pitch content. |
+| `summarize-bid` | Breaks down an uploaded bid packet. |
+| `guide` | Routes and explains. |
+| `log-update` | Turns notes into a paste-ready QuickBase update. |
+| `my-pipeline` | Reviews open opportunities. |
+| `my-new-leads` | Reviews unworked opportunities and the local lead board. |
+| `forecast-update` | Prepares forecast values for the grid. |
+| `quote-detail` | Reviews one quote's details. |
 
-| # | Tool | Status |
-|---|---|---|
-| 1 | `find-leads` | Built |
-| 2 | `research` | Built |
-| 3 | `prep-call` | Built |
-| 4 | `draft-outreach` | Built |
-| 5 | `make-content` | Built |
-| 6 | `summarize-bid` | Built |
-| — | `guide` | Built — rep-facing orientation/router, not one of the original 10, added per Nick's review |
+## House rules
 
-Tier 2 (installed for every rep during setup, but only works for pilot reps with the read-only QuickBase
-connector — see `TIER2-SETUP.md`, all owned by Vish; without the connector each replies with one plain
-sentence):
-
-| # | Tool | Status |
-|---|---|---|
-| 7 | `log-update` | Built, live-tested |
-| 8 | `my-pipeline` | Built (by Vish), live-tested |
-| 9 | `my-new-leads` | Built (by Vish), live-tested |
-| 10 | `forecast-update` | Built (by Vish), live-tested |
-
-## House rules worth knowing before adapting or adding a tool
-
-- **Never invent specifics** — about a prospect, a bid, or Bliss itself — beyond what the rep supplies or
-  what's already in the conversation. A rep-supplied quantitative claim gets used as given, with a
-  caution to double-check it, never refused and never fabricated independently. See `CLAUDE.md`.
-- **Drafts never auto-send.** Nothing in this repo sends, submits, or posts on a rep's behalf.
-- **Zero Bliss/Trampetti-internal data.** No customer records, no QuickBase field/table/app IDs, no
-  internal paths — this repo is public. Scrub before every push. A Tier 2 tool's skill file should talk
-  about "the QuickBase connector" generically; real field mappings live in the private connector, not here.
-  **One allowed exception:** the direct link to the Rep Forecast Current Period (or Before) report in
-  `skills/guide/SKILL.md` contains the app and table IDs. It's approved to stay because it only opens after
-  a QuickBase login — don't strip it during a scrub.
+- Never invent facts about a prospect, bid, or Bliss.
+- Nothing sends, submits, or posts on a rep's behalf.
+- This public repository contains no customer records, QuickBase IDs, internal paths, tokens, or credentials. Run the prescribed scrub before every push.
+- QuickBase tools are read-only. IDs resolve by table and field name on first use, then remain only in the rep's local `PROFILE.md`.
+- The registry connector reads public government sources. If it is missing, Lead Finder falls back to public web search.

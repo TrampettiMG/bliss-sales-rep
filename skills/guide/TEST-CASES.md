@@ -2,55 +2,20 @@
 
 Not shipped to reps — internal checklist for verifying the skill before rollout.
 
-1. **A plain-words tool-routing question.** Rep says something like "I found a company that just got a
-   parks grant, what do I do with that." Expect: `guide` names `research` (build a reason-to-call
-   dossier on that company) as the next step, with a one-line example of how to ask for it — it doesn't
-   try to research the company itself.
+1. "I found a company that just got a parks grant. What do I do with that?" Expect: route to Research Brief in one line; do not research it.
+2. "Where does my note go in QuickBase?" Expect: explain Today Opp Update and the report that shows it. No field IDs or direct QuickBase URL.
+3. "How does this whole thing work?" Expect: the three-step quick start, short and plain.
+4. "How do I check my pipeline?" from a rep without QuickBase. Expect: the exact QuickBase-not-connected sentence, then a fitting non-QuickBase route only if one exists.
+5. Rep pastes an RFP and asks "Can you tell me what's in this?" Expect: hand off to Bid Breakdown; do not summarize.
+6. "Get me ready for my call with Acme tomorrow." Expect: one question distinguishing a Call Prep brief from an Email Writer script.
+7. "What even is an Opportunity?" Expect: the file-folder explanation, not a deflection.
+8. "Why is there red text on my opportunity?" Expect: Revision Needed / Update Needed explanation, with no field IDs.
+9. "How do I copy an opportunity?" Expect: COPY tab and Copy Opp - Select Quotes, with the picture link and warning against the built-in duplicate command.
+10. "How do I move a quote to a different opportunity?" Expect: the Move Quote to Another Opportunity button and picture link.
+11. "How do I copy a quote to show a second option?" Expect: Copy Quote for this Opportunity and picture link.
+12. "What does Lead Finder do now?" Expect: it reads connected public sources, grades noisy hits before showing them, scores real projects, uses QuickBase only when connected, and keeps a local lead board.
+13. "Why did Lead Finder give me a list to open myself?" Expect: source access failed or the source was marked for manual opening; route the rep to open the listed links, not around the restriction.
+14. "What should I use after Lead Finder finds a project?" Expect: Research Brief for a cited project dossier and public-role contacts; Call Prep when they already have that context.
+15. "Can New Leads show what Lead Finder found?" Expect: it reconciles the latest Lead Finder results with `lead-board.xlsx`; it does not run a new territory scan.
 
-2. **"Where does my note go in QuickBase" question.** Rep asks something like "if I write a note about
-   a call, where does that end up?" Expect: a plain explanation of the Today Opp Update field (note
-   only, no date/name typed by the rep since QuickBase stamps those automatically), and where it's
-   seen/updated (the Rep Forecast Current Period (or Before) report). No field ID numbers anywhere in the answer.
-
-3. **"How do I even use this" / getting-started question.** A new rep asks "how does this whole thing
-   work" or "where do I start." Expect: the three-step quick start — say what you need in plain words,
-   everything back is a draft or a read-only report, ask `guide` if unsure which tool fits. Short, no
-   tool-by-tool walkthrough unless asked.
-
-4. **A QuickBase question from a rep without the connector.** A Tier 1-only rep asks "how do I check my
-   pipeline in here" (meaning `my-pipeline`, a QuickBase tool they don't have). Expect: the exact
-   graceful-degrade line other Tier 2 tools use — "This needs the QuickBase connection your trainer sets
-   up; it isn't on your account yet." — then a redirect to an everyday tool that fits what they actually
-   need (e.g., `research` or `prep-call` if it's really about getting ready for a customer).
-
-5. **A request that's really another tool's job in disguise.** Rep pastes an RFP/bid document into the
-   chat and asks "can you tell me what's in this." Expect: `guide` recognizes this as `summarize-bid`'s
-   job and hands off by name, rather than attempting to read or summarize the bid itself.
-
-6. **An ambiguous request that could map to more than one tool.** Rep says "get me ready for my call
-   with Acme tomorrow" with no other detail. Expect: `guide` asks one short clarifying question (a fuller
-   pre-call brief, which is `prep-call`, vs. a short script to read from, which is `draft-outreach`)
-   instead of guessing which one they meant.
-
-7. **A plain QuickBase-navigation question that isn't about the three tracked fields.** Rep asks something
-   like "what even is an Opportunity" or "how do I copy a quote to send to another customer." Expect:
-   `guide` answers from its own navigation know-how (the file-cabinet-folder framing, the blue COPY-tab copy
-   button, avoiding the native three-dot copy menu) rather than deflecting to "ask your trainer" — it
-   should only punt to the trainer for something genuinely more specific than what it's told to know, not
-   for a rep's most basic "how does this work" question.
-
-8. **"Why is there red text on my opportunity?"** Expect: the Revision Needed / Update Needed explanation —
-   it shows once a quote is Quoted to Customer and the opportunity is missing customer, contact, forecast
-   close date, confidence, cooperative contract, offer financing, or payment terms; the red text names
-   what's missing; it blocks moving the quote to Order Submitted; fill each named field (pick "N/A"/"No"
-   rather than leaving co-op or financing blank) and it clears on its own. Uses both names. No field IDs.
-
-9. **"How do I copy an opportunity?"** Expect: the COPY tab → blue "Copy Opp - Select Quotes" button, only Opportunity Name / Bid Type / Sales Rep 1 copy over, refresh (Ctrl+R), up to 30 seconds — plus the picture link. Warns off "Duplicate this Opportunity." Test in the Cowork test account that the GitHub picture link actually opens.
-
-10. **"How do I move a quote to a different opportunity?"** Expect: the yellow "Move Quote to Another Opportunity" button on the quote's Opportunity/Customer section, with the picture link. No field IDs.
-
-11. **"How do I copy a quote to show a second option?"** Expect: the purple "Copy Quote for this Opportunity" button on the quote, with the picture link; warns off More ▾ → "Copy this Quote."
-
-**What "fails gracefully" means for this tool specifically:** it never attempts another tool's actual
-work (drafting, researching, summarizing, reading QuickBase) — it only routes, explains, or hands off.
-If it isn't sure which of two tools fits, it asks rather than picking one silently.
+This tool fails gracefully by routing and explaining only. It never researches, drafts, summarizes, scans, or reads QuickBase itself.
