@@ -71,6 +71,9 @@ Tools to install (fetch each URL and save it as a project file with exactly the 
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `Forecast Helper.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → save as `Quote Details.md`
 
+Then fetch and save every file in the **Lead Finder reference files** list further down, the same way.
+Lead Finder doesn't work without them.
+
 (The last five are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
 sentence saying so.)
 
@@ -119,9 +122,19 @@ use when they mention each other). They mean the same tool.
 - When you run a tool, name it once, briefly, at the start (e.g., "Here's your Lead Finder scan, Andy.").
 - Older projects may have a tool saved as `skills/<short name>/SKILL.md` instead — same tool, use it.
 
+## Lead Finder reference files
+
+Lead Finder reads these at set steps. Save each one as a project file named exactly as shown:
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/lead-grading.md → `Lead Finder - Lead Grading.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/stage-ladder-and-scoring.md → `Lead Finder - Stages and Scoring.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/qb-cross-reference.md → `Lead Finder - QuickBase Check.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/pdf-fallback.md → `Lead Finder - PDF Fallback.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/search-terms.md → `Lead Finder - Search Terms.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/board-reconciliation.md → `Lead Finder - Lead Board.md`
+
 ## Keeping things up to date
 
-**Tools version: 2026-09-27a**
+**Tools version: 2026-09-27b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -131,6 +144,7 @@ use when they mention each other). They mean the same tool.
      `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
      replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md`
      copy gets replaced in place too; don't create a duplicate). Save a new tool as its project file name.
+     Then do the same for every file in the fetched **Lead Finder reference files** list.
   3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
      replace this file's contents with the rest.
   Never touch `PROFILE.md`, `lead-board.xlsx`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
