@@ -103,6 +103,14 @@ as new — then leave the log alone. Don't append to it, don't rewrite it.
 | Doc Date | the document date from `find-leads`; blank when there isn't one |
 | Last Checked | the date of the run that last checked this lead |
 
+Column definitions and field ownership are the responsibility of `find-leads`' board reference —
+`Lead Finder - Lead Board.md` (`reference/board-reconciliation.md`) — this table must match it exactly.
+
+**Don't overwrite the fields `find-leads` owns.** Agency, County, Project, Stage, Score, Source Link, and
+Doc Date are `find-leads`' fields. When this tool updates a row that already exists, touch only QB Status,
+Status, Contact, Next Action, and Last Checked — leave `find-leads`' fields as they are, except to fill one
+in that's blank. Never invent a value to fill a blank; leave it blank if you don't have a real one.
+
 **Status values are limited to these five, exactly — never a free-text status:**
 
 - **new** — the lead appeared on the board for the first time on this run and has no QuickBase record. It
@@ -152,7 +160,9 @@ Only then: "Saved your lead board — N leads, M rows changed."
    `quickbase-usage` skill — never hardcode realm/app/table IDs), customer, customer contact, days since it
    came in, lead source, and the suggested next step. Group them cold (90+ days), aging (30–90), recent
    (under 30) when there are many. New leads that reached the board from a `find-leads` run get one line
-   each too: county and agency, what happened, doc date, stage, score, source link.
+   each too: county and agency, what happened, doc date, stage, score, source link. Add a one-line source
+   cut across the fresh leads: how many came from each lead source (Park, PLAYCORE, Website, and so on),
+   with blanks under "(source not set)." Skip this if there are only a couple of fresh leads.
 3. **The board, when the rep asks to see it** — the same rows as a plain table, paste-ready.
 4. **"Saved your lead board — N leads, M rows changed."** — only after the readback above.
 5. No "bottom line," no strategy wrap-up.
