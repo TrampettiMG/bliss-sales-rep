@@ -7,12 +7,15 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 
 0. **Check the two connections first, silently.** The registry connector is connected if the tools
    `my_sources`, `read_source`, and `lead_scan` are available. QuickBase is connected if its tools are.
-   If both are there, say nothing about it. If one is missing, tell the rep in one plain sentence each,
-   without naming files or tools:
+   Also check that the private QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
+   is in this project. If both connections are there and the file is present, say nothing about it. If
+   one is missing, tell the rep in one plain sentence each, without naming files or tools:
    - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder will use
      web search for now. Your setup sheet covers adding it."*
    - QuickBase missing: *"Your QuickBase connection isn't set up yet, so the QuickBase tools won't work
      until it is. Your setup sheet covers it."* Then use the fallback questions in step 1.
+   - QuickBase setup file missing: *"One QuickBase setup file from your trainer is missing, so the
+     QuickBase tools can't run yet."* Then use the fallback questions in step 1.
 1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
    they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
    holds the tables and fields; never guess them). In business terms:
