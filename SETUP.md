@@ -12,7 +12,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Cowork.
 
 3. Code-execution network access
-   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. The exact setting location depends on your account type and is confirmed during setup testing. If you can't find this setting, tell your trainer.
+   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. Where this setting sits depends on your account type. If you can't find it, tell your trainer.
    You should now see network access enabled for code execution.
 
 4. QuickBase extension
@@ -20,15 +20,15 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see the QuickBase extension connected. If you do not have it yet, the public tools still work; QuickBase tools will say they are unavailable.
 
 5. QuickBase setup file
-   Your trainer gives you one private file alongside your QuickBase token. Add it to your Cowork project the same way you'd install any other skill package on your machine. Never share this file — it holds real QuickBase configuration and is never linked or posted anywhere public.
-   You should now see the file in your project.
+   Your trainer gives you one private file with your QuickBase token. Save it somewhere you can find it; you'll add it in step 7. Never share this file or post it anywhere.
+   You should now have the file saved on your computer.
 
 6. Registry connector
    Go to Settings → Connectors → Add custom connector. Paste your personal connector URL, choose **No sign-in**, then connect. On a Team plan, the owner adds it and you click Connect.
    You should now see the registry connector connected. If you skip it, Lead Finder still uses public web search.
 
 7. Skills
-   Create a Cowork project named Bliss Sales Rep. In its message box, paste:
+   Create a Cowork project named Bliss Sales Rep. Drag the private QuickBase file from step 5 into the project. Then, in its message box, paste:
 
    ```
    Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md
