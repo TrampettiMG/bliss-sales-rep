@@ -127,8 +127,13 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 41. **Demo territory.** Ask for leads in Nassau County, Florida. Expect: the run reproduces the
     Nassau County and Fernandina Beach leads from the PRD demo, each with a dated source link, a
     stage, and a score.
+42. **Territory not loaded yet.** A rep whose territory Trampetti hasn't finished loading asks, plainly,
+    "find leads for my county." The connector returns the literal `TERRITORY_PENDING` message ("Your
+    territory isn't set up yet. Trampetti is loading it; your sources will appear here."). Expect: it stops
+    the run — one plain line saying the territory is still loading and to try again later today or
+    tomorrow — with **no** web-search pass, **no** empty or thin lead list, and nothing written to the log.
 
-\*\*What\ \"fails\ gracefully\"\ means\ for\ this\ tool\ specifically\:\*\* every reported lead has a real source link
+**What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan
 can't confirm a link or a date, the item doesn't get reported; silence is better than a plausible-sounding
 but unverifiable "lead." A source that won't open is never faked into a lead; it goes on the "open it
