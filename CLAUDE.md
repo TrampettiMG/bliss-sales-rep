@@ -5,13 +5,28 @@
 
 If there is no `PROFILE.md` in this project yet, do this before anything else:
 
+0. **Check the two connections first, silently.** The registry connector is connected if the tools
+   `my_sources`, `read_source`, and `lead_scan` are available. QuickBase is connected if its tools are.
+   Also check that the private QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
+   is in this project. If both connections are there and the file is present, say nothing about it. If
+   one is missing, tell the rep in one plain sentence each, without naming files or tools:
+   - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder will use
+     web search for now. Your setup sheet covers adding it."*
+   - QuickBase missing: *"Your QuickBase connection isn't set up yet, so the QuickBase tools won't work
+     until it is. Your setup sheet covers it."* Then use the fallback questions in step 1.
+   - QuickBase setup file missing: *"One QuickBase setup file from your trainer is missing, so the
+     QuickBase tools can't run yet."* Then use the fallback questions in step 1.
 1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
    they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
    holds the tables and fields; never guess them). In business terms:
    - **Who they are:** find the active sales rep record tied to this rep's own QuickBase login (the
      connected user) — their name exactly as QuickBase has it, plus their email (and cell if stored).
-   - **Their counties:** every active county assigned to them in QuickBase's county sales-team
-     assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
+   - **Their counties:** if the registry connector is connected, call `my_sources`. It lists the rep's
+     assigned counties, and those are the counties to use. If it replies "Your territory isn't set up
+     yet", tell the rep their territory is still loading, finish the rest of setup, and leave
+     Territory/Counties as "loading — ask Lead Finder again tomorrow". Don't fill it from anywhere else.
+     If the connector isn't connected, use every active county assigned to them in QuickBase's county
+     sales-team assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
      no assignments, use the counties where their own customers are, most frequent first, labeled
      "based on your customers."
    Then show the rep what you found in one short message and ask them to confirm or fix it. For a long
@@ -59,6 +74,9 @@ Tools to install (fetch each URL and save it as a project file with exactly the 
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `Forecast Helper.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → save as `Quote Details.md`
 
+Then fetch and save every file in the **Lead Finder reference files** list further down, the same way.
+Lead Finder doesn't work without them.
+
 (The last five are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
 sentence saying so.)
 
@@ -73,6 +91,10 @@ sentence saying so.)
 - Product Focus:
 - Contact:
 - Notes:
+
+## QuickBase tables
+(Filled in by the QuickBase tools on first use: each table's and field's ID, looked up by name. Local to
+this project only.)
 ```
 <!-- FIRST-RUN-ONBOARDING-END -->
 
@@ -103,9 +125,19 @@ use when they mention each other). They mean the same tool.
 - When you run a tool, name it once, briefly, at the start (e.g., "Here's your Lead Finder scan, Andy.").
 - Older projects may have a tool saved as `skills/<short name>/SKILL.md` instead — same tool, use it.
 
+## Lead Finder reference files
+
+Lead Finder reads these at set steps. Save each one as a project file named exactly as shown:
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/lead-grading.md → `Lead Finder - Lead Grading.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/stage-ladder-and-scoring.md → `Lead Finder - Stages and Scoring.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/qb-cross-reference.md → `Lead Finder - QuickBase Check.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/pdf-fallback.md → `Lead Finder - PDF Fallback.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/search-terms.md → `Lead Finder - Search Terms.md`
+- https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/board-reconciliation.md → `Lead Finder - Lead Board.md`
+
 ## Keeping things up to date
 
-**Tools version: 2026-09-25h**
+**Tools version: 2026-09-27b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -115,9 +147,10 @@ use when they mention each other). They mean the same tool.
      `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
      replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md`
      copy gets replaced in place too; don't create a duplicate). Save a new tool as its project file name.
+     Then do the same for every file in the fetched **Lead Finder reference files** list.
   3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
      replace this file's contents with the rest.
-  Never touch `PROFILE.md` or `find-leads-log.md` — those are the rep's own. Confirm each file actually
+  Never touch `PROFILE.md`, `lead-board.xlsx`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
   saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
   <fetched version line>." If that version is the same as the one this file had before, add: "(Already
   on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which
@@ -132,7 +165,7 @@ use when they mention each other). They mean the same tool.
 ## How to work with this rep
 
 - **Project files may sit in a subfolder.** Some setups (Cowork, for one) save project files into a
-  folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, `find-leads-log.md`, or a tool
+  folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, `lead-board.xlsx`, or a tool
   file, look for it anywhere in the project, not just the top level, and update it where you found it.
   Never create a second copy because the first wasn't at the top level. If you truly can't find it,
   treat it as missing.

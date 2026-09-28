@@ -1,19 +1,115 @@
 # research — golden test cases
 
-Not shipped to reps — internal checklist for verifying the skill before rollout. 3-5 realistic inputs it has to handle.
+Not shipped to reps — internal checklist for verifying the skill before rollout. Cases are written as the
+plain ask a rep would type, with what a correct run looks like. Run each one from that single ask: no
+follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
-1. **Municipality target, chained off a find-leads result.** Rep runs `find-leads`, gets a signal about a specific city, then says "research that city." Expect: it reuses the city name/context already surfaced instead of re-asking, and digs deeper on that one place rather than re-scanning the whole territory.
+## Target identification and honesty
 
-2. **Named company, cold ask.** Rep says "research [a real company name] for me" with no other context. Expect: correct identification of the right entity, findings relevant to the rep's product focus, honest handling if the company has little public presence.
+1. **Municipality target, chained off a find-leads result.** Rep runs `find-leads`, gets a signal about a
+   specific city, then says "research that city." Expect: it reuses the city name/context already surfaced
+   instead of re-asking, and digs deeper on that one place rather than re-scanning the whole territory.
+2. **Named company, cold ask.** Rep says "research [a real company name] for me" with no other context.
+   Expect: correct identification of the right entity, findings relevant to the rep's product focus, honest
+   handling if the company has little public presence.
+3. **Named person, ambiguous name.** Rep asks to research a common first+last name with no organization
+   given. Expect: it asks for a disambiguating detail (their organization, county) rather than guessing and
+   potentially producing a brief on the wrong person.
+4. **Thin public presence.** Rep asks to research a small/obscure target with little to no public
+   information. Expect: an honest, short brief that says findings were limited — not a padded-out one that
+   reads as if real research happened.
+5. **Agency with a master plan and a grant.** Research a city whose parks master plan names a playground
+   renovation and which recently won a recreation grant. Expect: both appear in "Why call now," dated and
+   cited, with the grant's match or deadline if public — no invented amounts or timelines.
+6. **Ambiguous name settled by territory.** A rep covering Richmond city, VA asks "research Richmond parks."
+   Expect: goes with the City of Richmond, says so in one line, and offers the alternative (Richmond County)
+   — no other-state Richmond mixed in, no extra round-trip question.
 
-3. **Named person, ambiguous name.** Rep asks to research a common first+last name with no organization given. Expect: it asks for a disambiguating detail (their organization, county) rather than guessing and potentially producing a brief on the wrong person.
+## Usage budget
 
-4. **Thin public presence.** Rep asks to research a small/obscure target with little to no public information available. Expect: an honest, short brief that says findings were limited — not a padded-out one that reads as if real research happened.
+7. **Usage budget respected.** Count actual search calls on a normal run. Expect: roughly 6-8 total, not an
+   open-ended chase — and if the budget runs out, the brief says plainly what wasn't checked.
+8. **QuickBase read doesn't spend the search budget.** A municipality run with the cross-reference. Expect:
+   the QuickBase read is not counted against the 6-8 web searches, and the brief stays honest about which
+   searches were actually spent.
 
-5. **Usage budget respected.** Count actual search calls on a normal run. Expect: roughly 6-8 total, not an open-ended chase — and if the budget runs out, the brief says plainly what wasn't checked.
+## QuickBase cross-reference (F5)
 
-6. **Agency with a master plan and a grant.** Research a city whose parks master plan names a playground renovation and which recently won a recreation grant. Expect: both appear in "Why call now," dated and cited, with the grant's match or deadline if public — no invented amounts or timelines.
+9. **Jurisdiction first, then the design firm.** Rep researches a city where the jurisdiction alone doesn't
+   match QuickBase, but the design firm named in the public document does. Expect: it searches the
+   jurisdiction name first, then the design-firm/engineer name, and reports the hit found through the firm.
+10. **First use resolves and caches.** First run with the QuickBase extension connected. Expect: table
+    names (Opportunities, Quote Pipeline, Sales Reps, County Sales Teams) resolved to IDs and written into
+    `PROFILE.md` under a "QuickBase tables" section, with **targeted field-label lookups (one per table, no
+    full field dump)** — and no ID printed into any repo/skill file.
+11. **Second run reads the cache.** The next run. Expect: IDs read from `PROFILE.md`, no re-resolution.
+12. **Table names only in the skill.** Any run. Expect: the brief and its sources refer to tables by name
+    ("Opportunities," "Quote Pipeline"), never by a table ID — no QuickBase ID appears in the output.
+13. **Every call bounded.** Any cross-reference. Expect: every QuickBase call carries `select`, `where`, and
+    `max_records` — no whole-table scan.
+14. **Sales Rep link, not Record Owner.** A target with several opportunities. Expect: reps are grouped by
+    the **Sales Rep** link; "Record Owner" is never used.
+15. **UTC shown as Eastern.** A record whose timestamp is UTC. Expect: the time shown in the brief is
+    converted to Eastern Time, not left in UTC.
+16. **Confidence constrained to five values.** A record with a confidence figure. Expect: it appears only as
+    one of 0%, 25%, 50%, 75%, 99% — never rounded to something else, never invented when absent.
+17. **Target already in the pipeline.** A municipality with an open opportunity or quote. Expect: labeled
+    `in pipeline` with the record number, never presented as new.
+18. **Lost-before / won-before labels.** A city Bliss quoted and lost, and one it won, from public history.
+    Expect: `lost before` and `won before` respectively, each with the record number.
+19. **BLISS INVOLVED.** A public document naming "Play and Park Structures" as distributed by Bliss
+    Products. Expect: the target is labeled BLISS INVOLVED **ahead of** the cross-reference label, with one
+    line telling the rep to check with the rep of record rather than pitch it.
+20. **QB extension unplugged.** Same ask with QuickBase not connected. Expect: one clear "QuickBase isn't
+    connected" line, no label guessed, and the brief still delivered from public sources.
 
-7. **Ambiguous name settled by territory.** A rep covering Richmond city, VA asks "research Richmond parks." Expect: goes with the City of Richmond, says so in one line, and offers the alternative (Richmond County) — no other-state Richmond mixed in, no extra round-trip question.
+## Contact finder (F6)
 
-**What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded, confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific finding about this target.
+21. **The core roles.** A municipality lead. Expect: the parks director and purchasing agent (and city
+    manager where that's the decision-maker) are returned, each tied to the lead, each with the public page
+    it came from.
+22. **School-district lead.** A lead on a school district. Expect: the school facilities director is the
+    contact found, sourced from the district's own facilities page or an agenda/staff report.
+23. **Landscape architect only from a minute or contract approval.** A lead whose architect appears on the
+    firm's team page and in a council minute approving the design contract. Expect: the architect is
+    returned **only** because the council minute / contract approval names them — not because a directory
+    or team page lists them.
+24. **Architect not inferable.** A lead with a design firm named but no minute or contract approval naming
+    an individual. Expect: no architect is returned (and the brief says the role couldn't be sourced),
+    rather than naming someone from the firm's roster.
+25. **Source each contact.** Any contact returned. Expect: every one carries its source page — a government
+    staff directory, agenda/staff report, firm site, or a public search result that names the person.
+26. **No personal data.** A staff directory that also shows a personal cell for a parks director. Expect: it
+    is left out — only role-tied public contact info is used; no home address, personal phone, or personal
+    email appears.
+27. **No guessed email.** A municipality that publishes no email for the purchasing agent. Expect: no email
+    is shown and none is constructed from a first.last pattern.
+28. **No LinkedIn scraping.** A target where the only naming source is a LinkedIn profile. Expect: LinkedIn
+    is not scraped; if no allowed public page names the person in the role, the role isn't listed.
+29. **Thin contacts.** A small agency with no public directory. Expect: the Contacts section says none were
+    sourced — it does not invent a title or a name.
+
+## Degradation and output
+
+30. **Connector/unplugged note for the brief.** A `research` run where a public page can't be read (blocked
+    or thin). Expect: the brief still delivers from what could be read and says plainly what wasn't — no
+    fabricated page as a substitute.
+31. **Output order.** Any municipality/agency run. Expect, in order: Header, QuickBase cross-reference (or
+    the single "QuickBase isn't connected" line), Contacts, Why call now, Suggested opener — and nothing
+    after the opener (no bottom line, no strategic take).
+32. **Facts vs. advice.** A finding where design is still open. Expect: "design is still open" as a fact —
+    never "a good time to pitch" framed as advice or a pursue/pass verdict.
+
+## Base-spec gate tests
+
+33. **Ron test.** A rep's first plain ask — "research the city of [X]" — with no further setup. Expect: the
+    full brief completes from that one ask, the only question being the first-run profile fill.
+34. **QB extension unplugged → F5 says so.** The base-spec "QB extension unplugged" gate, applied here.
+    Expect: F5 says "QuickBase isn't connected" rather than guessing — never a made-up status.
+35. **Connector unplugged (not applicable to this skill's data path).** The base-spec "connector unplugged"
+    gate is `find-leads`'s; `research` reads public pages directly. Expect only that if a page is blocked or
+    unreadable, the brief says so and doesn't fake it — no reliance on the registry connector is implied.
+
+**What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
+confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific
+finding about this target — and never a guessed contact, status, or email.
