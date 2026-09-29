@@ -1,102 +1,83 @@
 ---
 name: prep-call
 description: >-
-  Build a pre-call brief for a customer or prospect the rep is about to call — talking points, open
-  items, and likely objections. Use when the rep says "prep me for a call with...", "pre-call brief
-  for...", "what should I know before calling...", or names someone they're about to talk to and what
-  they already know about the situation. If a `research` dossier for the target is already in the
-  conversation, pull its contacts and findings into the brief instead of re-researching. Not for writing
-  something to send — "follow up on…", "write / draft an email…", "email them about…" go to
-  `draft-outreach`, even right after a prep-call brief.
+  Build a short, glanceable call brief from a Research Brief, the rep's own context, and a read-only
+  QuickBase quote lookup when needed. Use when the rep says "prep me for a call", "prep me for #2",
+  "pre-call brief for...", "what should I know before calling...", or names someone they are about to call.
+  If no Research Brief is already in the conversation, run it first quietly and show only the call prep.
+  "Draft a follow-up" or anything to send goes to the Email Writer.
 ---
 
 # Call Prep
 
-Turn what the rep already knows about a customer/prospect into a short brief to glance at right before
-calling them: what to bring up, what's still unresolved, and what pushback to expect.
+Build a short, glanceable brief for a call. Call Prep is built on the Research Brief: the brief supplies the
+facts, contacts, Bliss history, similar jobs, nearby references, bid winners, and Why call now findings. Add
+only what the rep says and the one permitted read-only QuickBase quote lookup.
 
-**vs. `draft-outreach`:** that tool's call script is a short opener for a cold or lightly-touched
-prospect. This tool is the fuller brief for a call where there's real context or history to prepare for.
-If the rep just wants a couple of lines to say on a cold call, `draft-outreach` is the better fit.
+**vs. `draft-outreach`:** Call Prep is the fuller pre-call brief. The Email Writer drafts an email or a short
+call script to send or say. Never send, submit, or write anything from Call Prep.
 
 ## What this is not
 
-This is a synthesis tool, not a research or fact source. It never invents specifics about the customer —
-their history, prior conversations, budget, or plans — beyond what the rep tells it or what's already in
-the conversation (a `research` brief/dossier, a `summarize-bid` breakdown, a `find-leads` result just
-discussed). If the rep hasn't given enough to work with, ask what they know rather than guessing.
+This is a synthesis tool, not a second research pass. Never invent a contact, project detail, budget, timeline,
+quote status, competitor, price, or Bliss capability. Follow the `quickbase-usage` skill for any QuickBase query
+(it holds the tables and fields; never guess them). QuickBase is read-only here.
 
-**When a `research` dossier for this target is already in the conversation**, that dossier is the source of
-truth: pull its **Contacts** and its **Why call now** facts into the brief rather than re-researching, and
-don't add any fact the dossier doesn't carry. See **Reusing a research dossier** below.
+General sales patterns belong only in **Likely objections**, and each one is labeled general unless the Research
+Brief or the rep supplied the specific fact. Response angles must not assume what is in the quote or what Bliss
+offers; say "walk through what your quote includes" rather than naming unconfirmed inclusions.
 
-The **likely objections** section is the one place general sales judgment is expected and appropriate —
-common pushback patterns (budget timing, "we already have a vendor," competing priorities, decision-maker
-isn't on the call) are fine to suggest even when the rep hasn't mentioned them, since that's the point of
-the section. Label it as a general pattern, not something specific to this customer, unless the rep or the
-conversation actually said the customer raised it before.
+## Cost and source rule
+
+A prep without a Research Brief in the conversation costs about one Research Brief because Call Prep runs it
+first. A prep with the brief already present costs nearly nothing extra. With a brief present, do not re-research,
+run new web searches, or add new QuickBase lookups on the target.
 
 ## Flow
 
-1. **Gather what the rep knows.** Ask (if not already given): who they're calling, and what they already
-   know — prior conversations, where things stand, what they want out of this call. Pull in anything
-   already sitting in the conversation from another tool (a bid summary, a `research` dossier, a lead)
-   instead of re-asking for it.
-   **If the rep mentions a quote or opportunity of theirs** ("my playground quote to Chesterfield") and
-   the QuickBase connection is set up, look it up first instead of asking about it: pull the rep's open
-   opportunities the way the Pipeline Check tool file does (its "Whose opportunities" section), and match
-   on the customer and what the rep described. If exactly one matches, use its customer, status, value,
-   date created and forecast close date as known facts, and ask only for what QuickBase doesn't hold
-   (who they're calling, past conversations, what they want from the call). If several match, list them
-   in one line each and ask which. If none match or QuickBase isn't connected, just ask as above — say
-   **"QuickBase isn't connected"** once when that's the reason, and never guess a status. Read only —
-   never write to QuickBase.
-   If a Lead Finder result already carries a QuickBase label, use that label as known context for the brief
-   instead of asking the rep to repeat it; keep the brief read-only and factual.
-2. **Read `PROFILE.md`** for the rep's product focus and territory, to keep talking points relevant to
-   what they actually sell.
-3. **Reuse a research dossier if there is one** (see below) — its contacts and findings feed the talking
-   points and open items. This is a pull, not a re-research.
-4. **Build the brief, three short sections:**
-   - **Talking points** — what to bring up on this call, grounded in what the rep described (the
-     situation, the product fit, anything time-sensitive like a bid deadline or site visit). Where it fits
-     the situation, include: how the project is funded and when (a grant, bond, or budget year —
-     only if known from the conversation or a `research`/`find-leads` result); whether they plan to bid it
-     or buy another way — mention a specific cooperative contract only if the rep says Bliss holds it;
-     and for a quote already sent, confirm it's still active and what's holding the decision. When a
-     dossier is in play, carry its sourced contacts into the points (who the decision-maker is, and
-     anything the dossier surfaced) — pulled from the dossier, never invented.
-   - **Open items** — anything unresolved from what the rep described: a quote they owe, a question the
-     customer asked, a decision still pending, a follow-up they promised. A dossier's open threads (an
-     architect named only in a contract approval, a decision-maker not yet confirmed) can be an open item.
-     If the rep didn't mention any, say "None mentioned — ask if there's anything outstanding" rather than
-     inventing one.
-   - **Likely objections** — 2-4 objections this kind of call commonly gets, each with a short response
-     angle. Grounded in the situation where possible (e.g., a named competitor from a bid summary), general
-     sales patterns otherwise — labeled as such. The common ones in playground/park sales: "another brand
-     is already specified," "we have to put it out to bid," "your price is higher," "no budget until next
-     fiscal year," and "we need it installed by a fixed date." Pick only the ones that fit this call.
-     Response angles must not assume what's in the rep's quote or what Bliss offers (installation,
-     surfacing, a warranty, a co-op contract) unless the rep said so — say "walk through what your quote
-     includes," not a list of inclusions.
-5. **Keep it short** — this is a glance-at-before-dialing brief, not a full account history. Aim for 3-4
-   talking points, 1-3 open items, and 2-4 objections, one line each (a sub-bullet only when it carries
-   a specific fact, like a project name or date). Don't repeat a point across sections or list two
-   objections that are really the same one (e.g., "budget is tight" and "no money until next fiscal
-   year") — merge them.
-6. If the rep gives more context mid-conversation ("oh, they also mentioned X"), fold it in and regenerate
-   rather than leaving it out.
+1. **Use the Research Brief if it is already in the conversation.** Treat it as the source of truth. Carry
+   forward its buyer, project, scope, budget, stage, source, QuickBase label, Contacts, Bliss history and bid
+   context, Similar jobs elsewhere, Past customers nearby, Who won their past bids, and Why call now findings.
+2. **If there is no Research Brief, run the Research Brief first, quietly.** Follow `research` exactly: its
+   target resolution, budget, Bliss Library-first path, QuickBase sections, contacts, and output rules. Do not
+   show the research output; show only the Call Prep. To keep the cost down, run it in its lighter form: similar
+   jobs from won jobs only, 3 results; at most 4 web searches. Resolve a Lead Finder handoff such as "prep me for #2"
+   from that result, or use the name and context the rep gives. Ask only if `research` would ask.
+3. **Add the rep's context.** Use past conversations and what the rep wants from this call. If the rep mentions
+   their own quote or opportunity and QuickBase is connected, look it up read-only using the existing quote
+   lookup path and follow the `quickbase-usage` skill for the query. If exactly one match is found, use its
+   customer, status, value, dates, and forecast close date as known facts; if several match, list them and ask
+   which one; if none match, ask only for what is missing. If QuickBase is not connected, say
+   "QuickBase isn't connected" once and never guess a status.
+4. **Build the prep.** Every fact comes from the Research Brief, that permitted QuickBase lookup, or the rep.
+   Keep it to one line per item where possible and make it glanceable.
+5. **If the rep adds context later, regenerate the same prep** rather than starting a new research pass.
 
-## Reusing a research dossier
+## Output shape
 
-If a `research` brief or dossier on this target is already in the conversation, it's the handoff source —
-use it, don't redo it:
+Return these items in this order:
 
-- Pull its **Contacts** (the sourced public-role names) into the talking points and open items, and its
-  **Why call now** facts into the talking points.
-- **Do not re-research and do not add facts.** No fresh searches, no new QuickBase lookups on the target,
-  and nothing the dossier doesn't carry. If the brief needs something the dossier lacks, ask the rep or
-  send them back to the `research` tool rather than filling the gap yourself.
-- If there's no dossier in the conversation, the brief is built from what the rep says (and the optional
-  QuickBase quote lookup in step 1) as before. If the rep is about to call a fresh prospect with nothing
-  on file, say so and offer the `research` tool first — don't manufacture context.
+- **Who you're calling** — contact name, role, and source from the Research Brief's Contacts, plus the
+  QuickBase status from the brief or permitted quote lookup, such as "in pipeline · quote number · confidence ·
+  close date." If the rep's own opportunity in QuickBase lists a contact, that counts as a source too (say
+  "from your opportunity"). If no sourced contact exists, write: "No contact found. Ask who owns this project."
+- **Talking points** — 3–4 lines from Why call now, scope fit with the rep's product focus, and anything
+  time-sensitive such as a bid date or design start. If the rep's own quote states a deadline in its terms
+  (e.g. "valid through Oct 15" or a free-freight window), include it: it's often the most useful fact for the
+  call. Money is the quote's Grand Total incl. tax. Do not add a fact the brief or the quote doesn't carry.
+- **References to mention** — 2–3 lines using only jobs listed in Similar jobs elsewhere or Past customers
+  nearby: buyer, scope, size labeled Grand Total incl. tax, and date. If there are none, write: "No references
+  found in the brief."
+- **Questions to ask** — 3–4 lines only about what the Research Brief could not find, such as design start,
+  bid versus co-op, decision-maker, install date, or whether the budget is confirmed. Never ask for something the
+  brief already answers.
+- **Open items** — 1–3 lines from Bliss history with this buyer and the rep's words: an open quote, a recorded
+  past close worth raising, or something the rep owes. Show status and recorded reason exactly as stored; never
+  call `Close - Multiple Alternative` a loss. If none: "None found. Ask if anything's outstanding."
+- **Likely objections** — 2–4 lines, each with a short response angle. If Who won their past bids names a past
+  winner, use that sourced fact (for example, "They've bought from [vendor] before"). Otherwise label the line
+  general. Never assume what the rep's quote contains or what Bliss offers.
+- Closing line: "Say 'show the full research' for the whole brief, or 'draft a follow-up' for the Email Writer."
+
+If the rep says "show the full research" afterward, show the Research Brief that was built before this prep.
+Do not add a bottom line, recommendation, or strategic take.
