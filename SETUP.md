@@ -1,6 +1,6 @@
 # Bliss Sales Rep setup
 
-Follow these steps in order. Your trainer provides your QuickBase token and your personal registry connector URL. Do not share either.
+Follow these steps in order. Your trainer provides your QuickBase token and your registry key. Do not share either.
 
 1. Account
    - If your trainer invited you to a Business account, accept the invite.
@@ -24,7 +24,27 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now have the file saved on your computer.
 
 6. Registry connector
-   Go to Settings → Connectors → Add custom connector. Paste your personal connector URL, choose **No sign-in**, then connect. On a Team plan, the owner adds it and you click Connect.
+   1. In Claude Desktop, go to Settings → Connectors → Add custom connector.
+   2. Name: `Bliss Lead Registry`
+   3. URL: `https://bliss-lead-registry.trampetti.com/mcp`
+   4. Leave every other field blank. Click Add.
+   5. Claude opens a web page titled "Bliss Registry: enter your key".
+   6. Paste the key from your trainer. You only do this once.
+   7. Click Connect.
+   8. You land back in Claude with the connector connected.
+   9. Test it. Open a new chat and ask Claude: "run my_sources".
+   10. You should see the counties you cover.
+   11. If you see "Your territory isn't set up yet", tell your trainer.
+
+   The connector gives Claude three tools: `my_sources`, `read_source`, and `lead_scan`.
+
+   If something goes wrong:
+   - The page says the link expired: start again from step 1 above.
+   - The page says "Paused by Trampetti": the tool is paused. Try again later.
+   - Your key doesn't work: ask your trainer for a new one.
+
+   Still stuck? Contact Nick Ambrose first, then Mike Trampetti.
+
    You should now see the registry connector connected. If you skip it, Lead Finder still uses public web search.
 
 7. Skills
