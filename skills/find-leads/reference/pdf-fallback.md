@@ -4,8 +4,8 @@ Read this when `read_source` returns any of these literal strings:
 
 - `scanned PDF: download it and read the page images`
 - `large PDF: open it yourself`
-- `PDF couldn't be read here: download it and extract the text` (an upcoming connector string — not live
-  yet, but wired here so it works the day it ships)
+- `PDF couldn't be read here: download it and extract the text` (live: the connector returns this
+  today)
 - `no readable text` — this is `read_source`'s empty-body result, and the same reason shows up in
   `lead_scan`'s footer as `Couldn't read: <url> - no readable text; open it yourself`.
 
@@ -23,7 +23,7 @@ The first three always mean "the server can't parse this one, you try" — befor
   goes straight to the closing "Couldn't read these, open them yourself" list.
 
 **Respect the site's robots.txt, always.**
-- **The connector refused for robots:** if `read_source` or `lead_scan` says `blocked by the site's robots.txt: open it yourself`, don't download it. It goes straight to the closing list. The rep can open it in their browser.
+- **The connector refused for robots:** if `read_source` or `lead_scan` says the site's robots.txt disallows the path (live wording: `robots.txt for <site> disallows this path; open it yourself`), don't download it. It goes straight to the closing list. The rep can open it in their browser.
 - **Before any download above:** fetch `https://<site>/robots.txt` first. If it disallows that path for all automated readers (`User-agent: *`), don't download; put it on the closing list instead.
 - **Never work around a robots block.**
 

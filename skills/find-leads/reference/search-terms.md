@@ -1,17 +1,17 @@
 # Search terms, grouping, and the usage budget
 
-Read when you build the search pass (reading-order step 3) and when you judge whether a `lead_scan` hit or a
-search result is relevant. SKILL.md carries the flow; this file carries the keyword list, the query traps,
-and the search budget.
+Read when choosing literal `read_source` terms, judging whether a connector result is relevant, or enriching
+an existing lead. SKILL.md carries the flow; this file carries the keyword list, the query traps, and the
+small web-enrichment budget.
 
 ## The grouped keyword list
 
-The same grouped list is what the connector matches on — a hit that matched one of these groups is a keyword
-hit, not a graded lead until you grade it.
+The same grouped list is what the connector matches on. A hit that matched one of these groups is a connector
+signal to grade, not a finished lead until you confirm a specific project and stage.
 
-Use these to build each category's query and to judge relevance. **Never run one search per term** — that
-blows the budget below. Pick the 3-5 terms that best fit the rep's product focus and combine them with OR
-(e.g., `"playground" OR "splash pad" OR "shade structure"`).
+Use these to choose the 2–3 single terms that best fit the rep's product focus for `read_source`. **One
+literal phrase per call; never use `OR`.** The connector's query trap is real: `playground OR shade
+structure` is not an OR search.
 
 - **Play:** playground, inclusive playground, accessible / ADA playground, play structure, swings, splash
   pad, spray park, spray ground, dog park, skate park
@@ -26,21 +26,17 @@ blows the budget below. Pick the 3-5 terms that best fit the rep's product focus
 - **Parks & trails:** park improvements, park renovation, park amenities, trail, pedestrian bridge,
   campground, pier
 
-## Usage budget — most reps are on a standard/basic Claude plan
+## Web enrichment budget
 
-Web searches count against the rep's own usage limits. The registry steps cost no search budget, so on a
-connector run the pass is small; on the connector-missing route it's the whole scan. Stay disciplined:
+Web search is enrichment only: it can fill a missing contact or buyer name, bid due date or bid page,
+pre-bid information, or newer news on the same connector lead. It never creates or replaces a lead.
 
-- **Cap it at roughly 2 searches per category per run** (about 10 total) — one broad search, one narrower
-  follow-up only if the first looked promising. Don't chain searches chasing a thin lead.
-- **Multiple counties don't multiply the budget.** Combine counties into one query per category (e.g.,
-  "Clark County Nevada OR Washoe County Nevada new park playground 2026"), not separate searches per county.
-  If you have to prioritize or skip a county, say so plainly.
-- **Check the board's last-checked dates first.** If the rep already ran this today, say so and ask if they
-  still want to spend a fresh scan. Still run it if they say yes.
-- If the budget runs out before covering every county, **stop and report what you found**, and say plainly
-  which counties weren't checked ("Didn't get to Columbia County this time — ask again to pick it up.")
-  rather than silently skipping them.
+- Search only the top-scored leads that have a missing detail, about 1–2 searches per lead and roughly 6 total
+  per run.
+- Skip enrichment when nothing is missing. If library and web facts disagree, show both and say so; cite the
+  web source separately from the library source.
+- If the budget runs out, stop and say which lead details were not checked. Never use the budget to hunt for
+  another county or a separate lead.
 
 ## Traps to avoid
 

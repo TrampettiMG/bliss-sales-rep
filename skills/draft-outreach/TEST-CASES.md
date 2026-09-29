@@ -21,3 +21,16 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 9. **No invented history in the clarifying question.** Earlier in the chat, `research` surfaced a playground project. Rep asks for an email with no quote named. Expect: "Which quote is this about?" — never "a quote you already sent, like [the research project]."
 
 **What "fails gracefully" means for this tool specifically:** if there's not enough specific context to personalize a draft (no prospect name, no situation described), ask one short question rather than producing a generic template dressed up as personalized, or inventing plausible-sounding prospect details.
+
+10. **Quote-only follow-up.** A Lead Finder result names a fictional customer and job with a QuickBase quote
+    but no opportunity. Expect: Email Writer finds the quote by customer plus job name, uses its details, and
+    does not invent an opportunity or fall back to a blank placeholder.
+11. **Lead label — in pipeline and yours.** Expect: an open-quote follow-up referencing the new public signal,
+    without asking the rep to choose the type.
+12. **Lead label — lost before.** Expect: a re-engagement email around the new signal, never implying the old
+    quote is still open.
+13. **Lead label — won before.** Expect: a past-customer check-in about phase two, another site, or surfacing,
+    never a "still moving?" follow-up.
+14. **Lead label — new.** Expect: an intro email.
+15. **BLISS INVOLVED or another rep's open job.** Expect: no draft; one line says to check with the rep of
+    record first.

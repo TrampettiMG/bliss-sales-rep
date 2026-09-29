@@ -10,8 +10,8 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    Also check that the private QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
    is in this project. If both connections are there and the file is present, say nothing about it. If
    one is missing, tell the rep in one plain sentence each, without naming files or tools:
-   - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder will use
-     web search for now. Your setup sheet covers adding it."*
+   - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder won't work
+     until it is. Your setup sheet covers adding it."*
    - QuickBase missing: *"Your QuickBase connection isn't set up yet, so the QuickBase tools won't work
      until it is. Your setup sheet covers it."* Then use the fallback questions in step 1.
    - QuickBase setup file missing: *"One QuickBase setup file from your trainer is missing, so the
@@ -137,7 +137,7 @@ Lead Finder reads these at set steps. Save each one as a project file named exac
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-27b**
+**Tools version: 2026-09-30b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

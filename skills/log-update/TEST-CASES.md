@@ -37,3 +37,7 @@ are the generic patterns that pull found, not the real data itself.
 plain sentence and a suggestion to retry. The final output is always labeled as a draft the rep pastes
 themselves; the tool never claims to have written anything to QuickBase, and it never treats a rep's own
 raw material as license to invent details beyond what's actually in it.
+
+7. **Quote-only job.** A fictional customer and job exist in QuickBase only as a quote, with no opportunity.
+   Expect: the tool says there is no opportunity to log against yet and the rep must create one first or ask
+   their trainer, while still producing the clean note as a ready-to-paste draft.

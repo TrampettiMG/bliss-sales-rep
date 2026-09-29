@@ -79,6 +79,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 21. **Connector unplugged (not applicable).** The base-spec "connector unplugged" gate is `find-leads`'s;
     `prep-call` is a synthesis tool and reads no registry sources. Expect nothing beyond the rule that it
     never invents context when the registry or QuickBase is absent.
+22. **Lead Finder label already in context.** A Lead Finder result carries `in pipeline`, `won before`, or
+    `BLISS INVOLVED`. Expect: Call Prep uses the label as known context without asking the rep to repeat it, and
+    keeps the brief factual and read-only.
 
 **What "fails gracefully" means for this tool specifically:** when context is thin, the brief should look
 thin and general — not confidently specific. A generic-but-honest brief beats a specific-but-fabricated

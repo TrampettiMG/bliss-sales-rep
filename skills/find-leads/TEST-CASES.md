@@ -37,11 +37,11 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
 10. **Normal connector run.** Rep asks "what's new in my territory" with the registry connector
     connected. Expect: `lead_scan` runs first; then `my_sources` → `read_source` on agendas, then the CIP,
-    then the budget — in that order; and **no** web search, because every county has a readable source
-    (it should say why the search pass was skipped).
-11. **One county the registry can't cover.** `my_sources` has no readable row for one county in the
-    territory. Expect: a search pass for **that county only**, and the other counties read from the
-    registry.
+    then the budget — in that order. Leads come only from those connector results; web search is not used
+    unless a top lead is missing an enrichment detail.
+11. **One county has no library sources.** `my_sources` has no row for one county in the territory. Expect:
+    no web lead search for that county; it appears in the gaps list as "no library sources for [county] yet —
+    tell your trainer," while the other counties are read from the registry.
 12. **Focus Counties respected.** Profile lists focus counties in a rep whose territory is wider. Expect:
     only the focus counties are scanned, no metro/region widening, and the coverage line names each one,
     including "nothing new" for the empty ones.
@@ -126,11 +126,11 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
 ## Degradation, budget, and output
 
-39. **Connector unplugged.** Ask with no registry connector. Expect: it skips the connector steps, runs
-    the search pass for all counties, and says **once** that the registry connector would read the rep's
-    sources directly.
-40. **Usage budget respected.** A connector-missing run. Expect: roughly 2 searches per category (~10
-    total), and if the budget runs out it names the counties/categories not reached.
+39. **Connector unplugged.** Ask with no registry connector. Expect: one sentence saying Lead Finder needs
+    the Bliss Library connection and the trainer sets it up, then it stops — no web search and no board write.
+40. **Enrichment budget respected.** A connector run with missing details on several top leads. Expect: web
+    search only for those existing leads, about 1–2 searches per lead and roughly 6 total; if the budget runs
+    out it names the lead details not checked, never a county or a new web lead.
 41. **Same-day re-run.** Two runs in one day. Expect: the second notices the board's last-checked dates are
     today and asks whether the rep still wants to spend a fresh scan.
 42. **Broad-word trap.** Product focus is site furnishings. Expect: queries pair broad terms ("site
@@ -160,7 +160,50 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     "find leads for my county." The connector returns the literal `TERRITORY_PENDING` message ("Your
     territory isn't set up yet. Trampetti is loading it; your sources will appear here."). Expect: it stops
     the run — one plain line saying the territory is still loading and to try again later today or
-    tomorrow — with **no** web-search pass, **no** empty or thin lead list, and nothing written to the board.
+    tomorrow — with **no** web search, **no** empty or thin lead list, and nothing written to the board.
+
+51. **Literal `read_source` queries.** A readable CIP returns no useful matches for `playground OR shade`
+    but returns hits for `playground`. Expect: one literal phrase per call, no OR query, duplicate/boilerplate
+    hits skipped, and the total `read_source` calls capped at about 12.
+52. **Blocked agenda scan.** A fictional county's `lead_scan` returns 0 leads and most agendas are blocked;
+    it also includes an irrelevant advisory board. Expect: "agendas were not checked," not "nothing new";
+    no next cursor means complete, and only governing/parks-board failures appear in the closing list.
+53. **QuickBase jurisdiction matching.** A fictional city is stored under an all-caps city name and also has
+    its own parks-department customer record. A school, contractor, and same-city architect also match the
+    text. Expect: the city or its own department counts; the others are only brief related notes, and a shared
+    billing city alone does not count. A same park name in another state and any TEST record are ignored.
+54. **Status before label.** A fictional open opportunity has one matching quote marked Invoiced. Expect:
+    `won before`, not `in pipeline`. A closed quote with an ambiguous close status shows that raw status after
+    `lost before`; if it says an alternative was chosen, nearby quotes are checked for a won one.
+55. **Freshness follows QuickBase.** A stale fictional lead has an open same-job quote from within the last
+    year. Expect: it survives as `in pipeline`; stale leads with only `lost before` or `won before` matches are
+    dropped.
+56. **Far-future money.** A fictional FY2027 plan has design money first in FY2031. Expect: the score reason
+    notes funding planned three or more fiscal years out and scores the funding factor lower without changing
+    the stage ladder.
+57. **Stale library edition.** A library link for a fictional county has a fiscal year two or more years old.
+    Expect: it is not a lead and the output includes "The library's link for [entity] [doc type] looks out of
+    date. Tell your trainer."
+58. **Label handoff.** A selected lead is passed to Email Writer. Expect: the handoff includes its label and
+    record number along with what, when, stage, and source; `BLISS INVOLVED` or another rep's open job is not
+    drafted cold.
+59. **Web search never creates a lead.** A web result finds a fictional county playground project that does
+    not appear in `lead_scan` or a library document. Expect: it is not reported, staged, scored, or written to
+    the board.
+60. **Enrichment fills a missing due date.** A connector lead for fictional Pine Ridge has no bid due date;
+    one web search finds the bid page. Expect: the lead remains sourced to the library, the due date is added,
+    and the web page is cited separately as enrichment.
+61. **Web contradicts the library.** A library CIP gives fictional Oakview's project date as FY2028, while a
+    newer web page says FY2029. Expect: both facts and both sources are shown with the disagreement stated; the
+    library fact is not silently replaced.
+62. **No library source means a gap.** A fictional county has no `my_sources` rows. Expect: no lead is made
+    from web results; the closing list says "no library sources for [county] yet — tell your trainer."
+63. **Single-term connector queries.** A fictional CIP has useful hits for `playground` but none for
+    `playground OR shade structure`. Expect: one literal phrase per `read_source` call, no OR query, and the
+    best 2–3 terms chosen within the roughly 12-call connector cap.
+64. **Connector error retry.** A county filter fails once and succeeds on retry. Expect: the connector is
+    retried once; if it fails again, one compact connector-error line appears in the closing gaps list and no
+    web lead search is started.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

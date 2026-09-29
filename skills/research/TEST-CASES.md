@@ -110,6 +110,13 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     gate is `find-leads`'s; `research` reads public pages directly. Expect only that if a page is blocked or
     unreadable, the brief says so and doesn't fake it — no reliance on the registry connector is implied.
 
+36. **Jurisdiction and department matching.** A fictional city has an all-caps governing customer and its own
+    parks-department record, plus a same-city contractor and architect. Expect: the city or department matches,
+    the related companies are only notes, and a billing city or repeated park name alone does not match.
+37. **Status before label.** A fictional open opportunity contains a won quote, while another matching quote has
+    an ambiguous close status. Expect: `won before` takes precedence, and any ambiguous raw status is shown
+    after the label rather than translated to "lost".
+
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific
 finding about this target — and never a guessed contact, status, or email.

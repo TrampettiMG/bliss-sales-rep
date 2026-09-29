@@ -19,9 +19,18 @@ Opportunities, Quote Pipeline, Sales Reps, County Sales Teams.
 
 ## What to search
 
-For each REAL lead: the **jurisdiction** name first, then any **design firm or engineer named in the public
-document** — a project can surface through its firm when the city alone wouldn't have. Match against
-Opportunities and Quote Pipeline.
+For each REAL lead: match the jurisdiction on its distinctive name, contains-style and case-insensitive
+(QuickBase may store it as an all-caps `CITY OF …` name) first, then any **design firm or engineer named in
+the public document**. The entity's own department record, such as its Parks & Recreation department, counts
+as the jurisdiction. Schools, property managers, architects, and contractors do not count as the governing
+entity; mention a related one briefly if relevant. A billing city alone is not a match. Match against
+Opportunities and Quote Pipeline: opportunities only exist from about mid-2026, so older jobs may be
+quote-only.
+
+Jobs are sometimes quoted through a general contractor. Search quote and opportunity names for the park or
+project name, but count it as the same job only when the place also matches by city or county on the quote or
+customer. Park names repeat across states, so never match on a park name alone. Ignore records with `TEST` in
+the rep or customer name.
 
 ## Rules that always hold
 
@@ -32,3 +41,13 @@ Opportunities and Quote Pipeline.
 - **Confidence is only ever one of the five values** the QuickBase field accepts: 0%, 25%, 50%, 75%, 99%
   (stored 0, 0.25, 0.5, 0.75, 0.99). Never round a rep's number to something else, and never invent one.
 - A lead already open in QuickBase is labeled **in pipeline**, never presented as new.
+
+## Status before labeling
+
+Read the status of the matching opportunity and every matching quote before choosing a label. A won quote
+(`Order Submitted`, `Invoiced`, or `Commission Paid`) under an opportunity that still looks open is **won
+before**. Use this precedence when statuses conflict: **won before** beats **in pipeline**, and **in pipeline**
+beats **lost before**. Label a fully closed match with no won quote **lost before**, but show the raw QuickBase
+status after the label when it is ambiguous (for example, `lost before — Close - Multiple Alternative`); never
+assert "lost" merely from an ambiguous close status. If the status says an alternative was chosen, check that
+customer's other quotes from about the same time for a won one.
