@@ -17,3 +17,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 7. **Price objection without quote details.** Rep says only "prep me for a call on my playground quote to Chesterfield." Expect: the price-objection angle says "walk through what your quote includes" — never lists installation, surfacing, or a warranty as included. Brief stays about one line per item.
 
 **What "fails gracefully" means for this tool specifically:** when context is thin, the brief should look thin and general — not confidently specific. A generic-but-honest brief beats a specific-but-fabricated one, same principle as make-content and draft-outreach.
+
+8. **Lead Finder QuickBase state already in context.** A Lead Finder result includes a QuickBase state for the
+job. Expect: Call Prep uses it as known context without asking the rep to repeat it, and keeps the brief factual
+and read-only.

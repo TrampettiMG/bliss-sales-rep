@@ -62,9 +62,17 @@ review and send/say themselves.
    holds the fields; never guess them). Match on the customer and what the rep described. If exactly one
    matches, use its opportunity name and contact in the draft. The subject line gets the opportunity
    name only — never the "Opp ####" number, which is internal and means nothing to the customer; the
-   number goes only in what you say to the rep. If several match, list them one line each and ask which. If none match
-   or QuickBase isn't connected, carry on as above and leave a `[Name]` placeholder. Read only — never
-   write to QuickBase.
+   number goes only in what you say to the rep. If several match, list them one line each and ask which. If none
+   match, also check the rep's quotes by customer plus job name before falling back to a `[Name]` placeholder;
+   if QuickBase isn't connected, carry on as above. If a quote-only match is found, use its quote/job details
+   without inventing an opportunity. Read only — never write to QuickBase.
+   **When a Lead Finder result arrives with a QuickBase state, use it to choose the type without asking:**
+   open and yours → open-quote follow-up, referencing the new public signal; ordered → past-customer check-in
+   about phase two, another site, or surfacing, never a "still moving?" question; closed, no order →
+   re-engagement around the new signal, never implying the old quote is still open; past customer, new job →
+   past-customer check-in around the new signal; not in QuickBase → intro. If the job is another rep's, do not
+   draft — say in one line that it is another rep's open job and the rep should check with them first. The rep
+   can override the type. Keep the existing no-write rule and name-only subject rule.
 4. **Draft, matched to type:**
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.

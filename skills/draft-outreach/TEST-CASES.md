@@ -21,3 +21,24 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 9. **No invented history in the clarifying question.** Earlier in the chat, `research` surfaced a playground project. Rep asks for an email with no quote named. Expect: "Which quote is this about?" — never "a quote you already sent, like [the research project]."
 
 **What "fails gracefully" means for this tool specifically:** if there's not enough specific context to personalize a draft (no prospect name, no situation described), ask one short question rather than producing a generic template dressed up as personalized, or inventing plausible-sounding prospect details.
+
+10. **Quote-only follow-up.** A Lead Finder result names a customer and job with a QuickBase quote but no
+opportunity. Expect: Email Writer finds the quote by customer plus job name, uses the quote details, and does
+not invent an opportunity or fall back to a blank placeholder.
+
+11. **QuickBase state handoff — open and yours.** Expect: an open-quote follow-up referencing the new public
+signal, without asking the rep to choose the type.
+
+12. **QuickBase state handoff — ordered.** Expect: a past-customer check-in about phase two, another site, or
+surfacing, never a "still moving?" follow-up.
+
+13. **QuickBase state handoff — closed, no order.** Expect: a re-engagement email built around the new public
+signal, never implying the old quote is still open.
+
+14. **QuickBase state handoff — past customer, new job.** Expect: a past-customer check-in built around the
+new signal.
+
+15. **QuickBase state handoff — not in QuickBase.** Expect: an intro email.
+
+16. **QuickBase state handoff — another rep's open job.** Expect: no draft; one line says it is another rep's
+open job and the rep should check with them first.

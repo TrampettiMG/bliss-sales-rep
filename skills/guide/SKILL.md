@@ -48,6 +48,8 @@ Ask what the rep is trying to do, then point to the matching tool below.
   in my territory."*
 - **Research Brief** (`research`) — background on a company or person, plus a reason to call them. *"Research Acme
   Construction," "give me a dossier on this city."*
+- When the Bliss Library connection is set up, Lead Finder and Research Brief can read your county budgets,
+  capital plans, and agendas directly; Lead Finder also checks QuickBase for past jobs with each lead's customer.
 - **Call Prep** (`prep-call`) — get ready for a call or meeting you already have context on. *"Prep me for a call
   with Jane Rep."*
 - **Email Writer** (`draft-outreach`) — write an email or call script. Always a draft — never sent automatically.

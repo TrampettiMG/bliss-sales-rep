@@ -27,3 +27,7 @@ with a real opportunity number that has a quote.
 isn't set up, one plain sentence and stop. If a query would pull too much from the huge Quote tables, it
 narrows or delegates to a subagent rather than dumping raw data. Errors come back as one plain sentence, no
 stack traces, no field IDs shown to the rep.
+
+7. **Quote-only job found by quote number.** A Lead Finder result supplies a quote number for an older job
+with no opportunity. Expect: Quote Details looks up the quote directly, shows its status, total, and line items,
+and does not ask for or invent an opportunity.

@@ -52,7 +52,26 @@ silently stopping partway through.
        contract (Sourcewell, BuyBoard, TIPS, OMNIA, etc.);
      - open or recent bids on the agency's own bid page, and published bid tabulations/awards (who won
        a past playground or park bid, if public).
-     For a **school district**, the equivalent is its facilities plan or bond program.
+     If the Bliss Library connector is available (tools `my_sources`, `read_source`) and the target is an
+     entity in the rep's counties, call `my_sources(county=…)` and use that entity's rows first. Read its CIP,
+     master plan, or budget with 1–2 separate single-term queries, then its parks page, before spending web
+     searches. Cap this connector pass at about 6 `read_source` calls; cite the URL plus page number. If the
+     connector is unavailable or the entity has no matching rows, use the web-search flow unchanged.
+     If QuickBase is connected, follow the `quickbase-usage` skill for the query (it holds the tables and
+     fields; never guess them) and use the rep's `QuickBase Name` from `PROFILE.md` when needed. Look up the
+     municipality/agency or company entity once using the same case-insensitive, distinctive-name matching
+     rules as `find-leads`: the entity's own department record counts, but a billing city alone does not, and
+     related schools, architects, property managers, or contractors are only notes. Search quotes as well as
+     opportunities, including quote and opportunity names for the project plus a matching city or county;
+     park name alone is not enough. Older jobs may exist only as quotes. Ignore records with `TEST` in the rep
+     or customer name. Add one factual line in the header or "Why call now": past customer (last job + year,
+     number of quotes; use "N+ quotes" if the history pull was capped), or not in QuickBase. If this project
+     itself is in QuickBase, check its status first and say which it is, sorted the way `find-leads` does:
+     open (number, status, date), already ordered, or quoted before and closed with no order (number, close
+     status, date). Show QuickBase's status exactly as returned, without
+     translating an ambiguous close reason. If a library source is clearly an old edition, leave it out and
+     say: "The library's link for [entity] [doc type] looks out of date. Tell your trainer." This is read-only.
+   For a **school district**, the equivalent is its facilities plan or bond program.
 4. **Present the brief**, one page, in this order:
    - **Header** — name, title/role or type, organization, and any public contact info found (never
      inferred or guessed).

@@ -44,6 +44,8 @@ conversation actually said the customer raised it before.
    (who they're calling, past conversations, what they want from the call). If several match, list them
    in one line each and ask which. If none match or QuickBase isn't connected, just ask as above. Read
    only — never write to QuickBase.
+   If a Lead Finder result already carries a QuickBase state, use that state as known context for the brief
+   instead of asking the rep to repeat it; keep the brief read-only and factual.
 2. **Read `PROFILE.md`** for the rep's product focus and territory, to keep talking points relevant to
    what they actually sell.
 3. **Build the brief, three short sections:**

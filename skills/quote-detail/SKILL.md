@@ -1,7 +1,7 @@
 ---
 name: quote-detail
 description: >-
-  Pull the quote and line-item detail behind one opportunity from QuickBase — the quote total, the main line
+  Pull the quote and line-item detail behind one opportunity or quote from QuickBase — the quote total, the main line
   items, and any bond or permit related lines — so the rep can see what's in a deal without digging through
   QuickBase. Read-only; never writes. Use when the rep says "what's in this quote", "quote detail for [opp]",
   "what's the bond on [opp]", "line items for [opp]", or names an opportunity and asks what's in it. For a
@@ -10,7 +10,7 @@ description: >-
 
 # Quote Details
 
-A read-only look at the quote and line items behind one opportunity: the quote total, the main line items,
+A read-only look at the quote and line items behind one opportunity or quote: the quote total, the main line items,
 and any bond or permit related lines. It lets the rep see what is actually in a deal without opening
 QuickBase and clicking through. It reads; it never writes.
 
@@ -24,16 +24,18 @@ guess or fabricate quote data.
 Every figure comes from a live QuickBase read. Never invent a line item, a price, a bond amount, or a
 total. Never write back to QuickBase.
 
-## Which opportunity
-Take the opportunity number from the rep, or from a `my-pipeline` / `my-new-leads` result already in the
-conversation. If none is given, ask for the opportunity number instead of guessing.
+## Which opportunity or quote
+Take an opportunity number, a quote number from a Lead Finder **Quoted before** or **Already in QuickBase**
+line, or a customer plus job name from the rep or the conversation. If there is no opportunity, look up the
+quote(s) directly. If nothing is given, ask for the opportunity or quote number instead of guessing.
 
 ## How to pull it
-Follow the `quickbase-usage` skill for the query and field IDs. These are the two largest tables in the app,
+Follow the `quickbase-usage` skill for the query (it holds the tables and fields; never guess them). These are the two largest tables in the app,
 so stay tight:
 
-- Find the quote(s) for the opportunity in the Quote Pipeline table, filtered to that opportunity, reading
-  the quote number, quote status, and grand total. Select only those fields; never pull the whole table.
+- Find the quote(s) for the opportunity, or search quotes directly by quote number or by the customer's job
+  name, reading the quote number, quote status, and grand total. Select only those fields; never pull the
+  whole table.
 - For each quote, pull its line items from the Quote Lines table, filtered to that quote, reading
   description, extended price, and product type. A single quote's lines are a small, bounded set.
 - Never scan either table unfiltered. If you need to find a field, delegate to a subagent per the
@@ -55,7 +57,7 @@ so stay tight:
 
 ## Present it
 - Open with one line naming the tool and the rep ("Here's your Quote Details, Andy — Opp 12345, [customer].").
-- Lead with the opportunity and its quote(s): quote number as a clickable link to the record (build the link
+- Lead with the opportunity or quote and its quote(s): quote number as a clickable link to the record (build the link
   from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the realm/app/table IDs),
   quote status, and grand total.
 - Then the main line items: description, quantity where useful, extended price. Group or trim if there are

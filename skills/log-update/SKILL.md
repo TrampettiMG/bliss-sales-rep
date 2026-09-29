@@ -36,19 +36,28 @@ voice memo, they transcribe it first (dictation on their own device, or any tran
 and paste the text in. Work only from what's actually in the material — never assume details a transcript
 or email thread doesn't contain.
 
-## Step 1 — identify the opportunity
+## Step 1 — identify the opportunity or quote
 Open with one line naming the tool and the rep ("Here's the Update Logger, Andy."). If the customer is
 clear from the material or the conversation (a bid just broken down, an email thread naming the owner),
 look it up yourself first — don't ask the rep for an opportunity number QuickBase can find. If a Bid
 Breakdown earlier in the conversation already reported "no opportunity for this owner," use that rather
 than asking. Ask the rep which opportunity this is for only if it still isn't clear. Then look it up via the `quickbase-usage` skill the same
 way `forecast-update` does — pull that one opportunity's current status, forecast close date, confidence,
-and customer name, using the rep's QuickBase name (see below) to confirm it's theirs.
+and customer name, using the rep's QuickBase name (see below) to confirm it's theirs. Follow the
+`quickbase-usage` skill for the actual query (it holds the tables and fields; never guess them).
+
+If the job only exists as a quote and there is no opportunity to log against yet, say so in one plain line:
+there's no opportunity to log this against yet, so the rep needs to create one in QuickBase first or ask their
+trainer. Still produce the clean note as a draft ready to paste once the opportunity exists. Do not invent any
+other QuickBase process.
+
+If no opportunity matches, check the rep's quotes directly by quote number or by customer plus job name before
+falling back to a pure transformation.
 
 **If the lookup fails or the rep doesn't have an opportunity number handy:** don't block on it. Fall back
 to a pure transformation — derive the draft update from the raw material alone, note in the output that the
 opportunity wasn't matched in QuickBase, and tell the rep to fill in the opportunity number themselves
-before pasting.
+before pasting. If a quote was found but no opportunity exists, use the quote-only line above instead.
 
 ## First use — confirm the rep's QuickBase name
 Rep names must match QuickBase exactly or the lookup returns nothing. If `PROFILE.md` has a "QuickBase
@@ -101,7 +110,8 @@ only once the rep has given or confirmed its values.
   change (if any), note.
 - Offer a tab-separated version for a direct paste into the grid.
 - If the opportunity wasn't matched in QuickBase, say so plainly and flag that the opportunity number
-  needs to be filled in by hand.
+  needs to be filled in by hand. If the job only exists as a quote, say plainly that an opportunity must be
+  created first or the rep should ask their trainer, while keeping the clean note ready to paste.
 - Remind the rep plainly: this is a draft — they paste it into the QuickBase forecast grid themselves;
   nothing is written automatically.
 - No strategy wrap-up, no "bottom line."

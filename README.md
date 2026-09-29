@@ -15,6 +15,8 @@ that project just works. See `SETUP-CARD.md` for the exact, tested steps.
 - `SETUP-CARD.md` — the one-page install steps for a non-technical rep; installs all 12 tools (Tier 1
   tested end-to-end).
 - `TIER2-SETUP.md` — the separate, gated install path for the pilot reps who get the QuickBase connector.
+- The optional Bliss Library connector (`my_sources`, `lead_scan`, `read_source`) powers Lead Finder and
+  Research Brief with county-scoped public sources. Both tools still work without it; the trainer sets it up.
 - `skills/` — the sales-rep tools (saved in a rep's project under friendly names like `Lead Finder.md` — see
   the name table in `CLAUDE.md`), each a `SKILL.md` plus a `TEST-CASES.md` of golden test inputs used to
   verify it before rollout.

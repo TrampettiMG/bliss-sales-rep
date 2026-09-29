@@ -19,6 +19,12 @@ this for a Tier 1 rep; without the connector these tools can only fail.
    hands it directly to each pilot rep's Cowork setup (e.g., drag-and-drop into the project, or install it
    the way any other Claude skill package is installed on that machine) — never a link, never this repo.
 
+## Optional Bliss Library connector
+
+The Bliss Library connector provides the county-scoped public sources used by Lead Finder and Research Brief
+through `my_sources`, `lead_scan`, and `read_source`. It is optional: both tools keep their existing web-search
+flow without it. The trainer sets it up. [Trainer: add Bliss Library connector install steps]
+
 **The five Tier 2 skills (Quote Details added 2026-09-25) are now installed for every rep during the normal setup** (they're
 public/generic, no Bliss-specific IDs, and they fail gracefully without the connector). So for a rep set up
 after 2026-09-24, the two prerequisites above are all that's needed. Only a project set up **before** that
