@@ -51,17 +51,20 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
    Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
    again.
-3. Fetch each URL in the "Tools to install" list below (add `?v=` plus the current date and time to
-   the end of each URL so you get a fresh copy, e.g. `?v=20261015-0930`) and save its content as a project file named
-   exactly as shown (e.g. `Lead Finder.md`), so the tool is available in this project without re-fetching
-   from GitHub every session and the rep can tell the tools apart in their file list.
+3. **Install the tools quietly, into one folder.** Fetch each URL in the "Tools to install" list below
+   (add `?v=` plus the current date and time to the end of each URL so you get a fresh copy, e.g.
+   `?v=20261015-0930`) and save it in a folder named `Bliss Tools` in this project, with exactly the file
+   name shown (e.g. `Bliss Tools/Lead Finder.md`). Keep it out of the rep's way:
+   - Don't list the tools, and don't say anything per file. The rep should only see the result.
+   - If you can run a shell command with internet access, download every file in one command, then
+     check they're all there. If that fails, fetch them one at a time, still quietly.
 4. **Set up automatic check-ins.** Follow **Automatic check-ins → Setting them up** below. Don't ask first.
 5. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
 6. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
-   say which tool didn't install and ask the rep to tell their trainer. Then confirm in one short sentence
-   that setup is done and tell them to try: "find leads for my county" or "summarize this bid" (with a bid document uploaded).
+   say which tool didn't install and ask the rep to tell their trainer. Then end setup with one short
+   line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."*
 
-Tools to install (fetch each URL and save it as a project file with exactly the name shown):
+Tools to install (fetch each URL and save it in the `Bliss Tools` folder with exactly the name shown):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/SKILL.md → save as `Lead Finder.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/research/SKILL.md → save as `Research Brief.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/prep-call/SKILL.md → save as `Call Prep.md`
@@ -75,8 +78,8 @@ Tools to install (fetch each URL and save it as a project file with exactly the 
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/forecast-update/SKILL.md → save as `Forecast Helper.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/quote-detail/SKILL.md → save as `Quote Details.md`
 
-Then fetch and save every file in the **Lead Finder reference files** list further down, the same way.
-Lead Finder doesn't work without them.
+Then fetch and save every file in the **Lead Finder reference files** list further down, the same way,
+into the same `Bliss Tools` folder. Lead Finder doesn't work without them.
 
 (The last five are QuickBase tools. If the QuickBase connection isn't working, they reply with one plain
 sentence saying so.)
@@ -105,6 +108,8 @@ this project only.)
 Each tool has a **friendly name** (what the rep sees and says) and a **short name** (what the tool files
 use when they mention each other). They mean the same tool.
 
+Every tool file lives in the project's `Bliss Tools` folder.
+
 | Friendly name | Short name | Project file |
 |---|---|---|
 | Lead Finder | `find-leads` | `Lead Finder.md` |
@@ -129,7 +134,7 @@ use when they mention each other). They mean the same tool.
 
 ## Lead Finder reference files
 
-Lead Finder reads these at set steps. Save each one as a project file named exactly as shown:
+Lead Finder reads these at set steps. Save each one in the `Bliss Tools` folder, named exactly as shown:
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/lead-grading.md → `Lead Finder - Lead Grading.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/stage-ladder-and-scoring.md → `Lead Finder - Stages and Scoring.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/qb-cross-reference.md → `Lead Finder - QuickBase Check.md`
@@ -173,23 +178,24 @@ The four tasks. Put the rep's first name where it says [First name]. Use each pr
 
 - Task id `bliss-morning-leads` · title "Bliss: Morning leads" · schedule `0 7 * * 1-5` · prompt:
   > This is [First name]'s scheduled Bliss morning leads check. Open the Bliss Sales Rep project and read
-  > its instructions (CLAUDE.md), `PROFILE.md`, `Lead Finder.md`, and every `Lead Finder - ….md` file.
+  > its instructions (CLAUDE.md), `PROFILE.md`, and, in its `Bliss Tools` folder, `Lead Finder.md` and
+  > every `Lead Finder - ….md` file.
   > Then run the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes, using the
   > Bliss Library and QuickBase connections. Never send, submit, or write anything to QuickBase. If you
   > can't find those files or connections, reply with one line: "Your morning leads couldn't run. Open
   > your Bliss Sales Rep project and say 'run my morning leads'."
 - Task id `bliss-monday-pipeline` · title "Bliss: Monday pipeline" · schedule `0 8 * * 1` · prompt:
   > This is [First name]'s scheduled Bliss Monday pipeline check. Open the Bliss Sales Rep project and
-  > read its instructions (CLAUDE.md), `PROFILE.md`, and `Pipeline Check.md`. Then run the Pipeline Check
-  > for [First name]'s own open opportunities, exactly as `Pipeline Check.md` describes, using the
-  > QuickBase connection. Read only: never write to QuickBase. If you can't find those files or the
+  > read its instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Pipeline Check.md`.
+  > Then run the Pipeline Check for [First name]'s own open opportunities, exactly as `Pipeline Check.md`
+  > describes, using the QuickBase connection. Read only: never write to QuickBase. If you can't find those files or the
   > connection, reply with one line: "Your Monday pipeline check couldn't run. Open your Bliss Sales Rep
   > project and say 'check my pipeline'."
 - Task id `bliss-friday-pipeline` · title "Bliss: Friday pipeline" · schedule `0 17 * * 5` · prompt:
   > This is [First name]'s scheduled Bliss Friday pipeline check. Open the Bliss Sales Rep project and
-  > read its instructions (CLAUDE.md), `PROFILE.md`, and `Pipeline Check.md`. Then run the Pipeline Check
-  > for [First name]'s own open opportunities, exactly as `Pipeline Check.md` describes, using the
-  > QuickBase connection. Read only: never write to QuickBase. If you can't find those files or the
+  > read its instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Pipeline Check.md`.
+  > Then run the Pipeline Check for [First name]'s own open opportunities, exactly as `Pipeline Check.md`
+  > describes, using the QuickBase connection. Read only: never write to QuickBase. If you can't find those files or the
   > connection, reply with one line: "Your Friday pipeline check couldn't run. Open your Bliss Sales Rep
   > project and say 'check my pipeline'."
 - Task id `bliss-profile-refresh` · title "Bliss: Profile refresh" · schedule `30 6 * * 1` · prompt:
@@ -230,7 +236,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-30d**
+**Tools version: 2026-09-30e**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -238,9 +244,10 @@ profile matching QuickBase and the Bliss Library without touching anything the r
      *its* name table and *its* Tools version line from here on — not the ones in this file.
   2. For every row in that fetched table, fetch
      `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/<short name>/SKILL.md` and
-     replace that tool's file wherever it sits in the project (an older `skills/<short name>/SKILL.md`
-     copy gets replaced in place too; don't create a duplicate). Save a new tool as its project file name.
-     Then do the same for every file in the fetched **Lead Finder reference files** list.
+     save it as `Bliss Tools/<project file name>`. If an older copy sits anywhere else in the project (at
+     the top level, or as `skills/<short name>/SKILL.md`), delete that old copy after the new one is
+     saved, so there's only ever one. Then do the same for every file in the fetched **Lead Finder
+     reference files** list. Work quietly: no per-file messages, only the one-line result below.
   3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
      replace this file's contents with the rest.
   4. **Check the automatic check-ins.** If the Automatic check-ins line of `PROFILE.md` says `on`, list the
