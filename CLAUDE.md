@@ -55,8 +55,9 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    the end of each URL so you get a fresh copy, e.g. `?v=20261015-0930`) and save its content as a project file named
    exactly as shown (e.g. `Lead Finder.md`), so the tool is available in this project without re-fetching
    from GitHub every session and the rep can tell the tools apart in their file list.
-4. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
-5. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
+4. **Offer automatic check-ins.** Follow **Automatic check-ins → Setting them up** below.
+5. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
+6. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
    say which tool didn't install and ask the rep to tell their trainer. Then confirm in one short sentence
    that setup is done and tell them to try: "find leads for my county" or "summarize this bid" (with a bid document uploaded).
 
@@ -90,6 +91,7 @@ sentence saying so.)
 - Focus Counties:
 - Product Focus:
 - Contact:
+- Automatic check-ins:
 - Notes:
 
 ## QuickBase tables
@@ -135,9 +137,95 @@ Lead Finder reads these at set steps. Save each one as a project file named exac
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/search-terms.md → `Lead Finder - Search Terms.md`
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/board-reconciliation.md → `Lead Finder - Lead Board.md`
 
+## Automatic check-ins
+
+Three tools can run on their own on a schedule, so the rep doesn't have to remember to ask:
+
+| Check-in | When (the rep's local time) | What it runs |
+|---|---|---|
+| **Morning leads** | Weekdays, 7:00 AM | Lead Finder, morning digest mode |
+| **Monday pipeline** | Mondays, 8:00 AM | Pipeline Check |
+| **Profile refresh** | Mondays, 6:30 AM | **Refreshing the profile** (below) |
+
+These use the app's scheduled-tasks tool (`create_scheduled_task`, `update_scheduled_task`,
+`list_scheduled_tasks`). Nothing a check-in produces is ever sent, submitted, or written to QuickBase: it
+only shows the rep results, the same as asking for the tool by hand.
+
+### Setting them up
+
+Use this during first-run setup, and any time the rep says "set up my automatic check-ins."
+
+1. Ask once, in plain words:
+   *"Want me to set up automatic check-ins? I'd look for new leads every weekday at 7 AM, check your
+   pipeline Monday at 8 AM, and refresh your profile Monday at 6:30 AM. They run while the Claude app is
+   open on your computer. If it's closed at that time, they run the next time you open it. Each one uses
+   a little of your Claude usage. Yes, no, or different times?"*
+2. **If yes** (or new times): create the three tasks with the task ids, titles, schedules and prompts
+   below, with any time changes the rep asked for. Then save the Automatic check-ins line of
+   `PROFILE.md`, e.g. `on (Morning leads weekdays 7:00 AM · Monday pipeline Mon 8:00 AM · Profile
+   refresh Mon 6:30 AM)`, and tell the rep in one line: *"Done. Your first morning leads check is
+   [day] at 7 AM. Say 'change my check-in times' or 'turn off my check-ins' anytime."*
+3. **If no:** save `off`, and say: *"No problem. You can say 'run my morning leads' anytime, or 'set up my
+   automatic check-ins' later."*
+4. **If the scheduled-tasks tool isn't available** in this app, don't try anything else. Save `off (not
+   available in this app)` and say: *"Your Claude app can't schedule check-ins here, but you can say 'run
+   my morning leads' anytime."*
+
+The three tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written:
+
+- Task id `bliss-morning-leads` · title "Bliss: Morning leads" · schedule `0 7 * * 1-5` · prompt:
+  > This is [First name]'s scheduled Bliss morning leads check. Open the Bliss Sales Rep project and read
+  > its instructions (CLAUDE.md), `PROFILE.md`, `Lead Finder.md`, and every `Lead Finder - ….md` file.
+  > Then run the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes, using the
+  > Bliss Library and QuickBase connections. Never send, submit, or write anything to QuickBase. If you
+  > can't find those files or connections, reply with one line: "Your morning leads couldn't run. Open
+  > your Bliss Sales Rep project and say 'run my morning leads'."
+- Task id `bliss-monday-pipeline` · title "Bliss: Monday pipeline" · schedule `0 8 * * 1` · prompt:
+  > This is [First name]'s scheduled Bliss Monday pipeline check. Open the Bliss Sales Rep project and
+  > read its instructions (CLAUDE.md), `PROFILE.md`, and `Pipeline Check.md`. Then run the Pipeline Check
+  > for [First name]'s own open opportunities, exactly as `Pipeline Check.md` describes, using the
+  > QuickBase connection. Read only: never write to QuickBase. If you can't find those files or the
+  > connection, reply with one line: "Your Monday pipeline check couldn't run. Open your Bliss Sales Rep
+  > project and say 'check my pipeline'."
+- Task id `bliss-profile-refresh` · title "Bliss: Profile refresh" · schedule `30 6 * * 1` · prompt:
+  > This is [First name]'s scheduled Bliss profile refresh. Open the Bliss Sales Rep project and read its
+  > instructions (CLAUDE.md) and `PROFILE.md`. Then follow "Refreshing the profile" in CLAUDE.md exactly,
+  > using the QuickBase and Bliss Library connections. Only change the lines that section allows. If you
+  > can't find those files or connections, change nothing and reply with one line: "Your profile refresh
+  > couldn't run. Open your Bliss Sales Rep project and say 'refresh my profile'."
+
+### Changing or stopping them
+
+- **"Change my check-in times"** (or "move my morning leads to 6:30"): update that task's schedule with
+  `update_scheduled_task`, update the Automatic check-ins line, and confirm the new time in one line.
+- **"Turn off my check-ins"** (or one of them): disable those tasks (don't delete them), set the line to
+  `off` or list what's still on, and confirm in one line. "Turn my check-ins back on" re-enables them.
+- **"Run my morning leads"**, **"check my pipeline"**, **"refresh my profile"**: run it right now, the same
+  way the scheduled task would.
+- If the rep asks what's scheduled, list the Bliss check-ins with their next run times, one line each.
+
+## Refreshing the profile
+
+Runs from the weekly Profile refresh check-in, or when the rep says "refresh my profile." It keeps the
+profile matching QuickBase and the Bliss Library without touching anything the rep chose.
+
+1. Look the rep up again the same way first-run setup does: their QuickBase record (by the `QuickBase
+   Name` line) for name and contact, and `my_sources` for their counties. If the Bliss Library connection
+   isn't there, use QuickBase's county assignments.
+2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
+   **Territory/Counties**. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
+   or the QuickBase tables section.
+3. If a Focus County is no longer in the rep's assigned counties, don't remove it. Say so in one line so
+   the rep can decide: *"Hanover isn't in your assigned counties anymore. Keep it as a focus county?"*
+4. **Change nothing** if a lookup fails, returns no rep, or the territory is still loading ("Your
+   territory isn't set up yet"). Say in one line that the refresh couldn't finish and will try again next
+   week.
+5. Tell the rep only what changed, one line each, e.g. *"Profile refreshed: Counties 42 → 44 (added
+   Hanover and Louisa)."* If nothing changed, one line: *"Your profile is up to date."*
+
 ## Keeping things up to date
 
-**Tools version: 2026-09-30b**
+**Tools version: 2026-09-30c**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -150,6 +238,10 @@ Lead Finder reads these at set steps. Save each one as a project file named exac
      Then do the same for every file in the fetched **Lead Finder reference files** list.
   3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
      replace this file's contents with the rest.
+  4. **Check the automatic check-ins.** If the Automatic check-ins line of `PROFILE.md` says `on`, list the
+     scheduled tasks. Re-create any Bliss check-in that's missing, and update any whose prompt doesn't
+     match the fetched **Automatic check-ins** section, keeping the rep's own times. If the line says
+     `off` or is blank, leave the schedule alone.
   Never touch `PROFILE.md`, `lead-board.xlsx`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
   saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
   <fetched version line>." If that version is the same as the one this file had before, add: "(Already

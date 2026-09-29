@@ -204,6 +204,16 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 64. **Connector error retry.** A county filter fails once and succeeds on retry. Expect: the connector is
     retried once; if it fails again, one compact connector-error line appears in the closing gaps list and no
     web lead search is started.
+65. **Morning digest, weekday.** The Morning leads check-in runs on a Wednesday; the board's latest Last
+    Checked date is Tuesday. Expect: no county question; `lead_scan` since Tuesday; no CIP/budget reads; no
+    web searches; opens "Good morning, [First name]"; at most 5 lead lines; the couldn't-read list as one count
+    line; saved-board and Set-aside lines.
+66. **Morning digest, Monday.** Same, on a Monday. Expect: `lead_scan` since the previous Friday's run, plus
+    the weekly library-document read at the normal cap.
+67. **Morning digest, nothing new.** Expect: one line, "Nothing new in your counties since [date]." No
+    padding, no old leads re-shown.
+68. **Morning digest, second run the same day.** Expect: "Already checked this morning. Nothing new since
+    then." and no scan, no board write.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

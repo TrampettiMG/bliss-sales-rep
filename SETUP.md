@@ -60,7 +60,17 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    Confirm your name, counties, product focus, and notes. Counties come from the registry connector when it is connected; otherwise Claude reads your QuickBase county assignments. You only confirm or correct what it found.
    You should now see your saved profile.
 
-9. Smoke test
+9. Automatic check-ins
+   Claude asks if you want automatic check-ins. Say **yes** to get:
+   - **New leads** every weekday at 7 AM
+   - **A pipeline check** every Monday at 8 AM
+   - **A profile refresh** every Monday at 6:30 AM
+
+   Want different times? Just say so, like "make it 6:30 instead."
+   These run while the Claude app is open on your computer. If it's closed at that time, they run the next time you open it.
+   You should now see "Done. Your first morning leads check is …". Change them anytime by saying "change my check-in times" or "turn off my check-ins."
+
+10. Smoke test
    Ask: "What's new in my counties?"
    You should now see a short list or "nothing new." If not, check that you are in the Bliss Sales Rep project, the registry connector is connected when you expect it, and your territory has finished loading. If that does not fix it, text your trainer.
 
