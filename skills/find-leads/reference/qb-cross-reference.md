@@ -29,8 +29,9 @@ quote-only.
 
 Jobs are sometimes quoted through a general contractor. Search quote and opportunity names for the park or
 project name, but count it as the same job only when the place also matches by city or county on the quote or
-customer. Park names repeat across states, so never match on a park name alone. Ignore records with `TEST` in
-the rep or customer name.
+customer. Park names repeat across states, so never match on a park name alone. Ignore test records: a customer, quote or job name that is
+clearly a test ("TEST", "Test2", "Testing"). A real customer's quote entered under a test rep account still
+counts; show its rep as "test account".
 
 ## Rules that always hold
 

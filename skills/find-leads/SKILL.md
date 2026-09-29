@@ -157,6 +157,18 @@ distributor of a listed playground or shelter) means label the lead **BLISS INVO
 cross-reference returns, and tell the rep to **check with the rep of record rather than pitch it**. It's still
 worth surfacing — just not one to walk into cold.
 
+## History line on the top leads
+
+For the top 5 leads in a normal run, add one line immediately after the QuickBase label. Build it from the
+QuickBase lookup already done for that lead — no web searches — plus at most one bounded nearby lookup per
+county. Use this form: "History: 6 quotes since 2019, 1 won (2023 shade, $48K Grand Total incl. tax), last
+closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])".
+History counts the buyer's matching quotes, includes the latest win and last closed status exactly as stored,
+and never calls `Close - Multiple Alternative` a loss. Nearby means the most recent won job for another
+customer in the same county; if there is none, use the same state and say "in [state]". Never use the lead's
+own buyer. If no buyer history exists, write "History: none on file." If QuickBase isn't connected, write
+"History: unavailable — QuickBase isn't connected." Keep it to one line.
+
 ## The lead board — what makes this repeatable
 
 The tracker is `lead-board.xlsx` — the shared spreadsheet `my-new-leads` also keeps: one row per lead the rep
@@ -175,8 +187,9 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
    jurisdiction, what happened, the document date, the stage number, the score with its one-line reason, the
    QuickBase label (`BLISS INVOLVED` / `new` / `in pipeline` / `lost before` / `won before`) with the record
    number, and the source link. For an open bid or RFP, include the due date (or "due date not visible —
-   verify on the page"). A detail added by web enrichment goes on the same lead, marked "Web:" with its own
-   link, after the library source; never in place of it.
+   verify on the page"). For the top 5, add the one-line History entry immediately after the QuickBase label.
+   A detail added by web enrichment goes on the same lead, marked "Web:" with its own link, after the library
+   source; never in place of it.
 3. **Coverage line** — every county in the run, with what the library produced ("Chesterfield: 2 · Henrico: 2
    · Richmond city: nothing new"), plus any source types not reached and any county with no library sources.
    If any enrichment ran, add "Added details from the web for N leads."
@@ -184,9 +197,10 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
    "open it yourself" documents, stale links, counties with no library sources, and connector errors. Include
    title, county, link, and reason when there is a source; mention the download cap if it was hit.
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
-6. One closing line offering both next steps: "Want more on one of these? That's the Research Brief. Or an
-   intro email built around one of them? That's the Email Writer." When the rep picks one, pass that lead
-   (what, when, stage, source) and its QuickBase label plus record number to the Email Writer as known context.
+6. One closing line offering both next steps: "Want more on one of these? Ask for the Research Brief — for
+   example, 'research #2' for the full history. Or an intro email built around one of them? That's the Email
+   Writer." When the rep picks one, pass that lead (what, when, stage, source) and its QuickBase label plus
+   record number to the Email Writer as known context.
 7. **The last line of the output** is the ROUTINE count, and it is count-only — no list, no links, and no
    category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was set
    aside, "Set aside 0 routine items." Nothing follows it.
@@ -213,13 +227,15 @@ scores, QuickBase labels and the lead board all work the same), except:
 6. **Short output:**
    - Start with: *"Good morning, [First name]. Here are your morning leads."*
    - "Moved up since your last scan", then up to the **top 5** new leads, one line each, in the normal
-     format. If there are more: *"…and N more on your lead board."*
+     format, including the one-line History entry after the QuickBase label. If there are more: *"…and N more
+     on your lead board."*
    - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
      couldn't read' for the list."*
    - The saved-board line and the Set-aside line, as usual.
    - Nothing new at all: one line, *"Nothing new in your counties since [date]."*, then the saved-board
      line if any row changed.
-7. End with one line: *"Want more on one of these? Ask for the Research Brief or the Email Writer."*
+7. End with one line: *"Want more on one of these? Ask for the Research Brief — for example, 'research #2' —
+   or the Email Writer."*
 
 ## Flow
 
