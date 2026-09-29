@@ -214,6 +214,17 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     padding, no old leads re-shown.
 68. **Morning digest, second run the same day.** Expect: "Already checked this morning. Nothing new since
     then." and no scan, no board write.
+69. **History line on the top five.** A normal run produces at least five ranked fictional leads with QuickBase
+    connected. Expect: each top-five lead has one History line immediately after its QuickBase label, with buyer
+    quote history and the most recent nearby won job; no web searches are used for the line.
+70. **History none on file.** A top fictional lead has no matching buyer quotes. Expect exactly "History: none
+    on file." and no invented nearby buyer if the bounded nearby lookup also finds nothing.
+71. **Nearby history falls back to state.** A top fictional lead has no other-customer won job in its county but
+    does have one in the same state. Expect the one-line History entry says "in [state]" and names the other
+    customer and rep as QuickBase stores them; it never uses the lead's own buyer.
+72. **Morning digest includes history.** A weekday morning run produces top-five fictional leads. Expect each
+    lead's normal one-line format includes History after the QuickBase label, and the closing offer mentions
+    "research #2" as an example of the full Research Brief handoff.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

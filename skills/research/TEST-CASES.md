@@ -95,8 +95,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     or thin). Expect: the brief still delivers from what could be read and says plainly what wasn't — no
     fabricated page as a substitute.
 31. **Output order.** Any municipality/agency run. Expect, in order: Header, QuickBase cross-reference (or
-    the single "QuickBase isn't connected" line), Contacts, Why call now, Suggested opener — and nothing
-    after the opener (no bottom line, no strategic take).
+    the single "QuickBase isn't connected" line), Bliss history with this buyer, Similar jobs elsewhere, Past
+    customers nearby, Who won their past bids, Contacts, Why call now, Suggested opener — and nothing after
+    the opener (no bottom line, no strategic take).
 32. **Facts vs. advice.** A finding where design is still open. Expect: "design is still open" as a fact —
     never "a good time to pitch" framed as advice or a pursue/pass verdict.
 
@@ -116,6 +117,39 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 37. **Status before label.** A fictional open opportunity contains a won quote, while another matching quote has
     an ambiguous close status. Expect: `won before` takes precedence, and any ambiguous raw status is shown
     after the label rather than translated to "lost".
+
+## Bliss history and bid context
+
+38. **Buyer history, newest first.** Research fictional Cedar Grove City after a Lead Finder result. Expect: up
+    to 8 matching quotes or bids, including quote-only jobs, ordered newest first; each line includes date, job,
+    Grand Total incl. tax, QuickBase status exactly as shown, recorded lost reason when present, co-op contract
+    when present, and the rep as stored. The pattern line is factual only.
+39. **Similar jobs with all filters.** A fictional lead has a known scope and budget. Expect: at most about 30
+    candidates from the last 24 months are checked, and only up to 5 jobs matching product categories, buyer
+    type, and the half-to-double budget range are shown. Totals are labeled Grand Total incl. tax, and the
+    pattern line states the observed win history without advice.
+40. **Similar jobs with no budget.** A fictional lead has no known budget. Expect: the size filter is skipped
+    and the Similar jobs elsewhere section says so; product-category and buyer-type filters still apply.
+41. **Nearby fallback.** A fictional lead's county has no other-customer wins, but the same state does. Expect:
+    up to 5 won jobs are shown from the state and the section says "fallback: same state"; the lead's own buyer
+    is excluded. Won means only Order Submitted, Invoiced, or Commission Paid.
+42. **Other rep's history is visible.** A matching buyer has past Bliss jobs owned by another rep. Expect: the
+    history and nearby sections show the rep name exactly as QuickBase stores it; they do not hide or rename it.
+43. **Multiple Alternative is not called lost.** A buyer history record has status `Close - Multiple Alternative`.
+    Expect: that status is shown exactly as stored, with no invented "lost" wording; the factual pattern line
+    does not count it as a loss unless QuickBase records a won or lost status separately.
+44. **Who won their past bids.** A fictional agency has Bliss lost bids and public award minutes. Expect: Bliss's
+    own lost bids with recorded reasons appear first, then only 1–2 web searches for bid tabs or award minutes;
+    each web result has its own source link, and any amount is labeled Grand Total incl. tax when applicable.
+45. **QuickBase missing, one line per section.** Run the same fictional agency brief without QuickBase. Expect:
+    the four Bliss history sections each have their own one-line "QuickBase isn't connected" notice, with no
+    guessed labels, statuses, history, reps, or totals. Public research and contacts may still run.
+46. **Research #2 handoff.** Lead Finder returns at least two fictional leads and the rep says "research #2."
+    Expect: Research Brief uses the second lead's buyer, project, scope, budget, stage, source, and QuickBase
+    label without asking the rep to repeat them.
+47. **Buyer documents first.** A fictional municipality in the rep's counties has the Bliss Library connector.
+    Expect: `my_sources` and about 6 single-term, non-OR `read_source` calls cover the entity's CIP, budget,
+    master plan, and parks page before web searches; those reads do not spend the 6–8 web-search budget.
 
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific
