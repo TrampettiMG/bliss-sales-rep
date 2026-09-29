@@ -1,8 +1,8 @@
 # Grading a lead-scan hit: REAL or ROUTINE
 
-`lead_scan` matches a keyword list against whole agenda documents, so most of what it returns is ordinary
-business that happens to contain one of the words — server precision is roughly 30%. **Every hit gets
-graded before anything reaches the rep.** Only a REAL hit is staged (F1), scored (F2), and
+The Bliss Library connector supplies a curated source list and clean daily signals. **Every hit gets
+graded before anything reaches the rep.** Grading sorts specific projects from routine agenda items; it does
+not second-guess the source list. Only a REAL hit is staged (F1), scored (F2), and
 cross-referenced against QuickBase (F5). A ROUTINE hit is set aside silently; it appears only in the
 closing count line.
 

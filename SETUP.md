@@ -45,7 +45,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
 
    Still stuck? Contact Nick Ambrose first, then Mike Trampetti.
 
-   You should now see the registry connector connected. If you skip it, Lead Finder still uses public web search.
+   You should now see the registry connector connected. Lead Finder needs it: without it, Lead Finder says so and stops.
 
 7. Skills
    Create a Cowork project named Bliss Sales Rep. Drag the private QuickBase file from step 5 into the project. Then, in its message box, paste:

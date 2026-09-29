@@ -33,4 +33,4 @@ Cowork fetches `CLAUDE.md` directly, then saves the profile and skill files in t
 - Nothing sends, submits, or posts on a rep's behalf.
 - This public repository contains no customer records, QuickBase IDs, internal paths, tokens, or credentials. Run the prescribed scrub before every push.
 - QuickBase tools are read-only. IDs resolve by table and field name on first use, then remain only in the rep's local `PROFILE.md`.
-- The registry connector reads public government sources. If it is missing, Lead Finder falls back to public web search.
+- The registry connector (Bliss Library) is the source of truth for new leads: it reads a curated list of public government sources. Lead Finder uses web search only to add details to a lead the connector found. If the connector is missing, Lead Finder says so and stops.

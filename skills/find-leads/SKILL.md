@@ -1,8 +1,8 @@
 ---
 name: find-leads
 description: >-
-  Scan the rep's counties for new lead signals — registry agendas and public PDFs first, then a web-search
-  pass — grade each hit, stage it on the 0-7 ladder, score it 0-100, and cross-reference QuickBase. Reports
+  Scan the rep's counties for new lead signals from the Bliss Library connector — curated agendas and public
+  registry documents — then grade each hit, stage it on the 0-7 ladder, score it 0-100, and cross-reference QuickBase. Reports
   what's new since the last run. Use when the rep says "find leads for my county", "what's new in my
   territory", "scan for leads", "any new signals", or similar. Repeatable: each run surfaces only items not
   already on the shared lead board (`lead-board.xlsx`).
@@ -10,9 +10,12 @@ description: >-
 
 # Lead Finder
 
-Scan public sources for new, dated signals in the rep's territory that suggest a playground/site-amenity
-opportunity is coming — not a generic list of categories, and not a per-contact brief (that's the `research`
-tool, for a target the rep already has).
+The Bliss Library connector is the source of truth for new leads. Leads come only from its `lead_scan` hits
+and from projects found in the registry's own CIP, budget, and master-plan documents through `my_sources` and
+`read_source`. Web search can enrich an existing connector lead, but never creates one. This surfaces new,
+dated signals in the rep's territory that suggest a playground/site-amenity opportunity is coming — not a
+generic list of categories, and not a per-contact brief (that's the `research` tool, for a target the rep
+already has).
 
 ## Reference files — read these, don't re-derive them
 
@@ -22,7 +25,7 @@ Read these saved project files at the stated step. Their repo paths remain the `
 - **`Lead Finder - Lead Grading.md`** (`reference/lead-grading.md`) — as soon as `lead_scan` returns hits, before reporting them; REAL/ROUTINE definitions and edge cases.
 - **`Lead Finder - QuickBase Check.md`** (`reference/qb-cross-reference.md`) — before cross-reference, and when a table or field moved; resolve/cache procedure and query rules.
 - **`Lead Finder - PDF Fallback.md`** (`reference/pdf-fallback.md`) — when `read_source` returns a scanned-PDF, large-PDF, or unreadable-PDF fallback; download/extract/page-image ladder.
-- **`Lead Finder - Search Terms.md`** (`reference/search-terms.md`) — when building the search pass or judging relevance; keyword groups, query traps, and budget.
+- **`Lead Finder - Search Terms.md`** (`reference/search-terms.md`) — when choosing literal `read_source` terms, judging relevance, or enriching a lead; keyword groups, query traps, and budget.
 - **`Lead Finder - Lead Board.md`** (`reference/board-reconciliation.md`) — before checking or updating the board; ownership, reconciliation, stage moves, and write verification.
 
 If a named file is not in the project, look in subfolders. If still missing, fetch `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/reference/<file>.md`, save it under its named project-file name, then continue.
@@ -30,8 +33,8 @@ If a named file is not in the project, look in subfolders. If still missing, fet
 ## What this is not
 
 This surfaces **signals** (a dated, cited, specific event or item), not accounts or contacts. Never invent a
-signal — if a scan comes back thin for a county, say so plainly rather than padding the list with generic
-possibilities. Every signal needs a real source link; no real source, no lead. If the source is real but a
+signal — if the connector comes back thin for a county, say so plainly rather than padding the list with generic
+possibilities. Every signal needs a real library source link; no library source, no lead. If the source is real but a
 detail (like the exact date) isn't visible in what you can read of the page, include it anyway with an
 explicit flag ("date not visible — verify on the page") rather than drop a good lead over one missing detail.
 A source that wouldn't open at all isn't a signal yet: leave it out, and if its title looked relevant list it
@@ -46,44 +49,44 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
 `read_source`). Before step 1, work out which of the three connector branches you're in:
 
 - **Connector present** — run steps 1–4 as written.
-- **Connector not installed** — skip steps 1–2, run the web search pass for **all** the rep's counties, and
-  say once, in one sentence, that the registry connector would read the rep's own agendas, CIP, and budget
-  directly instead of relying on search (and where setup covers it). Don't repeat that line elsewhere in the
-  output, and don't pretend registry-sourced coverage you didn't have.
+- **Connector not installed** — say once: "Lead Finder needs the Bliss Library connection; your trainer sets
+  it up." Stop there: do not web-search, write the board, or pretend registry-sourced coverage you didn't have.
 - **Territory still loading** — if `my_sources`, `read_source`, or `lead_scan` returns the literal
   `TERRITORY_PENDING` message ("Your territory isn't set up yet. Trampetti is loading it; your sources will
   appear here."), **stop the run**. Tell the rep plainly that their territory is still loading, that their
   sources will appear once Trampetti finishes, and to try again later today or tomorrow. Do **not** run the
-  web-search pass, do **not** report an empty or thin result, and do **not** write the board.
+  web-search, do **not** report an empty or thin result, and do **not** write the board.
 
 1. **`lead_scan` first.** One call over the rep's agenda sources is the cheapest, broadest first pass — run it
    before anything else, with a `since:` about 60 days back (widen it if the rep asks for a longer look). Page
    with the returned `cursor` while there's more, as budget allows; if the output shows no "next cursor", the
    scan is complete. If the county filter fails and the scan comes back for every county on the account,
-   keep only hits from the counties you're scanning this run. These hits are a **first-pass filter, not a
-   lead list** — grade every one (see **Grade every hit** below). If it returns 0 leads while most agendas were blocked or unreadable, say the agendas
-   were **not checked**, never "nothing new on agendas." It may pick the latest meeting of any board, so only
+   keep only hits from the counties you're scanning this run. These hits are the connector's daily agenda
+   signals: grade each one (see **Grade every hit** below) and order the REAL projects ahead of routine
+   agenda items. If it returns 0 leads while most agendas were blocked or unreadable, say the agendas were
+   **not checked**, never "nothing new on agendas." It may pick the latest meeting of any board, so only
    governing-board and parks/rec-board failures belong in the closing list; drop irrelevant boards silently.
    Note any sources the footer lists as "Open it yourself", "Fetch failed", or "Couldn't read" — they feed the
    closing list in step 4.
 2. **`my_sources`, then `read_source`.** Call `my_sources` for the rep's counties (again with a county name if
-   the response pages them), then read the sources it marks **readable**, in this order: **agendas first, then
-   the CIP, then the adopted budget**. Pass `read_source` one literal `query` phrase per call (for example,
-   `playground`, `splash pad`, or `pavilion`) — never combine terms with `OR`. Each call returns at most 12
-   page-numbered hits; skip boilerplate and duplicate hits, and cap the successful `read_source` calls at
-   about 12 per run (a failed call you retry once doesn't count). Add `pages` only for a section the hit points to. A document you couldn't read follows the
+   the response pages them), then read the sources it marks **readable**. After the agenda pass, prioritize
+   **CIP, then budget, then master plan**, most recent fiscal year first. For each, choose the 2–3 terms that
+   best fit the rep's product focus — default `playground`, then `shade`, then `splash pad` — and pass
+   `read_source` one literal `query` phrase per call (never combine terms with `OR`). Each call returns at most
+   12 page-numbered hits; skip boilerplate and duplicate hits, and cap the successful `read_source` calls at
+   about 12 per run (a `pages` read counts; a failed call you retry once doesn't). Add `pages` only for a section the hit points to. A document you couldn't read follows the
    PDF-fallback rules before the closing list. If a library source is clearly an old edition, such as a fiscal
    year two or more years behind, leave it out of the signals and add: "The library's link for [entity] [doc
    type] looks out of date. Tell your trainer."
-3. **Web search pass — only for counties with no readable source.** If `my_sources` shows every county in the
-   rep's territory with at least one readable source, skip the search pass entirely and say so in one line.
-   Run it only for counties the registry can't cover (no rows, or every row "open it yourself" / failed),
-   inside the usage budget in `Lead Finder - Search Terms.md` (`reference/search-terms.md`). A county the registry covers with agendas gets its
-   agendas read, not searched — that's the point of the registry.
-4. **Close with the "Couldn't read these, open them yourself" list** — every manual source, robots refusal,
-   fetch failure, and unreadable document from steps 1–3, one line each: title, county, link, reason in a few
-   words. Never route around a source that blocks automated reads — that refusal is expected behavior, not a
-   bug.
+3. **Enrich only existing connector leads.** After a lead exists, use web search only for a missing contact or
+   buyer name, bid due date or bid page, pre-bid information, or newer news on that same project. Search only
+   the top-scored leads, about 1–2 searches per lead and roughly 6 per run. Never add a lead from web search or
+   replace a library fact with a web fact; if they disagree, show both and say so. Cite the web source separately.
+   Skip enrichment when nothing is missing. Report it as "added details from the web for N leads."
+4. **Close with the "Couldn't read these, open them yourself" list** — keep it compact and include governing or
+   parks/rec agenda failures, "open it yourself" documents, stale library links, counties with no library
+   sources ("no library sources for [county] yet — tell your trainer"), and connector errors. Retry a connector
+   error once, then give one plain line. Keep irrelevant-board failures out of the list.
 
 ### Dates and currency
 
@@ -97,8 +100,7 @@ verify on the page."
 
 ## Grade every hit before it goes any further
 
-`lead_scan` matches a keyword list against whole agenda documents, so most hits are ordinary business that
-happens to contain one of the words. Server precision is roughly 30%. **Grade every hit yourself**, using
+The connector supplies a curated daily source list. **Grade every hit yourself**, using
 `Lead Finder - Lead Grading.md` (`reference/lead-grading.md`) for the full definitions and edge cases: **REAL** is a specific project,
 procurement, grant, bond, CIP, or budget line that could buy what Bliss sells (playground, shade structure or
 canopy, splash pad, surfacing, site furnishings, pavilion, bleachers, courts, fitness, trail amenities) at
@@ -172,11 +174,14 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
    jurisdiction, what happened, the document date, the stage number, the score with its one-line reason, the
    QuickBase label (`BLISS INVOLVED` / `new` / `in pipeline` / `lost before` / `won before`) with the record
    number, and the source link. For an open bid or RFP, include the due date (or "due date not visible —
-   verify on the page").
-3. **Coverage line** — every county in the run, with what it produced ("Chesterfield: 2 · Henrico: 2 ·
-   Richmond city: nothing new"), plus any categories not reached and any county covered only by search.
-4. **"Couldn't read these, open them yourself"** — one line per source: title, county, link, reason. Mention
-   the download cap if it was hit.
+   verify on the page"). A detail added by web enrichment goes on the same lead, marked "Web:" with its own
+   link, after the library source; never in place of it.
+3. **Coverage line** — every county in the run, with what the library produced ("Chesterfield: 2 · Henrico: 2
+   · Richmond city: nothing new"), plus any source types not reached and any county with no library sources.
+   If any enrichment ran, add "Added details from the web for N leads."
+4. **"Couldn't read these, open them yourself"** — compact lines for blocked governing/parks agendas,
+   "open it yourself" documents, stale links, counties with no library sources, and connector errors. Include
+   title, county, link, and reason when there is a source; mention the download cap if it was hit.
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
 6. One closing line offering both next steps: "Want more on one of these? That's the Research Brief. Or an
    intro email built around one of them? That's the Email Writer." When the rep picks one, pass that lead
@@ -194,8 +199,11 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
    focus on this run (and offer to save them). If territory is missing or too broad (just a state name), ask
    for the county or counties — with the connector present, `my_sources` lists the counties the rep actually
    has.
-2. **Run the reading order** (steps 1–4 above) for those counties.
-3. **Grade** every `lead_scan` hit REAL/ROUTINE, then **drop** anything that fails the stage-7 exclusion.
+2. **Check the board's last-checked dates.** If the rep already ran this today, say so and ask if they
+   still want a fresh scan; library sources rarely change within a day. Still run it if they say yes.
+   Then **run the reading order** (steps 1–4 above) for those counties. Web enrichment is only for existing leads.
+3. **Grade** every `lead_scan` hit and every `read_source` finding REAL/ROUTINE (both count toward the
+   closing "Set aside" line), then **drop** anything that fails the stage-7 exclusion.
    Defer the currency rule for stale candidates until after the QuickBase cross-reference, so an open same-job
    match can keep one alive.
 4. **Check the board** and keep only genuinely new items, marking stage moves separately.
