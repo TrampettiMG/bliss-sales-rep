@@ -61,14 +61,13 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see your saved profile.
 
 9. Automatic check-ins
-   Claude asks if you want automatic check-ins. Say **yes** to get:
+   Claude sets these up for you:
    - **New leads** every weekday at 7 AM
-   - **A pipeline check** every Monday at 8 AM
+   - **A pipeline check** every Monday at 8 AM and Friday at 5 PM
    - **A profile refresh** every Monday at 6:30 AM
 
-   Want different times? Just say so, like "make it 6:30 instead."
-   These run while the Claude app is open on your computer. If it's closed at that time, they run the next time you open it.
-   You should now see "Done. Your first morning leads check is …". Change them anytime by saying "change my check-in times" or "turn off my check-ins."
+   They run while the Claude app is open on your computer. If it's closed at that time, they run the next time you open it.
+   You should now see "I set up your automatic check-ins…". To change them later, say "change my check-in times" or "turn off my check-ins."
 
 10. Smoke test
    Ask: "What's new in my counties?"
