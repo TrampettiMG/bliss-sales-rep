@@ -162,6 +162,32 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     the run — one plain line saying the territory is still loading and to try again later today or
     tomorrow — with **no** web-search pass, **no** empty or thin lead list, and nothing written to the board.
 
+51. **Literal `read_source` queries.** A readable CIP returns no useful matches for `playground OR shade`
+    but returns hits for `playground`. Expect: one literal phrase per call, no OR query, duplicate/boilerplate
+    hits skipped, and the total `read_source` calls capped at about 12.
+52. **Blocked agenda scan.** A fictional county's `lead_scan` returns 0 leads and most agendas are blocked;
+    it also includes an irrelevant advisory board. Expect: "agendas were not checked," not "nothing new";
+    no next cursor means complete, and only governing/parks-board failures appear in the closing list.
+53. **QuickBase jurisdiction matching.** A fictional city is stored under an all-caps city name and also has
+    its own parks-department customer record. A school, contractor, and same-city architect also match the
+    text. Expect: the city or its own department counts; the others are only brief related notes, and a shared
+    billing city alone does not count. A same park name in another state and any TEST record are ignored.
+54. **Status before label.** A fictional open opportunity has one matching quote marked Invoiced. Expect:
+    `won before`, not `in pipeline`. A closed quote with an ambiguous close status shows that raw status after
+    `lost before`; if it says an alternative was chosen, nearby quotes are checked for a won one.
+55. **Freshness follows QuickBase.** A stale fictional lead has an open same-job quote from within the last
+    year. Expect: it survives as `in pipeline`; stale leads with only `lost before` or `won before` matches are
+    dropped.
+56. **Far-future money.** A fictional FY2027 plan has design money first in FY2031. Expect: the score reason
+    notes funding planned three or more fiscal years out and scores the funding factor lower without changing
+    the stage ladder.
+57. **Stale library edition.** A library link for a fictional county has a fiscal year two or more years old.
+    Expect: it is not a lead and the output includes "The library's link for [entity] [doc type] looks out of
+    date. Tell your trainer."
+58. **Label handoff.** A selected lead is passed to Email Writer. Expect: the handoff includes its label and
+    record number along with what, when, stage, and source; `BLISS INVOLVED` or another rep's open job is not
+    drafted cold.
+
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan
 can't confirm a link or a date, the item doesn't get reported; silence is better than a plausible-sounding

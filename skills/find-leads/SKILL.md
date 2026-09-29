@@ -58,15 +58,23 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
 
 1. **`lead_scan` first.** One call over the rep's agenda sources is the cheapest, broadest first pass — run it
    before anything else, with a `since:` about 60 days back (widen it if the rep asks for a longer look). Page
-   with the returned `cursor` while there's more, as budget allows. These hits are a **first-pass filter, not
-   a lead list** — grade every one (see **Grade every hit** below). Note any sources the footer lists as "Open
-   it yourself", "Fetch failed", or "Couldn't read" — they feed the closing list in step 4.
+   with the returned `cursor` while there's more, as budget allows; if the output shows no "next cursor", the
+   scan is complete. If the county filter fails and the scan comes back for every county on the account,
+   keep only hits from the counties you're scanning this run. These hits are a **first-pass filter, not a
+   lead list** — grade every one (see **Grade every hit** below). If it returns 0 leads while most agendas were blocked or unreadable, say the agendas
+   were **not checked**, never "nothing new on agendas." It may pick the latest meeting of any board, so only
+   governing-board and parks/rec-board failures belong in the closing list; drop irrelevant boards silently.
+   Note any sources the footer lists as "Open it yourself", "Fetch failed", or "Couldn't read" — they feed the
+   closing list in step 4.
 2. **`my_sources`, then `read_source`.** Call `my_sources` for the rep's counties (again with a county name if
    the response pages them), then read the sources it marks **readable**, in this order: **agendas first, then
-   the CIP, then the adopted budget**. Pass `read_source` a `query` (a couple of the rep's keyword groups,
-   e.g. `playground`, `splash pad`, `pavilion`) for the matching lines instead of a whole document, and add
-   `pages` only for a section the hit points to. A document you couldn't read follows the PDF-fallback rules
-   before the closing list.
+   the CIP, then the adopted budget**. Pass `read_source` one literal `query` phrase per call (for example,
+   `playground`, `splash pad`, or `pavilion`) — never combine terms with `OR`. Each call returns at most 12
+   page-numbered hits; skip boilerplate and duplicate hits, and cap the successful `read_source` calls at
+   about 12 per run (a failed call you retry once doesn't count). Add `pages` only for a section the hit points to. A document you couldn't read follows the
+   PDF-fallback rules before the closing list. If a library source is clearly an old edition, such as a fiscal
+   year two or more years behind, leave it out of the signals and add: "The library's link for [entity] [doc
+   type] looks out of date. Tell your trainer."
 3. **Web search pass — only for counties with no readable source.** If `my_sources` shows every county in the
    rep's territory with at least one readable source, skip the search pass entirely and say so in one line.
    Run it only for counties the registry can't cover (no rows, or every row "open it yourself" / failed),
@@ -134,7 +142,11 @@ Rep** link, never "Record Owner"; UTC → **Eastern Time**; Confidence only ever
 already-open lead is **in pipeline**, never new).
 
 **Labels on each lead:** `new` (nothing on file), `in pipeline` (open opportunity or quote), `lost before`, or
-`won before`, plus the QuickBase record number the rep can open. If the extension isn't connected, say
+`won before`, plus the QuickBase record number the rep can open. Labels describe **this job**; the
+jurisdiction's history is a separate note. When the jurisdiction is on file as a customer, add its history
+after any label, including `new`, e.g. "`new` · past customer: 6 quotes, last 2026 (bleachers), none won"
+(most recent job name and year, quote count, and whether any was won). Nothing on file at all: just `new`.
+If the extension isn't connected, say
 **"QuickBase isn't connected"** once, leave the label off every lead, and never guess a status.
 
 **Bliss already involved.** A public document that names "Bliss Products" or "Play and Park Structures" (often as the
@@ -168,7 +180,7 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
 6. One closing line offering both next steps: "Want more on one of these? That's the Research Brief. Or an
    intro email built around one of them? That's the Email Writer." When the rep picks one, pass that lead
-   (what, when, stage, source) to the Email Writer as known context.
+   (what, when, stage, source) and its QuickBase label plus record number to the Email Writer as known context.
 7. **The last line of the output** is the ROUTINE count, and it is count-only — no list, no links, and no
    category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was set
    aside, "Set aside 0 routine items." Nothing follows it.
@@ -183,10 +195,14 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
    for the county or counties — with the connector present, `my_sources` lists the counties the rep actually
    has.
 2. **Run the reading order** (steps 1–4 above) for those counties.
-3. **Grade** every `lead_scan` hit REAL/ROUTINE, then **drop** anything that fails the stage-7 exclusion or
-   the currency rule.
+3. **Grade** every `lead_scan` hit REAL/ROUTINE, then **drop** anything that fails the stage-7 exclusion.
+   Defer the currency rule for stale candidates until after the QuickBase cross-reference, so an open same-job
+   match can keep one alive.
 4. **Check the board** and keep only genuinely new items, marking stage moves separately.
-5. **Stage and score** the survivors, and **cross-reference** each one against QuickBase.
+5. **Stage and score** the survivors, and **cross-reference** each one against QuickBase. A lead more than
+   about 12 months old stays only when QuickBase finds an open (`in pipeline`) same-job opportunity or quote;
+   `lost before` and `won before` do not keep it alive. Do not add a lookup just for a stale item beyond the
+   normal bounded cross-reference pass.
 6. **Present** in the output shape above.
 7. **Update the board** and verify the spreadsheet write.
 8. If the rep wants more on a specific signal (a named municipality, a named project), hand off to the

@@ -137,7 +137,7 @@ Lead Finder reads these at set steps. Save each one as a project file named exac
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-27b**
+**Tools version: 2026-09-30a**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

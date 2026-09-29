@@ -70,6 +70,18 @@ before it goes into the brief. This is read-only — never write to QuickBase. T
 record** (a project can surface through its firm when the city alone would not have). Match against
 Opportunities and Quote Pipeline.
 
+Match the jurisdiction on its distinctive name, contains-style and case-insensitive; the entity's own
+department record counts, but a billing city alone does not, and schools, property managers, architects, and
+contractors are only related notes. Search quote and opportunity names for the project too, but require a
+matching city or county — never match on a park name alone. Opportunities only exist from about mid-2026, so
+older jobs may be quote-only. Ignore records with `TEST` in the rep or customer name.
+
+Before choosing `in pipeline`, `lost before`, or `won before`, read the matching opportunity and every matching
+quote. A won quote (`Order Submitted`, `Invoiced`, or `Commission Paid`) means `won before` even under an
+opportunity that still looks open. For a closed match with no won quote, use `lost before` and show an ambiguous
+raw status after the label instead of asserting "lost"; check nearby quotes if the status says an alternative
+was chosen.
+
 **First use — resolve and cache.** This skill file is public and carries no QuickBase IDs.
 
 - Resolve each table name to its table ID with the QuickBase extension's table listing, and write the

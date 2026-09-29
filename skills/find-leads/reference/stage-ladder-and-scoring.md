@@ -40,6 +40,9 @@ Factors, heaviest first:
 - Product fit to Bliss's lines, scored from which of F1's keyword groups matched (play, surfacing, shade
   and structures, sports and fitness, site amenities, or parks and trails)
 - Funding certainty: committed budget versus a wish-list item
+- Money planned 3 or more fiscal years out (from the current fiscal year to the earliest year with design or
+  construction money) is a lower-confidence funding signal; note it in the score reason and score it lower
+  within the funding factor. Do not change the stage solely for this timing.
 - Cooperative-contract path: an agency buying through a contract Bliss holds, such as OMNIA or Sourcewell,
   can skip a formal bid; this factor switches on once the current-contract list is confirmed (see the
   decisions table)
