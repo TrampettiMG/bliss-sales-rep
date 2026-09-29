@@ -4,7 +4,8 @@ description: >-
   Scan the rep's counties for new lead signals from the Bliss Library connector — curated agendas and public
   registry documents — then grade each hit, stage it on the 0-7 ladder, score it 0-100, and cross-reference QuickBase. Reports
   what's new since the last run. Use when the rep says "find leads for my county", "what's new in my
-  territory", "scan for leads", "any new signals", or similar. Repeatable: each run surfaces only items not
+  territory", "scan for leads", "any new signals", "run my morning leads", or similar (the Morning leads
+  automatic check-in runs it in morning digest mode). Repeatable: each run surfaces only items not
   already on the shared lead board (`lead-board.xlsx`).
 ---
 
@@ -189,6 +190,36 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
 7. **The last line of the output** is the ROUTINE count, and it is count-only — no list, no links, and no
    category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was set
    aside, "Set aside 0 routine items." Nothing follows it.
+
+## Morning digest mode — the automatic check-in
+
+The **Morning leads** check-in (see **Automatic check-ins** in CLAUDE.md) runs this tool on its own every
+weekday, and the rep can start it any time with "run my morning leads." It is the same tool with a smaller,
+cheaper run. Everything above still applies (the connector is the only source of leads; grading, stages,
+scores, QuickBase labels and the lead board all work the same), except:
+
+1. **Counties:** Focus Counties if the profile has them; otherwise all of the rep's counties. Never stop to
+   ask which counties. If there are more than about 10 and no Focus Counties, add one line at the end:
+   *"Tip: pick a few focus counties to keep this quick. Say 'change my focus counties'."*
+2. **Only what's new:** run `lead_scan` with `since:` set to the latest **Last Checked** date on the lead
+   board (no board yet: 7 days back). Mondays catch up on the weekend automatically this way.
+3. **Library documents once a week:** read CIPs, budgets and master plans (the normal `read_source` step,
+   same cap) only on Mondays, or when no row on the board was checked in the last 7 days. Other days, skip
+   them. Budgets and plans rarely change day to day.
+4. **No web enrichment** in this mode. If a lead is missing a due date or contact, say "due date not
+   visible — verify on the page" as usual. The rep can ask for more on any lead afterward.
+5. **Already ran today?** Don't ask. Reply with one line and stop: *"Already checked this morning. Nothing
+   new since then."*
+6. **Short output:**
+   - Start with: *"Good morning, [First name]. Here are your morning leads."*
+   - "Moved up since your last scan", then up to the **top 5** new leads, one line each, in the normal
+     format. If there are more: *"…and N more on your lead board."*
+   - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
+     couldn't read' for the list."*
+   - The saved-board line and the Set-aside line, as usual.
+   - Nothing new at all: one line, *"Nothing new in your counties since [date]."*, then the saved-board
+     line if any row changed.
+7. End with one line: *"Want more on one of these? Ask for the Research Brief or the Email Writer."*
 
 ## Flow
 
