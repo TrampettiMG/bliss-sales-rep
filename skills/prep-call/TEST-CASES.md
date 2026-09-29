@@ -4,85 +4,80 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 plain ask a rep would type, with what a correct run looks like. Run each one from that single ask: no
 follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
-## Core synthesis
+## Research Brief handoff
 
-1. **Rich context given directly.** Rep says: "prep me for a call with Dana at Fairview Parks — we talked
-   last week, she wants a quote by Friday, and I know the county already has a vendor for the smaller
-   stuff." Expect: talking points and open items (the quote) pulled directly from what was said, plus
-   objections that plausibly connect to "already has a vendor" without inventing new facts.
-2. **Chained off a summarize-bid result.** Rep runs `summarize-bid` on a packet naming a competitor with
-   "or approved equal" language, then says "prep me for a call with the contracting officer about this."
-   Expect: talking points reference the actual competitor/substitution requirement from the bid summary,
-   not a generic script.
-3. **Thin context — rep gives almost nothing.** Rep says "prep me for a call with the North Las Vegas parks
-   guy" with no other detail. Expect: it asks what the rep already knows rather than inventing a
-   relationship history, OR produces a clearly generic brief with objections labeled as general patterns —
-   it should not present invented specifics as if they were known facts about this contact.
-4. **Open items correctly says "none" rather than inventing one.** Rep gives context with no outstanding
-   items ("just an intro call, haven't talked before"). Expect: the Open items section says something like
-   "None — first conversation" rather than fabricating a pending item to fill the section.
-5. **Objections grounded vs. generic, side by side.** A rich-context case (test 1) and a thin-context case
-   (test 3) run back to back. Expect: the objections in test 1 read as connected to the stated situation
-   (already has a vendor for smaller stuff), while test 3's read as clearly general/labeled — the two should
-   be visibly different in specificity, not identical boilerplate.
-6. **Call on a quote already sent, bid unclear.** Rep says "I'm calling the parks director about the quote I
-   sent last month — they may have to bid it." Expect: talking points cover confirming the quote is still
-   active, what's holding the decision, and how they plan to buy — without naming a co-op contract the rep
-   didn't mention; objections include "we have to put it out to bid," labeled as a general pattern.
-7. **Price objection without quote details.** Rep says only "prep me for a call on my playground quote to
-   Chesterfield." Expect: the price-objection angle says "walk through what your quote includes" — never
-   lists installation, surfacing, or a warranty as included. Brief stays about one line per item.
-8. **Mid-conversation addition.** After a brief, rep says "oh, they also mentioned they're replacing the
-   surfacing." Expect: the new context is folded in and the brief regenerated, not left out.
+1. **Brief already in the conversation.** Rep runs Research Brief on a fictional municipality, then says
+   "prep me for the call." Expect: no re-research, no new web searches, and no new QuickBase lookup on the
+   target; Call Prep uses the brief as its source of truth.
+2. **No brief runs silently.** Rep says "prep me for a call with fictional Cedar Grove Parks." Expect: Call
+   Prep runs Research Brief first using its normal budget, library-first path, QuickBase sections, and contacts;
+   the rep sees only the Call Prep, not the Research Brief output.
+3. **Show the full research afterward.** After case 2 the rep says "show the full research." Expect: the exact
+   Research Brief built for the prep is shown, not a fresh research pass and not a new set of facts.
+4. **Lead Finder handoff by number.** Lead Finder returns at least two fictional leads and the rep says
+   "prep me for #2." Expect: Call Prep resolves the second lead, then uses its buyer, project, scope, budget,
+   stage, source, and QuickBase label without asking the rep to repeat them.
+5. **Research Brief facts are preserved.** A brief has a named contact, a bid date, nearby references, and an
+   ambiguous QuickBase close status. Expect: all appear only where the output shape calls for them; nothing is
+   strengthened, guessed, or translated.
 
-## Research-dossier handoff (F6)
+## Output shape and synthesis
 
-9. **Brief built off a dossier in the conversation.** Rep runs `research` on a city (producing a dossier
-   with a Contacts list and Why-call-now findings), then says "prep me for a call with them." Expect: the
-   talking points and open items carry the dossier's sourced contacts and its Why-call-now facts — the
-   brief is **pulled from the dossier**, not researched again.
-10. **No re-research, no new facts.** Same as test 9, watched for behavior. Expect: **no** fresh web
-    searches and **no** new QuickBase lookups on the target, and nothing asserted that the dossier doesn't
-    carry. If the brief needs something the dossier lacks, it asks the rep or points back to `research`
-    rather than filling the gap itself.
-11. **A dossier's open thread becomes an open item.** The dossier names the architect only in a contract
-    approval, or flags a decision-maker not yet confirmed. Expect: that surfaces as an open item, sourced
-    from the dossier — not invented, and not silently dropped.
-12. **Dossier present but thin.** The dossier honestly says few contacts were sourced. Expect: the brief
-    stays thin and honest about the gap — it does not manufacture a contact or a finding to fill a section.
-13. **No dossier, cold prospect.** Rep says "prep me for a call with [a new city] parks head" with nothing
-    in the conversation. Expect: it builds from what the rep says, flags the thin context, and may offer the
-    `research` tool first — it does not invent context.
+6. **Who you're calling has no contact.** The Research Brief has no sourced contact. Expect exactly: "No contact
+   found. Ask who owns this project." It does not invent a role or name.
+7. **Talking points.** The brief's Why call now section has a funding event, a design-start date, and scope that
+   matches the rep's product focus. Expect 3–4 one-line talking points using those facts and no extra claims.
+8. **References use only the brief.** Similar jobs elsewhere and Past customers nearby each contain fictional
+   jobs. Expect 2–3 references drawn only from those sections, showing buyer, scope, date, and Grand Total incl.
+   tax when the brief provides it. If both sections are empty, expect "No references found in the brief."
+9. **Questions do not repeat answers.** The brief already answers the bid date, buyer type, and whether funding
+   is adopted, but does not say who decides or when design starts. Expect questions only about the missing
+   decision-maker and design timing, not the answered items.
+10. **Open items from history and the rep.** Bliss history has an open quote and the rep says they owe a
+    follow-up. Expect both as open items, with status and recorded reason exactly as stored; no invented item is
+    added. If neither exists, expect "None found. Ask if anything's outstanding."
+11. **Past winner becomes an objection.** Who won their past bids names a fictional vendor that won a prior
+    agency bid. Expect an objection line using that sourced fact, such as "They've bought from that vendor
+    before," with a short response angle.
+12. **General objections are labeled.** The brief names no past winner or customer objection. Expect 2–4 likely
+    objections labeled general, with response angles that do not assume the quote includes installation,
+    surfacing, warranty, or any other unconfirmed Bliss capability.
+13. **Glanceable length.** A rich Research Brief contains many findings. Expect 3–4 talking points, 2–3
+    references, 3–4 questions, 1–3 open items, and 2–4 objections, one line per item where possible.
+14. **Closing handoff.** Every completed prep ends with: "Say 'show the full research' for the whole brief, or
+    'draft a follow-up' for the Email Writer." It does not add a bottom line or recommendation.
 
-## QuickBase behavior and no-write rule
+## QuickBase and read-only behavior
 
-14. **Quote named, connector set up, one match.** Rep names a quote/opportunity and QuickBase is connected.
-    Expect: it looks the opportunity up the way Pipeline Check does and, on exactly one match, treats its
-    customer/status/value/dates as known facts — read only.
-15. **Several matches.** Rep's quote matches several opportunities. Expect: they're listed one line each and
-    the rep is asked which — no silent guess.
-16. **QB unplugged.** Rep names a quote but QuickBase isn't connected. Expect: one clear "QuickBase isn't
-    connected" line and the normal ask — never a guessed status or fabricated opportunity.
-17. **Never writes to QuickBase.** Any run that touches QuickBase. Expect: read-only throughout — no write,
-    edit, or status change is ever made.
-18. **PROFILE.md read.** Any run. Expect: product focus and territory come from `PROFILE.md` so talking
-    points stay relevant to what the rep sells.
+15. **Rep's quote lookup.** Rep says "prep me for my playground quote to fictional Cedar Grove." With QuickBase
+    connected, Call Prep follows the `quickbase-usage` skill for the read-only quote lookup. One match supplies
+    the current status and dates; several matches are listed for the rep to choose; no match leaves only the
+    missing questions.
+16. **QuickBase not connected.** Rep mentions their own quote but QuickBase is unavailable. Expect one plain
+    "QuickBase isn't connected" line, no guessed status, and the prep still uses the Research Brief and rep's
+    context.
+17. **No writes.** Any run that uses QuickBase makes no write, edit, or status change.
+18. **Multiple Alternative stays ambiguous.** The brief's history contains status `Close - Multiple Alternative`.
+    Expect that exact status in Open items, never the word "lost" unless the source separately records a loss.
+19. **Other reps remain visible.** The brief's history names another rep on a past job. Expect Call Prep to carry
+    that name exactly as supplied by the brief; it does not hide or replace it.
 
-## Base-spec gate tests
+## Source and routing boundaries
 
-19. **Ron test.** A rep's first plain ask — "prep me for a call with [name]" — with no further setup.
-    Expect: the three-section brief completes from that one ask, the only question being the first-run
-    profile fill.
-20. **QB extension unplugged → F5 says so.** The base-spec "QB extension unplugged" gate, applied here.
-    Expect: the quote lookup step says "QuickBase isn't connected" rather than guessing, and the brief is
-    still delivered from what the rep provided.
-21. **Connector unplugged (not applicable).** The base-spec "connector unplugged" gate is `find-leads`'s;
-    `prep-call` is a synthesis tool and reads no registry sources. Expect nothing beyond the rule that it
-    never invents context when the registry or QuickBase is absent.
-22. **Lead Finder label already in context.** A Lead Finder result carries `in pipeline`, `won before`, or
-    `BLISS INVOLVED`. Expect: Call Prep uses the label as known context without asking the rep to repeat it, and
-    keeps the brief factual and read-only.
+20. **Research facts are the only facts.** The rep asks for a prep with no brief and gives no extra context.
+    Expect all factual content to come from the quietly run Research Brief; general sales patterns appear only in
+    Likely objections and are labeled general.
+21. **Mid-conversation addition.** After a prep, the rep says the agency also mentioned replacing surfacing.
+    Expect the prep to regenerate with that rep-supplied fact, without re-researching unless the rep asks for a
+    new Research Brief.
+22. **Email Writer distinction.** After a prep, the rep says "draft a follow-up." Expect routing to the Email
+    Writer, not an email drafted inside Call Prep. After an Email Writer result, a request to be briefed before
+    calling still routes to Call Prep.
+23. **Profile relevance.** Any run reads `PROFILE.md` for product focus and territory. Talking points remain
+    relevant to what the rep sells without assuming products not in the profile or brief.
+24. **No invented contact or answer.** A public-role contact, decision-maker, install date, or budget is absent
+    from the brief. Expect the contact fallback or a question, not a plausible name, date, or amount.
 
-**What "fails gracefully" means for this tool specifically:** when context is thin, the brief should look
-thin and general — not confidently specific. A generic-but-honest brief beats a specific-but-fabricated
-one, same principle as make-content and draft-outreach.
+**What "fails gracefully" means for this tool specifically:** Call Prep is a short synthesis of the Research
+Brief, the rep's words, and the one permitted read-only quote lookup. When those sources are thin, the prep is
+thin; it never fills a section with invented customer facts.

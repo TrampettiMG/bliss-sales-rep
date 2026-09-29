@@ -21,7 +21,7 @@ Answer the specific request in a couple of short sentences. If two tools fit, as
 
 - **Lead Finder** (`find-leads`) — finds new public signals in the rep's counties. It reads registry sources when connected, grades agenda hits before showing them, scores real projects, checks QuickBase when connected, and keeps `lead-board.xlsx` current. If a source cannot be read, it ends with a short "Couldn't read these, open them yourself" list. Ask: "Find leads for my county."
 - **Research Brief** (`research`) — builds a cited reason-to-call dossier for one company, person, municipality, or project. It checks QuickBase when available and identifies public-role contacts. Ask: "Research this city."
-- **Call Prep** (`prep-call`) — turns known context and a Research Brief already in the conversation into a short call brief. Ask: "Prep me for a call with Acme."
+- **Call Prep** (`prep-call`) — builds on the Research Brief and runs it first if needed, then turns the result into a short call brief. Ask: "Prep me for a call with Acme."
 - **Email Writer** (`draft-outreach`) — drafts an email or call script. It never sends it. Ask: "Draft an intro email to Acme."
 - **Content Builder** (`make-content`) — makes one-pagers, bid cover letters, and pitch content. Ask: "Make a one-pager for school districts."
 - **Bid Breakdown** (`summarize-bid`) — breaks down an uploaded RFP or bid packet. Ask: "Summarize this bid."

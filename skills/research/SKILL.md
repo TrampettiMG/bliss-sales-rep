@@ -60,7 +60,9 @@ a web search — it doesn't spend this budget.
        contract (Sourcewell, BuyBoard, TIPS, OMNIA, etc.);
      - open or recent bids on the agency's own bid page, and published bid tabulations/awards (who won
        a past playground or park bid, if public).
-     For a **school district**, the equivalent is its facilities plan or bond program.
+     For a **school district**, the equivalent is its facilities plan or bond program. For a **private buyer**
+     (a private school, church, HOA or property manager), skip the Bliss Library and bid-tab searches (they
+     don't publish agendas or bids); use its own website and any news, and still run the QuickBase sections.
 4. **For a municipality/agency or a named project, cross-reference QuickBase (F5)** — see the section
    below. Do this before presenting the brief, and read only.
 5. **Build the Bliss history sections** below after the QuickBase label and before contacts. Keep each lookup
@@ -155,7 +157,7 @@ a faster Bliss Library lookup later. If QuickBase isn't connected, say: "Similar
 isn't connected."
 
 **Past customers nearby** — find up to 5 won jobs for other customers in the lead's county, at most 2 per
-customer. Won means exactly
+customer, won in the last 5 years. Won means exactly
 `Order Submitted`, `Invoiced`, or `Commission Paid`. If the county has none, fall back to the same state and say
 "fallback: same state." Never use the lead's own buyer. The county is the customer's billing county, so
 leave out contractors (their billing county isn't the job site). Each line has: customer · product categories · year ·
@@ -167,7 +169,8 @@ line has: date · project · winner · amount if published (Grand Total incl. ta
 source link. Add a factual pattern line when one is supported, such as "One repeat vendor won 2 of their last 3
 playground bids." Web searches count toward the existing 6–8 search budget. If QuickBase isn't connected, say:
 "Who won their past bids: QuickBase isn't connected." You may still use the web-search portion only when the
-agency and its public bid source are identified.
+agency and its public bid source are identified. Skip the web part for a private buyer and say "not a public
+bidder."
 
 ## Contact finder (F6)
 
@@ -178,6 +181,8 @@ actually matter to Bliss's sales process, and only them:
 - the **purchasing agent** (or procurement officer);
 - the **school facilities director** — for a school-district lead;
 - the **city manager** (or county administrator) where that's the decision-maker for the lead;
+- for a **private buyer**: the head of school or administrator, the facilities or business manager, the
+  pastor or church administrator, or the HOA board president or property manager, from the buyer's own site;
 - the **landscape architect / project lead** — **only** when a council minute or a contract-approval record
   identifies them by name, never inferred from a staff directory, a firm's team page, or a project listing.
 
@@ -235,4 +240,4 @@ verdict on how the rep should approach the account.
 ## Hand off, don't overreach
 
 If the rep wants to act on this brief next (an email, a call), hand off to `draft-outreach` or `prep-call`
-rather than drafting those here — this tool's job stops at the research and the sourced contacts.
+rather than drafting those here — Call Prep may run this tool silently first and uses its output as the source of truth.
