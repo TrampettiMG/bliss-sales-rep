@@ -126,6 +126,8 @@ issuing agency/owner name. Read only — never write to QuickBase. Report it as 
 snapshot:
 - one or more matches: "In QuickBase: Opp 12345 — [name], [status]" (up to 3, then "and N more"), so the
   rep adds to the existing record instead of creating a duplicate customer or opportunity;
+- no match of yours but another rep's record for this owner (from "Bliss and this buyer"): "In QuickBase:
+  none of yours — another rep's record is below";
 - no match: "In QuickBase: no opportunity for this owner yet";
 - no connection: leave the line out.
 A name match isn't proof it's the same project — say "for this owner," not "for this bid."
@@ -138,8 +140,8 @@ is already in the conversation, reuse its results; otherwise run the Research Br
 and similar-jobs lookups; follow the `quickbase-usage` skill
 (it holds the tables and fields; never guess them). Show this buyer's past Bliss bids/quotes with the outcome
 and status exactly as QuickBase shows it, the recorded reason lost, and who won if known. Never call `Close -
-Multiple Alternative` a loss. Then show 1–3 similar won bids as a price reference range using Grand Total incl.
-tax. Facts only: this block is context for the rep's decision, not a pursue/pass verdict, and it never includes
+Multiple Alternative` a loss. Then, unless the bid has already closed, show 1–3 similar won bids as a price reference range using Grand Total incl.
+tax. For a closed bid, skip the similar bids and offer them in one line instead. Facts only: this block is context for the rep's decision, not a pursue/pass verdict, and it never includes
 a pricing worksheet. If QuickBase is not connected, omit the block rather than guessing.
 
 ## Known permit requirements

@@ -235,9 +235,10 @@ scores, QuickBase labels and the lead board all work the same), except:
    - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
      couldn't read' for the list."*
    - The saved-board line and the Set-aside line, as usual.
-   - Nothing new at all: one line, *"Nothing new in your counties since [date]."*, then the saved-board
-     line if any row changed.
-7. End with one line: *"Want more on one of these? Ask for the Research Brief — for example, 'research #2' —
+   - Nothing new at all: one line, *"Nothing new in your counties since [date]."* ([date] is the `since:`
+     date from step 2, the last check, never today), then the saved-board line if any row changed, and skip
+     the step 7 line.
+7. When at least one lead was shown, end with one line: *"Want more on one of these? Ask for the Research Brief — for example, 'research #2' —
    or the Email Writer."*
 
 ## Flow
