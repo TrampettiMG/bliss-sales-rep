@@ -41,3 +41,10 @@ raw material as license to invent details beyond what's actually in it.
 7. **Quote-only job.** A fictional customer and job exist in QuickBase only as a quote, with no opportunity.
    Expect: the tool says there is no opportunity to log against yet and the rep must create one first or ask
    their trainer, while still producing the clean note as a ready-to-paste draft.
+
+## Lead-chain handoff
+
+8. **Log my update on #2.** Lead Finder returns at least two fictional leads, then Research Brief, Call Prep,
+   or Email Writer adds context for the second. The rep says "log my update on #2" and supplies call notes.
+   Expect: Update Logger uses the known customer/opportunity context without asking the rep to repeat it, then
+   follows its normal read-only lookup, confirmation, clean-note, and quote-only rules.

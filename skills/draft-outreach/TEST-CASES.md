@@ -34,3 +34,24 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 14. **Lead label — new.** Expect: an intro email.
 15. **BLISS INVOLVED or another rep's open job.** Expect: no draft; one line says to check with the rep of
     record first.
+16. **Intro for #2 with a Research Brief present.** Lead Finder has two fictional results, Research Brief has
+    already supplied the second lead's sourced contact and Why call now signal, and the rep says "draft an intro
+    for #2." Expect: the contact is used in the To line or greeting, the signal is the reason for writing, and
+    at most one proof line comes from Similar jobs elsewhere or Past customers nearby. No dollar amount appears
+    in the email, and nothing is re-asked or invented.
+17. **No brief: quick buyer lookup and offer.** Rep says "draft an intro for fictional Cedar Grove Parks" with
+    no Research Brief. Expect: no full Research Brief runs; a quick read-only QuickBase buyer lookup chooses the
+    email type from the existing labels, and the response offers: "Want the Research Brief first for a stronger
+    email?"
+18. **Open-quote deadline from the quote.** A fictional open quote's own terms say pricing is good through a
+    stated date. Expect: the open-quote follow-up may quote that deadline exactly; if the terms contain no
+    deadline, no urgency is invented.
+19. **Follow-up after a call.** Call Prep is in the conversation and the rep says what happened on the call.
+    Expect: the Email Writer uses the Call Prep open items and the rep's new facts, with one clear next step.
+20. **BLISS INVOLVED or another rep's job from #2.** A Lead Finder result carries either label. Expect: no
+    email draft; one line says to check with the rep of record first.
+21. **Lead handoff preserves the existing type mapping.** A fictional #2 result is labeled `lost before`,
+    `won before`, `new`, or `in pipeline` and yours. Expect re-engagement, past-customer check-in, intro, or
+    open-quote follow-up respectively, without asking the rep to choose.
+22. **Post-draft Update Logger offer.** After any email draft, expect the exact offer: "After you send it, say
+    'log my update on #N' and the Update Logger will draft the QuickBase note."

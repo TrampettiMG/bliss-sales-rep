@@ -46,6 +46,10 @@ way `forecast-update` does — pull that one opportunity's current status, forec
 and customer name, using the rep's QuickBase name (see below) to confirm it's theirs. Follow the
 `quickbase-usage` skill for the actual query (it holds the tables and fields; never guess them).
 
+If the rep says "log my update on #N," use Lead Finder result N, or the Research Brief, Call Prep, or Email
+Writer draft already in the conversation, as the known customer/opportunity context. Do not ask the rep to
+repeat it; continue the normal lookup and raw-material flow below, including the quote-only case.
+
 If the job only exists as a quote and there is no opportunity to log against yet, say so in one plain line:
 there's no opportunity to log this against yet, so the rep needs to create one in QuickBase first or ask their
 trainer. Still produce the clean note as a draft ready to paste once the opportunity exists. Do not invent any
