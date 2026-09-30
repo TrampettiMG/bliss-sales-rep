@@ -165,7 +165,8 @@ customer, won in the last 5 years. Won means exactly
 `Order Submitted`, `Invoiced`, or `Commission Paid`. If the county has none, fall back to the same state and say
 "fallback: same state." Never use the lead's own buyer. The county is the customer's billing county, so
 leave out contractors (their billing county isn't the job site). Skip parts and small orders (Grand Total incl.
-tax under $10K). Each line has: customer · product categories · year · total (Grand Total incl. tax) · rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
+tax under $10K). Don't repeat a job already listed under Similar jobs elsewhere; add "(also listed above)" to
+the count instead. Each line has: customer · product categories · year · total (Grand Total incl. tax) · rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
 
 **Who won their past bids** — first show Bliss's own lost bids to this buyer with the recorded reason lost, then
 use 1–2 web searches for the agency's published bid tabs or award minutes for playground or park bids. Each

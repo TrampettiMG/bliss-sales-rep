@@ -52,7 +52,7 @@ review and send/say themselves.
    and record number. Do not ask the rep to repeat it. If a `research` brief or `prep-call` brief is already
    in the conversation, use its sourced contact in the To line or greeting and its Why call now signal as the
    reason for writing. Add at most one proof line from Similar jobs elsewhere or Past customers nearby, only a
-   job that brief lists and never a dollar amount. Call Prep's Open items feed a follow-up. Never add a fact
+   job that brief lists and never a dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Call Prep's Open items feed a follow-up. Never add a fact
    those tools did not carry.
    **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
    read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill

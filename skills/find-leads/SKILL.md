@@ -131,7 +131,8 @@ Read `Lead Finder - Stages and Scoring.md` (`reference/stage-ladder-and-scoring.
   the stage-7 exclusion.
 - Rank the output by score, highest first, and open the list with the summary line the rubric asks for:
   **"Found N, call these X now"** — not a flat list. X is the leads in the top band (roughly the top three
-  scoring leads); name them.
+  scoring leads); name them. Leave out of the "call now" names any lead that says to check with another rep
+  first (`BLISS INVOLVED`, or another rep's open quotes with that buyer); it stays in the list at its score.
 
 ## QuickBase cross-reference (F5)
 
