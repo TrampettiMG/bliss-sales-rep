@@ -78,7 +78,8 @@ It replaces the markdown log as the tracker. Keep leads in the board — never k
 `find-leads-log.md` from this tool, and never keep a second copy of the board.
 
 **Where it lives:** in the rep's project folder. **Look for it anywhere in the project first, including a
-subfolder like `claude/`** — some setups keep files there. If it's there, use it where it is and update it
+subfolder like `claude/`** — some setups keep files there. Where the project only holds text files, the board
+is `lead-board.csv` (same columns); follow `Lead Finder - Lead Board.md` for that case. If it's there, use it where it is and update it
 there. If it truly isn't anywhere, this is the rep's first board run: create it, run the QuickBase read, and
 fill it with today's leads. Never create a second board "to be safe."
 
