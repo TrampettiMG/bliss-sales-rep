@@ -148,6 +148,8 @@ for #2", "break down the bid for #2").
   tool found. If two results disagree, use the newer one and say so in one line.
 - A label of `BLISS INVOLVED` or another rep's open job stops the chain at outreach: say in one line to check
   with the rep of record first.
+- If QuickBase shows the buyer's past quotes under a different rep, but nothing open, that's not a stop: say it
+  once, in one line ("Past quotes for this buyer were under [rep]."), and carry on.
 
 ## Lead Finder reference files
 
@@ -253,7 +255,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-01a**
+**Tools version: 2026-10-01b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

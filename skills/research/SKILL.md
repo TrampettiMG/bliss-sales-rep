@@ -146,8 +146,12 @@ QuickBase isn't connected." If no matching buyer history exists, say so plainly.
 **Similar jobs elsewhere** — check at most 30 candidates (a hard cap) from the last 24 months, then show up to 5 that
 match all three filters: the same product categories as the lead's scope from the quote line items; the same
 buyer type; and a total from half to double the lead's budget. Use **Grand Total incl. tax** for every total.
-If the lead has no known budget, skip the size filter and say so in this section. Look at won jobs first
-and add still-open quotes only if fewer than 5 match. Two limits to say plainly when they apply:
+The budget is the Bliss-relevant scope estimate when the source states one (e.g. the playground line item),
+otherwise the whole project budget; name which one you used. If the lead has no known budget, skip the size
+filter and say so in this section. Look at won jobs first
+and add still-open quotes only if fewer than 5 match. If nothing matches all three filters, you may list up
+to 3 near misses (right size and buyer type, but only some of the product categories), each labeled "near
+miss: [what differs]"; never present a near miss as a match. Two limits to say plainly when they apply:
 QuickBase files site furnishings under play equipment, so a job only counts as a playground when it has
 real playground equipment, not just benches, tables or bleachers (the QuickBase skill says how to tell); and many
 customers have no buyer type recorded, so a buyer with none is matched on product and size only. Each line has: buyer · state ·
@@ -160,8 +164,8 @@ isn't connected."
 customer, won in the last 5 years. Won means exactly
 `Order Submitted`, `Invoiced`, or `Commission Paid`. If the county has none, fall back to the same state and say
 "fallback: same state." Never use the lead's own buyer. The county is the customer's billing county, so
-leave out contractors (their billing county isn't the job site). Each line has: customer · product categories · year ·
-rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
+leave out contractors (their billing county isn't the job site). Skip parts and small orders (Grand Total incl.
+tax under $10K). Each line has: customer · product categories · year · total (Grand Total incl. tax) · rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
 
 **Who won their past bids** — first show Bliss's own lost bids to this buyer with the recorded reason lost, then
 use 1–2 web searches for the agency's published bid tabs or award minutes for playground or park bids. Each
