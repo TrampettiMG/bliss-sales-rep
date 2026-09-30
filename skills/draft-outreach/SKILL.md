@@ -3,11 +3,11 @@ name: draft-outreach
 description: >-
   Draft an intro email, follow-up email, open-quote follow-up, past-customer check-in, re-engagement
   email, or call script for a prospect, in the rep's own voice. Use when the rep says "write an intro
-  email for...", "draft a follow-up to...", "follow up on my quote to...", "check in with a past
-  customer...", "write a re-engagement email for...", "give me a call script for...", or asks for
-  something to send or say to a prospect. "Follow up on [a quote/proposal]" means an email here, not a
-  pre-call brief — even if the previous message in the chat was a `prep-call` brief. Always a draft for the rep to review and send/use themselves —
-  never sends anything.
+  email for...", "draft an intro for #2", "draft a follow-up to...", "follow up on my quote to...",
+  "draft a follow-up after my call", "check in with a past customer...", "write a re-engagement email
+  for...", "give me a call script for...", or asks for something to send or say to a prospect. "Follow
+  up on [a quote/proposal]" means an email here, not a pre-call brief — even right after Call Prep. Always
+  a draft for the rep to review and send/use themselves — never sends anything.
 ---
 
 # Email Writer
@@ -47,7 +47,21 @@ review and send/say themselves.
    check-in, re-engagement email, or call script. If ambiguous, ask in one short question.
 2. **Read `PROFILE.md`** for the rep's name, contact info, territory, product focus, and Voice line (see
    above — ask for Voice only if it's missing).
-3. **Gather what's specific to this prospect:** who they are, what's known about them or their
+3. **Use context already found before asking for it.** If the rep says "draft an intro for #N" or any email
+   type plus "#N", use Lead Finder result N's buyer, project, scope, budget, stage, source, QuickBase label,
+   and record number. Do not ask the rep to repeat it. If a `research` brief or `prep-call` brief is already
+   in the conversation, use its sourced contact in the To line or greeting and its Why call now signal as the
+   reason for writing. Add at most one proof line from Similar jobs elsewhere or Past customers nearby, only a
+   job that brief lists and never a dollar amount. Call Prep's Open items feed a follow-up. Never add a fact
+   those tools did not carry.
+   **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
+   read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill
+   for the query. Use the label it gives to choose the type, exactly as the Lead Finder label rules below say
+   (including the `BLISS INVOLVED` / other rep's job stop). Offer: "Want the Research Brief first for a
+   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context.
+   **For "draft a follow-up after my call,"** use the Call Prep already in the conversation plus what the rep
+   says happened; write one clear next step.
+   **Then gather what's specific to this prospect:** who they are, what's known about them or their
    organization, and the situation (cold intro, following up on X, gone quiet since Y). Pull this from
    what the rep just told you or from a tool result already in this conversation (a lead, a research
    brief, a bid summary) — don't ask the rep to repeat something already said. If there isn't enough to
@@ -80,8 +94,9 @@ review and send/say themselves.
    - **Open-quote follow-up** — for a quote the rep sent that hasn't turned into an order or a no (often
      flagged by `my-pipeline` as quoted 90+ days ago). Name the quote or project, ask one simple question
      that gets a clear answer — still moving, timing changed, or went another way — and make "no" or
-     "not this year" easy to say, so the rep can update or close it out. No invented urgency or
-     discounts.
+     "not this year" easy to say, so the rep can update or close it out. If the rep's own quote terms state a
+     deadline, quote it exactly (for example, "pricing is good through Oct 15"); otherwise no invented urgency
+     or discounts.
    - **Past-customer check-in** — for a customer who's bought before (most repeat business comes from
      these). Reference the past project only if the rep names it or QuickBase shows it (a Pipeline Check past-customer list), ask about what's coming up (another
      site, a phase two, replacing aging equipment or surfacing, next year's budget), and keep the ask
@@ -95,7 +110,9 @@ review and send/say themselves.
    Apply the rep's Voice throughout — casual and short vs. more formal changes the sentence length and
    tone, not the facts included.
 5. **Hand it back as plain, paste-ready text.** For an email, that means subject line + body. For a call
-   script, a short bulleted list.
+   script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
+   the Update Logger will draft the QuickBase note." Use the lead's number when the draft came from a Lead
+   Finder result; otherwise use the customer's name ("log my update on Cedar Grove Parks").
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.
 
 ## Several check-ins or follow-ups at once

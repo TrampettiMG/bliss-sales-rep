@@ -19,12 +19,14 @@ Nothing here changes QuickBase automatically. Tools return drafts, reports, or v
 
 Answer the specific request in a couple of short sentences. If two tools fit, ask one short question instead of guessing.
 
+Work a lead by number: "find leads" → "research #2" → "prep me for #2" → "draft an intro for #2" → "log my update on #2". Each tool picks up what the last one found.
+
 - **Lead Finder** (`find-leads`) — finds new public signals in the rep's counties. It reads registry sources when connected, grades agenda hits before showing them, scores real projects, checks QuickBase when connected, and keeps `lead-board.xlsx` current. If a source cannot be read, it ends with a short "Couldn't read these, open them yourself" list. Ask: "Find leads for my county."
 - **Research Brief** (`research`) — builds a cited reason-to-call dossier for one company, person, municipality, or project. It checks QuickBase when available and identifies public-role contacts. Ask: "Research this city."
 - **Call Prep** (`prep-call`) — builds on the Research Brief and runs it first if needed, then turns the result into a short call brief. Ask: "Prep me for a call with Acme."
 - **Email Writer** (`draft-outreach`) — drafts an email or call script. It never sends it. Ask: "Draft an intro email to Acme."
-- **Content Builder** (`make-content`) — makes one-pagers, bid cover letters, and pitch content. Ask: "Make a one-pager for school districts."
-- **Bid Breakdown** (`summarize-bid`) — breaks down an uploaded RFP or bid packet. Ask: "Summarize this bid."
+- **Content Builder** (`make-content`) — makes one-pagers, bid cover letters, leave-behinds, and pitch content, with real Bliss jobs from QuickBase as references when connected. Ask: "Make a one-pager for school districts" or "make a one-pager for #2."
+- **Bid Breakdown** (`summarize-bid`) — breaks down an RFP or bid packet (uploaded, or read from the lead's source), adds Bliss's history with that buyer and known permit requirements from QuickBase, and can set deadline reminders. Ask: "Summarize this bid" or "break down the bid for #2."
 - **Update Logger** (`log-update`) — turns notes, a transcript, or an email into a paste-ready QuickBase update.
 - **Pipeline Check** (`my-pipeline`) — shows open opportunities needing attention.
 - **New Leads** (`my-new-leads`) — shows unworked QuickBase opportunities and the local lead board.

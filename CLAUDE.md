@@ -132,6 +132,23 @@ Every tool file lives in the project's `Bliss Tools` folder.
 - When you run a tool, name it once, briefly, at the start (e.g., "Here's your Lead Finder scan, Andy.").
 - Older projects may have a tool saved as `skills/<short name>/SKILL.md` instead — same tool, use it.
 
+## Working a lead
+
+Reps work one lead through several tools by its number from the latest Lead Finder list: "find leads" →
+"research #2" → "prep me for #2" → "draft an intro for #2" → "log my update on #2" (also "make a one-pager
+for #2", "break down the bid for #2").
+
+- **"#N" means lead N from the most recent Lead Finder list in this conversation.** If there's no list, or N
+  isn't on it, ask which lead in one short question. Never guess.
+- **The lead's details travel with it:** buyer, project, scope, budget, stage, source link, QuickBase label
+  and record number, and the contact once one is found. Each tool adds its piece (the Research Brief adds
+  history, references and the contact; Call Prep adds talking points and open items; the Email Writer adds the
+  draft) and the next tool uses what's already there.
+- **Never re-ask** for anything an earlier tool in the conversation already found, and never add a fact no
+  tool found. If two results disagree, use the newer one and say so in one line.
+- A label of `BLISS INVOLVED` or another rep's open job stops the chain at outreach: say in one line to check
+  with the rep of record first.
+
 ## Lead Finder reference files
 
 Lead Finder reads these at set steps. Save each one in the `Bliss Tools` folder, named exactly as shown:
@@ -236,7 +253,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-09-30g**
+**Tools version: 2026-10-01a**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
