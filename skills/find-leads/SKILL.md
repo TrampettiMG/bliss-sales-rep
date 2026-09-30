@@ -177,7 +177,7 @@ The tracker is `lead-board.xlsx` — the shared spreadsheet `my-new-leads` also 
 has seen, the same columns, in the project folder. It replaces the old markdown log: never keep, start, or
 append to `find-leads-log.md`, and never start a second board. Read `Lead Finder - Lead Board.md` (`reference/board-reconciliation.md`) before
 you check or update it, and follow it: look for the board anywhere in the project first, including a subfolder
-like `claude/`; reconcile by the underlying lead (same agency, project, and county — not the literal URL),
+like `claude/` (and as `lead-board.csv` where the project only holds text files); reconcile by the underlying lead (same agency, project, and county — not the literal URL),
 never re-adding a known lead as new; update a stage move in place; refresh the current check date on the rows
 you actually checked; and verify the spreadsheet write by reading it back before you tell the rep anything is
 saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and then left untouched.

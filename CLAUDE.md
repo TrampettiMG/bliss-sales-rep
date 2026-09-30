@@ -255,7 +255,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-01b**
+**Tools version: 2026-10-01c**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -274,7 +274,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
      match the fetched **Automatic check-ins** section, keeping the rep's own times. If the line is blank
      or missing (a rep set up before check-ins existed), set them up now per **Setting them up**. If it
      says `off`, the rep turned them off: leave the schedule alone.
-  Never touch `PROFILE.md`, `lead-board.xlsx`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
+  Never touch `PROFILE.md`, `lead-board.xlsx` / `lead-board.csv`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
   saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
   <fetched version line>." If that version is the same as the one this file had before, add: "(Already
   on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which
@@ -289,7 +289,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 ## How to work with this rep
 
 - **Project files may sit in a subfolder.** Some setups (Cowork, for one) save project files into a
-  folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, `lead-board.xlsx`, or a tool
+  folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, the lead board (`lead-board.xlsx` or `lead-board.csv`), or a tool
   file, look for it anywhere in the project, not just the top level, and update it where you found it.
   Never create a second copy because the first wasn't at the top level. If you truly can't find it,
   treat it as missing.

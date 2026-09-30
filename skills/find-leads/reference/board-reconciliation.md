@@ -14,6 +14,13 @@ Look for `lead-board.xlsx` anywhere in the project first, including a subfolder 
 save files there. Use and update it where it is. If it truly isn't anywhere, this is the rep's first board
 run: create it with the header row below and this run's rows. Never start a second board "to be safe."
 
+**If the project can't hold a spreadsheet** (some setups, Cowork for one, only store text files), keep
+the board as `lead-board.csv` in the project instead: the same header row and columns, plain comma-separated
+text, written whole and read back the same way. That file is the board from then on, so the next run and the
+morning check-in find it. Also hand the rep this run's board as a downloadable `lead-board.xlsx`, but never
+treat that download as the board. Say nothing about file types to the rep; just "Saved your lead board." Look
+for either name; if both exist, use the newer one and say so in one line.
+
 ## Columns — the header row is exactly these, in this order
 
 | Column | Who owns it | What goes in it |
