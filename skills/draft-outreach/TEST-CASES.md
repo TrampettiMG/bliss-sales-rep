@@ -54,4 +54,5 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     `won before`, `new`, or `in pipeline` and yours. Expect re-engagement, past-customer check-in, intro, or
     open-quote follow-up respectively, without asking the rep to choose.
 22. **Post-draft Update Logger offer.** After any email draft, expect the exact offer: "After you send it, say
-    'log my update on #N' and the Update Logger will draft the QuickBase note."
+    'log my update on #N' and the Update Logger will draft the QuickBase note." With no lead number, the
+    offer names the customer instead of "#N".

@@ -3,8 +3,8 @@ name: summarize-bid
 description: >-
   Break down an uploaded RFP, bid invite, or spec packet into what a sales rep needs to decide whether
   it's worth pursuing — scope, deadlines, bond/permit requirements, and whether it fits what they sell.
-  Use when the rep says "summarize this bid", "break down this RFP", "what's in this bid packet", "does
-  this fit us", or uploads a bid/RFP document and asks about it. Extraction-only and cited: it quotes
+  Use when the rep says "summarize this bid", "break down this RFP", "break down the bid for #2", "what's
+  in this bid packet", "does this fit us", or uploads a bid/RFP document and asks about it. Extraction-only and cited: it quotes
   only what the documents say, with the page/section it came from, never invents details, and flags
   anything required that it can't find.
 ---
@@ -31,8 +31,9 @@ forms, or draft a bid response.
 
 ## Flow
 
-1. **Confirm you have the documents.** If nothing is attached yet, ask the rep to upload the bid packet
-   (including any addenda). Don't work from memory or general knowledge of the project. Bid packets can
+1. **Confirm you have the documents.** If the bid came from a Lead Finder lead or a registry link, read it
+   from the Bliss Library first (see "Reading a Bliss Library bid source" below). If nothing is attached and
+   there's no library source, ask the rep to upload the bid packet (including any addenda). Don't work from memory or general knowledge of the project. Bid packets can
    run 100-300+ pages — if a document isn't readable (a scanned image with no extractable text) or a
    referenced attachment/addendum is missing, say so plainly and ask for a text-readable version or the
    missing file, rather than skipping it silently or guessing at its contents.
@@ -77,7 +78,12 @@ forms, or draft a bid response.
      Skip a category's line only if it's already fully covered in the snapshot. One line means one
      line: no sub-bullets here, even for scope with several zones — "4 priority zones (large climber,
      train corridor, …) — ask for the scope by zone." The detail is what the follow-up is for.
+   - **Bliss and this buyer** (QuickBase connected only) — up to 4 lines, right after the snapshot; see
+     that section below.
    - **Fit signal** — 2-4 lines: what matches the rep's product focus and what doesn't, quoting the spec.
+   - **From QuickBase** (connected only) — one line for known permit requirements and one line for the Bliss
+     checklist ("9 of 12 requirements match Bliss bid checklist items — ask for the checklist"). The full
+     lists come on request, like any other section.
    - **Not found — verify** — always present, in full (even if the only line is "None found."). This is
      where computed/derived values from the rule above go.
    - **Conflicts** — always present, in full (even if the only line is "None found."); state explicitly
@@ -88,6 +94,28 @@ forms, or draft a bid response.
 7. When the rep asks for details on a section, give that section in full — every item, quoted or closely
    paraphrased, cited — and nothing else. Answer any other question about the documents the same way:
    extraction-only, cited.
+
+## Reminders and handoffs
+
+After the details line (step 6), offer one more line, naming only the deadlines the documents state that
+haven't passed: "Want reminders? I can set one-time reminders for the questions deadline, the pre-bid, and the
+due date." If the rep says yes, use the app's scheduled-tasks tool `create_scheduled_task` with `fireAt` for
+the day before at 9 AM the rep's local time, and a self-contained prompt naming the bid, the deadline exactly
+as the documents state it, and the source page. Schedule only dates stated in the documents; never schedule a
+computed date. If the day before has already passed, skip that one and say so. Confirm what was set in one
+line. If that tool is unavailable, say so in one line.
+
+If the rep says "write the cover letter," hand off to Content Builder with this breakdown as context. If the
+rep says "log bid" or "no bid," hand off to Update Logger, preserving the existing no-bid offer and the rep's
+reason when one was provided.
+
+## Reading a Bliss Library bid source
+
+If the rep points at a Lead Finder lead or registry URL whose source is a bid/RFP, read that Bliss Library
+document with `read_source` instead of asking for an upload. Search with one literal term per call — never an
+`OR` query — and include the relevant page-numbered hits in the breakdown. Ask for an upload only when the
+source is blocked, says "open it yourself," is scanned/unreadable, or the addenda are missing. The same
+extraction-only and citation rules apply; cite pages of the library document, not an uncited web summary.
 
 ## Already in QuickBase?
 
@@ -101,6 +129,38 @@ snapshot:
 - no match: "In QuickBase: no opportunity for this owner yet";
 - no connection: leave the line out.
 A name match isn't proof it's the same project — say "for this owner," not "for this bid."
+
+## Bliss and this buyer
+
+When QuickBase is connected, place this block immediately after the Gating snapshot. The buyer is the
+issuing agency/owner (for a GC's request for pricing, the project owner). If a Research Brief for this buyer
+is already in the conversation, reuse its results; otherwise run the Research Brief's bounded buyer-history
+and similar-jobs lookups; follow the `quickbase-usage` skill
+(it holds the tables and fields; never guess them). Show this buyer's past Bliss bids/quotes with the outcome
+and status exactly as QuickBase shows it, the recorded reason lost, and who won if known. Never call `Close -
+Multiple Alternative` a loss. Then show 1–3 similar won bids as a price reference range using Grand Total incl.
+tax. Facts only: this block is context for the rep's decision, not a pursue/pass verdict, and it never includes
+a pricing worksheet. If QuickBase is not connected, omit the block rather than guessing.
+
+## Known permit requirements
+
+When QuickBase is connected, add a separate line or short block titled exactly "Known permit requirements
+(from QuickBase)". The jurisdiction is the site's city or county from the documents. Read only its
+permit-authority records and show requirements, not credentials.
+Keep these requirements separate from permits stated in the bid documents, and never read or show login,
+username, or password fields. Show only what QuickBase marks as required for that authority, with its fee
+type and days to issue when filled in; count the rest as "not confirmed in QuickBase," never as required. If
+the name matches more than one authority (city and county), show both. If there's no permit record for the
+jurisdiction, say so plainly; do not infer a requirement from the jurisdiction or the document.
+
+## Bliss internal bid checklist
+
+After extracting the document requirements, map each one to Bliss's internal bid checklist and bid timeline item
+names from QuickBase when connected. Show the Bliss item alongside the document requirement. Anything that does
+not map stays under the document's own wording. Do not invent a checklist item or use this mapping as a pursue/pass
+recommendation. If the rep already has a Bliss quote for this bid (from "Already in QuickBase?"), also show
+what its bid checklist and bid timeline already hold, and flag any timeline date that differs from the
+documents: the documents' date wins, and a QuickBase date nobody entered by hand is only a calculated one.
 
 ## If the rep passes on it
 

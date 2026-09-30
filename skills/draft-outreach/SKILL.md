@@ -56,9 +56,9 @@ review and send/say themselves.
    those tools did not carry.
    **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
    read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill
-   for the query. Use the result to choose `new` → intro, `lost before` → re-engagement, `won before` →
-   past-customer check-in, or `in pipeline` and yours → open-quote follow-up. Offer: "Want the Research Brief
-   first for a stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context.
+   for the query. Use the label it gives to choose the type, exactly as the Lead Finder label rules below say
+   (including the `BLISS INVOLVED` / other rep's job stop). Offer: "Want the Research Brief first for a
+   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context.
    **For "draft a follow-up after my call,"** use the Call Prep already in the conversation plus what the rep
    says happened; write one clear next step.
    **Then gather what's specific to this prospect:** who they are, what's known about them or their
@@ -111,7 +111,8 @@ review and send/say themselves.
    tone, not the facts included.
 5. **Hand it back as plain, paste-ready text.** For an email, that means subject line + body. For a call
    script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
-   the Update Logger will draft the QuickBase note."
+   the Update Logger will draft the QuickBase note." Use the lead's number when the draft came from a Lead
+   Finder result; otherwise use the customer's name ("log my update on Cedar Grove Parks").
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.
 
 ## Several check-ins or follow-ups at once

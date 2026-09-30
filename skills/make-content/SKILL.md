@@ -2,8 +2,9 @@
 name: make-content
 description: >-
   Draft a value-prop one-pager, a bid cover letter, or short pitch content for a named prospect type
-  (e.g. parks departments, HOAs, school districts). Use when the rep says "make me a one-pager for...",
-  "write a value prop for...", "draft a cover letter for this bid", "give me pitch content for...", or
+  (e.g. parks departments, HOAs, school districts), or a leave-behind after a call. Use when the rep says
+  "make me a one-pager for...", "make a one-pager for #2", "write a value prop for...", "draft a cover
+  letter for this bid", "write the cover letter", "make a leave-behind", "give me pitch content for...", or
   asks for something to hand a prospect or attach to a bid. Always produces a draft for the rep to
   review, edit, and send themselves — never sends or submits anything.
 ---
@@ -34,7 +35,8 @@ review and send themselves.
      "churches," "property management," "general contractors").
    - **Bid cover letter** — a letter to attach to a specific bid submission.
    - **Pitch content** — shorter, more flexible: an elevator pitch, a few talking points, a short intro
-     paragraph, for a named prospect type or situation.
+     paragraph, for a named prospect type or situation. A **leave-behind** (after Call Prep) is pitch content
+     for one buyer: see "Chained context" below.
    If it's ambiguous which one the rep wants, ask in one short question rather than guessing.
 
 2. **Read `PROFILE.md`** for the rep's name, contact info, territory, and product focus — use it to
@@ -69,3 +71,28 @@ review and send themselves.
 
 7. If the rep asks for a revision (shorter, different tone, different prospect type), redraft rather than
    patching — keep the same discipline about not inventing specifics.
+
+## Chained context and QuickBase proof
+
+- **From a Lead Finder result:** "make a one-pager for #2" means use lead #2 without re-asking. Carry over
+  its buyer, buyer type, project scope, stage, source, and QuickBase label. If a Research Brief for that lead
+  is already in the conversation, use its similar-jobs and nearby-customer references too.
+- **After Call Prep:** "make a leave-behind" means turn that Call Prep's talking points and references into
+  paste-ready leave-behind content. Do not ask the rep to repeat them.
+- **When QuickBase is connected:** for a one-pager or pitch, add 2–3 reference bullets or a factual count,
+  such as "3 school playgrounds in [state] in 2026." If a Research Brief is in the conversation, use only its
+  Similar jobs elsewhere and Past customers nearby. Otherwise run just the Past customers nearby lookup (the
+  county, else the same state), kept to the prospect type; don't run the full Research Brief. Mark every item
+  exactly: "from QuickBase — double-check before it goes out." Follow the `quickbase-usage` skill (it holds
+  the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If QuickBase is not
+  connected, keep the current `[placeholder]` behavior instead of inventing proof.
+- **Co-op claims:** if QuickBase or the Research Brief shows the buyer used a co-op, write "available through
+  [co-op]" only after the rep confirms Bliss holds that contract. Otherwise ask one short confirmation question
+  or leave the co-op out.
+
+## Bid Breakdown handoff
+
+When a Bid Breakdown is in the conversation, a cover letter uses only its facts: solicitation/bid number,
+project title, issuing agency, due date, every acknowledged addendum by number and date, and a line that the
+required forms are enclosed, listing the forms from the breakdown. Anything missing from the breakdown stays a
+`[placeholder]`; never infer or fill it from general bid conventions.

@@ -14,4 +14,24 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 6. **Bid cover letter after summarize-bid found two addenda.** Expect: the letter acknowledges Addendum 1 and Addendum 2 by number. If no addenda are known, it doesn't invent any.
 
+7. **QuickBase proof points for a prospect type.** With QuickBase connected and a school-district lead in a
+   fictional state, expect 2–3 similar-job or nearby-customer references, or a factual count, each marked
+   "from QuickBase — double-check before it goes out." No customer prices appear. With QuickBase unavailable,
+   expect the existing `[placeholder]` behavior.
+
+8. **Cover letter from a complete Bid Breakdown.** The breakdown contains a fictional bid number, project title,
+   agency, due date, two addenda with dates, and required forms. Expect all of those in the letter, including
+   "required forms are enclosed" and the form list. Missing fields remain placeholders.
+
+9. **Lead and Research Brief handoff.** After Lead Finder returns fictional lead #2 and Research Brief includes
+   similar and nearby references, "make a one-pager for #2" uses the buyer, buyer type, scope, stage, source,
+   and those references without re-asking.
+
+10. **Co-op confirmation gate.** If a fictional brief says the buyer used a co-op but the rep has not confirmed
+   Bliss holds that contract, expect one short question or no co-op claim — never an unsupported "available through"
+   statement.
+
+11. **Leave-behind after Call Prep.** After fictional Call Prep talking points and references, "make a leave-behind"
+   turns those into a short draft without asking the rep to repeat the call-prep content.
+
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.

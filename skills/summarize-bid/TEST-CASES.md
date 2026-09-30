@@ -24,4 +24,28 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 11. **Short breakdown + details on request.** A long RFP (13 required forms, 9 key dates, 8 optional tasks). Expect: snapshot of ~8 bullets, one line per other category (long lists shown as a count + key items), Fit, Not found and Conflicts in full, and a closing line naming real sections the rep can ask about. Then "show the required forms" returns all 13, cited, and nothing else.
 
+12. **Bid source already in the Bliss Library.** A fictional Lead Finder result points to a readable registry bid
+   document. Expect `read_source` page reads with one literal term per call, no `OR`, and page citations in the
+   breakdown. Ask for an upload only if the source is blocked, says "open it yourself," scanned/unreadable, or
+   its addenda are missing.
+
+13. **Bliss and this buyer block.** With fictional QuickBase data connected, expect the block immediately after
+   the gating snapshot: this buyer's past bids/quotes with exact outcomes/statuses, recorded lost reason, winner
+   when known, and 1–3 similar won bids as a Grand Total incl. tax reference range. `Close - Multiple Alternative`
+   is not labeled a loss; there is no pursue/pass verdict or pricing worksheet.
+
+14. **Known permit requirements and internal checklist.** Fictional QuickBase permit-authority records show
+   requirements and internal checklist/timeline names. Expect a separate "Known permit requirements (from
+   QuickBase)" section, separate document permits, and mapped Bliss checklist items. No login, username, or
+   password fields appear; unmapped requirements retain the document wording. A fictional authority with one
+   requirement marked required and six "Pending" shows the one as required and the rest as "not confirmed in
+   QuickBase," never as required.
+
+15. **Reminder offer and date gate.** After a fictional breakdown, expect the exact one-line reminder offer. If
+   accepted, schedule only document-stated questions, pre-bid, and due dates for the day before at 9 AM local;
+   never schedule a computed date. If scheduling is unavailable, say so in one line.
+
+16. **Handoffs.** "Write the cover letter" hands the breakdown to Content Builder. "Log bid / no bid" hands it
+   to Update Logger and keeps the existing no-bid offer. Both use fictional facts only.
+
 **What "fails gracefully" means for this tool specifically:** if no documents are attached, one plain sentence asking the rep to upload the packet — not a guess, not an error dump. If a document is unreadable (e.g., a scanned image PDF with no extractable text), say so plainly and ask for a text-readable version instead of fabricating a breakdown.

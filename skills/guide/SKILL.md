@@ -25,8 +25,8 @@ Work a lead by number: "find leads" → "research #2" → "prep me for #2" → "
 - **Research Brief** (`research`) — builds a cited reason-to-call dossier for one company, person, municipality, or project. It checks QuickBase when available and identifies public-role contacts. Ask: "Research this city."
 - **Call Prep** (`prep-call`) — builds on the Research Brief and runs it first if needed, then turns the result into a short call brief. Ask: "Prep me for a call with Acme."
 - **Email Writer** (`draft-outreach`) — drafts an email or call script. It never sends it. Ask: "Draft an intro email to Acme."
-- **Content Builder** (`make-content`) — makes one-pagers, bid cover letters, and pitch content. Ask: "Make a one-pager for school districts."
-- **Bid Breakdown** (`summarize-bid`) — breaks down an uploaded RFP or bid packet. Ask: "Summarize this bid."
+- **Content Builder** (`make-content`) — makes one-pagers, bid cover letters, leave-behinds, and pitch content, with real Bliss jobs from QuickBase as references when connected. Ask: "Make a one-pager for school districts" or "make a one-pager for #2."
+- **Bid Breakdown** (`summarize-bid`) — breaks down an RFP or bid packet (uploaded, or read from the lead's source), adds Bliss's history with that buyer and known permit requirements from QuickBase, and can set deadline reminders. Ask: "Summarize this bid" or "break down the bid for #2."
 - **Update Logger** (`log-update`) — turns notes, a transcript, or an email into a paste-ready QuickBase update.
 - **Pipeline Check** (`my-pipeline`) — shows open opportunities needing attention.
 - **New Leads** (`my-new-leads`) — shows unworked QuickBase opportunities and the local lead board.
