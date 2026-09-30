@@ -64,8 +64,10 @@ so stay tight:
   many; the rep wants the shape of the deal, not every note line.
 - Call out any bond or permit related lines separately, with the "identified by description" caveat.
 - Keep it scannable. No strategy wrap-up, no "bottom line."
-- Offer next steps as offers only, by friendly name: "Want a cover letter for this? That's the Content
-  Builder." and "Want a full bid document broken down? Upload it and ask the Bid Breakdown."
+- Offer one next step that fits what the quote shows, as an offer only, by friendly name: an open quote →
+  "Want a follow-up on the open [site] quote? That's the Email Writer."; a bid still being prepared → "Want a
+  cover letter for this? That's the Content Builder." or "Want the bid document broken down? Upload it and
+  ask the Bid Breakdown."
 
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment. If

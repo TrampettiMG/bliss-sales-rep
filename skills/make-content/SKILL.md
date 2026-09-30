@@ -69,7 +69,10 @@ review and send themselves.
    - **Bid cover letter** (standard business-letter format): addressed to the agency/point of contact if
      known, references the bid/solicitation number and project title, acknowledges each addendum by number
      if the addenda are known (e.g., from `summarize-bid`) — never guess addendum numbers — one paragraph
-     on fit and interest,
+     on fit and interest. **Never commit the rep's proposal**: what it covers, which tasks or zones, staying
+     under a budget, following a theme, or complying with all terms is a placeholder (`[what your proposal
+     covers]`, `[compliance statement]`) unless the rep has said it. Describe the bid from the breakdown;
+     the rep decides what Bliss offers,
      closes with the rep's name/contact from the profile. Keep it short — one page.
    - **Pitch content**: match the length the rep actually asked for (an elevator pitch is a few sentences,
      talking points are a short bulleted list) — don't pad it into a one-pager they didn't ask for.
