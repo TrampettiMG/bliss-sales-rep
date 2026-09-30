@@ -55,7 +55,12 @@ review and send themselves.
    - **Only claim what a source shows.** Benefit bullets and the why-Bliss paragraph may only claim products
      or capabilities that are in `PROFILE.md`, said by the rep, or shown by a tool result in the conversation
      (e.g. QuickBase jobs). Anything else ("one team for play, shade and surfacing," "in-house install") is a
-     `[capability]` placeholder the rep fills in.
+     `[capability]` placeholder the rep fills in. That includes design or layout help, "one team" or
+     in-house install, "from design through installation," warranty, and years in business.
+   - **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done.
+   - **Check before you hand it back.** Read every benefit bullet and sentence once more and ask: which line
+     of the profile, the rep's words, or a tool result says this? If none does, make it a `[capability]`
+     placeholder or cut it.
 
 4. **Draft the content:**
    - **Value-prop one-pager** (~250–400 words, scannable): a short headline, 3–4 benefit bullets specific
