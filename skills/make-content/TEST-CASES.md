@@ -34,4 +34,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 11. **Leave-behind after Call Prep.** After fictional Call Prep talking points and references, "make a leave-behind"
    turns those into a short draft without asking the rep to repeat the call-prep content.
 
+12. **No re-asking and no unsourced capability claims.** "Make a one-pager for #1" after a fictional Lead Finder
+   list. Expect: no question about selling points; the lead's scope and the profile's Product Focus are used;
+   any capability not in the profile or a tool result is a `[capability]` placeholder.
+
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.

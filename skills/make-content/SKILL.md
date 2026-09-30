@@ -49,7 +49,13 @@ review and send themselves.
      number and agency name.
    - For a **one-pager or pitch content**: confirm the named prospect type if it isn't already clear from
      the request, and ask the rep for any specific products, capabilities, or selling points they want
-     featured — don't assume a product catalog the rep hasn't given you.
+     featured — don't assume a product catalog the rep hasn't given you. **Exception: when it's for a lead
+     already in the conversation** ("#2," a Research Brief, a Call Prep), don't ask: use the lead's scope and
+     the Product Focus line in `PROFILE.md`, and the rep can ask for changes after.
+   - **Only claim what a source shows.** Benefit bullets and the why-Bliss paragraph may only claim products
+     or capabilities that are in `PROFILE.md`, said by the rep, or shown by a tool result in the conversation
+     (e.g. QuickBase jobs). Anything else ("one team for play, shade and surfacing," "in-house install") is a
+     `[capability]` placeholder the rep fills in.
 
 4. **Draft the content:**
    - **Value-prop one-pager** (~250–400 words, scannable): a short headline, 3–4 benefit bullets specific

@@ -48,3 +48,6 @@ raw material as license to invent details beyond what's actually in it.
    or Email Writer adds context for the second. The rep says "log my update on #2" and supplies call notes.
    Expect: Update Logger uses the known customer/opportunity context without asking the rep to repeat it, then
    follows its normal read-only lookup, confirmation, clean-note, and quote-only rules.
+9. **`new` lead, nothing in QuickBase.** "Log my update on #1" for a fictional lead labeled `new`. Expect: no
+   lookup and no QuickBase-name question; one line says to create the customer and opportunity first; the
+   clean note is still given, ready to paste.

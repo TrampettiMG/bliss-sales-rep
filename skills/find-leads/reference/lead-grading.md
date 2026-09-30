@@ -42,6 +42,11 @@ Examples:
   is REAL.
 - A generic mention ("our parks are important to the community") with no project, money, or date is
   ROUTINE. A named park with a scope, a stage, and a date is REAL.
+- **A named park matched only on keywords is ROUTINE until a source shows Bliss scope.** A status-update or
+  project-list line that names a park and happens to contain "swing," "bench" or "shade" in passing, with no
+  scope, budget or stage for that equipment, stays ROUTINE. It becomes REAL when a budget, CIP or scope
+  source shows playground, shade, surfacing, shelter or site-amenity work. (Example: a "Riverside Park
+  shoreline and sidewalk repairs — bench relocation" line is ROUTINE.)
 - Grading happens on what the source shows. If it's ambiguous whether a project is specific and
   purchasable, grade it ROUTINE and let the closing count line carry it — a wrong REAL lead that gets
   pitched costs more than a ROUTINE one that gets set aside.

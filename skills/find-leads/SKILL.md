@@ -164,8 +164,10 @@ QuickBase lookup already done for that lead — no web searches — plus at most
 county. Use this form: "History: 6 quotes since 2019, 1 won (2023 shade, $48K Grand Total incl. tax), last
 closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])".
 History counts the buyer's matching quotes, includes the latest win and last closed status exactly as stored,
-and never calls `Close - Multiple Alternative` a loss. Nearby means the most recent won job for another
-customer in the same county; if there is none, use the same state and say "in [state]". Never use the lead's
+and never calls `Close - Multiple Alternative` a loss. Nearby means the most recent project-sized won job
+for another customer in the same county: skip parts, replacement-part and small orders (Grand Total incl. tax
+under $10K, or a job name like "parts," "replacement," "hardware"). If there is none, use the same state and
+say "in [state]". Never use the lead's
 own buyer. If no buyer history exists, write "History: none on file." If QuickBase isn't connected, write
 "History: unavailable — QuickBase isn't connected." Keep it to one line.
 

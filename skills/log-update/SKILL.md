@@ -50,6 +50,11 @@ If the rep says "log my update on #N," use Lead Finder result N, or the Research
 Writer draft already in the conversation, as the known customer/opportunity context. Do not ask the rep to
 repeat it; continue the normal lookup and raw-material flow below, including the quote-only case.
 
+If the lead is labeled `new` (nothing in QuickBase for this buyer), don't look anything up and don't ask for
+the rep's QuickBase name: say in one line that there's nothing in QuickBase to log this against yet, so the
+rep creates the customer and opportunity first (or asks their trainer), and give the clean note ready to paste
+once it exists.
+
 If the job only exists as a quote and there is no opportunity to log against yet, say so in one plain line:
 there's no opportunity to log this against yet, so the rep needs to create one in QuickBase first or ask their
 trainer. Still produce the clean note as a draft ready to paste once the opportunity exists. Do not invent any
