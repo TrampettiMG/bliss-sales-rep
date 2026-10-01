@@ -201,9 +201,9 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
 
 - Task id `bliss-daily-run` · title "Bliss: Daily run" · schedule `0 7 * * 1-5` · prompt:
   > This is [First name]'s scheduled Bliss daily run. Open the Bliss Sales Rep project and read its
-  > instructions (CLAUDE.md), `PROFILE.md`, and, in its `Bliss Tools` folder, `Lead Finder.md`, every
-  > `Lead Finder - ….md` file, `Research Brief.md` and `Pipeline Check.md`.
-  > Then do the Daily run exactly as CLAUDE.md's "Daily run" section describes, using the Bliss Library and
+  > instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Lead Finder.md`. Read the other files only
+  > when a step needs them, as CLAUDE.md's "Daily run" section says.
+  > Then do the Daily run exactly as that section describes, using the Bliss Library and
   > QuickBase connections. Never send, submit, or write anything to QuickBase; only the lead board is saved.
   > If you can't find those files or connections, reply with one line: "Your daily run couldn't run. Open
   > your Bliss Sales Rep project and say 'run my daily run'."
@@ -253,11 +253,21 @@ line: *"Nothing new today, [First name]. Your follow-ups and bids are clear."*
 Start with: *"Good morning, [First name]. Here's your daily run."*
 
 1. **New leads** — the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes (it saves
-   the lead board).
+   the lead board). If its "Already ran today?" rule applies, that stops step 1 only: leave the section out
+   and carry on with steps 2–4.
 2. **Who to call** — the Research Brief's contact card mode for the top 3 new or moved-up leads from step 1,
    by score. None new or moved up: leave the section out.
 3. **Today's follow-ups** — the Pipeline Check's today mode, first part.
 4. **Bid deadlines this week** — the Pipeline Check's today mode, second part.
+
+**Read files only when a step needs them** (this keeps the daily run within a normal day's usage):
+- Step 1 reads `Lead Finder.md`, and each `Lead Finder - ….md` file only at the step `Lead Finder.md` names
+  for it. The PDF and search-terms files are usually only needed on days the library documents are read.
+- Step 2 reads `Research Brief.md` only if there's at least one lead to make a card for.
+- Steps 3 and 4 read `Pipeline Check.md`.
+- From the QuickBase setup file, read its main page and the recipes; open its other reference pages only if
+  a lookup fails or a recipe doesn't cover what's needed.
+- Don't re-read a file already read in this run.
 
 Read only: nothing is sent, submitted, or written to QuickBase. Only the lead board is saved, and only
 blank contact cells are filled. Without QuickBase, steps 3 and 4 use the lead board alone and say so in one
@@ -284,7 +294,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-02b**
+**Tools version: 2026-10-02c**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
