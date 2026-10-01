@@ -65,6 +65,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    - **New leads** every weekday at 7 AM
    - **A pipeline check** every Monday at 8 AM and Friday at 5 PM
    - **A profile refresh** every Monday at 6:30 AM
+   - **A setup check** every Monday at 6 AM. It tells you only if something needs fixing.
 
    They run while the Claude app is open on your computer. If it's closed at that time, they run the next time you open it.
    You should now see "I set up your automatic check-ins…". To change them later, say "change my check-in times" or "turn off my check-ins."
