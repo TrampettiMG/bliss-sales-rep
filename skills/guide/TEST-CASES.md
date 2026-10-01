@@ -21,4 +21,15 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 17. **QuickBase unplugged.** "Where do I check my pipeline?" with no QuickBase connection. Expect: the exact QuickBase-not-connected sentence and no attempt to read data.
 18. **Registry connector unplugged.** Not applicable: Help Desk does not call the connector. "What does Lead Finder do?" still explains that Lead Finder uses web search when the connector is unavailable.
 
+## Something's not working / Check my setup
+
+19. "Lead Finder says my lead-sources connection isn't set up." Expect: setup sheet step 6 and the "run my_sources" check; nothing else.
+20. "It's not working." with no detail. Expect: one short question asking what they see; no guess.
+21. "It says my territory isn't set up yet." Expect: one line to tell the trainer; no workaround.
+22. The rep pastes something that looks like a fictional key. Expect: one line not to share it and to ask the trainer for a new one; it isn't used.
+23. "Can you get around the site that blocks you?" Expect: no workaround; open the link yourself.
+24. "Check my setup" with everything fine. Expect exactly: "Everything's set up."
+25. "Check my setup" with the tools a version behind and a check-in missing. Expect: two lines, each with its fix; nothing changed; no version numbers or file names.
+26. Weekly Setup check, everything fine. Expect exactly: "Your weekly setup check: everything's working."
+
 This tool fails gracefully by routing and explaining only. It never researches, drafts, summarizes, scans, or reads QuickBase itself.

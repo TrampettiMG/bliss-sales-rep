@@ -171,6 +171,7 @@ Every rep gets these check-ins. They run on their own, so the rep doesn't have t
 | **Monday pipeline** | Mondays, 8:00 AM | Pipeline Check |
 | **Friday pipeline** | Fridays, 5:00 PM | Pipeline Check |
 | **Profile refresh** | Mondays, 6:30 AM | **Refreshing the profile** (below) |
+| **Setup check** | Mondays, 6:00 AM | Help Desk, **Check my setup** (weekly) |
 
 These use the app's scheduled-tasks tool (`create_scheduled_task`, `update_scheduled_task`,
 `list_scheduled_tasks`). Nothing a check-in produces is ever sent, submitted, or written to QuickBase: it
@@ -181,19 +182,20 @@ only shows the rep results, the same as asking for the tool by hand.
 Use this during first-run setup, and any time the rep says "set up my automatic check-ins." Don't ask
 whether they want them, and don't ask for times: set them up.
 
-1. Create the four tasks below with `create_scheduled_task`, using the task ids, titles, schedules and
+1. Create the five tasks below with `create_scheduled_task`, using the task ids, titles, schedules and
    prompts exactly as written.
 2. Save the Automatic check-ins line of `PROFILE.md` as `on (Morning leads weekdays 7:00 AM · Pipeline Mon
-   8:00 AM and Fri 5:00 PM · Profile refresh Mon 6:30 AM)`.
+   8:00 AM and Fri 5:00 PM · Profile refresh Mon 6:30 AM · Setup check Mon 6:00 AM)`.
 3. Tell the rep in plain words:
    *"I set up your automatic check-ins: new leads every weekday at 7 AM, a pipeline check Monday at 8 AM
-   and Friday at 5 PM, and a profile refresh Monday at 6:30 AM. They run while the Claude app is open on
+   and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only
+   speaks up if something needs fixing. They run while the Claude app is open on
    your computer. If it's closed at that time, they run the next time you open it."*
 4. **If the scheduled-tasks tool isn't available** in this app, don't try anything else. Save `off (not
    available in this app)` and say: *"Your Claude app can't schedule check-ins here, but you can say 'run
    my morning leads' or 'check my pipeline' anytime."*
 
-The four tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written:
+The five tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written:
 
 - Task id `bliss-morning-leads` · title "Bliss: Morning leads" · schedule `0 7 * * 1-5` · prompt:
   > This is [First name]'s scheduled Bliss morning leads check. Open the Bliss Sales Rep project and read
@@ -223,6 +225,12 @@ The four tasks. Put the rep's first name where it says [First name]. Use each pr
   > using the QuickBase and Bliss Library connections. Only change the lines that section allows. If you
   > can't find those files or connections, change nothing and reply with one line: "Your profile refresh
   > couldn't run. Open your Bliss Sales Rep project and say 'refresh my profile'."
+- Task id `bliss-setup-check` · title "Bliss: Setup check" · schedule `0 6 * * 1` · prompt:
+  > This is [First name]'s scheduled Bliss weekly setup check. Open the Bliss Sales Rep project and read its
+  > instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Help Desk.md`. Then run "Check my setup" in
+  > its weekly mode, exactly as `Help Desk.md` describes. Read only: change nothing, fix nothing, and never
+  > write to QuickBase. If you can't find the project or those files, reply with one line: "Your weekly
+  > setup check couldn't run. Open your Bliss Sales Rep project and say 'check my setup'."
 
 ### Changing or stopping them
 
@@ -230,7 +238,7 @@ The four tasks. Put the rep's first name where it says [First name]. Use each pr
   `update_scheduled_task`, update the Automatic check-ins line, and confirm the new time in one line.
 - **"Turn off my check-ins"** (or one of them): disable those tasks (don't delete them), set the line to
   `off` or list what's still on, and confirm in one line. "Turn my check-ins back on" re-enables them.
-- **"Run my morning leads"**, **"check my pipeline"**, **"refresh my profile"**: run it right now, the same
+- **"Run my morning leads"**, **"check my pipeline"**, **"refresh my profile"**, **"check my setup"**: run it right now, the same
   way the scheduled task would.
 - If the rep asks what's scheduled, list the Bliss check-ins with their next run times, one line each.
 
@@ -255,7 +263,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-01e**
+**Tools version: 2026-10-02a**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -280,6 +288,8 @@ profile matching QuickBase and the Bliss Library without touching anything the r
   on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which
   tool didn't update and ask the rep to tell their trainer.
 - **"What version am I on?"** Answer with the Tools version line above.
+- **"Check my setup"** or **"something's not working"**: that's the Help Desk (its "Check my setup" and
+  "Something's not working" sections).
 - **Changing the profile** ("change my focus counties," "add Hanover," "update my phone number," "I
   mostly sell shade now"): edit that one line of `PROFILE.md` where it sits, show the rep the new line,
   and leave the rest alone. For focus counties, name counties only: if the rep gives a region, confirm
