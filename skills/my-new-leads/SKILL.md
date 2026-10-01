@@ -103,13 +103,20 @@ as new — then leave the log alone. Don't append to it, don't rewrite it.
 | Source Link | the document link the lead came from; blank for a QuickBase-only lead |
 | Doc Date | the document date from `find-leads`; blank when there isn't one |
 | Last Checked | the date of the run that last checked this lead |
+| Phone | the contact's published work phone; blank otherwise |
+| Email | the contact's published work email, never guessed; blank otherwise |
+| Website | the buyer's website or the project page |
+| Contact Source | the public page the contact came from |
+| Next Action Date | the date of the next step, when the rep named one; blank otherwise |
+| Bid Due | the bid's due date as the documents state it; blank otherwise |
 
 Column definitions and field ownership are the responsibility of `find-leads`' board reference —
 `Lead Finder - Lead Board.md` (`reference/board-reconciliation.md`) — this table must match it exactly.
 
 **Don't overwrite the fields `find-leads` owns.** Agency, County, Project, Stage, Score, Source Link, and
 Doc Date are `find-leads`' fields. When this tool updates a row that already exists, touch only QB Status,
-Status, Contact, Next Action, and Last Checked — leave `find-leads`' fields as they are, except to fill one
+Status, Contact, Next Action, Next Action Date, and Last Checked (and Phone, Email or Website only where
+blank) — leave `find-leads`' fields as they are, except to fill one
 in that's blank. Never invent a value to fill a blank; leave it blank if you don't have a real one.
 
 **Status values are limited to these five, exactly — never a free-text status:**
@@ -187,7 +194,9 @@ fresh intake. If nothing moved and nothing is new, say that in one line rather t
 ## The suggested next step — no fabrication
 For each fresh lead, suggest a real next action without inventing anything about the account:
 - "Start with the Research Brief to build a reason to call, then the Email Writer for the intro."
-- Keep it to which tool to use next, and write it into `Next Action` when it's for a lead on the board.
+- Keep it to which tool to use next, and write it into `Next Action` when it's for a lead on the board. When
+  the rep's own words give the next step a day ("call again Tuesday"), also write that day's calendar date
+  into `Next Action Date`; otherwise leave it blank.
   Never invent the account's situation, needs, or a sales strategy. And remember: a lead only leaves "New"
   once the rep logs an update or a quote in QuickBase — this tool drafts, the rep logs.
 

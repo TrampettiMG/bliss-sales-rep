@@ -94,6 +94,7 @@ sentence saying so.)
 - Focus Counties:
 - Product Focus:
 - Contact:
+- Voice:
 - Automatic check-ins:
 - Notes:
 
@@ -167,7 +168,7 @@ Every rep gets these check-ins. They run on their own, so the rep doesn't have t
 
 | Check-in | When (the rep's local time) | What it runs |
 |---|---|---|
-| **Morning leads** | Weekdays, 7:00 AM | Lead Finder, morning digest mode |
+| **Daily run** | Weekdays, 7:00 AM | **Daily run** (below): new leads, contact cards, follow-ups, bid deadlines |
 | **Monday pipeline** | Mondays, 8:00 AM | Pipeline Check |
 | **Friday pipeline** | Fridays, 5:00 PM | Pipeline Check |
 | **Profile refresh** | Mondays, 6:30 AM | **Refreshing the profile** (below) |
@@ -184,27 +185,28 @@ whether they want them, and don't ask for times: set them up.
 
 1. Create the five tasks below with `create_scheduled_task`, using the task ids, titles, schedules and
    prompts exactly as written.
-2. Save the Automatic check-ins line of `PROFILE.md` as `on (Morning leads weekdays 7:00 AM · Pipeline Mon
+2. Save the Automatic check-ins line of `PROFILE.md` as `on (Daily run weekdays 7:00 AM · Pipeline Mon
    8:00 AM and Fri 5:00 PM · Profile refresh Mon 6:30 AM · Setup check Mon 6:00 AM)`.
 3. Tell the rep in plain words:
-   *"I set up your automatic check-ins: new leads every weekday at 7 AM, a pipeline check Monday at 8 AM
+   *"I set up your automatic check-ins: a daily run every weekday at 7 AM (new leads, who to call, today's
+   follow-ups and bid deadlines), a pipeline check Monday at 8 AM
    and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only
    speaks up if something needs fixing. They run while the Claude app is open on
    your computer. If it's closed at that time, they run the next time you open it."*
 4. **If the scheduled-tasks tool isn't available** in this app, don't try anything else. Save `off (not
    available in this app)` and say: *"Your Claude app can't schedule check-ins here, but you can say 'run
-   my morning leads' or 'check my pipeline' anytime."*
+   my daily run' or 'check my pipeline' anytime."*
 
 The five tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written:
 
-- Task id `bliss-morning-leads` · title "Bliss: Morning leads" · schedule `0 7 * * 1-5` · prompt:
-  > This is [First name]'s scheduled Bliss morning leads check. Open the Bliss Sales Rep project and read
-  > its instructions (CLAUDE.md), `PROFILE.md`, and, in its `Bliss Tools` folder, `Lead Finder.md` and
-  > every `Lead Finder - ….md` file.
-  > Then run the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes, using the
-  > Bliss Library and QuickBase connections. Never send, submit, or write anything to QuickBase. If you
-  > can't find those files or connections, reply with one line: "Your morning leads couldn't run. Open
-  > your Bliss Sales Rep project and say 'run my morning leads'."
+- Task id `bliss-daily-run` · title "Bliss: Daily run" · schedule `0 7 * * 1-5` · prompt:
+  > This is [First name]'s scheduled Bliss daily run. Open the Bliss Sales Rep project and read its
+  > instructions (CLAUDE.md), `PROFILE.md`, and, in its `Bliss Tools` folder, `Lead Finder.md`, every
+  > `Lead Finder - ….md` file, `Research Brief.md` and `Pipeline Check.md`.
+  > Then do the Daily run exactly as CLAUDE.md's "Daily run" section describes, using the Bliss Library and
+  > QuickBase connections. Never send, submit, or write anything to QuickBase; only the lead board is saved.
+  > If you can't find those files or connections, reply with one line: "Your daily run couldn't run. Open
+  > your Bliss Sales Rep project and say 'run my daily run'."
 - Task id `bliss-monday-pipeline` · title "Bliss: Monday pipeline" · schedule `0 8 * * 1` · prompt:
   > This is [First name]'s scheduled Bliss Monday pipeline check. Open the Bliss Sales Rep project and
   > read its instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Pipeline Check.md`.
@@ -234,13 +236,32 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
 
 ### Changing or stopping them
 
-- **"Change my check-in times"** (or "move my morning leads to 6:30"): update that task's schedule with
+- **"Change my check-in times"** (or "move my daily run to 6:30"): update that task's schedule with
   `update_scheduled_task`, update the Automatic check-ins line, and confirm the new time in one line.
 - **"Turn off my check-ins"** (or one of them): disable those tasks (don't delete them), set the line to
   `off` or list what's still on, and confirm in one line. "Turn my check-ins back on" re-enables them.
-- **"Run my morning leads"**, **"check my pipeline"**, **"refresh my profile"**, **"check my setup"**: run it right now, the same
+- **"Run my daily run"** (or "run my morning leads"), **"check my pipeline"**, **"refresh my profile"**, **"check my setup"**: run it right now, the same
   way the scheduled task would.
 - If the rep asks what's scheduled, list the Bliss check-ins with their next run times, one line each.
+
+## Daily run
+
+Runs from the weekday 7 AM check-in, or when the rep says "run my daily run" or "run my morning leads." One
+message, in this order. Leave out any section that's empty. If every section is empty, the whole reply is one
+line: *"Nothing new today, [First name]. Your follow-ups and bids are clear."*
+
+Start with: *"Good morning, [First name]. Here's your daily run."*
+
+1. **New leads** — the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes (it saves
+   the lead board).
+2. **Who to call** — the Research Brief's contact card mode for the top 3 new or moved-up leads from step 1,
+   by score. None new or moved up: leave the section out.
+3. **Today's follow-ups** — the Pipeline Check's today mode, first part.
+4. **Bid deadlines this week** — the Pipeline Check's today mode, second part.
+
+Read only: nothing is sent, submitted, or written to QuickBase. Only the lead board is saved, and only
+blank contact cells are filled. Without QuickBase, steps 3 and 4 use the lead board alone and say so in one
+line. The lead numbers ("#2") follow the step 1 list, so "research #2" works right after.
 
 ## Refreshing the profile
 
@@ -263,7 +284,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-02a**
+**Tools version: 2026-10-02b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -278,7 +299,8 @@ profile matching QuickBase and the Bliss Library without touching anything the r
   3. Remove the fetched CLAUDE.md's "First run" block (everything between the START/END markers) and
      replace this file's contents with the rest.
   4. **Check the automatic check-ins.** If the Automatic check-ins line of `PROFILE.md` says `on`, list the
-     scheduled tasks. Re-create any Bliss check-in that's missing, and update any whose prompt doesn't
+     scheduled tasks. If `bliss-morning-leads` exists, disable it and create `bliss-daily-run` at the same
+     time and days it had, then change "Morning leads" to "Daily run" on that line. Re-create any Bliss check-in that's missing, and update any whose prompt doesn't
      match the fetched **Automatic check-ins** section, keeping the rep's own times. If the line is blank
      or missing (a rep set up before check-ins existed), set them up now per **Setting them up**. If it
      says `off`, the rep turned them off: leave the schedule alone.

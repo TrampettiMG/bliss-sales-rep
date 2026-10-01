@@ -105,6 +105,9 @@ as the documents state it, and the source page. Schedule only dates stated in th
 computed date. If the day before has already passed, skip that one and say so. Confirm what was set in one
 line. If that tool is unavailable, say so in one line.
 
+The rep can also ask for reminders from a Daily run line ("remind me about [bid]") without a full
+breakdown: use the deadlines that line and the lead board state, with the same rules.
+
 If the rep says "write the cover letter," hand off to Content Builder with this breakdown as context. If the
 rep says "log bid" or "no bid," hand off to Update Logger, preserving the existing no-bid offer and the rep's
 reason when one was provided.

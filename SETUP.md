@@ -62,7 +62,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
 
 9. Automatic check-ins
    Claude sets these up for you:
-   - **New leads** every weekday at 7 AM
+   - **A daily run** every weekday at 7 AM: new leads, who to call (name, phone, website), today's follow-ups, and bid deadlines this week
    - **A pipeline check** every Monday at 8 AM and Friday at 5 PM
    - **A profile refresh** every Monday at 6:30 AM
    - **A setup check** every Monday at 6 AM. It tells you only if something needs fixing.

@@ -4,8 +4,8 @@ description: >-
   Scan the rep's counties for new lead signals from the Bliss Library connector — curated agendas and public
   registry documents — then grade each hit, stage it on the 0-7 ladder, score it 0-100, and cross-reference QuickBase. Reports
   what's new since the last run. Use when the rep says "find leads for my county", "what's new in my
-  territory", "scan for leads", "any new signals", "run my morning leads", or similar (the Morning leads
-  automatic check-in runs it in morning digest mode). Repeatable: each run surfaces only items not
+  territory", "scan for leads", "any new signals", or similar ("run my daily run" / "run my morning leads" is the
+  Daily run in CLAUDE.md, which uses this tool's morning digest mode as its first step). Repeatable: each run surfaces only items not
   already on the shared lead board (`lead-board.xlsx`).
 ---
 
@@ -181,7 +181,8 @@ you check or update it, and follow it: look for the board anywhere in the projec
 like `claude/` (and as `lead-board.csv` where the project only holds text files); reconcile by the underlying lead (same agency, project, and county — not the literal URL),
 never re-adding a known lead as new; update a stage move in place; refresh the current check date on the rows
 you actually checked; and verify the spreadsheet write by reading it back before you tell the rep anything is
-saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and then left untouched.
+saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and then left untouched. For a
+stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due`.
 
 ## Output shape — in this order
 
@@ -210,9 +211,11 @@ saved. A legacy `find-leads-log.md`, if the rep has one, is imported once and th
 
 ## Morning digest mode — the automatic check-in
 
-The **Morning leads** check-in (see **Automatic check-ins** in CLAUDE.md) runs this tool on its own every
-weekday, and the rep can start it any time with "run my morning leads." It is the same tool with a smaller,
-cheaper run. Everything above still applies (the connector is the only source of leads; grading, stages,
+The **Daily run** (see **Daily run** in CLAUDE.md) runs this mode as its first step every weekday, and the
+rep can start it any time with "run my daily run" or "run my morning leads." It is the same tool with a
+smaller, cheaper run. In the Daily run, skip this mode's "Good morning … Here are your morning leads" opening
+line and its closing "Want more on one of these?" line: the Daily run opens the message, and the contact
+cards follow. Everything above still applies (the connector is the only source of leads; grading, stages,
 scores, QuickBase labels and the lead board all work the same), except:
 
 1. **Counties:** Focus Counties if the profile has them; otherwise all of the rep's counties. Never stop to

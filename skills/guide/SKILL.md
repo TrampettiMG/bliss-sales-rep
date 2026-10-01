@@ -37,7 +37,7 @@ Work a lead by number: "find leads" → "research #2" → "prep me for #2" → "
 For a QuickBase tool without the connection, say: "This needs the QuickBase connection your trainer sets up; it isn't on your account yet." Then route to an everyday tool only if it fits the job.
 
 - **Update my tools / Change your profile** — not a tool; these are handled by the project's main instructions ("Keeping things up to date"). Give the rep the phrase and let them ask.
-- **Automatic check-ins** — not a tool; handled by the project's main instructions ("Automatic check-ins"). Set up for every rep: morning leads every weekday at 7 AM, a pipeline check Monday at 8 AM and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only speaks up if something needs fixing. They run while the Claude app is open; if it's closed, they run the next time it opens. Phrases: "change my check-in times," "turn off my check-ins," "run my morning leads," "refresh my profile," "check my setup."
+- **Automatic check-ins** — not a tool; handled by the project's main instructions ("Automatic check-ins"). Set up for every rep: a daily run every weekday at 7 AM (new leads, who to call, today's follow-ups and bid deadlines), a pipeline check Monday at 8 AM and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only speaks up if something needs fixing. They run while the Claude app is open; if it's closed, they run the next time it opens. Phrases: "change my check-in times," "turn off my check-ins," "run my daily run," "refresh my profile," "check my setup."
 
 ## Something's not working
 
@@ -66,7 +66,7 @@ sheet shows (step 4 for QuickBase, step 6 for lead sources). Never use it or put
 | QuickBase tools say they're unavailable | The QuickBase extension isn't installed, or this chat started before it was | Setup sheet step 4, then start a new chat | "check my pipeline" shows your opportunities |
 | "One QuickBase setup file from your trainer is missing" | The private file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
 | The Lead Finder can't download PDFs | Network access for code execution is off | Setup sheet step 3 | Run the Lead Finder again |
-| Your morning leads didn't show up | The Claude app was closed at that time, or your check-ins are off | Open the app (it catches up), or say "set up my automatic check-ins" | Say "what's scheduled?": you see the Bliss check-ins |
+| Your daily run didn't show up | The Claude app was closed at that time, or your check-ins are off | Open the app (it catches up), or say "set up my automatic check-ins" | Say "what's scheduled?": you see the Bliss check-ins |
 | The same leads come back as new every day | Your lead board isn't being saved | Say "update my tools" | The next scan shows nothing you've already seen as new |
 | A tool works differently from what your trainer showed you, or a tool is missing | Your tools are out of date or one didn't install | Say "update my tools" | "What version am I on?" matches what your trainer says |
 | Your profile is missing your QuickBase name | Setup couldn't match you in QuickBase | Say "my QuickBase name is [your name exactly as QuickBase has it]" | Say "check my setup" |
@@ -96,7 +96,7 @@ order. Change nothing.
 7. **Lead board:** `lead-board.csv` or `lead-board.xlsx` is in the project. If the Lead Finder has never run,
    that's fine; don't report it.
 8. **Check-ins:** if the profile's Automatic check-ins line says `on`, the scheduled-tasks list shows all the
-   Bliss check-ins, enabled: `bliss-morning-leads`, `bliss-monday-pipeline`, `bliss-friday-pipeline`,
+   Bliss check-ins, enabled: `bliss-daily-run`, `bliss-monday-pipeline`, `bliss-friday-pipeline`,
    `bliss-profile-refresh`, `bliss-setup-check`. If it says `off`, skip this.
 
 Reply with one line per problem, each with its fix from the table above (every problem here has a row) (e.g. *"Your tools are a version
