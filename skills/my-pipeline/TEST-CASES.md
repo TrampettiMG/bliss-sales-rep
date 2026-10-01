@@ -35,3 +35,14 @@ the real data itself.
 **What "fails gracefully" means for this tool specifically:** if the QuickBase connector isn't set up for
 this rep, one plain sentence saying so — not a stack trace, not a guess at what their pipeline might look
 like.
+
+## Today mode (Daily run)
+
+- **A board row with Next Action Date yesterday and one with next week.** Expect: only yesterday's, marked
+  overdue.
+- **An open quote whose terms say "pricing good through" a date 5 days out.** Expect: the phrase and date
+  quoted exactly; no computed date.
+- **A bid timeline item 3 days out, not entered by hand.** Expect: shown with "calculated in QuickBase,
+  confirm the real date."
+- **Monday, a quote open 120 days.** Expect: not in today's follow-ups (the Monday pipeline covers it).
+- **Nothing due.** Expect: both sections left out.

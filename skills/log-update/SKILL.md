@@ -50,6 +50,12 @@ If the rep says "log my update on #N," use Lead Finder result N, or the Research
 Writer draft already in the conversation, as the known customer/opportunity context. Do not ask the rep to
 repeat it; continue the normal lookup and raw-material flow below, including the quote-only case.
 
+**The lead board's next step.** When the update is about a lead on the lead board and the rep's notes name
+a next step ("try again Tuesday"), also update that board row: `Next Action` to the step, `Next Action Date`
+to its calendar date (only when the rep named the day), and `Status` to `contacted` if they reached out. The
+board is a local file, not QuickBase; say "Saved to your lead board." after reading it back. Touch nothing
+else on the row.
+
 If the lead is labeled `new` (nothing in QuickBase for this buyer), don't look anything up and don't ask for
 the rep's QuickBase name: say in one line that there's nothing in QuickBase to log this against yet, so the
 rep creates the customer and opportunity first (or asks their trainer), and give the clean note ready to paste

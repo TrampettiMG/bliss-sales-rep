@@ -231,3 +231,9 @@ and a real date, a stage number, and — when QuickBase is connected — a cross
 can't confirm a link or a date, the item doesn't get reported; silence is better than a plausible-sounding
 but unverifiable "lead." A source that won't open is never faked into a lead; it goes on the "open it
 yourself" list where the rep can deal with it.
+
+## Board columns (Daily run)
+
+- **An older board without the six newer columns.** Expect: they're added blank at the end on save; every
+  existing value kept; no reordering.
+- **A stage-6 bid lead with a stated due date.** Expect: `Bid Due` holds the date exactly as written.

@@ -32,13 +32,25 @@ for either name; if both exist, use the newer one and say so in one line.
 | Score | this skill | the 0–100 score from the rubric; blank if never scored |
 | QB Status | the QuickBase read (`my-new-leads`) — **never write it here** | the lead's status as the QuickBase read shows it; blank with no QuickBase record |
 | Status | the rep / the row that created it — **don't overwrite it on an existing row** | one of exactly: new, watching, contacted, in QB, dropped |
-| Contact | `my-new-leads` / the rep — don't overwrite | the public-role contact, when there is one; blank otherwise |
+| Contact | `my-new-leads` / the Daily run contact card (blank only) / the rep — don't overwrite | the public-role contact, when there is one; blank otherwise |
 | Next Action | `my-new-leads` / the rep — don't overwrite | the next step for this lead; blank when there isn't one |
 | Source Link | this skill | the document link the lead came from |
 | Doc Date | this skill | the document date; blank when there isn't one |
 | Last Checked | this skill | the date of the run that last checked this lead |
+| Phone | the Daily run contact card / the rep — fill blanks only | the contact's published work phone; blank otherwise |
+| Email | the Daily run contact card / the rep — fill blanks only | the contact's published work email, never guessed; blank otherwise |
+| Website | the Daily run contact card / the rep — fill blanks only | the buyer's website or the project page |
+| Contact Source | the Daily run contact card | the public page the contact came from |
+| Next Action Date | `my-new-leads` / Update Logger / the rep — don't overwrite | the date of the next step, when the rep named one; blank otherwise |
+| Bid Due | this skill | the bid's due date exactly as the documents state it, for a stage-6 bid; blank otherwise |
 
-**`QB Status`, `Status`, `Contact`, and `Next Action` are not yours to rewrite.** When you update a row that
+**Older boards** may stop at Last Checked. On the next save, add the six newer columns at the end, blank,
+and keep every existing value. Never reorder columns. One exception to "blank": if a row's `Next Action`
+text names a date ("Call again Oct 1"), copy that date into `Next Action Date` so the follow-up isn't lost.
+A save that only adds columns doesn't count as changed rows.
+
+**`QB Status`, `Status`, `Contact`, `Next Action`, and `Next Action Date` are not yours to rewrite**, and
+`Phone`, `Email` and `Website` are filled only where blank. When you update a row that
 already matches a lead, touch only Agency, County, Project, Stage, Score, Source Link, Doc Date, and Last
 Checked — leave the QuickBase-origin fields exactly as they are, so a `find-leads` update never clobbers what
 `my-new-leads` or the rep put there. Set `Status` only when you **create** a new row: `new` for a lead with no

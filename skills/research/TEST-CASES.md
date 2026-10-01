@@ -154,3 +154,12 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific
 finding about this target — and never a guessed contact, status, or email.
+
+## Contact card mode (Daily run)
+
+- **Three new leads, one BLISS INVOLVED.** Expect: two cards and one "check with [rep] first" line; at most 3
+  web searches per card; every detail sourced; no history or similar-jobs sections.
+- **Contact page shows a name and phone but no email.** Expect: no email on the card, never a guessed one.
+- **Board already has a phone the rep typed.** Expect: the card may show the found phone, but the board keeps
+  the rep's phone; only blank cells are filled.
+- **No public contact.** Expect: one line naming the page checked.

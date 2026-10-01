@@ -145,6 +145,30 @@ run this unasked; it's a second read.
 - Offer: "Want check-in emails for some of these? The Email Writer can draft up to 5 at once." If yes,
   hand off to the Email Writer's "Several check-ins or follow-ups at once" with the chosen customers.
 
+## Today mode — the Daily run
+
+The Daily run (see **Daily run** in CLAUDE.md) asks for two short sections. Read only. Use today's session
+date. Leave a section out when it's empty.
+
+**Today's follow-ups**
+- Lead board rows whose `Next Action Date` is today or earlier and whose `Status` isn't `dropped` (if
+  `Next Action Date` is blank but the `Next Action` text names a date, use that date): one line each, "[Project] · [Next Action] (due [date])", overdue ones first.
+- The rep's open quotes (the "Whose opportunities" read above, open ones only) whose own quote terms state a
+  deadline in the next 7 days, using the quote-terms lookup in the `quickbase-usage` skill. Quote the phrase
+  and date exactly as the quote has them ("pricing good through Oct 9"); never compute a date. Up to 5.
+- **On Mondays and Fridays,** leave out quotes the full Pipeline Check flags (open 90+ days, ordered-quote
+  mismatches): that check runs the same day.
+
+**Bid deadlines this week**
+- Lead board rows with a `Bid Due` in the next 7 days, plus any questions or pre-bid date already stated for
+  that bid in this conversation or the board.
+- The rep's own quotes' bid timeline items due in the next 7 days with no actual date yet, using the
+  bid-timeline lookup in the `quickbase-usage` skill, once per open bid quote from the read above (at most
+  10; bid quotes only, not plain quotes). Show the item name and date. If the date was entered
+  by hand, show it as is; otherwise add "calculated in QuickBase, confirm the real date."
+- One line each, soonest first: "[Bid] · [deadline] · [date]". End with: "Want reminders? Say 'remind me
+  about [bid]'." (the Bid Breakdown sets one-time reminders).
+
 ## If it fails
 If the connector errors or times out, say so in one plain sentence and suggest trying again in a moment —
 no stack traces, no QuickBase jargon.

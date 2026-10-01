@@ -209,6 +209,28 @@ This is the F6 job: the named public decision-maker tied to the lead, with the p
 know-how, not a data source — the point is knowing which titles matter and that the architect of record
 shows up in contract-approval minutes rather than a staff directory.
 
+## Contact card mode — the Daily run
+
+The Daily run (see **Daily run** in CLAUDE.md) asks for a short contact card on up to 3 leads, instead of
+a full brief. For each lead:
+
+- **Skip** any lead the Lead Finder flagged to check with another rep first (`BLISS INVOLVED`, or another
+  rep's open quotes with that buyer): one line, "[Project]: check with [rep] first," and no card.
+- Use the contact finder rules above (F6) exactly: public-role contacts only, every item sourced, **never
+  guess or construct an email**, no LinkedIn scraping. Pick the one best contact for the lead (parks
+  director or purchasing for a city or county, facilities for a school district, the owner's role for a
+  private buyer); a second only if the first is a general office line.
+- **At most 3 web searches per lead.** No QuickBase lookups beyond what the Lead Finder already did, and no
+  history, similar-jobs, nearby or who-won sections.
+- **The card, one block per lead:** "#N [Project] · [Buyer]", then: who to call (name, title) · phone ·
+  email (only if published) · website · purchasing or bid page link (if found) · one "Why call now" line from
+  the lead itself. Each detail carries its source link. A detail not found is left out, not guessed.
+- No contact found: one line, "#N [Project]: no public contact found — [the page you checked]."
+- **Save to the lead board:** put the contact in `Contact` (name, title) and fill `Phone`, `Email`,
+  `Website` and `Contact Source`, **only where those cells are blank**. Never overwrite what the rep typed.
+- End the section with one line: "Say 'research #N' for the full brief, or 'draft an intro for #N'." Leave
+  it out when every lead was skipped.
+
 ## Output shape
 
 One page, in this order:

@@ -8,7 +8,8 @@ Opportunities, Quote Pipeline, Sales Reps, County Sales Teams.
 
 ## First use — resolve and cache
 
-- Resolve each table name to its table ID with the QuickBase extension's table listing, and write the result
+- Resolve each table name to its table ID from the `quickbase-usage` skill's table list (never list all
+  tables in QuickBase: the app is too large), and write the result
   into the rep's local `PROFILE.md` under a **QuickBase tables** section (table name → ID).
 - Resolve the field IDs the same way, **by field label**, and cache those under the same section. Make **one
   targeted field lookup per table** — never a full field dump (Quote Pipeline has several hundred fields). The
