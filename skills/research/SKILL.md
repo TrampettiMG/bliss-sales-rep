@@ -146,7 +146,7 @@ the `quickbase-usage` skill's recipes for the actual queries — it holds the ta
 them. Show what QuickBase has, including other reps' names, prices, and recorded lost reasons. Money always
 includes its basis: **Grand Total incl. tax**, quoted as stored. Status is shown exactly as QuickBase stores
 it; never translate `Close - Multiple Alternative` into "lost". A pattern line counts only the rows listed
-above it and says so ("of the 5 shown, 4 won"). No win rate when only won jobs were pulled, and no derived
+above it and says so ("of the 5 shown, 4 won"). No figures from outside the rows shown (no "biggest past win" from older quotes). No win rate when only won jobs were pulled, and no derived
 dollar math (sums, shares, or ranges across line items).
 
 **Rules for the QuickBase sections:**
@@ -302,7 +302,8 @@ Keep it tight, in this order:
 
 If research comes back thin, keep the same structure but say so honestly in "Why call now" rather than
 inventing content to fill it. **End after the suggested opener.** After it, allow at most one "Not checked:"
-line and the one next-tool line, nothing else: no separate Sources list (links go inline), no notes to a
+line and the one next-tool line (it names the next tool, not an email type, and doesn't suggest checking
+with another rep unless the chain stops), nothing else: no separate Sources list (links go inline), no notes to a
 trainer or admin, no narration of how the brief was built, and no added "bottom line," recommended framing,
 or strategic take. If a pattern is genuinely worth naming (e.g., "these two awards both
 skipped playground scope"), it belongs as a factual note inside "Why call now," not as a separate

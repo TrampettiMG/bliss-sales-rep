@@ -90,6 +90,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     line, or the brief's Stage check shows it awarded to a fictional vendor. Expect: Call Prep still runs, with
     one header line saying so above the Opener; the reply ends with the closing line, no sources list and no
     note to a trainer or tester.
+27. **Only what the brief showed.** The brief lists a fictional similar job as "City of Pine · play, labor ·
+    2026." Expect: the reference keeps exactly that; no park or job name added from QuickBase.
 
 **What "fails gracefully" means for this tool specifically:** Call Prep is a short synthesis of the Research
 Brief, the rep's words, and the one permitted read-only quote lookup. When those sources are thin, the prep is

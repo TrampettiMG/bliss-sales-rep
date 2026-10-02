@@ -17,7 +17,7 @@ description: >
 
 # Quickbase MCP usage (Bliss)
 
-The `mcp__quickbase__*` tools are a read-only MCP wired to Bliss's Quickbase — realm `blissproducts.quickbase.com`, app `bgr44yubi` ("Bliss Sales & Projects Portal"). Ten tools that query records, run reports, read schema, and download field files. Nothing here writes, so there is no destructive step to gate.
+The `mcp__quickbase__*` tools (in Cowork they may show under the QuickBase read-only extension's own prefix; same tools) are a read-only MCP wired to Bliss's Quickbase — realm `blissproducts.quickbase.com`, app `bgr44yubi` ("Bliss Sales & Projects Portal"). Ten tools that query records, run reports, read schema, and download field files. Nothing here writes, so there is no destructive step to gate.
 
 The problem this skill solves is not *how* to call the tools — it's that the tables are enormous and the payloads are merciless. Quote Pipeline (`bhp495xeb`) carries ~700 fields and ~55K records; Q/O Status Changes (`btiessw29`) holds ~92K rows (counts verified 2026-06-24). A `query_records` with no `select` returns every field on every row. `list_tables` returned 61,551 characters across the app's 113 tables and overflowed the token limit on the first call of this session. Drag one of those into the main agent and the context the user's actual ask needs is gone.
 

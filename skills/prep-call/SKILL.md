@@ -56,7 +56,8 @@ run new web searches, or add new QuickBase lookups on the target.
 ## Output shape
 
 Return these items in this order. The whole prep is **30 lines at most**; if it runs longer, cut references
-and objections first.
+and objections first. Every item uses only what the brief (or an earlier tool) showed: no job names, park
+names, dates or amounts it didn't show, even when QuickBase has them.
 
 - **Header notes** (only when they apply, one line each, above everything else):
   - The lead's county isn't on your Territory/Counties line: "This one's in [county], which isn't one of

@@ -161,7 +161,9 @@ for #2", "break down the bid for #2").
   ("[Rep] has other open quotes with this buyer.") and carry on.
 - If QuickBase shows the buyer's past quotes under a different rep, but nothing open, that's not a stop: say it
   once, in one line ("Past quotes for this buyer were under [rep]."), and carry on. The same goes when
-  QuickBase lists another rep as the customer's Sales Rep.
+  QuickBase lists another rep as the customer's Sales Rep. These lines state the fact only: don't add "check
+  with [rep] before you call" or end on "talk it through with [rep] first" (that's for a stop). A practical
+  tip is fine, such as asking that rep for a direct contact.
 - **A lead outside the rep's counties** (its county isn't on the profile's Territory/Counties line) stops the
   chain at outreach: *"This one's in [county], which isn't one of your counties. Check with your manager
   before reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check
@@ -325,7 +327,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-03a**
+**Tools version: 2026-10-03b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
