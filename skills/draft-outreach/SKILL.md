@@ -52,7 +52,7 @@ review and send/say themselves.
    and record number. Do not ask the rep to repeat it. If a `research` brief or `prep-call` brief is already
    in the conversation, use its sourced contact in the To line or greeting and its Why call now signal as the
    reason for writing. Add at most one proof line from Similar jobs elsewhere or Past customers nearby, only a
-   job that brief lists and never a dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Call Prep's Open items feed a follow-up. Never add a fact
+   job that brief lists and never a dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Phrase a reference as "[Buyer] chose Bliss for [products] in [year]"; never "we've done," "we did," "our work at," "completed," or "installed." Call Prep's Open items feed a follow-up. Never add a fact
    those tools did not carry.
    **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
    read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill
@@ -80,17 +80,47 @@ review and send/say themselves.
    match, also check the rep's quotes by customer plus job name before falling back to a `[Name]` placeholder;
    if QuickBase isn't connected, carry on as above. If a quote-only match is found, use its quote/job details
    without inventing an opportunity. Read only — never write to QuickBase.
-   **When a Lead Finder result arrives with a QuickBase label, use it to choose the type without asking:**
+   **Stops first.** Before choosing a type, check these, one line each, and don't draft:
+   - The lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This one's in [county], which
+     isn't one of your counties — check with your manager before reaching out." Skip this check while that
+     line is blank or still loading.
+   - The Research Brief's Stage check shows it awarded to another vendor, under contract, or built: "The
+     brief shows this awarded to [vendor] on [date] ([source]). Want an email about [another open item in the
+     brief] instead?" (or "built" / "under contract" wording).
+   - `BLISS INVOLVED` (a public document that names Bliss, or Play and Park Structures, in connection with
+     this lead's project), `in pipeline ([another rep])`, or any label followed by `open quote: [another
+     rep]` (another rep's open record for this same project, whatever the label) → say in one line to check
+     with the rep of record first. **Exception:** when the brief or the Lead Finder shows the `BLISS INVOLVED` match is a
+     QuickBase record whose rep is you and no other rep has an open record on this project, say "This one is
+     yours." and choose the type by the QuickBase label below.
+   - Another rep's open quotes with the same buyer on a *different* project, or past quotes for this buyer
+     under another rep with nothing open: not a stop. Say it in one line ("[Rep] has other open quotes with
+     this buyer." / "Past quotes for this buyer were under [rep].") and carry on.
+   **When a Lead Finder result arrives with a QuickBase label, use it to choose the type without asking.**
+   The label describes **this lead's project or site**: `in pipeline`, `won before`, `lost before` and
+   `Close - Multiple Alternative` apply only to a quote or opportunity for this project or site; anything
+   else is `new`, sometimes followed by "Past orders with this buyer: N, last [year], [categories]."
    `in pipeline (yours)` → open-quote follow-up referencing the new signal; `lost before` → re-engagement
    around the new signal, never implying the old quote is open; `Close - Multiple Alternative` → the same
-   light re-engagement around the new signal, never saying or implying Bliss lost; `won before` →
-   past-customer check-in about phase two, another site, or surfacing, never a "still moving?" question;
-   `new` → intro. `BLISS INVOLVED`, `in pipeline ([another rep])`, or any label followed by `open quote:
-   [another rep]` (another rep's open record for this same project, whatever the label) → don't draft; say
-   in one line to check with the rep of record first. "Draft an intro for #N" still follows the label (the
-   word "intro" isn't an override); the rep overrides by naming a different type. The rep can
-   override the type. Keep the existing no-write rule and name-only subject rule.
+   light re-engagement around the new signal, never saying or implying Bliss lost (see Re-engagement email
+   below); `won before` → past-customer check-in about phase two, another site, or surfacing, never a
+   "still moving?" question — and when the signal is a budget line with no quote behind it, write the
+   check-in around that budget line: name the line and ask one question about it (who's leading it, or
+   when it starts); `new` → intro.
+   A `new` lead with past orders gets a past-customer check-in only when a past order was real play, splash
+   or shade equipment (not parts or furnishings) within the last 5 years; otherwise it's an intro that may
+   say "we've supplied [buyer] before," with no year, amount or number. "Draft an intro for #N" still
+   follows the label (the word "intro" isn't an override); the rep overrides by naming a different type.
+   Keep the existing no-write rule and name-only subject rule.
 4. **Draft, matched to type:**
+   **Rules for every email:**
+   - **Exactly one question in the body.** One ask, phrased as one question; no second "and who's the
+     right person?" or "happy to do a call whenever."
+   - **Department mailbox** (purchasing@, parks@, info@ or another shared address, and no named contact
+     for it): open with "Hello," and no first name.
+   - **Never a quote or RFQ number, or an amount,** in the subject or body. A past order is named at most
+     as "we've supplied you before" (or "[Buyer] chose Bliss for [products] in [year]" for a real equipment
+     order), never with another customer's name attached to this buyer.
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.
    - **Follow-up email** — references the specific prior interaction the rep described (a call, a meeting,
@@ -105,16 +135,25 @@ review and send/say themselves.
      these). Reference the past project only if the rep names it or QuickBase shows it (a Pipeline Check past-customer list), ask about what's coming up (another
      site, a phase two, replacing aging equipment or surfacing, next year's budget), and keep the ask
      small. Never invent their history, plans, or budget timing.
-   - **Re-engagement email** — for a prospect gone quiet. Light touch, no guilt-tripping or fabricated
-     urgency ("prices are going up," "limited availability") unless the rep says that's actually true.
-     Give them an easy, low-pressure way to respond.
+   - **Re-engagement email** — for a prospect gone quiet, or a `lost before` / `Close - Multiple
+     Alternative` buyer. Light touch, no guilt-tripping or fabricated urgency ("prices are going up,"
+     "limited availability") unless the rep says that's actually true. Give them an easy, low-pressure way
+     to respond.
+     **Open on a new signal:** a lead, a budget line, or a brief finding already in the conversation. If
+     there isn't one, ask the rep in one short question before drafting ("What's new with them — a budget
+     line, a new project, a meeting item?").
+     **For `Close - Multiple Alternative` and `lost before`,** never write "lost," "missed out," "didn't
+     win," "next time," "do better," "another shot," or "how the decision went" / "how the decision came
+     together," and never ask for a debrief or feedback on the old quote. The email is about the new
+     signal, not the old quote.
    - **Call script** — talking points, not a word-for-word script: an opening line, 2-3 points to cover,
      and how to handle the most likely objection or two. Bullet form, meant to glance at during the call,
      not read verbatim.
    Apply the rep's Voice throughout — casual and short vs. more formal changes the sentence length and
    tone, not the facts included.
-5. **Hand it back as plain, paste-ready text.** For an email, that means subject line + body. For a call
-   script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
+5. **Hand it back as plain, paste-ready text.** For an email, always print the full subject line and the
+   full body in the reply itself, then any notes below them. A reply with a subject and no body is never
+   acceptable. For a call script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
    the Update Logger will draft the QuickBase note." Use the lead's number when the draft came from a Lead
    Finder result; otherwise use the customer's name ("log my update on Cedar Grove Parks").
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.

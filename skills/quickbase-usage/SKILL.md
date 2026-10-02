@@ -8,7 +8,8 @@ description: >
   reads to a subagent that returns a compact digest; use select / where / max_records on
   every call. Use whenever a task touches Quickbase: reading a quote, QC or bid fields,
   line items or bond amounts, quote status history, permit / jurisdiction history, running
-  a QB report, or exploring tables and fields. Trigger phrases: "Quickbase", "QB",
+  a QB report, or exploring tables and fields. Trigger phrases: "Quickbase", "QB", "set yourself up", "who am I", "my counties", "my territory",
+  "my pipeline", "my new leads", "quote details", "what's in this quote", "past customers", "check in with",
   "mcp__quickbase__", "query_records", "run_report", "get_table_fields", "Quote Pipeline",
   "Q/O Status Changes", "Quote Lines", "Permit Authority", "bond amount", "bhp495xeb",
   "blissproducts.quickbase.com".
@@ -52,7 +53,7 @@ The main agent stays clean. A subagent does the heavy reads in *its* context and
 
 1. **`select` always.** `query_records` with no `select` returns every field (~700 on Quote Pipeline). Pass the field IDs you need and nothing else.
 2. **Bound the rows.** Set `max_records`. Page with `skip` / `paginate` only when you must. Never pull a whole table to answer a narrow question.
-3. **Push work to the server where the tool supports it.** `where` filters server-side — use it. But on this MCP **`groupBy` does *not* return counts or sums** — it returns grouped *rows*, capped at ~1000 per page, and the response's `totalRecords` is *not* a table total. So you cannot get a true "count by status" from one `query_records` call. For a real aggregate, run a saved QB report (`run_report`) that does the math, or delegate a subagent to page through and tally. Never treat one `groupBy` page or `totalRecords` as a full count.
+3. **Push work to the server where the tool supports it.** `where` filters server-side — use it. But on this MCP **`groupBy` does *not* return counts or sums** — it returns grouped *rows*, capped at ~1000 per page, and the response's `totalRecords` is *not* a table total. So you cannot get a true "count by status" from one `query_records` call. For a real aggregate, delegate a subagent to page through and tally (`run_report` has returned HTTP 400 since 2026-08-13). Never treat one `groupBy` page or `totalRecords` as a full count.
 4. **Don't explore in the main agent.** `list_tables` and `get_table_fields` overflow. Delegate, then store the IDs you learn in `references/tables.md` so you never re-explore.
 
 ## Tool map (read-only)
@@ -60,7 +61,7 @@ The main agent stays clean. A subagent does the heavy reads in *its* context and
 | Tool | Use it for | Context note |
 |---|---|---|
 | `query_records` | The workhorse — rows from a table by `where` | **Always `select`.** Always `max_records`. `groupBy` returns grouped *rows* (≤1000/page), **not** server-side counts — see lever 3. |
-| `run_report` | Execute a saved QB report by `report_id` | Pre-shaped output — cheapest path for a known reporting need. |
+| `run_report` | Execute a saved QB report by `report_id` | ⚠ Broken since 2026-08-13 (HTTP 400). Replicate with `query_records`. |
 | `get_relationships` | Map a table's parents / children | Returns IDs, not names. Broad ones → subagent. |
 | `get_table_fields` | The field list for a table | **Huge** (~700 on Quote Pipeline) → subagent; store the map. |
 | `get_field` | Detail on one field by ID | Cheap. Fine direct. |
@@ -70,12 +71,18 @@ The main agent stays clean. A subagent does the heavy reads in *its* context and
 | `configure_cache` | Cache repeated reads (`enabled`, `ttl`, `clear`) | Use when re-reading the same data in a run. |
 
 → Per-tool parameters, response shapes, the Quickbase query language (operators, `{fid.OP.'value'}`), and the overflow / error catalog: **read `references/tools.md`**.
-→ Sequenced flows for the real Bliss jobs — a quote's QC fields, line items / bond amounts, status history, permit lookup: **read `references/recipes.md`**.
-→ Known Bliss table IDs and field IDs (so you skip exploration): **read `references/tables.md`**.
+→ **Scheduled and repeat runs (the Daily run, pipeline checks, the setup check): read only this page and
+`references/recipes.md`.** The recipes carry the table and field IDs they need. Open `tables.md`,
+`field-map.md`, `tools.md` or `subagents.md` only if a call errors or no recipe covers the job — they cost
+~15K tokens together.
+→ Sequenced flows for the real Bliss jobs — rep setup (who am I + my counties), who covers a county, the rep's open opps with contact / last activity / record links, finding a rep's opp for a customer, quote details for an opp, past customers with nothing open, a quote's QC fields, line items / bond amounts, status history, permit lookup, the Research Brief bid-history lookups (buyer history, similar jobs, nearby customers), the Bid Breakdown lookups, and the Pipeline Check today-mode lookups (quote terms, bid timeline): **read `references/recipes.md`**.
+→ Known Bliss table IDs and field IDs (so you skip exploration): **read `references/tables.md`**, then **`references/field-map.md`** (the full 9/29 map: all 118 tables by group, key fields per table, every status value, query rules, conflicts) for anything tables.md doesn't cover.
+→ ⚠ **Never select or export credential fields:** Permit Authorities `btwte4vj4` fids 16/17/18 and Quote Permits `bsce9f3yv` fids 44/45/46 hold logins and passwords.
 
 ## Reference files
 
 - `references/subagents.md` — the delegation playbook: when to delegate, which agent type, the brief template, what to forbid the subagent from returning, example briefs. Read before dispatching a Quickbase subagent.
 - `references/tools.md` — every tool: parameters, response shape, the Quickbase query-language operators, and the error / overflow catalog (the "exceeds maximum allowed tokens, saved to file" behavior and how to triage it). Read for any non-trivial call or when a call errors.
 - `references/recipes.md` — copy-paste flows for the common Bliss jobs, each routed to the right path (direct vs. subagent). Read when doing one of those jobs.
+- `references/field-map.md` — the compact live field map (2026-09-29): table groups with dbids, key fields and gotchas, status values, query rules, and source conflicts. Where it and tables.md disagree, field-map.md is newer.
 - `references/tables.md` — the Bliss app appendix: realm, app ID, known table IDs, and the field IDs mapped so far. Read when you need a table or field ID; extend it whenever a subagent discovers new ones.

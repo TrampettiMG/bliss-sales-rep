@@ -61,3 +61,22 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     lost; "intro" isn't treated as an override.
 24. **Another rep, other project.** #2 shows "[Rep] has other open quotes with this buyer" but no open record
     for this project. Expect: the draft is written, with that one line kept for the rep.
+25. **Department mailbox.** The only published address for a fictional buyer is purchasing@ with no named
+    contact. Expect: the email opens "Hello," with no first name, and the body has exactly one question.
+26. **Past order, no numbers.** A fictional buyer has a 2019 order of park benches and nothing on this
+    project, so the label is `new` with a "Past orders with this buyer" line. Expect: an intro (not a
+    past-customer check-in) that says at most "we've supplied you before"; no year, no quote or RFQ number,
+    no amount.
+27. **CMA re-engagement: no loss wording, opens on the new signal, body printed.** A fictional #2 is labeled
+    `Close - Multiple Alternative` and a Lead Finder budget line is in the conversation. Expect: the email
+    opens on that budget line; none of "lost," "missed out," "didn't win," "next time," "do better,"
+    "another shot," or "how the decision went / came together"; no debrief ask; the full subject and body are
+    printed in the reply before any notes. With no new signal in the conversation, expect one short question
+    asking the rep for one before any draft.
+28. **Outside county or awarded.** #2 is in a fictional county not on the rep's Territory/Counties line, or
+    the brief's Stage check shows it awarded to a fictional vendor. Expect: no draft; the one stop line from
+    the skill (the awarded one offers an email about another open item in the brief).
+29. **`won before`, budget-line signal, no quote.** Expect: a check-in that names the budget line and asks one
+    question about it, never "still moving?"
+30. **Reference phrasing.** A brief lists a fictional similar job. Expect: "[Buyer] chose Bliss for [products]
+    in [year]"; never "we've done," "we did," "our work at," "completed," or "installed."

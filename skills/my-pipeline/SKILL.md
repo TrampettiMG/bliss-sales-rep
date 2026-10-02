@@ -82,6 +82,7 @@ Never report "you have no opportunities" without first checking the name this wa
 - **Customer contact and last activity** come from the fields the `quickbase-usage` skill maps. Show the
   contact so the rep can act; use last activity for a plain "last touched N days ago." Never invent either.
 - If any test records appear (your trainer's test accounts), exclude them.
+- **Statuses are shown verbatim as stored** (e.g. "Close - Quick Close (no reason)"), never shortened.
 
 ## What to flag — the health buckets
 Group the rep's open opps into three buckets:
@@ -108,7 +109,7 @@ adjust them.
   now, Y 🟡 worth a look, Z 🟢 clean."
 - List the 🔴 items in full, one line each: the opportunity number as a clickable link to its QuickBase
   record (build the link from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the
-  realm/app/table IDs), then customer, status, close date (or "no close date," or "date looks wrong:
+  realm/app/table IDs; a link may carry table IDs inside its URL, but never print a bare table or field ID), then customer, status, close date (or "no close date," or "date looks wrong:
   <value>"), confidence as a %, and last activity ("last touched N days ago"). Put the customer contact
   (name, phone, email) with each item so the rep can act without opening QuickBase. These are what to fix
   first.
@@ -150,13 +151,14 @@ run this unasked; it's a second read.
 ## Today mode — the Daily run
 
 The Daily run (see **Daily run** in CLAUDE.md) asks for two short sections. Read only. Use today's session
-date. Leave a section out when it's empty.
+date. Leave a section out when it's empty: no heading and no "nothing due" or "all clear" line for it.
 
 **Today's follow-ups**
 - Lead board rows whose `Next Action Date` is today or earlier and whose `Status` isn't `dropped` (if
   `Next Action Date` is blank but the `Next Action` text names a date, use that date): one line each, "[Project] · [Next Action] (due [date])", overdue ones first.
 - The rep's open quotes (the "Whose opportunities" read above, open ones only) whose own quote terms state a
-  deadline in the next 7 days, using the quote-terms lookup in the `quickbase-usage` skill. Quote the phrase
+  deadline in the next 7 days, using the quote-terms lookup in the `quickbase-usage` skill's section titled
+  **"Pipeline Check today mode: quote terms and bid timeline"**. Quote the phrase
   and date exactly as the quote has them ("pricing good through Oct 9"); never compute a date. Up to 5.
 - **On Mondays and Fridays,** leave out quotes the full Pipeline Check flags (open 90+ days, ordered-quote
   mismatches): that check runs the same day. Keep any quote whose terms state a deadline in the next 7 days
@@ -166,7 +168,8 @@ date. Leave a section out when it's empty.
 - Lead board rows with a `Bid Due` in the next 7 days, plus any questions or pre-bid date already stated for
   that bid in this conversation or the board.
 - The rep's own quotes' bid timeline items due in the next 7 days with no actual date yet, using the
-  bid-timeline lookup in the `quickbase-usage` skill, once per open bid quote from the read above (at most
+  bid-timeline lookup in that same `quickbase-usage` section, **"Pipeline Check today mode: quote terms and
+  bid timeline"**, once per open bid quote from the read above (at most
   10; bid quotes only, not plain quotes). Show the item name and date. If the date was entered
   by hand, show it as is; otherwise add "calculated in QuickBase, confirm the real date."
 - One line each, soonest first: "[Bid] · [deadline] · [date]". End with: "Want reminders? Say 'remind me

@@ -18,15 +18,15 @@ anything. Don't paraphrase, don't restate it from memory, and don't reorder the 
 
 Stages 2 through 5 are the target: real enough to chase, early enough that Bliss can still get specified
 before the bid is written. Stage 6 is a different play, an act-now price response to something already
-out for bid. Stage 7 is excluded automatically; a lead that's already broken ground, like the one Mike
+out for bid. Stage 7 is excluded automatically; a lead that's already broken ground, like the one the bid team
 flagged on 9/23, should never appear. Acceptance test: zero stage-7 leads in any output.
 
 ## F2 — Bliss scoring
 
 > **INTERIM — this rubric is a first draft.** It is pending the bid team's own "what we look for" guide
-> (the document Mike screen-shared on 9/23 that we still need a copy of). The weights get calibrated
-> against the backtest and signed off against that guide once it's in hand. Say "interim" if the rep asks
-> where the weights come from; never present them as final.
+> (still to come from the bid team). The weights get calibrated
+> against the backtest and signed off against that guide once it's in hand. Say "interim" only if the rep asks
+> where the weights come from — never in a score reason or anywhere else unprompted; never present them as final.
 
 Scores every lead 0–100 with a one-line reason, so a rep sees "found 14, call these 3 now" instead of a
 flat list.
@@ -49,8 +49,7 @@ Factors, heaviest first:
 - Existing relationship on file in QuickBase
 
 The weights behind these factors are a first draft. They get calibrated against the backtest and signed
-off against the bid team's own "what we look for" guide (the document Mike screen-shared on 9/23 that we
-still need a copy of).
+off against the bid team's own "what we look for" guide, once it's in hand.
 
 Acceptance criteria:
 

@@ -27,8 +27,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
 ## Usage budget
 
-7. **Usage budget respected.** Count actual search calls on a normal run. Expect: roughly 6-8 total, not an
-   open-ended chase — and if the budget runs out, the brief says plainly what wasn't checked.
+7. **Usage budget respected.** Count web searches on a normal run (page fetches are counted separately).
+   Expect: roughly 6–8 web searches, not an open-ended chase — and if the budget runs out, one "Not checked:"
+   line after the opener says what wasn't.
 8. **QuickBase read doesn't spend the search budget.** A municipality run with the cross-reference. Expect:
    the QuickBase read is not counted against the 6-8 web searches, and the brief stays honest about which
    searches were actually spent.
@@ -38,11 +39,11 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 9. **Jurisdiction first, then the design firm.** Rep researches a city where the jurisdiction alone doesn't
    match QuickBase, but the design firm named in the public document does. Expect: it searches the
    jurisdiction name first, then the design-firm/engineer name, and reports the hit found through the firm.
-10. **First use resolves and caches.** First run with the QuickBase extension connected. Expect: table
-    names (Opportunities, Quote Pipeline, Sales Reps, County Sales Teams) resolved to IDs and written into
-    `PROFILE.md` under a "QuickBase tables" section, with **targeted field-label lookups (one per table, no
-    full field dump)** — and no ID printed into any repo/skill file.
-11. **Second run reads the cache.** The next run. Expect: IDs read from `PROFILE.md`, no re-resolution.
+10. **Recipes, no discovery.** First run with the QuickBase extension connected. Expect: queries come from
+    the QuickBase setup skill's recipes — no table listing, no field dump, no ID lookup step — and no ID
+    printed into any repo/skill file.
+11. **QuickBase budget.** Any full brief. Expect: about 12 bounded QuickBase queries in all; run in a subagent
+    when one is available, otherwise the same bounded queries run directly.
 12. **Table names only in the skill.** Any run. Expect: the brief and its sources refer to tables by name
     ("Opportunities," "Quote Pipeline"), never by a table ID — no QuickBase ID appears in the output.
 13. **Every call bounded.** Any cross-reference. Expect: every QuickBase call carries `select`, `where`, and
@@ -78,7 +79,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     an individual. Expect: no architect is returned (and the brief says the role couldn't be sourced),
     rather than naming someone from the firm's roster.
 25. **Source each contact.** Any contact returned. Expect: every one carries its source page — a government
-    staff directory, agenda/staff report, firm site, or a public search result that names the person.
+    staff directory, agenda/staff report, firm site, or another opened public page that names the person.
 26. **No personal data.** A staff directory that also shows a personal cell for a parks director. Expect: it
     is left out — only role-tied public contact info is used; no home address, personal phone, or personal
     email appears.
@@ -96,8 +97,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     fabricated page as a substitute.
 31. **Output order.** Any municipality/agency run. Expect, in order: Header, QuickBase cross-reference (or
     the single "QuickBase isn't connected" line), Bliss history with this buyer, Similar jobs elsewhere, Past
-    customers nearby, Who won their past bids, Contacts, Why call now, Suggested opener — and nothing after
-    the opener (no bottom line, no strategic take).
+    customers nearby, Who won their past bids, Contacts, Why call now, Suggested opener — with the four-line
+    Project block under the name line. After the opener, at most one "Not checked:" line and one next-tool
+    line: no Sources list, no trainer/admin note, no process narration, no bottom line or strategic take.
 32. **Facts vs. advice.** A finding where design is still open. Expect: "design is still open" as a fact —
     never "a good time to pitch" framed as advice or a pursue/pass verdict.
 
@@ -131,7 +133,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     pattern line states the observed win history without advice.
 40. **Similar jobs with no budget.** A fictional lead has no known budget. Expect: the size filter is skipped
     and the Similar jobs elsewhere section says so; product-category and buyer-type filters still apply.
-41. **Nearby fallback.** A fictional lead's county has no other-customer wins, but the same state does. Expect:
+41. **Nearby fallback.** A fictional lead's county has fewer than 3 other-customer wins, but the same state does. Expect:
     up to 5 won jobs are shown from the state and the section says "fallback: same state"; the lead's own buyer
     is excluded. Won means only Order Submitted, Invoiced, or Commission Paid.
 42. **Other rep's history is visible.** A matching buyer has past Bliss jobs owned by another rep. Expect: the
@@ -149,8 +151,25 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     Expect: Research Brief uses the second lead's buyer, project, scope, budget, stage, source, and QuickBase
     label without asking the rep to repeat them.
 47. **Buyer documents first.** A fictional municipality in the rep's counties has the Bliss Library connector.
-    Expect: `my_sources` and about 6 single-term, non-OR `read_source` calls cover the entity's CIP, budget,
+    Expect: `my_sources` and about 6 single-term, non-OR `read_source` calls per document cover the entity's CIP, budget,
     master plan, and parks page before web searches; those reads do not spend the 6–8 web-search budget.
+
+## QC round 1 cases
+
+48. **Out of territory.** A rep covering fictional Pine and Cedar counties says "research #1" on a lead in
+    fictional Oak County, where QuickBase's county assignments list another rep for Oak County. Expect: the
+    header says Oak County isn't one of the rep's counties and names that rep; the brief completes; the Email Writer and
+    Content Builder then stop with one line.
+49. **Awarded since the scan.** The library budget shows a $300K playground line; a council minute two weeks
+    later awards the contract to fictional Maple Play Co. Expect: the Stage check shows both (Lead Finder stage
+    and "awarded to Maple Play Co., [date], [source]"); outreach isn't drafted; the rep is offered another
+    open item from the brief.
+50. **Label scope.** A fictional buyer has a 2014 $300 parts order and nothing on this project. Expect: `new`
+    plus one "Past orders with this buyer: 1, last 2014, [categories]" line; never `won before`.
+51. **Search summary is not a source.** A search result names a parks director, but the linked page doesn't.
+    Expect: the detail is marked "unconfirmed (search summary)", with no link presented as proof.
+52. **Pattern line honesty.** Five won jobs listed, no lost jobs pulled. Expect: "of the 5 shown…" wording and
+    no win rate; no derived dollar math across rows.
 
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific

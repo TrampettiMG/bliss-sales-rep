@@ -55,8 +55,17 @@ run new web searches, or add new QuickBase lookups on the target.
 
 ## Output shape
 
-Return these items in this order:
+Return these items in this order. The whole prep is **30 lines at most**; if it runs longer, cut references
+and objections first.
 
+- **Header notes** (only when they apply, one line each, above everything else):
+  - The lead's county isn't on your Territory/Counties line: "This one's in [county], which isn't one of
+    your counties — check with your manager before reaching out." Call Prep still runs.
+  - The brief's Stage check shows it awarded to another vendor, under contract, or built: "The brief shows
+    this awarded to [vendor] on [date] ([source])." (or "built" / "under contract" wording). Call Prep still
+    runs; the talking points and the ask are about what's still open, not the awarded job.
+- **Opener** — one line to start the call, tied to one sourced fact from the brief (a budget line, a meeting
+  item, a bid date). It may reuse the brief's suggested opener. Never a fact the brief doesn't carry.
 - **Who you're calling** — contact name, role, and source from the Research Brief's Contacts, plus the
   QuickBase status from the brief or permitted quote lookup, such as "in pipeline · quote number · confidence ·
   close date." If the rep's own opportunity in QuickBase lists a contact, that counts as a source too (say
@@ -77,13 +86,17 @@ Return these items in this order:
 - **Likely objections** — 2–4 lines, each with a short response angle. If Who won their past bids names a past
   winner, use that sourced fact (for example, "They've bought from [vendor] before"). Otherwise label the line
   general. Never assume what the rep's quote contains or what Bliss offers.
+- **The ask** — one concrete next step to ask for before you hang up: a site visit, a 15-minute follow-up
+  call, a spec or plan review, or a copy of the bid documents. One ask only, fitted to the stage.
 - Closing line: "Say 'show the full research' for the whole brief, or 'draft an email for #N' for the Email
   Writer." (The Email Writer picks the type from the lead's label.) Use "draft a follow-up" instead only when
   the rep has already been in touch (an open quote or a past call in the conversation), and the customer's
-  name when there's no lead number. For a lead to check with another rep first, leave the Email Writer offer
-  out.
+  name when there's no lead number. For a lead to check with another rep first, a lead outside your counties,
+  or one the brief shows awarded, under contract or built, leave the Email Writer offer out.
 - **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Talking points about a designer or past quote say what QuickBase shows ("two past $0 quotes
   with this designer"), not what it implies.
 
 If the rep says "show the full research" afterward, show the Research Brief that was built before this prep.
-Do not add a bottom line, recommendation, or strategic take.
+The prep ends with the closing line: no separate sources list (links stay inline where the items put them),
+no notes to a trainer, admin or tester, and no description of how the prep was built. Do not add a bottom
+line, recommendation, or strategic take.

@@ -7,7 +7,7 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 
 0. **Check the two connections first, silently.** The registry connector is connected if the tools
    `my_sources`, `read_source`, and `lead_scan` are available. QuickBase is connected if its tools are.
-   Also check that the private QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
+   Also check that the QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
    is in this project. If both connections are there and the file is present, say nothing about it. If
    one is missing, tell the rep in one plain sentence each, without naming files or tools:
    - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder won't work
@@ -65,7 +65,9 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    confirm it saved.
 6. Confirm every file in the list, and `CLAUDE.md`, was actually saved before saying setup is done — if any fetch failed,
    say which tool didn't install and ask the rep to tell their trainer. Then end setup with one short
-   line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."*
+   line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."* That line is the
+   last thing setup says: the check-ins message from step 4 comes before it, and nothing follows it (no
+   notes about files, folders, time zones or logins, even when the person looks like a trainer or admin).
 
 Tools to install (fetch each URL and save it in the `Bliss Tools` folder with exactly the name shown):
 - https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/skills/find-leads/SKILL.md → save as `Lead Finder.md`
@@ -100,10 +102,6 @@ sentence saying so.)
 - Voice:
 - Automatic check-ins:
 - Notes:
-
-## QuickBase tables
-(Filled in by the QuickBase tools on first use: each table's and field's ID, looked up by name. Local to
-this project only.)
 ```
 <!-- FIRST-RUN-ONBOARDING-END -->
 
@@ -162,7 +160,23 @@ for #2", "break down the bid for #2").
   Another rep's open quotes with the same buyer on a *different* project aren't a stop: say so in one line
   ("[Rep] has other open quotes with this buyer.") and carry on.
 - If QuickBase shows the buyer's past quotes under a different rep, but nothing open, that's not a stop: say it
-  once, in one line ("Past quotes for this buyer were under [rep]."), and carry on.
+  once, in one line ("Past quotes for this buyer were under [rep]."), and carry on. The same goes when
+  QuickBase lists another rep as the customer's Sales Rep.
+- **A lead outside the rep's counties** (its county isn't on the profile's Territory/Counties line) stops the
+  chain at outreach: *"This one's in [county], which isn't one of your counties. Check with your manager
+  before reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check
+  while Territory/Counties is blank or still loading.
+- **A lead the sources show is already awarded, under contract, or built** (the Research Brief's Stage check)
+  stops the chain at outreach too: *"The brief shows this awarded to [vendor] on [date] ([source]). Want an email about
+  [another open item in the brief] instead?"* Show the Lead Finder's stage and what the sources say side by
+  side; never silently overwrite the stage.
+- **The QuickBase label describes this lead's project or site,** not the buyer. `in pipeline`, `won before`,
+  `lost before` and `Close - Multiple Alternative` apply only to a quote or opportunity for this project or
+  site. Anything else is `new`, followed by one line when QuickBase has any: "Past orders with this buyer: N,
+  last [year], [categories]."
+- **`BLISS INVOLVED` means a public document names Bliss (or Play and Park Structures) in connection with this
+  lead's project.** If that match turns out in QuickBase to be the rep's own record, and no other rep has an
+  open record on this project, it isn't a stop: say "This one is yours." and carry on by the QuickBase label.
 
 ## Lead Finder reference files
 
@@ -261,7 +275,8 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
 ## Daily run
 
 Runs from the weekday 7 AM check-in, or when the rep says "run my daily run" or "run my morning leads." One
-message, in this order. Leave out any section that's empty. If every section is empty, the whole reply is one
+message, in this order. Leave out any section that's empty, with no "nothing due" or "none this week" line
+in its place. If every section is empty, the whole reply is one
 line: *"Nothing new today, [First name]. Your follow-ups and bids are clear."*
 
 Start with: *"Good morning, [First name]. Here's your daily run."*
@@ -299,7 +314,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
    **Territory/Counties**. Fill **Contact** only when it's blank: the rep may have changed their own phone or
    email, so never overwrite it. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
-   or the QuickBase tables section.
+   or a QuickBase tables section an older profile may still have.
 3. If a Focus County is no longer in the rep's assigned counties, don't remove it. Say so in one line so
    the rep can decide: *"Hanover isn't in your assigned counties anymore. Keep it as a focus county?"*
 4. **Change nothing** if the QuickBase lookup fails or returns no rep, or the territory is still loading
@@ -310,7 +325,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-02d**
+**Tools version: 2026-10-03a**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -364,6 +379,11 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 - Anything that would send, submit, or post on the rep's behalf (an email, a QuickBase update) is always a draft for the rep to review and send/paste themselves. Never send or submit anything automatically.
 - Never invent specifics — about a prospect, a bid, or Bliss itself — beyond what the rep tells you or what's already in the conversation. If a specific, hard-to-verify quantitative claim about Bliss (an installation count, years in business, a win rate) is given by the rep or already sitting earlier in the conversation, use it as given — don't refuse it or demand proof — but add one short caution alongside the output, e.g. "Used as given — double-check this number is accurate before it goes out." The caution is a reminder, not a gate.
 - If a tool or step fails, say so in one plain sentence — no stack traces, no jargon. Tell the rep what to try instead.
+- **End where the tool's output ends.** After a tool's last section, add at most one line offering the next
+  tool. No separate "Sources:" list (links go inline where the tool's format puts them), no narration of what
+  you did behind the scenes (copying, reading back, scheduling), and no notes addressed to a trainer, admin
+  or tester, even when the person looks like one. If something needs the trainer, say it to the rep in one
+  plain line: *"Tell your trainer: …"*
 - Stick to the output sections a skill's flow actually specifies. Don't tack on an extra "bottom line," "recommended approach," or strategic-framing wrap-up that section wasn't asked for — that's the rep's call to make, not the tool's to volunteer. If the rep wants that kind of thinking, they'll ask for it directly, and a tool can offer a natural next step (which other tool to use next) without editorializing on strategy.
 - Keep responses short and easy to scan. Assume the rep is reading this on a laptop/desktop, not a phone.
   Reps are on standard accounts with a message-count limit per session — don't pad an answer with

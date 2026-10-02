@@ -46,7 +46,7 @@ forms, or draft a bid response.
    - **Addenda** — every addendum included in the upload, by number and date, with a one-line summary of what each changes. If the documents reference an addendum that isn't attached, list it in "Not found — verify." If a plan-holders list is included, say so and how many firms are on it — don't list the firms.
    - **Scope of work** — what's being built or bought, in the documents' own words. Call out anything specific to playgrounds, park/site amenities, or equipment procurement.
    - **Scope beyond equipment supply** — list any work the documents include besides supplying equipment: installation, demolition/removal, surfacing, concrete or site work, permits, drawings/CAD submittals, material take-offs. This tells the rep what outside pricing (installer, subcontractor, vendor) they'd need to gather before the due date. List what's in the documents; don't estimate cost or effort.
-   - **Materials, equipment & specs** — named products, brands, or model numbers; any "or approved equal" / substitution language and what it requires (this is the key fit signal — it tells you whether an equivalent product can be proposed).
+   - **Materials, equipment & specs** — named products, brands, or model numbers, as written (no inference about who makes them or whether one is a competitor's); any "or approved equal" / substitution language and what it requires (this is the key fit signal — it tells you whether an equivalent product can be proposed).
    - **Bonds & insurance** — bid bond and payment/performance bond requirements, if any, and the amount/percentage.
    - **Submission logistics** — how and where to submit, format (sealed vs. portal), deadline for questions.
    - **Required forms** — the documents' required-forms list (e.g., bid form, W-9, insurance certificate, references).
@@ -55,7 +55,7 @@ forms, or draft a bid response.
    - **Evaluation/scoring criteria** — how proposals are judged, if stated.
    - **Prevailing wage & funding flags** — Davis-Bacon or state equivalent, federal/state funding sources — these add compliance overhead worth knowing about upfront.
    - **Mandatory requirements** — everything the documents label "mandatory," "required," or "must," as one failsafe list.
-4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If a competitor's product is named as the basis of design, say so and note whether "or approved equal" language is present. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
+4. **Fit signal.** Compare the scope and named materials/equipment against the rep's product focus from `PROFILE.md`. State plainly what matches or doesn't, quoting the spec language — this is a factual comparison, not a recommendation. If the documents name a basis-of-design product, report it as written ("basis of design: [manufacturer and model as written], p. …") and note whether "or approved equal" language is present. Don't infer who makes it, whether it's a competitor's, or whether Bliss carries it: "Manufacturer A, Model X" is reported as exactly that. Stop at the comparison. Never add a pursue/pass verdict or characterize the bid as "likely a pass" or "worth chasing" — even softened, that's a recommendation, and it's the rep's call, not this tool's.
 5. **Open with one line that names the tool and the rep** ("Here's your Bid Breakdown, Andy."). **If the
    bid's due date has already passed, say so in that same first line** ("Here's your Bid Breakdown,
    Andy. This bid closed on … — late proposals aren't accepted, p. …"), then continue. Speak to the rep
@@ -134,6 +134,8 @@ snapshot:
 - no match: "In QuickBase: no opportunity for this owner yet";
 - no connection: leave the line out.
 A name match isn't proof it's the same project — say "for this owner," not "for this bid."
+Statuses are shown verbatim as stored (e.g. "Close - Quick Close (no reason)"). A record link may carry
+table IDs inside its URL; never print a bare table or field ID.
 
 ## Bliss and this buyer
 

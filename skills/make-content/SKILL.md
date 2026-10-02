@@ -52,20 +52,30 @@ review and send themselves.
      featured — don't assume a product catalog the rep hasn't given you. **Exception: when it's for a lead
      already in the conversation** ("#2," a Research Brief, a Call Prep), don't ask: use the lead's scope and
      the Product Focus line in `PROFILE.md`, and the rep can ask for changes after.
-   - **Only claim what a source shows.** Benefit bullets and the why-Bliss paragraph may only claim products
-     or capabilities that are in `PROFILE.md`, said by the rep, or shown by a tool result in the conversation
-     (e.g. QuickBase jobs). Anything else ("one team for play, shade and surfacing," "in-house install") is a
+   - **Only claim what a source shows.** Benefit bullets and the why-Bliss paragraph may only name products
+     the rep sells (the Product Focus line in `PROFILE.md`) and claim capabilities the rep has stated or a tool
+     result in the conversation shows (e.g. QuickBase jobs). Anything else ("one team for play, shade and surfacing," "in-house install") is a
      `[capability]` placeholder the rep fills in. That includes design or layout help, "one team" or
      in-house install, "from design through installation," warranty, and years in business.
+   - **Headings and bold lead-ins are claims too.** The rule covers the headline, section headings and bold
+     lead-ins, not only sentences: an unsourced "One team for play, shade and surfacing" heading becomes a
+     `[capability]` placeholder.
+   - **Product Focus is what the rep sells, not what Bliss is.** It picks which products to feature; it
+     isn't a source for a company-level claim. "Bliss does…", "Bliss offers…" and the like need a source
+     (the rep's words or a tool result) or a `[capability]` placeholder.
+   - **Reach claims only as wide as a source shows.** Working with designers, consultants or general
+     contractors, and geographic reach ("across Florida," "throughout the Southeast"), are written only as
+     wide as a source shows (e.g. a count of QuickBase jobs in that county or state); otherwise
+     `[capability]`.
    - **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done.
    - **Check before you hand it back.** Read every benefit bullet and sentence once more and ask: which line
      of the profile, the rep's words, or a tool result says this? If none does, make it a `[capability]`
      placeholder or cut it.
 
 4. **Draft the content:**
-   - **Value-prop one-pager** (~250–400 words, scannable): a short headline, 3–4 benefit bullets specific
-     to the named prospect type (why this matters to *them*, not generic marketing copy), a brief
-     why-Bliss paragraph, and a contact block from the profile.
+   - **Value-prop one-pager** (as long as the sourced content supports, 400 words at most; scannable): a
+     short headline, 3–4 benefit bullets specific to the named prospect type (why this matters to *them*,
+     not generic marketing copy), a brief why-Bliss paragraph, and a contact block from the profile.
    - **Bid cover letter** (standard business-letter format): addressed to the agency/point of contact if
      known, references the bid/solicitation number and project title, acknowledges each addendum by number
      if the addenda are known (e.g., from `summarize-bid`) — never guess addendum numbers — one paragraph
@@ -79,6 +89,8 @@ review and send themselves.
 
 5. **Hand it back as plain, paste-ready text** the rep can copy into an email, a document, or print
    directly. Offer a downloadable document only if the rep asks for one.
+   The reply ends with the draft, the placeholder flag (step 6) and at most one next-tool line: no
+   separate sources list, no notes to a trainer, admin or tester, and no description of how it was built.
 
 6. **Flag placeholders clearly** at the end if any were used (e.g., "You'll want to fill in `[years in
    business]` before sending this") — don't let a bracketed placeholder slip through unnoticed.
@@ -86,12 +98,19 @@ review and send themselves.
 7. If the rep asks for a revision (shorter, different tone, different prospect type), redraft rather than
    patching — keep the same discipline about not inventing specifics.
 
-## Stop for another rep's deal
+## Stop for another rep's deal, another county, or an awarded job
 
-Prospect-facing content follows the same stop as the Email Writer: for a lead labeled `BLISS INVOLVED`, or
-another rep's open quote or opportunity for this same project (whatever the label, including `· open quote:
-[rep]` after it), don't draft it; say in one line to check with
-the rep of record first.
+Prospect-facing content follows the same stops as the Email Writer, one line each, and doesn't draft:
+- **Another rep's deal:** a lead labeled `BLISS INVOLVED`, or another rep's open quote or opportunity for
+  this same project (whatever the label, including `· open quote: [rep]` after it): say in one line to check
+  with the rep of record first. If the brief or the Lead Finder shows the `BLISS INVOLVED` match is your own QuickBase record
+  and no other rep has an open record on this project, say "This one is yours." and carry on.
+- **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This
+  one's in [county], which isn't one of your counties — check with your manager before reaching out." Skip
+  this check while that line is blank or still loading.
+- **Awarded, under contract or built:** the Research Brief's Stage check says so: "The brief shows this
+  awarded to [vendor] on [date] ([source]). Want content about [another open item in the brief] instead?"
+  (or "built" / "under contract" wording).
 
 ## Chained context and QuickBase proof
 
@@ -103,13 +122,13 @@ the rep of record first.
 - **When QuickBase is connected:** for a one-pager or pitch, add 2–3 reference bullets or a factual count,
   such as "3 school playgrounds in [state] in 2026." If a Research Brief is in the conversation, use only its
   Similar jobs elsewhere and Past customers nearby. Otherwise run just the Past customers nearby lookup (the
-  county, else the same state), kept to the prospect type; don't run the full Research Brief. Mark every item
-  exactly: "from QuickBase — double-check before it goes out." Follow the `quickbase-usage` skill (it holds
-  the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If QuickBase is not
+  county, else the same state), kept to the prospect type; don't run the full Research Brief. Mark each
+  reference on its own line exactly: "from QuickBase — double-check before it goes out." (on every item, not
+  once for the group). Follow the `quickbase-usage` skill (it holds the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If QuickBase is not
   connected, keep the current `[placeholder]` behavior instead of inventing proof.
 - **Co-op claims:** if QuickBase or the Research Brief shows the buyer used a co-op, write "available through
-  [co-op]" only after the rep confirms Bliss holds that contract. Otherwise ask one short confirmation question
-  or leave the co-op out.
+  `[co-op]`" as a placeholder the rep fills in once they've confirmed Bliss holds that contract; don't ask a
+  confirmation question. Otherwise leave the co-op out.
 
 ## Bid Breakdown handoff
 

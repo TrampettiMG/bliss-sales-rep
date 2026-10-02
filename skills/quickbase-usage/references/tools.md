@@ -25,7 +25,7 @@ Common operators:
 
 Examples (Bliss, field IDs illustrative — confirm against `tables.md`):
 
-- One quote by Record ID: `{3.EX.79632}` on `bhp495xeb`.
+- One quote by Record ID: `{3.EX.<quote #>}` on `bhp495xeb`.
 - Quotes in a status: `{86.EX.'Quoted to Customer'}` (field 86 = Quote Status; see `tables.md` for its real choice values — note "AI Draft Ready" is **not** one of them today).
 - Combine: `{<statusFid>.EX.'Bidding'}AND{<dateFid>.OAF.'2026-01-01'}`.
 
@@ -36,13 +36,15 @@ Dates: QB accepts `MM-DD-YYYY` and ISO `YYYY-MM-DD` in queries; results return I
 Params: `table_id` (req), `select` (array of field-ID strings), `where` (query string), `orderBy` (array of objects — `[{"fieldId": N, "order": "ASC"|"DESC"}]`), `groupBy` (array of objects — `[{"fieldId": N, "grouping": "equal-values"}]`), `max_records` (number), `skip` (number), `paginate` (bool), `options` (object). The `orderBy` / `groupBy` entries are field-id **objects**, not bare IDs — shapes verified live 2026-06-24.
 
 - **`select` is the single most important param.** No `select` → every field (~700 on Quote Pipeline). Pass only the field IDs you need.
-- **`groupBy` does NOT aggregate on this MCP.** It returns the individual *rows*, grouped/sorted, capped at ~1000 per page (`hasMore: true` beyond that) — it does *not* return counts or sums. You can't answer "how many quotes per status" from one call. For a true aggregate, run a saved report (`run_report`), or delegate a subagent to page through with `skip` and tally.
+- **`groupBy` does NOT aggregate on this MCP.** It returns the individual *rows*, grouped/sorted, capped at ~1000 per page (`hasMore: true` beyond that) — it does *not* return counts or sums. You can't answer "how many quotes per status" from one call. For a true aggregate, delegate a subagent to page through with `skip` and tally (`run_report` is currently broken).
 - **`max_records` + `skip`** bound and page the result; set `max_records` on every call. Each page caps at ~1000 rows and **`paginate: true` does not auto-page** — to read past 1000 you issue successive calls with `skip`. The response's `totalRecords` is *not* the table's row count (it caps at the page size / your `max_records`); to get a true count, skip-probe to where `hasMore` is false (note: the max Record ID# overcounts — `btiessw29`'s max RID is 217,862 but it holds only 92,168 live rows).
 - Response: rows keyed by field ID (each value wrapped as `{"value": ...}` — verified 2026-06-24), plus field metadata. Large results auto-save to a file — see the overflow catalog.
 
 ## run_report
 
-Params: `report_id` (req), `options` (object). Executes a saved Quickbase report and returns its pre-shaped output. When the question matches a report someone already built (e.g. Winnie's monthly pipeline snapshots), this beats rebuilding the query. You need the report ID — get it from the table's Reports in QB, or from Winnie / Gregg.
+⚠ Broken since 2026-08-13 (HTTP 400, per the 9/29 field map): replicate the report with `query_records` and tally by paging.
+
+Params: `report_id` (req), `options` (object). Executes a saved Quickbase report and returns its pre-shaped output. When the question matches a report someone already built (e.g. the monthly pipeline snapshots), this beats rebuilding the query. You need the report ID — get it from the table's Reports in QB, or from the sales ops team.
 
 ## get_table_fields
 
