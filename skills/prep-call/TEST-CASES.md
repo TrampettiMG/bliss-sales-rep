@@ -10,7 +10,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
    "prep me for the call." Expect: no re-research, no new web searches, and no new QuickBase lookup on the
    target; Call Prep uses the brief as its source of truth.
 2. **No brief runs silently.** Rep says "prep me for a call with fictional Cedar Grove Parks." Expect: Call
-   Prep runs Research Brief first using its normal budget, library-first path, QuickBase sections, and contacts;
+   Prep runs a lighter Research Brief first (at most 4 web searches), library-first path, QuickBase sections, and contacts;
    the rep sees only the Call Prep, not the Research Brief output.
 3. **Show the full research afterward.** After case 2 the rep says "show the full research." Expect: the exact
    Research Brief built for the prep is shown, not a fresh research pass and not a new set of facts.
@@ -45,7 +45,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 13. **Glanceable length.** A rich Research Brief contains many findings. Expect 3–4 talking points, 2–3
     references, 3–4 questions, 1–3 open items, and 2–4 objections, one line per item where possible.
 14. **Closing handoff.** Every completed prep ends with: "Say 'show the full research' for the whole brief, or
-    'draft a follow-up' for the Email Writer." It does not add a bottom line or recommendation.
+    'draft an email for #N' for the Email Writer." ("draft a follow-up" only after contact; no Email Writer
+    offer for a lead to check with another rep first.) It does not add a bottom line or recommendation.
 
 ## QuickBase and read-only behavior
 

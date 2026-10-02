@@ -33,7 +33,8 @@ once the rep has given or confirmed its values.
 A paste-ready table of forecast values — opportunity number, forecast close date, and confidence — that the
 rep copies into QuickBase's bulk-edit forecast grid. This tool doesn't handle notes at all; the note field
 (what happened on an opp, and what's next) is `log-update`'s job, not this one's. Match the column order and
-date format to the rep's actual forecast grid (see the bulk-update video; if unsure, tell the rep to check
+date format to the rep's actual forecast grid (picture:
+https://github.com/TrampettiMG/bliss-sales-rep/blob/main/docs/quickbase/4-rep-forecast-grid-edit.png; if unsure, tell the rep to check
 with their trainer rather than guessing the format).
 
 ## Whose opps, and how to pull them

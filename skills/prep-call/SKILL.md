@@ -77,9 +77,11 @@ Return these items in this order:
 - **Likely objections** — 2–4 lines, each with a short response angle. If Who won their past bids names a past
   winner, use that sourced fact (for example, "They've bought from [vendor] before"). Otherwise label the line
   general. Never assume what the rep's quote contains or what Bliss offers.
-- Closing line: "Say 'show the full research' for the whole brief, or 'draft an intro for #N' for the Email
-  Writer." Use "draft a follow-up" instead only when the rep has already been in touch (an open quote or a
-  past call in the conversation), and the customer's name when there's no lead number.
+- Closing line: "Say 'show the full research' for the whole brief, or 'draft an email for #N' for the Email
+  Writer." (The Email Writer picks the type from the lead's label.) Use "draft a follow-up" instead only when
+  the rep has already been in touch (an open quote or a past call in the conversation), and the customer's
+  name when there's no lead number. For a lead to check with another rep first, leave the Email Writer offer
+  out.
 - **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Talking points about a designer or past quote say what QuickBase shows ("two past $0 quotes
   with this designer"), not what it implies.
 

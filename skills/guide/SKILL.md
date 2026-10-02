@@ -22,7 +22,7 @@ Answer the specific request in a couple of short sentences. If two tools fit, as
 
 Work a lead by number: "find leads" → "research #2" → "prep me for #2" → "draft an intro for #2" → "log my update on #2". Each tool picks up what the last one found.
 
-- **Lead Finder** (`find-leads`) — finds new public signals in the rep's counties. It reads registry sources when connected, grades agenda hits before showing them, scores real projects, checks QuickBase when connected, and keeps your lead board current. If a source cannot be read, it ends with a short "Couldn't read these, open them yourself" list. Ask: "Find leads for my county."
+- **Lead Finder** (`find-leads`) — finds new public signals in the rep's counties. It needs the lead-sources connection (without it, it says so and stops; web search never creates a lead), grades agenda hits before showing them, scores real projects, checks QuickBase when connected, and keeps your lead board current. If a source cannot be read, it ends with a short "Couldn't read these, open them yourself" list. Ask: "Find leads for my county."
 - **Research Brief** (`research`) — builds a cited reason-to-call dossier for one company, person, municipality, or project. It checks QuickBase when available and identifies public-role contacts. Ask: "Research this city."
 - **Call Prep** (`prep-call`) — builds on the Research Brief and runs it first if needed, then turns the result into a short call brief. Ask: "Prep me for a call with Acme."
 - **Email Writer** (`draft-outreach`) — drafts an email or call script. It never sends it. Ask: "Draft an intro email to Acme."
@@ -66,7 +66,11 @@ sheet shows (step 4 for QuickBase, step 6 for lead sources). Never use it or put
 | QuickBase tools say they're unavailable | The QuickBase extension isn't installed, or this chat started before it was | Setup sheet step 4, then start a new chat | "check my pipeline" shows your opportunities |
 | "One QuickBase setup file from your trainer is missing" | The private file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
 | The Lead Finder can't download PDFs | Network access for code execution is off | Setup sheet step 3 | Run the Lead Finder again |
-| Your daily run didn't show up | The Claude app was closed at that time, or your check-ins are off | Open the app (it catches up), or say "set up my automatic check-ins" | Say "what's scheduled?": you see the Bliss check-ins |
+| Your daily run didn't show up | The Claude app was closed at that time | Open the app (it catches up) | Say "what's scheduled?": you see the Bliss check-ins |
+| A check-in is turned off | It was switched off | Say "turn my check-ins back on" | Say "what's scheduled?" |
+| A check-in is missing | It was never set up, or was removed | Say "set up my automatic check-ins" | Say "what's scheduled?" |
+| Your profile is missing | Setup didn't finish | Tell your trainer; they'll walk you through setup again | Say "check my setup" |
+| Claude can't check for tool updates | It couldn't reach the internet just now | Try again later; tell your trainer if it keeps happening | Say "check my setup" |
 | The same leads come back as new every day | Your lead board isn't being saved | Say "update my tools" | The next scan shows nothing you've already seen as new |
 | A tool works differently from what your trainer showed you, or a tool is missing | Your tools are out of date or one didn't install | Say "update my tools" | "What version am I on?" matches what your trainer says |
 | Your profile is missing your QuickBase name | Setup couldn't match you in QuickBase | Say "my QuickBase name is [your name exactly as QuickBase has it]" | Say "check my setup" |
@@ -87,17 +91,16 @@ order. Change nothing.
    rep is the "QuickBase can't find you" problem.
 3. **The private QuickBase setup file** (the `quickbase-usage` skill) is in the project.
 4. **The profile** exists, with Name and QuickBase Name filled in.
-5. **Tool files:** all 12 tool files and the 6 `Lead Finder - ….md` files are in the `Bliss Tools` folder
+5. **Tool files and instructions:** `CLAUDE.md` is in the project, and all 12 tool files and the 6 `Lead Finder - ….md` files are in the `Bliss Tools` folder
    (look anywhere in the project, as the main instructions say).
 6. **Tools version:** fetch `https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md`
    with `?v=` plus the current date and time, and compare its Tools version line with the project's. Only a
    newer version on GitHub is a problem ("out of date"); the same or an older one passes. If the fetch
-   fails, report the network-access problem.
-7. **Lead board:** `lead-board.csv` or `lead-board.xlsx` is in the project. If the Lead Finder has never run,
-   that's fine; don't report it.
-8. **Check-ins:** if the profile's Automatic check-ins line says `on`, the scheduled-tasks list shows all the
+   fails, report "Claude can't check for tool updates" from the table.
+7. **Check-ins:** if the profile's Automatic check-ins line says `on`, the scheduled-tasks list shows all the
    Bliss check-ins, enabled: `bliss-daily-run`, `bliss-monday-pipeline`, `bliss-friday-pipeline`,
-   `bliss-profile-refresh`, `bliss-setup-check`. If it says `off`, skip this.
+   `bliss-profile-refresh`, `bliss-setup-check`, except any the line marks as off. A missing one and a
+   turned-off one are different problems (see the table). If the line says `off`, skip this.
 
 Reply with one line per problem, each with its fix from the table above (every problem here has a row) (e.g. *"Your tools are a version
 behind. Say 'update my tools'."*). If everything passes, reply with one line: *"Everything's set up."* Never fix
@@ -105,8 +108,9 @@ anything yourself, never run "update my tools" for the rep, and don't show file 
 numbers.
 
 **Weekly Setup check** (the automatic check-in): the same checks and the same reply, except that when
-everything passes the whole reply is *"Your weekly setup check: everything's working."* It never asks the
-rep a question: a problem that needs an answer (like a missing QuickBase name) gets its one-line fix.
+everything passes, end without any reply at all: the weekly check only speaks up when something needs
+fixing. It never asks the rep a question: a problem that needs an answer (like a missing QuickBase name)
+gets its one-line fix.
 
 ## QuickBase — what the rep maintains
 

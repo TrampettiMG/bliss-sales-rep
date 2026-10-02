@@ -86,6 +86,13 @@ review and send themselves.
 7. If the rep asks for a revision (shorter, different tone, different prospect type), redraft rather than
    patching — keep the same discipline about not inventing specifics.
 
+## Stop for another rep's deal
+
+Prospect-facing content follows the same stop as the Email Writer: for a lead labeled `BLISS INVOLVED`, or
+another rep's open quote or opportunity for this same project (whatever the label, including `· open quote:
+[rep]` after it), don't draft it; say in one line to check with
+the rep of record first.
+
 ## Chained context and QuickBase proof
 
 - **From a Lead Finder result:** "make a one-pager for #2" means use lead #2 without re-asking. Carry over
@@ -107,6 +114,8 @@ review and send themselves.
 ## Bid Breakdown handoff
 
 When a Bid Breakdown is in the conversation, a cover letter uses only its facts: solicitation/bid number,
-project title, issuing agency, due date, every acknowledged addendum by number and date, and a line that the
-required forms are enclosed, listing the forms from the breakdown. Anything missing from the breakdown stays a
+project title, issuing agency, due date, every acknowledged addendum by number and date, and a
+`[confirm: required forms enclosed — list them]` placeholder for the forms (the rep confirms what's actually
+enclosed). If the breakdown shows the forms or addenda only as a count ("13 required items"), ask the Bid
+Breakdown for the full list first, in the same conversation, rather than listing only the few shown. Anything missing from the breakdown stays a
 `[placeholder]`; never infer or fill it from general bid conventions.

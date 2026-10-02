@@ -39,7 +39,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    The connector gives Claude three tools: `my_sources`, `read_source`, and `lead_scan`.
 
    If something goes wrong:
-   - The page says the link expired: start again from step 1 above.
+   - The page says the link expired: start again from step 6.1 above.
    - The page says "Paused by Trampetti": the tool is paused. Try again later.
    - Your key doesn't work: ask your trainer for a new one.
 
@@ -57,7 +57,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Claude checking your connections and setting up your profile and tools.
 
 8. Profile
-   Confirm your name, counties, product focus, and notes. Counties come from the registry connector when it is connected; otherwise Claude reads your QuickBase county assignments. You only confirm or correct what it found.
+   Confirm your name, contact, counties, and (optionally) your product focus. Counties come from the registry connector when it is connected; otherwise Claude reads your QuickBase county assignments. You only confirm or correct what it found.
    You should now see your saved profile.
 
 9. Automatic check-ins

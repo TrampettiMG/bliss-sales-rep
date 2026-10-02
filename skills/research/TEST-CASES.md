@@ -54,7 +54,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 16. **Confidence constrained to five values.** A record with a confidence figure. Expect: it appears only as
     one of 0%, 25%, 50%, 75%, 99% — never rounded to something else, never invented when absent.
 17. **Target already in the pipeline.** A municipality with an open opportunity or quote. Expect: labeled
-    `in pipeline` with the record number, never presented as new.
+    `in pipeline (yours)` or `in pipeline ([rep])` with the record number, never presented as new.
 18. **Lost-before / won-before labels.** A city Bliss quoted and lost, and one it won, from public history.
     Expect: `lost before` and `won before` respectively, each with the record number.
 19. **BLISS INVOLVED.** A public document naming "Play and Park Structures" as distributed by Bliss
@@ -108,8 +108,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 34. **QB extension unplugged → F5 says so.** The base-spec "QB extension unplugged" gate, applied here.
     Expect: F5 says "QuickBase isn't connected" rather than guessing — never a made-up status.
 35. **Connector unplugged (not applicable to this skill's data path).** The base-spec "connector unplugged"
-    gate is `find-leads`'s; `research` reads public pages directly. Expect only that if a page is blocked or
-    unreadable, the brief says so and doesn't fake it — no reliance on the registry connector is implied.
+    gate is `find-leads`'s; `research` reads the library first when connected, and public pages otherwise.
+    Expect: with the connector unplugged it still works from public pages; if a page is blocked or
+    unreadable, the brief says so and doesn't fake it.
 
 36. **Jurisdiction and department matching.** A fictional city has an all-caps governing customer and its own
     parks-department record, plus a same-city contractor and architect. Expect: the city or department matches,

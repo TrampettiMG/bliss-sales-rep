@@ -25,7 +25,7 @@ Every figure comes from a live QuickBase read. Never invent a line item, a price
 total. Never write back to QuickBase.
 
 ## Which opportunity or quote
-Take an opportunity number, a quote number from a Lead Finder `lost before` or `in pipeline` line, or a
+Take an opportunity number, a quote number from a Lead Finder `lost before`, `Close - Multiple Alternative` or `in pipeline` line, or a
 customer plus job name from the rep or the conversation. If there is no opportunity, look up the quote(s)
 directly. If nothing is given, ask for the opportunity or quote number instead of guessing.
 

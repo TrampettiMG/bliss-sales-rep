@@ -8,9 +8,10 @@ setup beyond the first-run QuickBase name confirmation.
 ## The Ron test
 
 1. **"What new leads do I have?"** — a rep's first run, nothing on disk yet. Expect: it pulls the rep's New
-   opportunities read-only from QuickBase and creates `lead-board.xlsx` in the rep project folder, one row
-   per lead, with the full column set (agency, county, project, stage, score, QB status, status, contact,
-   next action, source link, doc date, last checked). It reads the file back before saying it saved, says
+   opportunities read-only from QuickBase and creates the lead board in the rep project folder
+   (`lead-board.csv` where the project only holds text files), one row per lead, with the full 18-column set
+   (agency, county, project, stage, score, QB status, status, contact, next action, source link, doc date,
+   last checked, phone, email, website, contact source, next action date, bid due). It reads the file back before saying it saved, says
    where the board lives, and asks nothing beyond the QuickBase name if that's missing.
 
 ## The board
