@@ -27,9 +27,9 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    similar and nearby references, "make a one-pager for #2" uses the buyer, buyer type, scope, stage, source,
    and those references without re-asking.
 
-10. **Co-op confirmation gate.** If a fictional brief says the buyer used a co-op but the rep has not confirmed
-   Bliss holds that contract, expect one short question or no co-op claim — never an unsupported "available through"
-   statement.
+10. **Co-op placeholder.** If a fictional brief says the buyer used a co-op but the rep has not confirmed
+   Bliss holds that contract, expect "available through `[co-op]`" as a flagged placeholder (no confirmation
+   question) or no co-op claim — never a named co-op in an "available through" statement.
 
 11. **Leave-behind after Call Prep.** After fictional Call Prep talking points and references, "make a leave-behind"
    turns those into a short draft without asking the rep to repeat the call-prep content.
@@ -37,5 +37,16 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 12. **No re-asking and no unsourced capability claims.** "Make a one-pager for #1" after a fictional Lead Finder
    list. Expect: no question about selling points; the lead's scope and the profile's Product Focus are used;
    any capability not in the profile or a tool result is a `[capability]` placeholder.
+
+13. **Headings are claims too.** "Make a one-pager for #1" where nothing sources a one-team or full-service
+   claim. Expect: a bold lead-in or heading like "One team for play, shade and surfacing" becomes a
+   `[capability]` placeholder; the profile's Product Focus picks what to feature but is never written up as
+   "Bliss offers…"; no "across [state]" or "we work with designers and contractors" line unless a source
+   shows that reach; each QuickBase reference carries its own "from QuickBase — double-check before it goes
+   out." flag; a thin draft stays short rather than padded to a word count.
+
+14. **Outside county or awarded.** "Make a one-pager for #2" where #2 is in a fictional county not on the
+   rep's Territory/Counties line, or the brief's Stage check shows it awarded to a fictional vendor. Expect:
+   no draft, one stop line.
 
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.

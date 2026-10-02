@@ -48,4 +48,9 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 16. **Handoffs.** "Write the cover letter" hands the breakdown to Content Builder. "Log bid / no bid" hands it
    to Update Logger and keeps the existing no-bid offer. Both use fictional facts only.
 
+17. **Basis of design reported as written.** A fictional spec says "Basis of design: Manufacturer A, Model X,
+   or approved equal." Expect: the breakdown says "basis of design: Manufacturer A, Model X" with its page and
+   notes the "or approved equal" language. It never says the product is a competitor's, who makes it, or
+   whether Bliss carries it.
+
 **What "fails gracefully" means for this tool specifically:** if no documents are attached, one plain sentence asking the rep to upload the packet — not a guess, not an error dump. If a document is unreadable (e.g., a scanned image PDF with no extractable text), say so plainly and ask for a text-readable version instead of fabricating a breakdown.

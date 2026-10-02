@@ -74,7 +74,7 @@ All verified 2026-06-24 (via `get_table_fields` / `get_field`).
 
 **Quote Status (field 86) choice values:** Opportunity - New · Opportunity - Pending · Quoted to Customer · Order Submitted · Invoiced · Commission Paid · Lost - Close Quote · Close - Multiple Alternative · Close - Quick Close · Cancelled.
 
-> ⚠ As of 2026-06-24 there is **no** field literally named "Bid Coordinator" (closest is 750 "Bid QC"), and **no** "AI Draft Ready" value anywhere in Quote Pipeline (checked every field label, choice list, and formula). If the bid agent is meant to set an "AI Draft Ready" status, that value/field must be created in QB first — a Gregg/admin task. Don't query for it expecting rows today.
+> ⚠ As of 2026-06-24 there is **no** field literally named "Bid Coordinator" (closest is 750 "Bid QC"), and **no** "AI Draft Ready" value anywhere in Quote Pipeline (checked every field label, choice list, and formula). If the bid agent is meant to set an "AI Draft Ready" status, that value/field must be created in QB first — a QuickBase admin task. Don't query for it expecting rows today.
 
 ## Additions discovered 2026-07-13 (bliss-sales-reports field verification)
 
@@ -93,11 +93,11 @@ All on Quote Pipeline `bhp495xeb`, verified via field probe + 50-row population 
 
 - **515 Construction Complete Forecast Date** / **516 Construction Complete Actual Date** — date summaries rolled up from an Order Milestones child table. 516 stays empty while open, populates by Invoiced. 319 Install Complete Date = legacy manual twin of 516 (mostly agrees, occasional 1-day drift).
 - **Product-only has NO dedicated flag** — derive it: **326 "# Install Vendor Quote Lines" = 0 (or empty) ⇒ product-only.** (690 Install Coordinator Not Required is a checkbox but ~2% populated — unusable.)
-- **610 Latest Estimated Ship Date** — date summary from a Vendor Shipping Info child; the live ship-date field (Porsche Knox enters these for product-only orders). 560/561 Material Shipped Forecast/Actual are 0-populated (unused); 17 Approximate Ship Date is free text ("ASAP"). **No populated actual-ship-date field exists.**
+- **610 Latest Estimated Ship Date** — date summary from a Vendor Shipping Info child; the live ship-date field (entered by operations for product-only orders). 560/561 Material Shipped Forecast/Actual are 0-populated (unused); 17 Approximate Ship Date is free text ("ASAP"). **No populated actual-ship-date field exists.**
 - **Dollars: 66 Subtotal Price Before Freight & Tax** (currency summary) + **108 Total Customer Freight** (numeric summary; 255 = identical formula mirror). **213 Subtotal Sell incl. Freight** = 66+108 in one formula field. **71 Tax** (rate × taxable base; override fid 160). **Grand Total 73 = 66 + 108 + 71** — subtotal-incl-freight understates every taxed order; 73 is THE total column.
 - **Invoicing: 645 Total Amount $ Invoiced** (summary from Invoice Headers `bty3hdi98`), **829 Invoice #s** (multitext). ⚠ **NEVER use 871 "Outstanding $ To Invoice"**: 645 returns NULL (not 0) on never-invoiced quotes, so the 871 formula (GT − 645) is blank exactly where the answer is "the full amount." Compute outstanding yourself as GT − invoiced-with-blank-as-zero. 519 Invoice & Financial Close Actual Date is 0-populated; 495 Invoice Date RETIRED 9/14/25.
 - 513/514 Construction Start Forecast/Actual; 506 # Open Order Milestones (No Actual) — fully populated, useful open-milestone signal.
-- **Customer name is NOT on QP** — 179 is a numeric FK; resolve names against Customers `bgr44yuh9` fid 6 "Customer Name".
+- **Customer name:** QP fid 44 "Customer Name" is a lookup you can select directly (corrected 2026-09-30; earlier notes said it was absent). 179 is the numeric FK to Customers `bgr44yuh9` fid 3 → 6 "Customer Name".
 - Data-quality: 610 carries stale past dates and placeholder values (e.g. 2027-01-01); invoiced-to-date can exceed subtotal (tax/freight in invoices).
 
 ## Additions discovered 2026-07-15b (Opportunities table probe)
@@ -120,50 +120,73 @@ Quote Lines `bhq88xjum`: **156 "Product Type"** (text, effective value — resol
 
 - **Invoice Headers `bty3hdi98`** — the Invoices child table QP fid 645 summarizes (previously unresolved). Fields: **13 invoice date**, **63 Total Amount Due** (the amount fid 645 sums), **6 related quote FK**, **12 invoice #** (free text — carries annotations like "PAID IN FULL", credit memos), 23 Void (645's summary query is `{23.XEX.1}`), 55 Invoice Status.
 - Siblings: **Invoice Lines `bty3hgd67`**, **Invoice Payments `bty3h3hpd`**.
-- Data-quality: credit memos appear as negative amounts; duplicate-looking invoice pairs exist (e.g. quote 81537, two identical $10,350 on 6/25); invoices sit on Order Submitted / Invoiced / Commission Paid quotes alike.
+- Data-quality: credit memos appear as negative amounts; duplicate-looking invoice pairs exist (e.g. two identical invoices on the same quote and date); invoices sit on Order Submitted / Invoiced / Commission Paid quotes alike.
 
 ## Additions 2026-07-17 (consolidated from the bliss-sales-reports workstream, probes 7/13–7/16)
 
 Supporting tables mapped while building the sales reports:
 
-- **Sales Reps `bvgbefp6g`** — key fid 9, name fid 6, status fid 10. 24 real active reps. ⚠ **Test reps pollute groupings:** "TEST Mike" (rep 19) and "Winnie TEST" (rep 40) carry live quotes — exclude both from every rep report, rows AND totals.
-- **Rep grouping rule (Nick, 7/16):** group by QP fid **850** Related Sales Rep 1 (resolve names via `bvgbefp6g` 9→6). **Never group by QP fid 155** — it newline-joins secondary reps and creates phantom "X / Y" rows.
+- **Sales Reps `bvgbefp6g`** — key fid 9, name fid 6, status fid 10. ⚠ **Test reps pollute groupings:** the two test reps (names contain "TEST") carry live quotes — exclude both from every rep report, rows AND totals. **Exclude by name, never by record id**: the ids recorded in different notes (19/40 vs 37/41) conflict, likely Sales Team vs Sales Reps ids (see `field-map.md` Conflicts).
+- **Rep grouping rule (7/16):** group by QP fid **850** Related Sales Rep 1 (resolve names via `bvgbefp6g` 9→6). **Never group by QP fid 155** — it newline-joins secondary reps and creates phantom "X / Y" rows.
 - **Sales Budget Monthly Snapshots `bp8vub4tu`** — one row per rep per month-end, 2019-12 → present (~1,452 rows). fid 28 Snapshot Date; 6 rep FK; 7 rep name; **8 sales-goal baseline** (9 = LY goal; 42 revised goal — null for all reps in the 2026-06-30 snapshot); Quoted YTD $ 22 / count 24 (LY 23/25); Sales YTD $ 12 / count 10 (LY 13/11); GP$ 16/18. Cumulative YTD attainment that resets annually — NOT an open-pipeline-value snapshot. The goal source for business-review reports, and a ready-made LY-YTD anchor.
 - **Q/O Status Changes `btiessw29` field map** — FK fid 6 → QP fid 3; fid 1 Date Created = transition timestamp; **fid 11 Status = the NEW status only** (no previous-status field — infer prior from the preceding row); $ snapshots fid 18 Grand Total / 12 GP$ / 17 Total Cost / 20 Subtotal Sell copied at row creation but **often NULL on open-stage rows**. The 2023-08-18 start date is a one-time bulk load (one row per then-open quote), not real history — true per-transition logging only after that date.
-- **Customers `bgr44yuh9` extras** — fid 6 Customer Name; 54 Sales Rep (lookup of 53 → Sales Team) = assigned rep; **116 Billing Postal Code State** is the live state field (102/111 retired 5/14/26); 115 Billing Postal Code County populated (county-level territory joins); 110 Billing City + 112 Billing Zip labeled RETIRED but are the only populated billing city/zip (composite 138 empty; 101/103 are shipping).
-- **Opportunity-link coverage:** 335/417 (80%) of June-2026 quotes carry fid 697 — a count-once/dedup filter must admit no-Opportunity quotes or it silently drops ~20%. fid 702 "Count Toward Value" defaults to the lowest-$ option per Opportunity (manual override 921).
+- **Customers `bgr44yuh9` extras** — fid 6 Customer Name; 54 Sales Rep (lookup of 53 → Sales Team) = assigned rep; **116 Billing Postal Code State** is the live state field (102/111 retired 5/14/26); 115 Billing Postal Code County populated (county-level territory joins); 110 Billing City + 112 Billing Zip are the only populated billing city/zip (their labels no longer say RETIRED as of 9/29) (composite 138 empty; 101/103 are shipping).
+- **Opportunity-link coverage:** about 80% of June-2026 quotes carry fid 697 — a count-once/dedup filter must admit no-Opportunity quotes or it silently drops ~20%. fid 702 "Count Toward Value" defaults to the lowest-$ option per Opportunity (manual override 921).
 - **fid 191 is a clean order filter:** all June-2026 orders sat in WON statuses (Order Submitted / Invoiced / Commission Paid) — no extra status condition needed when filtering by Date Order Submitted.
 
-## Additions 2026-09-23 (contact + activity fields on Opportunities, for the rep tools)
+## Additions 2026-09-24 (rep setup: identity + territory)
 
-On Opportunities `bt93rndvw` (verified live):
+- **Sales Reps `bvgbefp6g` extras:** **11 "QB User"** (user type; set on nearly all active reps) — match with
+  `{11.EX._curuser_}`; **7 "Email as Text"** (25/25; 32 is a formula copy); **25 Cell #** (12/25);
+  **24 Office #** (7/25). No territory/region/county fields on this table.
+- **County Sales Reps `buq6z9c6j`** (live name; older notes say "County Sales Teams") — the territory assignment table, one row per rep per county.
+  **9 rep key** (= Sales Reps fid 9), **7 County** (text, e.g. "Baldwin County"), **8 State abbreviation**,
+  **11 rep QB User** (user type), **12 Sales Rep - Status** (includes inactive reps — filter 'Active').
+  500+ rows; one rep has 100+ counties. States seen: GA, NC, TN, FL, SC, AL.
+- **Zip Codes `bq9kufjg9`** (9 County_Name, 8 State_ID; 34/35 rep lookups) and **Counties `bq9xqa5ch`**
+  only look up from County Sales Reps — use County Sales Reps directly.
+- **Customers `bgr44yuh9`:** **53 Related Sales Rep** (numeric rep key) behind 54 (name lookup).
+- **Opportunities `bt93rndvw`:** 77 "Sales Rep 1 - QB User" (user type) also accepts `_curuser_`.
+- `test_connection` returns a generic userInfo ("Quickbase User") — it does not identify the token owner.
 
-- **9 Customer Contact** (text, the contact's name), **10 Customer Contact Block** (rich-text: name +
-  phone + email, formatted), **11 Customer Contact - Email** (email). Use these to show the rep who to call
-  or email on an opp, and to hand a contact to draft-outreach / prep-call / research. Single-record read of
-  the rep's own account, so it stays data-light.
-- **2 Date Modified** (timestamp, last activity), **88 Most Recent Update Date** (date, last logged update),
-  **92 # Updates** (count). Use for a "last touched N days ago" line. Caveat: on the bulk-import New rows
-  the modified date is an import artifact, so pair it with the original-date field for real recency.
-- The actual update note text lives in the **Updates** child table `bt69n97gn` (filter by the related
-  opportunity). Only read it when the rep wants the notes themselves; a recency line doesn't need it.
+## Additions discovered 2026-09-25 (contact, activity, won-status, record links)
 
-## Record links (for tools that list opps and want a click-through)
+**Opportunities `bt93rndvw`:**
+- **9 Customer Contact** (text lookup — the contact's name), **11 Customer Contact - Email** (email),
+  **10 Customer Contact Block** (rich text: "Name<br>Phone: …<br>Email: …" — parse phone from here).
+  No standalone phone field on Opportunities; for a clean phone go through **8 Related Customer Contact**
+  (numeric FK) → Customer Contacts `bhtcjajy9` **8 Phone**, **32 Cell**.
+- **2 Date Modified** (timestamp) · **88 Most Recent Update Date** (date) · 89 Most Recent Update (text),
+  91 (150 chars), 165 w/ Date & Owner · 64 TODAY Opp Update / 65 Owner.
+- **23 Opportunity Name** (multi-line text) · **6 Related Customer** (numeric FK → Customers key) ·
+  76 Sales Rep 1 (name) / 77 QB-user twin.
+- Quote-count summaries: **93 # Order Submitted/Invoiced**, **94 # Commission Paid**, **95 # Lost/Cancelled**,
+  101 Quote Status(es).
 
-To link a rep straight to a record in QuickBase, build the URL from realm + app + table + the record's ID#:
+**Quote Pipeline `bhp495xeb`:**
+- **697 Related Opportunity** (numeric FK → Opportunities fid 3, confirmed) · **179 Customer ID#** (FK →
+  Customers) · 1 Date Created · **191 Date Order Submitted** (the won date) · 303 Date Order(s) Placed ·
+  519 Invoice & Financial Close Actual Date.
+- **86 Quote Status** values — won/ordered: "Order Submitted", "Invoiced", "Commission Paid"; lost/closed:
+  "Lost - Close Quote", "Close - Multiple Alternative", "Close - Quick Close (no reason)", "Cancelled";
+  open: "Opportunity - New", "Opportunity - Pending", "Quoted to Customer"; reference only (exclude):
+  "Opp Transition New - For Ref Only", "Opp Transition Pending - For Ref Only".
 
-- Edit the record: `https://blissproducts.quickbase.com/nav/app/bgr44yubi/table/<tableId>/action/er?rid=<RID>`
-- View the record: same with `action/dr?rid=<RID>`
+**Quote Lines `bhq88xjum`:** 14 Quote # (FK → QP fid 3), 8 Description, 9 Qty, 16 Extended Price, 156 Product Type.
 
-For Opportunities (`bt93rndvw`): `https://blissproducts.quickbase.com/nav/app/bgr44yubi/table/bt93rndvw/action/er?rid=<RID>`.
-Verified from a live record edit URL 2026-09-23. The rid is the record's field 3. The rep-facing tool skills
-reference this pattern here rather than hardcoding these IDs (the tool skills live in the PUBLIC repo).
+**Record link pattern** (new UI; worked out, not yet clicked through):
+`https://blissproducts.quickbase.com/nav/app/bgr44yubi/table/<tableId>/action/dr?rid=<recordId>`
+— e.g. an opportunity: table `bt93rndvw`, rid = Opportunities fid 3; a quote: table `bhp495xeb`, rid = QP fid 3.
+Links are shown to the rep; the IDs inside them are fine there (opening needs a QB login) but never
+print bare field/table IDs in prose.
 
 ## Saved reports (for run_report)
 
-- `229` on Quote Pipeline `bhp495xeb` — Mike's link in ClickUp task 86ajhyn4n ("include total amount invoiced field in all exports"); contents unverified, presumably the to-be-invoiced view.
+- `229` on Quote Pipeline `bhp495xeb` — a saved report linked from an internal task ("include total amount invoiced field in all exports"); contents unverified, presumably the to-be-invoiced view.
 
-`run_report` needs a `report_id`; the above is the only one recorded. This matters more than it looks: because this MCP's `groupBy` does **not** return true aggregates, a saved report is the cleanest path to pipeline counts/sums. When you learn a report ID (from the table's Reports in QB, or from Winnie / Gregg), record it here as `report_id — what it returns`. Until then, treat the run_report recipe as "needs a report ID first."
+⚠ **`run_report` returns HTTP 400 since 2026-08-13** (per the 9/29 field map) — replicate reports with `query_records` instead. Other recorded report ids are in `field-map.md` (QP 229/233/355, Opportunities qid 56).
+
+`run_report` needs a `report_id`; the above is the only one recorded here. This matters more than it looks: because this MCP's `groupBy` does **not** return true aggregates, a saved report is the cleanest path to pipeline counts/sums. When you learn a report ID (from the table's Reports in QB, or from the sales ops team), record it here as `report_id — what it returns`. Until then, treat the run_report recipe as "needs a report ID first."
 
 ## Caveats
 

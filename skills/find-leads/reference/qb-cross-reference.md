@@ -3,20 +3,17 @@
 Read before the cross-reference step of any run, and again whenever a call fails because a table or field
 moved. SKILL.md carries the cross-reference behavior; this file carries the procedure and the query rules.
 
-This skill file is public and carries no QuickBase IDs. Tables are referenced by **name**, never by ID:
-Opportunities, Quote Pipeline, Sales Reps, County Sales Teams.
+The QuickBase IDs live in the QuickBase setup file (the `quickbase-usage` skill), not here. Tables are
+referenced by **name**, never by ID: Opportunities, Quote Pipeline, Sales Reps, County Sales Reps. A record
+link may carry table IDs inside its URL; never print a bare table or field ID.
 
-## First use — resolve and cache
+## Queries
 
-- Resolve each table name to its table ID from the `quickbase-usage` skill's table list (never list all
-  tables in QuickBase: the app is too large), and write the result
-  into the rep's local `PROFILE.md` under a **QuickBase tables** section (table name → ID).
-- Resolve the field IDs the same way, **by field label**, and cache those under the same section. Make **one
-  targeted field lookup per table** — never a full field dump (Quote Pipeline has several hundred fields). The
-  fields this tool needs are the opportunity's customer/jurisdiction, status, dates, owner link, and confidence.
-- Later runs read the IDs from `PROFILE.md`; only re-resolve one if a call fails because it moved. If
-  `PROFILE.md` has no such section yet, create it — never re-resolve on every run, and never write an ID
-  anywhere except `PROFILE.md`.
+Use the QuickBase setup skill's recipes: they carry the table and field IDs, so there's nothing to look up
+first. Never list all tables or dump a table's fields (Quote Pipeline has several hundred). Keep the
+cross-reference to the bounded queries the recipes give, with `select`, `where` and `max_records` on every
+call. When a subagent is available, the QuickBase work may run in one that returns only the rows needed;
+otherwise run the same bounded queries directly.
 
 ## What to search
 
@@ -32,7 +29,19 @@ Jobs are sometimes quoted through a general contractor. Search quote and opportu
 project name, but count it as the same job only when the place also matches by city or county on the quote or
 customer. Park names repeat across states, so never match on a park name alone. Ignore test records: a customer, quote or job name that is
 clearly a test ("TEST", "Test2", "Testing"). A real customer's quote entered under a test rep account still
-counts; show its rep as "test account".
+counts, once; show its rep as "test account" and never attribute it to the rep. `$0` Cancelled or Quick Close
+rows under a test rep are never listed one by one: collapse them into one line ("2 test-account entries not
+shown"). This is the one counting rule for a buyer's quote history, shared with the Research Brief: count
+every quote for the buyer except those test records. If a count differs from one an earlier tool showed in
+this conversation, use the newer one and say so in one line.
+
+## Label scope
+
+The label describes **this lead's project or site**. `in pipeline`, `won before`, `lost before` and `Close -
+Multiple Alternative` apply only to a quote or opportunity for this project or site. Everything else —
+other projects, old parts or furnishings orders with the same buyer — is `new`, followed (when QuickBase has
+any) by one line: "Past orders with this buyer: N, last [year], [categories]." On a lead that gets a History
+line, the History line carries that count instead; never both.
 
 ## Rules that always hold
 
@@ -46,7 +55,8 @@ counts; show its rep as "test account".
 
 ## Status before labeling
 
-Read the status of the matching opportunity and every matching quote before choosing a label. A won quote
+Read the status of the matching opportunity and every matching quote before choosing a label, and show
+statuses verbatim as stored (e.g. "Close - Quick Close (no reason)"). A won quote
 (`Order Submitted`, `Invoiced`, or `Commission Paid`) under an opportunity that still looks open is **won
 before**. Use this precedence when statuses conflict: **won before** beats **in pipeline**, and **in pipeline**
 beats the two closed labels. A fully closed match with no won quote gets one of two labels: **`Close -

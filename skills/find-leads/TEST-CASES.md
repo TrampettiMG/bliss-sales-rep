@@ -110,10 +110,10 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
 ## QuickBase cross-reference
 
-33. **First use resolves and caches.** First run with the QuickBase extension connected. Expect: table
-    names resolved to IDs and written into `PROFILE.md` under a "QuickBase tables" section, with targeted
-    field-label lookups (one per table, no full field dump) — and no ID printed into any repo/skill file.
-34. **Second run reads the cache.** The next run. Expect: IDs read from `PROFILE.md`, no re-resolution.
+33. **Recipes, no discovery.** First run with QuickBase connected. Expect: the cross-reference uses the setup
+    skill's recipes directly: no table listing, no field dump, no "QuickBase tables" lookup step, and no ID
+    printed into any repo/skill file or shown to the rep.
+34. **Bounded queries.** Any run. Expect: every QuickBase call has `select`, `where` and `max_records`.
 35. **Lead already in the pipeline.** A lead whose jurisdiction has an open opportunity. Expect: labeled
     "in pipeline" with the record number, never shown as new.
 36. **Lead found through the design firm.** A document naming the design firm/engineer but not matching
@@ -224,8 +224,30 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     does have one in the same state. Expect the one-line History entry says "in [state]" and names the other
     customer and rep as QuickBase stores them; it never uses the lead's own buyer.
 72. **Morning digest includes history.** A weekday morning run produces top-five fictional leads. Expect each
-    lead's normal one-line format includes History after the QuickBase label, and the closing offer mentions
+    lead's detail line carries one history clause after the QuickBase label, and the closing offer mentions
     "research #2" as an example of the full Research Brief handoff.
+73. **Digest lead shape.** A Daily run's step 1 shows three fictional leads; the lead board is saved as a CSV
+    (text-only project). Expect: each lead is exactly two lines — "#N · County · Buyer: Project", then "Stage ·
+    Score — one-clause reason · label · one history clause · source link" — with no separate History bullet
+    repeating the buyer's count. No score reason says "interim" (the rep didn't ask). The saved-board line is
+    "Saved your lead board — N leads, M rows changed." with no mention of CSV, Excel or text files. No
+    "Sources:" list, no note to a trainer or admin, no narration of the run.
+74. **Score reason says only what the source shows.** A fictional park playground is on next week's council
+    agenda; the buyer has two past Bliss orders under another rep. Expect: the reason says "on the [date]
+    agenda," never "approved" or "money committed," and the relationship part says "2 past orders," never the
+    other rep's name.
+75. **History count matches the Research Brief.** A fictional buyer has 5 quotes under the rep and 1 under a
+    test rep account. Expect: the History clause says 6 quotes, the test-account one counted once and shown as
+    "test account," never attributed to the rep; a later "research #1" shows the same 6. A fictional customer
+    named "TEST Parks" isn't counted at all.
+76. **Label scope — old parts order.** A fictional buyer's only order is a small replacement-parts order from
+    years ago, with nothing on this lead's project. Expect: label `new` plus "Past orders with this buyer: 1,
+    last [year], parts" (or the count in the History clause on a top-five lead, never both); never `won before`.
+77. **BLISS INVOLVED, rep's own record.** A fictional bid tab names Bliss on this project, and QuickBase
+    resolves it to a won quote whose rep is the rep running the scan, with no other rep open on it. Expect:
+    "This one is yours.", the QuickBase label shown instead of the check-with-the-rep stop, and the lead
+    stays in the call-now names. A document naming Bliss on a different procurement doesn't trigger
+    BLISS INVOLVED at all.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

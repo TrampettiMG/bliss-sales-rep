@@ -46,3 +46,7 @@ like.
   confirm the real date."
 - **Monday, a quote open 120 days.** Expect: not in today's follow-ups (the Monday pipeline covers it).
 - **Nothing due.** Expect: both sections left out.
+- **Follow-ups empty, one bid due Thursday.** Expect: no "Today's follow-ups" heading and no "nothing due"
+  or "all clear" line; only the bid deadlines section.
+- **Quote terms and bid timeline lookups.** Expect: both come from the setup skill's "Pipeline Check today
+  mode: quote terms and bid timeline" section; no guessed fields.

@@ -45,7 +45,7 @@ Never a wall of JSON.
 > You have `mcp__quickbase__*` (read-only). On `bhp495xeb`, count quotes by current status (field `86`) created on or after 2026-01-01 (field `<dateFid>`). This MCP's `groupBy` doesn't return counts, so page through with `select: ["86"]` + a `where` on the date + `skip` (≤1000 rows/page), tallying by status in your own context. Return ONLY the status→count list. Under 150 words.
 
 **Targeted extract — a few quotes, a few fields:**
-> You have `mcp__quickbase__*` (read-only). On `bhp495xeb`, pull quotes 79632, 79640, 79655 (`{3.EX.79632}OR{3.EX.79640}OR{3.EX.79655}`). `select` only fields `<a,b,c>`. `max_records` 10. Return ONLY a compact table of those fields per quote. Under 200 words.
+> You have `mcp__quickbase__*` (read-only). On `bhp495xeb`, pull three quotes by number (`{3.EX.<q1>}OR{3.EX.<q2>}OR{3.EX.<q3>}`). `select` only fields `<a,b,c>`. `max_records` 10. Return ONLY a compact table of those fields per quote. Under 200 words.
 
 **Triage an overflowed file:**
 > A `list_tables` result overflowed and was saved to `<path>`. Using bash (`jq` / `grep`), extract only the `table_id` and `name` for tables whose name contains "Quote" or "Permit". Return ONLY that list. Do not print the file.

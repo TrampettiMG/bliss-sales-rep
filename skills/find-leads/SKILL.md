@@ -24,7 +24,7 @@ Read these saved project files at the stated step. Their repo paths remain the `
 
 - **`Lead Finder - Stages and Scoring.md`** (`reference/stage-ladder-and-scoring.md`) — at the **start of every run**, before staging or scoring; F1 ladder and interim F2 rubric.
 - **`Lead Finder - Lead Grading.md`** (`reference/lead-grading.md`) — as soon as `lead_scan` returns hits, before reporting them; REAL/ROUTINE definitions and edge cases.
-- **`Lead Finder - QuickBase Check.md`** (`reference/qb-cross-reference.md`) — before cross-reference, and when a table or field moved; resolve/cache procedure and query rules.
+- **`Lead Finder - QuickBase Check.md`** (`reference/qb-cross-reference.md`) — before cross-reference; how the queries come from the setup skill's recipes, and the query rules.
 - **`Lead Finder - PDF Fallback.md`** (`reference/pdf-fallback.md`) — when `read_source` returns a scanned-PDF, large-PDF, or unreadable-PDF fallback; download/extract/page-image ladder.
 - **`Lead Finder - Search Terms.md`** (`reference/search-terms.md`) — when choosing literal `read_source` terms, judging relevance, or enriching a lead; keyword groups, query traps, and budget.
 - **`Lead Finder - Lead Board.md`** (`reference/board-reconciliation.md`) — before checking or updating the board; ownership, reconciliation, stage moves, and write verification.
@@ -97,7 +97,8 @@ shows it still moving. A budget or CIP counts as dated when it names its fiscal 
 upcoming fiscal year counts as fresh. Write the fiscal year and what it covers ("FY27 budget, July 2026–June
 2027") when the document shows the fiscal-year dates or the locality's fiscal year is stated; otherwise the
 label alone ("FY27 budget"). Only if a source shows no date and no fiscal year, write "date not visible —
-verify on the page."
+verify on the page." An amount from a multi-year plan table carries its span ("$2.5M, FY27–28"), never a
+single-year label.
 
 ## Grade every hit before it goes any further
 
@@ -126,40 +127,50 @@ Read `Lead Finder - Stages and Scoring.md` (`reference/stage-ladder-and-scoring.
 - **Score (F2):** score every staged lead 0–100 with a **one-line reason**, using the rubric's factors in
   their order of weight (stage fit heaviest, then project dollar size, product fit by which keyword groups
   matched, funding certainty, cooperative-contract path, existing relationship on file). The rubric file marks
-  the weights **interim**. Say what a factor rests on only if the source shows it — never assume funding,
-  size, or a due date that isn't visible; call it "not stated" instead. Score only REAL leads that survived
-  the stage-7 exclusion.
+  the weights interim; never say "interim" (in a score reason or anywhere else) unless the rep asks where the
+  weights come from. Say what a factor rests on only if the source shows it — never assume funding,
+  size, or a due date that isn't visible; call it "not stated" instead. The reason says only what the source
+  shows: "on the Oct 6 agenda" is not "approved," and a budget line under discussion is not "money
+  committed." The relationship factor is Bliss's history with this buyer ("2 past orders"), never another
+  rep's name. Score only REAL leads that survived the stage-7 exclusion.
 - Rank the output by score, highest first, and open the list with the summary line the rubric asks for:
   **"Found N, call these X now"** — not a flat list. X is the leads in the top band (roughly the top three
   scoring leads); name them. Leave out of the "call now" names any lead that says to check with another rep
-  first (`BLISS INVOLVED`, or another rep's open quote or opportunity for this same project); it stays in the
-  list at its score. Another rep's open quotes with the same buyer on other projects get one line on the lead
+  first (`BLISS INVOLVED` that isn't the rep's own, or another rep's open quote or opportunity for this same
+  project); it stays in the list at its score. Another rep's open quotes with the same buyer on other projects get one line on the lead
   ("[Rep] has other open quotes with this buyer"), and the lead stays callable.
 
 ## QuickBase cross-reference (F5)
 
 Every REAL lead is checked against QuickBase **before** it's shown as new. Tables are referenced by **name**,
-never by ID (this public skill file carries no QuickBase IDs): Opportunities, Quote Pipeline, Sales Reps,
-County Sales Teams. Read `Lead Finder - QuickBase Check.md` (`reference/qb-cross-reference.md`) before the cross-reference step of any run — it
-holds the resolve-and-cache procedure (IDs cached in the rep's `PROFILE.md` under a **QuickBase tables**
-section, nowhere else), what to search (the jurisdiction first, then any design firm or engineer named in the
+never by ID (the IDs live in the QuickBase setup file, the `quickbase-usage` skill): Opportunities, Quote
+Pipeline, Sales Reps, County Sales Reps. Read `Lead Finder - QuickBase Check.md` (`reference/qb-cross-reference.md`) before the cross-reference step of any run — it
+says the queries come from the QuickBase setup skill's recipes (no lookup step), what to search (the jurisdiction first, then any design firm or engineer named in the
 public document), and the query rules that always hold (`select`/`where`/`max_records`; group by the **Sales
 Rep** link, never "Record Owner"; UTC → **Eastern Time**; Confidence only ever 0%, 25%, 50%, 75%, or 99%; an
 already-open lead is **in pipeline**, never new).
 
 **Labels on each lead:** `new` (nothing on file), `in pipeline (yours)` / `in pipeline ([rep])` (open
 opportunity or quote), `Close - Multiple Alternative`, `lost before`, or `won before`, chosen by the precedence
-in `Lead Finder - QuickBase Check.md`, plus the QuickBase record number the rep can open. Labels describe **this job**; the
-jurisdiction's history is a separate note. When the jurisdiction is on file as a customer, add its history
-after any label, including `new`, e.g. "`new` · past customer: 6 quotes, last 2026 (bleachers), none won"
-(most recent job name and year, quote count, and whether any was won). Nothing on file at all: just `new`.
+in `Lead Finder - QuickBase Check.md`, plus the QuickBase record number the rep can open. The label
+describes **this lead's project or site**: `in pipeline`, `won before`, `lost before` and `Close - Multiple
+Alternative` apply only to a quote or opportunity for this project or site. Everything else is `new` — an
+old parts order or a different project with the same buyer never makes it `won before`. When QuickBase has
+other orders with the buyer, follow `new` with "Past orders with this buyer: N, last [year], [categories]"
+(counted the History-line way below). On a lead that gets a History line, that line carries the count
+instead: never both. Nothing on file at all: just `new`. Statuses are shown verbatim as stored, and a record
+link may carry table IDs inside its URL, but never print a bare table or field ID.
 If the extension isn't connected, say
 **"QuickBase isn't connected"** once, leave the label off every lead, and never guess a status.
 
-**Bliss already involved.** A public document that names "Bliss Products" or "Play and Park Structures" (often as the
-distributor of a listed playground or shelter) means label the lead **BLISS INVOLVED** *ahead of* whatever the
-cross-reference returns, and tell the rep to **check with the rep of record rather than pitch it**. It's still
-worth surfacing — just not one to walk into cold.
+**Bliss already involved.** A public document that names Bliss (or Play and Park Structures) in connection
+with this lead's project (often as the distributor of a listed playground or shelter) means label the lead
+**BLISS INVOLVED** *ahead of* whatever the cross-reference returns, and tell the rep to **check with the rep
+of record rather than pitch it**. It's still worth surfacing — just not one to walk into cold. A document
+naming Bliss on a different project or procurement doesn't trigger it. **If it's the rep's own:** when
+QuickBase resolves the match to a record whose rep is the rep in the profile, and no other rep has an open
+record on this project, say "This one is yours." on the lead, show its QuickBase label instead of the stop,
+and keep it callable.
 
 ## History line on the top leads
 
@@ -167,8 +178,12 @@ For the top 5 leads in a normal run, add one line immediately after the QuickBas
 QuickBase lookup already done for that lead — no web searches — plus at most one bounded nearby lookup per
 county. Use this form: "History: 6 quotes since 2019, 1 won (2023 shade, $48K Grand Total incl. tax), last
 closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])".
-History counts the buyer's matching quotes, includes the latest win and last closed status exactly as stored,
-and never calls `Close - Multiple Alternative` a loss. Nearby means the most recent project-sized won job
+History counts every quote for the buyer except obvious test records (a customer or job name like "TEST",
+"Test2", "Testing") — the same count the Research Brief uses. A quote under a test rep account counts, once,
+and shows its rep as "test account" ("6 quotes since 2019, 1 under a test account"); never attribute one to
+the rep. If an earlier tool in this conversation showed a different count, use the newer one and say so in
+one line. It includes the latest win and last closed status exactly as stored, and never calls `Close -
+Multiple Alternative` a loss. Nearby means the most recent project-sized won job
 for another customer in the same county: skip parts, replacement-part and small orders (Grand Total incl. tax
 under $10K, or a job name like "parts," "replacement," "hardware"). If there is none, use the same state and
 say "in [state]". Never use the lead's
@@ -196,7 +211,7 @@ stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due
    before` / `Close - Multiple Alternative` / `won before`) with the record number, and the source link. For an open bid or RFP, include the due date (or "due date not visible —
    verify on the page"). For the top 5, add the one-line History entry immediately after the QuickBase label.
    A detail added by web enrichment goes on the same lead, marked "Web:" with its own link, after the library
-   source; never in place of it.
+   source; never in place of it. Links go inline on their lead: no separate "Sources:" list anywhere.
 3. **Coverage line** — every county in the run, with what the library produced ("Chesterfield: 2 · Henrico: 2
    · Richmond city: nothing new"), plus any source types not reached and any county with no library sources.
    If any enrichment ran, add "Added details from the web for N leads."
@@ -204,13 +219,15 @@ stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due
    "open it yourself" documents, stale links, counties with no library sources, and connector errors. Include
    title, county, link, and reason when there is a source; mention the download cap if it was hit.
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
+   Say nothing about file types or storage (CSV, Excel, text files): just this line.
 6. One closing line offering both next steps: "Want more on one of these? Ask for the Research Brief — for
    example, 'research #2' for the full history. Or an intro email built around one of them? That's the Email
    Writer." When the rep picks one, pass that lead (what, when, stage, source) and its QuickBase label plus
    record number to the Email Writer as known context.
 7. **The last line of the output** is the ROUTINE count, and it is count-only — no list, no links, and no
    category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was set
-   aside, "Set aside 0 routine items." Nothing follows it.
+   aside, "Set aside 0 routine items." Nothing follows it: no "Sources:" list, no note to a trainer, admin or
+   tester (even when the person looks like one), and no narration of how the scan ran.
 
 ## Morning digest mode — the automatic check-in
 
@@ -236,12 +253,21 @@ scores, QuickBase labels and the lead board all work the same), except:
 6. **Short output:**
    - Start with: *"Good morning, [First name]. Here are your morning leads."*
    - "Moved up since your last scan", then up to the **top 5** new leads (number them all in one list,
-     moved-up first, so "#2" works for either), one line each, in the normal
-     format, including the one-line History entry after the QuickBase label. If there are more: *"…and N more
-     on your lead board."*
+     moved-up first, so "#2" works for either). Each lead is exactly two lines, nothing more:
+     - Title line: **"#[N] · [County] · [Buyer]: [Project]"**
+     - One detail line: **"Stage [n] · Score [nn] — [one-clause reason] · [QuickBase label] · [one history
+       clause] · [source link]"**, e.g. "Stage 2 · Score 74 — playground line in the FY27 CIP · `new` · 4
+       past quotes, last 2024 (shade), none won · [FY27 CIP p. 12](link)". For a moved-up lead the stage
+       reads "Stage 2 → 4"; for an open bid add "due [date]" after the stage.
+     The history clause is the History line's content, shortened, and it is the only place the buyer's
+     count appears: no separate History bullet, no "Past orders" line, and no other sub-bullets. If there are
+     more: *"…and N more on your lead board."*
    - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
      couldn't read' for the list."*
-   - The saved-board line and the Set-aside line, as usual.
+   - The saved-board line exactly as *"Saved your lead board — N leads, M rows changed."* Never mention
+     file types, CSV, Excel, or where or how the file is stored.
+   - The Set-aside line, as usual. No "Sources:" list, no note to a trainer or admin, no narration of the
+     run.
    - Nothing new at all: one line, *"Nothing new in your counties since [date]."* ([date] is the `since:`
      date from step 2, the last check, never today), then the saved-board line if any row changed, and skip
      the step 7 line.
@@ -253,7 +279,7 @@ scores, QuickBase labels and the lead board all work the same), except:
 
 ## Flow
 
-1. **Read `PROFILE.md`** for the rep's counties/territory, product focus, and QuickBase tables section. If a
+1. **Read `PROFILE.md`** for the rep's counties/territory and product focus. If a
    **Focus Counties** line is filled in, scan **only those** — don't widen to neighboring counties or a
    metro/region, even ones in the rep's territory. If the rep wants a wider scan, they'll ask ("scan all my
    counties," "add Hanover"). With no Focus Counties line and more than ~10 counties, ask once which few to

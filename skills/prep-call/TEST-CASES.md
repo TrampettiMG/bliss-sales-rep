@@ -42,8 +42,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 12. **General objections are labeled.** The brief names no past winner or customer objection. Expect 2–4 likely
     objections labeled general, with response angles that do not assume the quote includes installation,
     surfacing, warranty, or any other unconfirmed Bliss capability.
-13. **Glanceable length.** A rich Research Brief contains many findings. Expect 3–4 talking points, 2–3
-    references, 3–4 questions, 1–3 open items, and 2–4 objections, one line per item where possible.
+13. **Glanceable length.** A rich Research Brief contains many findings. Expect the whole prep, opener and ask
+    included, within 30 lines, one line per item where possible; when it would run longer, references and
+    objections are trimmed first.
 14. **Closing handoff.** Every completed prep ends with: "Say 'show the full research' for the whole brief, or
     'draft an email for #N' for the Email Writer." ("draft a follow-up" only after contact; no Email Writer
     offer for a lead to check with another rep first.) It does not add a bottom line or recommendation.
@@ -78,6 +79,17 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     relevant to what the rep sells without assuming products not in the profile or brief.
 24. **No invented contact or answer.** A public-role contact, decision-maker, install date, or budget is absent
     from the brief. Expect the contact fallback or a question, not a plausible name, date, or amount.
+
+## Opener, ask and header notes
+
+25. **Opener and ask present, under 30 lines.** Any fictional brief with a sourced budget line. Expect: one
+    Opener line tied to that sourced fact (or the brief's suggested opener), one concrete next step under The
+    ask (a site visit, a 15-minute call, a spec review), and the whole prep at 30 lines or fewer, with
+    references and objections cut first when it runs long.
+26. **Outside-county or awarded lead.** The lead is in fictional Oak County, not on the rep's Territory/Counties
+    line, or the brief's Stage check shows it awarded to a fictional vendor. Expect: Call Prep still runs, with
+    one header line saying so above the Opener; the reply ends with the closing line, no sources list and no
+    note to a trainer or tester.
 
 **What "fails gracefully" means for this tool specifically:** Call Prep is a short synthesis of the Research
 Brief, the rep's words, and the one permitted read-only quote lookup. When those sources are thin, the prep is

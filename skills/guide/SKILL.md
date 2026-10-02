@@ -64,7 +64,7 @@ sheet shows (step 4 for QuickBase, step 6 for lead sources). Never use it or put
 | "Your territory isn't set up yet" | Your counties haven't been loaded yet | Tell your trainer | Ask the Lead Finder again tomorrow |
 | Counties that aren't yours | The lead-sources key isn't your own | Ask your trainer for your own key | Say "check my setup" |
 | QuickBase tools say they're unavailable | The QuickBase extension isn't installed, or this chat started before it was | Setup sheet step 4, then start a new chat | "check my pipeline" shows your opportunities |
-| "One QuickBase setup file from your trainer is missing" | The private file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
+| "One QuickBase setup file from your trainer is missing" | The QuickBase setup file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
 | The Lead Finder can't download PDFs | Network access for code execution is off | Setup sheet step 3 | Run the Lead Finder again |
 | Your daily run didn't show up | The Claude app was closed at that time | Open the app (it catches up) | Say "what's scheduled?": you see the Bliss check-ins |
 | A check-in is turned off | It was switched off | Say "turn my check-ins back on" | Say "what's scheduled?" |
@@ -89,7 +89,7 @@ order. Change nothing.
    `QuickBase Name` line in the profile, following the `quickbase-usage` skill (never guess tables or fields).
    A blank QuickBase Name is the profile problem in step 4 (skip this read). A lookup that finds no active
    rep is the "QuickBase can't find you" problem.
-3. **The private QuickBase setup file** (the `quickbase-usage` skill) is in the project.
+3. **The QuickBase setup file** (the `quickbase-usage` skill) is in the project.
 4. **The profile** exists, with Name and QuickBase Name filled in.
 5. **Tool files and instructions:** `CLAUDE.md` is in the project, and all 12 tool files and the 6 `Lead Finder - ….md` files are in the `Bliss Tools` folder
    (look anywhere in the project, as the main instructions say).
