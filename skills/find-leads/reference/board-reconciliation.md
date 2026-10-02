@@ -31,9 +31,9 @@ for either name; if both exist, use the newer one and say so in one line.
 | Stage | this skill | the 0–7 stage from the ladder; blank if never staged |
 | Score | this skill | the 0–100 score from the rubric; blank if never scored |
 | QB Status | the QuickBase read (`my-new-leads`) — **never write it here** | the lead's status as the QuickBase read shows it; blank with no QuickBase record |
-| Status | the rep / the row that created it — **don't overwrite it on an existing row** | one of exactly: new, watching, contacted, in QB, dropped |
+| Status | the row that created it, then only the moves in "Who may change Status" below | one of exactly: new, watching, contacted, in QB, dropped |
 | Contact | `my-new-leads` / the Daily run contact card (blank only) / the rep — don't overwrite | the public-role contact, when there is one; blank otherwise |
-| Next Action | `my-new-leads` / the rep — don't overwrite | the next step for this lead; blank when there isn't one |
+| Next Action | `my-new-leads` / Update Logger / the rep — see below | the next step for this lead; blank when there isn't one |
 | Source Link | this skill | the document link the lead came from |
 | Doc Date | this skill | the document date; blank when there isn't one |
 | Last Checked | this skill | the date of the run that last checked this lead |
@@ -49,12 +49,31 @@ and keep every existing value. Never reorder columns. One exception to "blank": 
 text names a date ("Call again Oct 1"), copy that date into `Next Action Date` so the follow-up isn't lost.
 A save that only adds columns doesn't count as changed rows.
 
-**`QB Status`, `Status`, `Contact`, `Next Action`, and `Next Action Date` are not yours to rewrite**, and
+## Who may change Status, Contact and Next Action
+
+One set of rules for every tool that writes the board (Lead Finder, New Leads, Update Logger, the Daily run):
+
+- **`dropped`** is set only by the rep, and no tool ever changes it afterwards.
+- **`new` → `watching`:** the next run that sees the row untouched (Lead Finder or New Leads).
+- **→ `contacted`:** the Update Logger or New Leads, when the rep has reached out (their own notes or a logged
+  update). Only from `new` or `watching`.
+- **→ `in QB`:** when QuickBase has an opportunity or quote for this lead (the New Leads read or the Lead
+  Finder's QuickBase check). From `new`, `watching` or `contacted`. Never move a row back from `in QB`.
+- **Contact, Phone, Email, Website:** tools fill them only where blank. The rep may change them; no tool
+  overwrites what's there.
+- **Next Action and Next Action Date:** the Update Logger and New Leads may set them when the rep names the
+  next step; never blank out what the rep wrote.
+- **Last Checked** belongs to the Lead Finder alone: it uses the latest one to know where its last scan
+  stopped, so no other tool changes it.
+
+**`QB Status`, `Contact`, `Next Action`, and `Next Action Date` are not yours to rewrite, and `Status`
+changes only as "Who may change Status" above allows**, and
 `Phone`, `Email` and `Website` are filled only where blank. When you update a row that
-already matches a lead, touch only Agency, County, Project, Stage, Score, Source Link, Doc Date, and Last
-Checked — leave the QuickBase-origin fields exactly as they are, so a `find-leads` update never clobbers what
-`my-new-leads` or the rep put there. Set `Status` only when you **create** a new row: `new` for a lead with no
-QuickBase record (`in QB` instead when the cross-reference finds an open opportunity). Refuse to write a
+already matches a lead, touch Agency, County, Project, Stage, Score, Source Link, Doc Date, Bid Due and Last
+Checked, and Status only as "Who may change Status" allows — leave the QuickBase-origin fields exactly as they
+are, so a `find-leads` update never clobbers what `my-new-leads` or the rep put there. On a **new** row, set
+`Status` to `new` for a lead with no QuickBase record (`in QB` instead when the cross-reference finds an open
+opportunity). Refuse to write a
 status outside the five above, and never invent a Contact or Next Action — a blank cell is correct when the
 data isn't there.
 

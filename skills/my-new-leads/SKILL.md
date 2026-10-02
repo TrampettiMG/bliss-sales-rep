@@ -115,9 +115,10 @@ Column definitions and field ownership are the responsibility of `find-leads`' b
 
 **Don't overwrite the fields `find-leads` owns.** Agency, County, Project, Stage, Score, Source Link, and
 Doc Date are `find-leads`' fields. When this tool updates a row that already exists, touch only QB Status,
-Status, Contact, Next Action, Next Action Date, and Last Checked (and Phone, Email or Website only where
-blank) — leave `find-leads`' fields as they are, except to fill one
-in that's blank. Never invent a value to fill a blank; leave it blank if you don't have a real one.
+Status (only the moves `Lead Finder - Lead Board.md` allows under "Who may change Status"), Contact and
+Phone, Email or Website (only where blank), Next Action and Next Action Date — leave `find-leads`' fields
+as they are, except to fill one in that's blank. Never change `Last Checked`: the Lead Finder uses it to
+know where its last scan stopped. Never invent a value to fill a blank; leave it blank if you don't have a real one.
 
 **Status values are limited to these five, exactly — never a free-text status:**
 
@@ -133,7 +134,7 @@ in that's blank. Never invent a value to fill a blank; leave it blank if you don
 **Where the rows come from, every run:**
 
 1. **The rep's QuickBase New opps** — the read above, one row per opp. `QB Status` is what the read shows
-   (New, when it's untouched); `Status` is `in QB`. Fresh-vs-backlog still decides what you show in chat,
+   (New, when it's untouched); `Status` is `in QB` (unless the row is `dropped`, which stays as it is). Fresh-vs-backlog still decides what you show in chat,
    not what goes on the board — the backlog is on the board too, so it isn't re-litigated every run.
 2. **The latest `find-leads` results** — the most recent run, taken from this conversation or its local
    artifacts. Those runs are authoritative for agency, county, project, stage, score, source link and doc
@@ -148,8 +149,8 @@ never re-open a row the rep has `dropped`.
 
 **Re-check every tracked lead, every run — stage changes first.** Each run re-checks the tracked rows: the
 QuickBase ones from the read, and the `find-leads` ones against what the latest `find-leads` run says about
-them. Anything that moved **stage** is reported ahead of anything newly found. Refresh `Last Checked` on
-every row you actually checked — and only on rows you checked.
+them. Anything that moved **stage** is reported ahead of anything newly found. Leave `Last Checked`
+alone: it belongs to the Lead Finder.
 
 **Write it, then read it back.** Build the board in code execution with a spreadsheet library (openpyxl is
 the usual one in this setup) and write the **whole** board each run: header row, then one row per lead,
@@ -188,8 +189,7 @@ fresh intake. If nothing moved and nothing is new, say that in one line rather t
   public-role contact for a lead, not personal contact data.
 - Exclude any test records (your trainer's test accounts).
 - Count "days since" off **today's date from the current session** — reps aren't all in one time zone, so
-  don't convert to or assume Eastern. A few hours' offset never changes a day count that matters here. Use
-  the same session date for `Last Checked`.
+  don't convert to or assume Eastern. A few hours' offset never changes a day count that matters here.
 
 ## The suggested next step — no fabrication
 For each fresh lead, suggest a real next action without inventing anything about the account:

@@ -33,7 +33,7 @@ like them, update the Voice line the same way.
 
 This is a drafting tool, not a fact source. It never invents specifics about the prospect — their history
 with Bliss, prior conversations, their organization's plans, budget, or timeline — beyond what the rep
-tells it or what's already in the conversation (e.g., from a `research` or `find-leads`/`lead-ideas`
+tells it or what's already in the conversation (e.g., from a `research` or `find-leads`
 result just discussed). If the rep hasn't given enough to personalize a draft, ask for the missing detail
 in one short question rather than inventing a plausible-sounding one. (See the house rules in `CLAUDE.md`
 for how to handle a rep-supplied quantitative claim you can't verify.)
@@ -81,10 +81,14 @@ review and send/say themselves.
    if QuickBase isn't connected, carry on as above. If a quote-only match is found, use its quote/job details
    without inventing an opportunity. Read only — never write to QuickBase.
    **When a Lead Finder result arrives with a QuickBase label, use it to choose the type without asking:**
-   `in pipeline` and yours → open-quote follow-up referencing the new signal; `lost before` → re-engagement
-   around the new signal, never implying the old quote is open; `won before` → past-customer check-in about
-   phase two, another site, or surfacing, never a "still moving?" question; `new` → intro. `BLISS INVOLVED`
-   or another rep's open job → don't draft; say in one line to check with the rep of record first. The rep can
+   `in pipeline (yours)` → open-quote follow-up referencing the new signal; `lost before` → re-engagement
+   around the new signal, never implying the old quote is open; `Close - Multiple Alternative` → the same
+   light re-engagement around the new signal, never saying or implying Bliss lost; `won before` →
+   past-customer check-in about phase two, another site, or surfacing, never a "still moving?" question;
+   `new` → intro. `BLISS INVOLVED`, `in pipeline ([another rep])`, or any label followed by `open quote:
+   [another rep]` (another rep's open record for this same project, whatever the label) → don't draft; say
+   in one line to check with the rep of record first. "Draft an intro for #N" still follows the label (the
+   word "intro" isn't an override); the rep overrides by naming a different type. The rep can
    override the type. Keep the existing no-write rule and name-only subject rule.
 4. **Draft, matched to type:**
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,

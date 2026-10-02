@@ -21,7 +21,9 @@ values that fix these gaps, hand off to `forecast-update`.
 This tool only works if the read-only QuickBase connector and the `quickbase-usage` skill are set up in
 this project (your trainer sets this up). If they aren't available, say so in one plain
 sentence — "This needs the QuickBase connection your trainer sets up; it isn't on your account yet." —
-and stop. Never guess or fabricate pipeline data.
+and stop. Never guess or fabricate pipeline data. **Exception — Today mode inside the Daily run:** without
+QuickBase, do only the lead-board parts (board follow-ups and `Bid Due` dates), say "QuickBase isn't
+connected, so this is from your lead board only." once, and carry on.
 
 ## The one rule: real data only, read-only
 Every number comes from a live QuickBase read. Never invent an opportunity, a date, a dollar value, or a
@@ -89,7 +91,7 @@ Group the rep's open opps into three buckets:
 - **Has ordered quotes** — any open opp with at least one quote already won goes here instead of any other
   bucket, labeled "N of M quotes already ordered — the opportunity status may be out of date." Don't call
   it overdue or stale, and don't offer a "still moving?" follow-up for it: the customer already ordered.
-  The fix is updating the opportunity in QuickBase (offer the Forecast Helper). List these right after 🔴.
+  The fix is checking the opportunity's status in QuickBase (offer the Update Logger to draft the note). List these right after 🔴.
 - 🟡 **Worth a look** — confidence is blank or 0; or a New opp older than ~30 days still has no forecast
   close date; or a **Quoted to Customer opp created more than ~90 days ago** that's still open (label it
   "quoted 90+ days ago, still open"). This one goes in 🟡 even if its close date and confidence are clean:
@@ -157,7 +159,8 @@ date. Leave a section out when it's empty.
   deadline in the next 7 days, using the quote-terms lookup in the `quickbase-usage` skill. Quote the phrase
   and date exactly as the quote has them ("pricing good through Oct 9"); never compute a date. Up to 5.
 - **On Mondays and Fridays,** leave out quotes the full Pipeline Check flags (open 90+ days, ordered-quote
-  mismatches): that check runs the same day.
+  mismatches): that check runs the same day. Keep any quote whose terms state a deadline in the next 7 days
+  even then: the full check doesn't show quote deadlines.
 
 **Bid deadlines this week**
 - Lead board rows with a `Bid Due` in the next 7 days, plus any questions or pre-bid date already stated for

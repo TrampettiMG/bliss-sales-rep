@@ -24,7 +24,7 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    - **Their counties:** if the registry connector is connected, call `my_sources`. It lists the rep's
      assigned counties, and those are the counties to use. If it replies "Your territory isn't set up
      yet", tell the rep their territory is still loading, finish the rest of setup, and leave
-     Territory/Counties as "loading — ask Lead Finder again tomorrow". Don't fill it from anywhere else.
+     Territory/Counties as "loading — say 'refresh my profile' tomorrow". Don't fill it from anywhere else.
      If the connector isn't connected, use every active county assigned to them in QuickBase's county
      sales-team assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
      no assignments, use the counties where their own customers are, most frequent first, labeled
@@ -59,8 +59,11 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    - If you can run a shell command with internet access, download every file in one command, then
      check they're all there. If that fails, fetch them one at a time, still quietly.
 4. **Set up automatic check-ins.** Follow **Automatic check-ins → Setting them up** below. Don't ask first.
-5. Delete this entire "First run" block (everything between the START/END markers, including this line) from this file so it never runs again.
-6. Confirm every file in the list was actually saved before saying setup is done — if any fetch failed,
+5. **Save these instructions into the project** as `CLAUDE.md` (at the top level, next to `PROFILE.md`),
+   with this entire "First run" block removed (everything between the START/END markers, including this
+   line), so it never runs again. Every later chat and every check-in reads that file, so read it back to
+   confirm it saved.
+6. Confirm every file in the list, and `CLAUDE.md`, was actually saved before saying setup is done — if any fetch failed,
    say which tool didn't install and ask the rep to tell their trainer. Then end setup with one short
    line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."*
 
@@ -103,6 +106,13 @@ sentence saying so.)
 this project only.)
 ```
 <!-- FIRST-RUN-ONBOARDING-END -->
+
+## The lead-sources connection
+
+The **lead-sources connection** is the connector with the `my_sources`, `read_source` and `lead_scan`
+tools. Setup calls it the `Bliss Lead Registry` connector, and the tool files also call it the Bliss Library
+or the registry connector: all the same thing. Call it "your lead-sources connection" when you talk to the
+rep.
 
 ## The tools — names
 
@@ -147,8 +157,10 @@ for #2", "break down the bid for #2").
   draft) and the next tool uses what's already there.
 - **Never re-ask** for anything an earlier tool in the conversation already found, and never add a fact no
   tool found. If two results disagree, use the newer one and say so in one line.
-- A label of `BLISS INVOLVED` or another rep's open job stops the chain at outreach: say in one line to check
-  with the rep of record first.
+- A label of `BLISS INVOLVED`, or another rep's open quote or opportunity **for this same project**, stops
+  the chain at outreach (emails and prospect content): say in one line to check with the rep of record first.
+  Another rep's open quotes with the same buyer on a *different* project aren't a stop: say so in one line
+  ("[Rep] has other open quotes with this buyer.") and carry on.
 - If QuickBase shows the buyer's past quotes under a different rep, but nothing open, that's not a stop: say it
   once, in one line ("Past quotes for this buyer were under [rep]."), and carry on.
 
@@ -205,8 +217,9 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
   > when a step needs them, as CLAUDE.md's "Daily run" section says.
   > Then do the Daily run exactly as that section describes, using the Bliss Library and
   > QuickBase connections. Never send, submit, or write anything to QuickBase; only the lead board is saved.
-  > If you can't find those files or connections, reply with one line: "Your daily run couldn't run. Open
-  > your Bliss Sales Rep project and say 'run my daily run'."
+  > A missing connection is handled the way that section says. If you can't find the project or those
+  > files, reply with one line: "Your daily run couldn't run. Open your Bliss Sales Rep project and say
+  > 'run my daily run'."
 - Task id `bliss-monday-pipeline` · title "Bliss: Monday pipeline" · schedule `0 8 * * 1` · prompt:
   > This is [First name]'s scheduled Bliss Monday pipeline check. Open the Bliss Sales Rep project and
   > read its instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Pipeline Check.md`.
@@ -224,14 +237,14 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
 - Task id `bliss-profile-refresh` · title "Bliss: Profile refresh" · schedule `30 6 * * 1` · prompt:
   > This is [First name]'s scheduled Bliss profile refresh. Open the Bliss Sales Rep project and read its
   > instructions (CLAUDE.md) and `PROFILE.md`. Then follow "Refreshing the profile" in CLAUDE.md exactly,
-  > using the QuickBase and Bliss Library connections. Only change the lines that section allows. If you
-  > can't find those files or connections, change nothing and reply with one line: "Your profile refresh
+  > using the QuickBase and lead-sources connections. Only change the lines that section allows. If you
+  > can't find the project or those files, or QuickBase isn't connected, change nothing and reply with one line: "Your profile refresh
   > couldn't run. Open your Bliss Sales Rep project and say 'refresh my profile'."
 - Task id `bliss-setup-check` · title "Bliss: Setup check" · schedule `0 6 * * 1` · prompt:
   > This is [First name]'s scheduled Bliss weekly setup check. Open the Bliss Sales Rep project and read its
   > instructions (CLAUDE.md), `PROFILE.md`, and `Bliss Tools/Help Desk.md`. Then run "Check my setup" in
-  > its weekly mode, exactly as `Help Desk.md` describes. Read only: change nothing, fix nothing, and never
-  > write to QuickBase. If you can't find the project or those files, reply with one line: "Your weekly
+  > its weekly mode, exactly as `Help Desk.md` describes: if everything passes, end without any reply. Read
+  > only: change nothing, fix nothing, and never write to QuickBase. If you can't find the project or those files, reply with one line: "Your weekly
   > setup check couldn't run. Open your Bliss Sales Rep project and say 'check my setup'."
 
 ### Changing or stopping them
@@ -239,7 +252,8 @@ The five tasks. Put the rep's first name where it says [First name]. Use each pr
 - **"Change my check-in times"** (or "move my daily run to 6:30"): update that task's schedule with
   `update_scheduled_task`, update the Automatic check-ins line, and confirm the new time in one line.
 - **"Turn off my check-ins"** (or one of them): disable those tasks (don't delete them), set the line to
-  `off` or list what's still on, and confirm in one line. "Turn my check-ins back on" re-enables them.
+  `off` (all of them) or keep `on (…)` with the turned-off ones marked, e.g. `· Friday pipeline off`, and
+  confirm in one line. "Turn my check-ins back on" re-enables them.
 - **"Run my daily run"** (or "run my morning leads"), **"check my pipeline"**, **"refresh my profile"**, **"check my setup"**: run it right now, the same
   way the scheduled task would.
 - If the rep asks what's scheduled, list the Bliss check-ins with their next run times, one line each.
@@ -253,8 +267,9 @@ line: *"Nothing new today, [First name]. Your follow-ups and bids are clear."*
 Start with: *"Good morning, [First name]. Here's your daily run."*
 
 1. **New leads** — the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes (it saves
-   the lead board). If its "Already ran today?" rule applies, that stops step 1 only: leave the section out
-   and carry on with steps 2–4.
+   the lead board). If its "Already ran today?" rule applies, or nothing is new or moved up, that's an empty
+   section: leave it out and carry on with steps 2–4. If the lead-sources connection is missing, say so in
+   one line and carry on.
 2. **Who to call** — the Research Brief's contact card mode for the top 3 new or moved-up leads from step 1,
    by score. None new or moved up: leave the section out.
 3. **Today's follow-ups** — the Pipeline Check's today mode, first part.
@@ -271,7 +286,7 @@ Start with: *"Good morning, [First name]. Here's your daily run."*
 
 Read only: nothing is sent, submitted, or written to QuickBase. Only the lead board is saved, and only
 blank contact cells are filled. Without QuickBase, steps 3 and 4 use the lead board alone and say so in one
-line. The lead numbers ("#2") follow the step 1 list, so "research #2" works right after.
+line, instead of stopping. The lead numbers ("#2") follow the step 1 list, so "research #2" works right after.
 
 ## Refreshing the profile
 
@@ -279,22 +294,23 @@ Runs from the weekly Profile refresh check-in, or when the rep says "refresh my 
 profile matching QuickBase and the Bliss Library without touching anything the rep chose.
 
 1. Look the rep up again the same way first-run setup does: their QuickBase record (by the `QuickBase
-   Name` line) for name and contact, and `my_sources` for their counties. If the Bliss Library connection
-   isn't there, use QuickBase's county assignments.
+   Name` line) for name and contact, and `my_sources` for their counties. If the lead-sources connection
+   isn't there, leave Territory/Counties as it is (don't switch it to QuickBase's assignments).
 2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
-   **Territory/Counties**. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
+   **Territory/Counties**. Fill **Contact** only when it's blank: the rep may have changed their own phone or
+   email, so never overwrite it. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
    or the QuickBase tables section.
 3. If a Focus County is no longer in the rep's assigned counties, don't remove it. Say so in one line so
    the rep can decide: *"Hanover isn't in your assigned counties anymore. Keep it as a focus county?"*
-4. **Change nothing** if a lookup fails, returns no rep, or the territory is still loading ("Your
-   territory isn't set up yet"). Say in one line that the refresh couldn't finish and will try again next
-   week.
+4. **Change nothing** if the QuickBase lookup fails or returns no rep, or the territory is still loading
+   ("Your territory isn't set up yet"). Say in one line that the refresh couldn't finish and will try again
+   next week. A missing lead-sources connection isn't a failed lookup: step 1 already leaves Territory alone.
 5. Tell the rep only what changed, one line each, e.g. *"Profile refreshed: Counties 42 → 44 (added
    Hanover and Louisa)."* If nothing changed, one line: *"Your profile is up to date."*
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-02c**
+**Tools version: 2026-10-02d**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
@@ -310,11 +326,14 @@ profile matching QuickBase and the Bliss Library without touching anything the r
      replace this file's contents with the rest.
   4. **Check the automatic check-ins.** If the Automatic check-ins line of `PROFILE.md` says `on`, list the
      scheduled tasks. If `bliss-morning-leads` exists, disable it and create `bliss-daily-run` at the same
-     time and days it had, then change "Morning leads" to "Daily run" on that line. Re-create any Bliss check-in that's missing, and update any whose prompt doesn't
+     time and days it had. Re-create any Bliss check-in that's missing, and update any whose prompt doesn't
      match the fetched **Automatic check-ins** section, keeping the rep's own times. If the line is blank
-     or missing (a rep set up before check-ins existed), set them up now per **Setting them up**. If it
-     says `off`, the rep turned them off: leave the schedule alone.
-  Never touch `PROFILE.md`, `lead-board.xlsx` / `lead-board.csv`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
+     or missing (a rep set up before check-ins existed), or says `off (not available in this app)` and the
+     scheduled-tasks tool is now available, set them up now per **Setting them up**. If it says plain `off`,
+     the rep turned them off: leave the schedule alone. When anything changed here, rewrite the Automatic
+     check-ins line to the current format (keeping the rep's times and any check-in marked off). That line
+     is the one exception to the rule below.
+  Never touch `PROFILE.md` (except the Automatic check-ins line, as step 4 says), `lead-board.xlsx` / `lead-board.csv`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
   saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
   <fetched version line>." If that version is the same as the one this file had before, add: "(Already
   on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which

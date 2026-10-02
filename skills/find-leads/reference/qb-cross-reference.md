@@ -49,7 +49,11 @@ counts; show its rep as "test account".
 Read the status of the matching opportunity and every matching quote before choosing a label. A won quote
 (`Order Submitted`, `Invoiced`, or `Commission Paid`) under an opportunity that still looks open is **won
 before**. Use this precedence when statuses conflict: **won before** beats **in pipeline**, and **in pipeline**
-beats **lost before**. Label a fully closed match with no won quote **lost before**, but show the raw QuickBase
-status after the label when it is ambiguous (for example, `lost before — Close - Multiple Alternative`); never
-assert "lost" merely from an ambiguous close status. If the status says an alternative was chosen, check that
-customer's other quotes from about the same time for a won one.
+beats the two closed labels. A fully closed match with no won quote gets one of two labels: **`Close -
+Multiple Alternative`** (shown exactly like that) when that's how its quotes closed, or **lost before** when
+QuickBase records it as lost. If both appear, use **lost before** and add the other status after it. Never
+call `Close - Multiple Alternative` a loss. If the status says an alternative was chosen, check that
+customer's other quotes from about the same time for a won one. A label for an open match names whose it is:
+**in pipeline (yours)** or **in pipeline ([rep])**. If another rep has an open quote or opportunity for this
+same project but a higher label wins (for example `won before` for an earlier phase), add it after the label
+(`won before · open quote: [rep]`): the "check with another rep first" stop still applies.

@@ -78,7 +78,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 21. **Download cap.** A territory with six such PDFs. Expect: at most 3 downloads attempted, the rest go
     straight to "Couldn't read these, open them yourself," and the output says the cap was hit.
 22. **Genuinely unreadable source.** A source that refuses at run time. Expect: it's on the closing list
-    with its link and the reason, it isn't in the log, and the next run tries it again.
+    with its link and the reason, it isn't added to the lead board, and the next run tries it again.
 23. **Connector returns "no readable text" on a PDF link.** `read_source` returns the empty-body
     no-readable-text reason (or `lead_scan`'s footer reads `Couldn't read: <url> - no readable text; open
     it yourself`) for a link that is a PDF. Expect: the same download → text extraction → page-image
@@ -86,8 +86,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 24. **Connector returns "no readable text" on a non-PDF page.** Same reason, but the link is an HTML page
     with no extractable text. Expect: no download attempt — it goes straight to the closing "Couldn't read
     these, open them yourself" list.
-25. **Connector refuses for robots.txt.** `read_source` returns `blocked by the site's robots.txt: open it
-    yourself`. Expect: no download attempt; the link goes straight to the closing list for the rep to open
+25. **Connector refuses for robots.txt.** `read_source` returns `robots.txt for <site> disallows this path; open
+    it yourself`. Expect: no download attempt; the link goes straight to the closing list for the rep to open
     in their browser.
 26. **Robots check before a fallback download.** A scanned-PDF link whose site's robots.txt disallows the
     path for `User-agent: *`. Expect: Claude checks robots.txt first, doesn't download, and lists the link
@@ -147,7 +147,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     whether each had anything new.
 47. **Output order.** Any run that produces results. Expect, in order: moved-up leads (if any), the ranked
     leads with the "Found N, call these X now" opener, the coverage line, the couldn't-read list, the
-    verified "Saved N new items" line, the closing offer of the Research Brief / Email Writer, and — as
+    verified "Saved your lead board — N leads, M rows changed" line, the closing offer of the Research Brief / Email Writer, and — as
     the last line of the output — the one count-only routine line ("Set aside N routine items"), with
     nothing after it.
 48. **Ron test.** A rep's first plain ask — "find leads in my counties" — with no further setup. Expect:
@@ -173,8 +173,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     text. Expect: the city or its own department counts; the others are only brief related notes, and a shared
     billing city alone does not count. A same park name in another state and any TEST record are ignored.
 54. **Status before label.** A fictional open opportunity has one matching quote marked Invoiced. Expect:
-    `won before`, not `in pipeline`. A closed quote with an ambiguous close status shows that raw status after
-    `lost before`; if it says an alternative was chosen, nearby quotes are checked for a won one.
+    `won before`, not `in pipeline`. A closed quote with status `Close - Multiple Alternative` gets that label
+    on its own, never `lost before` (both statuses → `lost before` plus the other); if it says an alternative
+    was chosen, nearby quotes are checked for a won one.
 55. **Freshness follows QuickBase.** A stale fictional lead has an open same-job quote from within the last
     year. Expect: it survives as `in pipeline`; stale leads with only `lost before` or `won before` matches are
     dropped.
@@ -185,7 +186,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     Expect: it is not a lead and the output includes "The library's link for [entity] [doc type] looks out of
     date. Tell your trainer."
 58. **Label handoff.** A selected lead is passed to Email Writer. Expect: the handoff includes its label and
-    record number along with what, when, stage, and source; `BLISS INVOLVED` or another rep's open job is not
+    record number along with what, when, stage, and source; `BLISS INVOLVED` or another rep's open quote or opportunity for this same project is not
     drafted cold.
 59. **Web search never creates a lead.** A web result finds a fictional county playground project that does
     not appear in `lead_scan` or a library document. Expect: it is not reported, staged, scored, or written to
@@ -204,7 +205,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 64. **Connector error retry.** A county filter fails once and succeeds on retry. Expect: the connector is
     retried once; if it fails again, one compact connector-error line appears in the closing gaps list and no
     web lead search is started.
-65. **Morning digest, weekday.** The Morning leads check-in runs on a Wednesday; the board's latest Last
+65. **Morning digest, weekday.** The Daily run's step 1 runs on a Wednesday; the board's latest Last
     Checked date is Tuesday. Expect: no county question; `lead_scan` since Tuesday; no CIP/budget reads; no
     web searches; opens "Good morning, [First name]"; at most 5 lead lines; the couldn't-read list as one count
     line; saved-board and Set-aside lines.

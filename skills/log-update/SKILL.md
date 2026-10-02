@@ -20,7 +20,8 @@ to QuickBase, and it never decides the forecast for the rep.
 This tool only works if the read-only QuickBase connector and the `quickbase-usage` skill are set up in
 this project (your trainer sets this up). If they aren't available, say so in one plain
 sentence — "This needs the QuickBase connection your trainer sets up; it isn't on your account yet." —
-and stop.
+and stop. **Two things still work without it:** the clean note for a `new` lead (nothing to look up) and the
+lead board update below; do those and say the QuickBase lookup was skipped.
 
 ## The one rule: the rep sets the forecast, never you
 Confidence and forecast close date are the rep's commitment — their judgment about their own deal. This
@@ -52,7 +53,8 @@ repeat it; continue the normal lookup and raw-material flow below, including the
 
 **The lead board's next step.** When the update is about a lead on the lead board and the rep's notes name
 a next step ("try again Tuesday"), also update that board row: `Next Action` to the step, `Next Action Date`
-to its calendar date (only when the rep named the day), and `Status` to `contacted` if they reached out. The
+to its calendar date (only when the rep named the day), and `Status` to `contacted` if they reached out and
+the row was `new` or `watching` (never change a `dropped` or `in QB` row's Status). The
 board is a local file, not QuickBase; say "Saved to your lead board." after reading it back. Touch nothing
 else on the row.
 

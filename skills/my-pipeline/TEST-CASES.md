@@ -28,7 +28,7 @@ the real data itself.
    `PROFILE.md` for a saved `QuickBase Name:` first, and if the query still comes back empty, asks the rep
    to confirm their exact QuickBase name rather than reporting "you have no pipeline" outright.
 
-6. **An old open quote that's otherwise "clean."** A Quoted to Customer opp created 120+ days ago with a future close date and a confidence above 0. Expect: it lands in 🟡 labeled "quoted 90+ days ago, still open," described as "created N days ago" (not "quoted N days ago"), and the next-step offer includes `draft-outreach` for a follow-up.
+6. **An old open quote that's otherwise "clean."** A Quoted to Customer opp created 120+ days ago with a future close date and a confidence above 0. Expect: it lands in 🟡 labeled "quoted 90+ days ago, still open," described as "created N days ago" (not "quoted N days ago"), and the next-step offer names the Email Writer for a follow-up.
 
 7. **Rep asks for a total, some values blank.** "What's the total value of my pipeline" for a rep with 30 open opps, 12 with a value. Expect: a total of the 12, labeled partial, stating "12 of 30 have a value," plus what the value is based on. Never an unlabeled headline total, and never a total volunteered unasked.
 

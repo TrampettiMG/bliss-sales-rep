@@ -132,7 +132,9 @@ Read `Lead Finder - Stages and Scoring.md` (`reference/stage-ladder-and-scoring.
 - Rank the output by score, highest first, and open the list with the summary line the rubric asks for:
   **"Found N, call these X now"** — not a flat list. X is the leads in the top band (roughly the top three
   scoring leads); name them. Leave out of the "call now" names any lead that says to check with another rep
-  first (`BLISS INVOLVED`, or another rep's open quotes with that buyer); it stays in the list at its score.
+  first (`BLISS INVOLVED`, or another rep's open quote or opportunity for this same project); it stays in the
+  list at its score. Another rep's open quotes with the same buyer on other projects get one line on the lead
+  ("[Rep] has other open quotes with this buyer"), and the lead stays callable.
 
 ## QuickBase cross-reference (F5)
 
@@ -145,8 +147,9 @@ public document), and the query rules that always hold (`select`/`where`/`max_re
 Rep** link, never "Record Owner"; UTC → **Eastern Time**; Confidence only ever 0%, 25%, 50%, 75%, or 99%; an
 already-open lead is **in pipeline**, never new).
 
-**Labels on each lead:** `new` (nothing on file), `in pipeline` (open opportunity or quote), `lost before`, or
-`won before`, plus the QuickBase record number the rep can open. Labels describe **this job**; the
+**Labels on each lead:** `new` (nothing on file), `in pipeline (yours)` / `in pipeline ([rep])` (open
+opportunity or quote), `Close - Multiple Alternative`, `lost before`, or `won before`, chosen by the precedence
+in `Lead Finder - QuickBase Check.md`, plus the QuickBase record number the rep can open. Labels describe **this job**; the
 jurisdiction's history is a separate note. When the jurisdiction is on file as a customer, add its history
 after any label, including `new`, e.g. "`new` · past customer: 6 quotes, last 2026 (bleachers), none won"
 (most recent job name and year, quote count, and whether any was won). Nothing on file at all: just `new`.
@@ -189,8 +192,8 @@ stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due
 1. **"Moved up since your last scan"** — tracked leads that advanced (skip the heading if there are none).
 2. **"Found N, call these X now"** — the ranked REAL leads, highest score first. Each: county and
    jurisdiction, what happened, the document date, the stage number, the score with its one-line reason, the
-   QuickBase label (`BLISS INVOLVED` / `new` / `in pipeline` / `lost before` / `won before`) with the record
-   number, and the source link. For an open bid or RFP, include the due date (or "due date not visible —
+   QuickBase label (`BLISS INVOLVED` / `new` / `in pipeline (yours)` or `in pipeline ([rep])` / `lost
+   before` / `Close - Multiple Alternative` / `won before`) with the record number, and the source link. For an open bid or RFP, include the due date (or "due date not visible —
    verify on the page"). For the top 5, add the one-line History entry immediately after the QuickBase label.
    A detail added by web enrichment goes on the same lead, marked "Web:" with its own link, after the library
    source; never in place of it.
@@ -229,10 +232,11 @@ scores, QuickBase labels and the lead board all work the same), except:
 4. **No web enrichment** in this mode. If a lead is missing a due date or contact, say "due date not
    visible — verify on the page" as usual. The rep can ask for more on any lead afterward.
 5. **Already ran today?** Don't ask. Reply with one line and stop: *"Already checked this morning. Nothing
-   new since then."*
+   new since then."* (Inside the Daily run this only ends step 1; the Daily run carries on.)
 6. **Short output:**
    - Start with: *"Good morning, [First name]. Here are your morning leads."*
-   - "Moved up since your last scan", then up to the **top 5** new leads, one line each, in the normal
+   - "Moved up since your last scan", then up to the **top 5** new leads (number them all in one list,
+     moved-up first, so "#2" works for either), one line each, in the normal
      format, including the one-line History entry after the QuickBase label. If there are more: *"…and N more
      on your lead board."*
    - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
@@ -241,6 +245,9 @@ scores, QuickBase labels and the lead board all work the same), except:
    - Nothing new at all: one line, *"Nothing new in your counties since [date]."* ([date] is the `since:`
      date from step 2, the last check, never today), then the saved-board line if any row changed, and skip
      the step 7 line.
+   - **Inside the Daily run:** a nothing-new step 1 is an empty section, so leave out the "Nothing new" line
+     and the Tip line (keep the saved-board line only if rows changed), and the Set-aside line isn't the last
+     line of the message: the Daily run's other sections follow it.
 7. When at least one lead was shown, end with one line: *"Want more on one of these? Ask for the Research Brief — for example, 'research #2' —
    or the Email Writer."*
 
@@ -263,7 +270,7 @@ scores, QuickBase labels and the lead board all work the same), except:
 4. **Check the board** and keep only genuinely new items, marking stage moves separately.
 5. **Stage and score** the survivors, and **cross-reference** each one against QuickBase. A lead more than
    about 12 months old stays only when QuickBase finds an open (`in pipeline`) same-job opportunity or quote;
-   `lost before` and `won before` do not keep it alive. Do not add a lookup just for a stale item beyond the
+   `lost before`, `Close - Multiple Alternative` and `won before` do not keep it alive. Do not add a lookup just for a stale item beyond the
    normal bounded cross-reference pass.
 6. **Present** in the output shape above.
 7. **Update the board** and verify the spreadsheet write.

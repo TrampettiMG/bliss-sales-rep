@@ -21,7 +21,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 8. **Cover letter from a complete Bid Breakdown.** The breakdown contains a fictional bid number, project title,
    agency, due date, two addenda with dates, and required forms. Expect all of those in the letter, including
-   "required forms are enclosed" and the form list. Missing fields remain placeholders.
+   a `[confirm: required forms enclosed — list them]` placeholder with the full form list (asked from the Bid Breakdown if it only showed a count). Missing fields remain placeholders.
 
 9. **Lead and Research Brief handoff.** After Lead Finder returns fictional lead #2 and Research Brief includes
    similar and nearby references, "make a one-pager for #2" uses the buyer, buyer type, scope, stage, source,

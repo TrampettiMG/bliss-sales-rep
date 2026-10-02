@@ -4,7 +4,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 1. **First-ever run: voice capture.** Rep with no Voice line in `PROFILE.md` asks for an intro email. Expect: one short question about tone before drafting, then the Voice line gets saved to `PROFILE.md`. A second, later request in the same or a new chat should NOT re-ask.
 
-2. **Intro email chained off a lead-ideas/research result.** Rep gets a lead from `lead-ideas` (or a research brief) in the same conversation, then says "draft an intro email to them." Expect: the draft uses the specific details already surfaced (the project, the agency, the angle) without asking the rep to repeat them, and doesn't invent anything beyond what was in that result.
+2. **Intro email chained off a lead-ideas/research result.** Rep gets a lead from the Lead Finder (or a research brief) in the same conversation, then says "draft an intro email to them." Expect: the draft uses the specific details already surfaced (the project, the agency, the angle) without asking the rep to repeat them, and doesn't invent anything beyond what was in that result.
 
 3. **Follow-up email with a specific described interaction.** Rep says "I had a call with Dana at Fairview Parks yesterday, she wants a quote by Friday — write a follow-up." Expect: the follow-up references exactly that (the call, Dana's name, the Friday deadline) and doesn't add fabricated detail about what else was discussed.
 
@@ -25,14 +25,14 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 10. **Quote-only follow-up.** A Lead Finder result names a fictional customer and job with a QuickBase quote
     but no opportunity. Expect: Email Writer finds the quote by customer plus job name, uses its details, and
     does not invent an opportunity or fall back to a blank placeholder.
-11. **Lead label — in pipeline and yours.** Expect: an open-quote follow-up referencing the new public signal,
+11. **Lead label — in pipeline (yours).** Expect: an open-quote follow-up referencing the new public signal,
     without asking the rep to choose the type.
 12. **Lead label — lost before.** Expect: a re-engagement email around the new signal, never implying the old
     quote is still open.
 13. **Lead label — won before.** Expect: a past-customer check-in about phase two, another site, or surfacing,
     never a "still moving?" follow-up.
 14. **Lead label — new.** Expect: an intro email.
-15. **BLISS INVOLVED or another rep's open job.** Expect: no draft; one line says to check with the rep of
+15. **BLISS INVOLVED or another rep's open quote or opportunity for this same project.** Expect: no draft; one line says to check with the rep of
     record first.
 16. **Intro for #2 with a Research Brief present.** Lead Finder has two fictional results, Research Brief has
     already supplied the second lead's sourced contact and Why call now signal, and the rep says "draft an intro
@@ -51,8 +51,13 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 20. **BLISS INVOLVED or another rep's job from #2.** A Lead Finder result carries either label. Expect: no
     email draft; one line says to check with the rep of record first.
 21. **Lead handoff preserves the existing type mapping.** A fictional #2 result is labeled `lost before`,
-    `won before`, `new`, or `in pipeline` and yours. Expect re-engagement, past-customer check-in, intro, or
+    `won before`, `new`, or `in pipeline (yours)`. Expect re-engagement, past-customer check-in, intro, or
     open-quote follow-up respectively, without asking the rep to choose.
 22. **Post-draft Update Logger offer.** After any email draft, expect the exact offer: "After you send it, say
     'log my update on #N' and the Update Logger will draft the QuickBase note." With no lead number, the
     offer names the customer instead of "#N".
+23. **Close - Multiple Alternative.** A fictional #2 is labeled `Close - Multiple Alternative` and the rep says
+    "draft an intro for #2". Expect: a light re-engagement around the new signal; nothing says or implies Bliss
+    lost; "intro" isn't treated as an override.
+24. **Another rep, other project.** #2 shows "[Rep] has other open quotes with this buyer" but no open record
+    for this project. Expect: the draft is written, with that one line kept for the rep.

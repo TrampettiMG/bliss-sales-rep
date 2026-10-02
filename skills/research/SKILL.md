@@ -89,16 +89,16 @@ older jobs may be quote-only. Ignore test records: a customer, quote or job name
 clearly a test ("TEST", "Test2", "Testing"). A real customer's quote entered under a test rep account still
 counts; show its rep as "test account".
 
-Before choosing `in pipeline`, `lost before`, or `won before`, read the matching opportunity and every matching
-quote. A won quote (`Order Submitted`, `Invoiced`, or `Commission Paid`) means `won before` even under an
-opportunity that still looks open. For a closed match with no won quote, use `lost before` and show an ambiguous
-raw status after the label instead of asserting "lost"; check nearby quotes if the status says an alternative
-was chosen.
+Before choosing a label, read the matching opportunity and every matching quote, and label exactly as
+`Lead Finder - QuickBase Check.md` ("Status before labeling") says: `won before` beats `in pipeline (yours)` /
+`in pipeline ([rep])`, which beat the two closed labels, `Close - Multiple Alternative` (shown exactly) and
+`lost before`. Never call `Close - Multiple Alternative` a loss; check nearby quotes if the status says an
+alternative was chosen.
 
 **First use — resolve and cache.** This skill file is public and carries no QuickBase IDs.
 
-- Resolve each table name to its table ID with the QuickBase extension's table listing, and write the
-  result into the rep's local `PROFILE.md` under a **QuickBase tables** section (table name → ID).
+- Resolve each table name to its table ID from the `quickbase-usage` skill's table list (never list all
+  tables in QuickBase: the app is too large), and write the result into the rep's local `PROFILE.md` under a **QuickBase tables** section (table name → ID).
 - Resolve the field IDs the same way, **by field label**, and cache those under the same section. Make
   **one targeted field lookup per table** — never a full field dump (Quote Pipeline has several hundred
   fields). The fields this tool needs are the opportunity's customer/jurisdiction, status, dates, owner
@@ -118,9 +118,10 @@ was chosen.
 - If the QuickBase extension isn't connected, say **"QuickBase isn't connected"** once, leave the
   cross-reference out of the brief, and never guess a status.
 
-**What the rep sees:** one label for the target — `new` (nothing on file), `in pipeline` (open opportunity
-or quote), `lost before`, or `won before` — with the QuickBase record number the rep can open. When there's an open
-quote on a project Bliss already won an earlier phase of, show both: `in pipeline · won before (2022)`.
+**What the rep sees:** one label for the target — `new` (nothing on file), `in pipeline (yours)` /
+`in pipeline ([rep])` (open opportunity or quote), `Close - Multiple Alternative`, `lost before`, or `won
+before` — with the QuickBase record number the rep can open. When there's also an open quote on a project
+Bliss already won an earlier phase of, the label stays `won before` and one more line names the open quote.
 
 **Bliss already involved.** Public records sometimes name Bliss's own deal — a document that names "Bliss
 Products" or "Play and Park Structures" (often as the distributor of a listed playground or shelter). When
@@ -215,7 +216,9 @@ The Daily run (see **Daily run** in CLAUDE.md) asks for a short contact card on 
 a full brief. For each lead:
 
 - **Skip** any lead the Lead Finder flagged to check with another rep first (`BLISS INVOLVED`, or another
-  rep's open quotes with that buyer): one line, "[Project]: check with [rep] first," and no card.
+  rep's open quote or opportunity for this same project): one line, "[Project]: check with [rep] first," and
+  no card. If no rep is named (a `BLISS INVOLVED` lead from a public document), say "check with the rep of
+  record first."
 - Use the contact finder rules above (F6) exactly: public-role contacts only, every item sourced, **never
   guess or construct an email**, no LinkedIn scraping. Pick the one best contact for the lead (parks
   director or purchasing for a city or county, facilities for a school district, the owner's role for a
@@ -228,7 +231,7 @@ a full brief. For each lead:
 - No contact found: one line, "#N [Project]: no public contact found — [the page you checked]."
 - **Save to the lead board:** put the contact in `Contact` (name, title) and fill `Phone`, `Email`,
   `Website` and `Contact Source`, **only where those cells are blank**. Never overwrite what the rep typed.
-- End the section with one line: "Say 'research #N' for the full brief, or 'draft an intro for #N'." Leave
+- End the section with one line: "Say 'research #N' for the full brief, or 'draft an email for #N'." Leave
   it out when every lead was skipped.
 
 ## Output shape
@@ -238,7 +241,8 @@ One page, in this order:
 - **Header** — name, title/role or type, organization, and any public contact info found (never inferred or
   guessed).
 - **QuickBase cross-reference** — for a municipality/agency or named project, the one label (`BLISS
-  INVOLVED` first when it applies, then `new` / `in pipeline` / `lost before` / `won before`) with the
+  INVOLVED` first when it applies, then `new` / `in pipeline (yours)` / `in pipeline ([rep])` / `Close -
+  Multiple Alternative` / `lost before` / `won before`) with the
   record number. If QuickBase isn't connected, this is just the single "QuickBase isn't connected" line.
 - **Bliss history with this buyer** — up to 8 matching quotes/bids, newest first, then one factual pattern
   line. If QuickBase isn't connected, include its one-line skip notice.

@@ -12,3 +12,7 @@ private/
 
 # Internal build-process notes, not something reps need to see.
 HANDOFF.md
+
+# Rep lead boards must never be committed.
+lead-board.csv
+lead-board.xlsx

@@ -28,6 +28,6 @@ isn't set up, one plain sentence and stop. If a query would pull too much from t
 narrows or delegates to a subagent rather than dumping raw data. Errors come back as one plain sentence, no
 stack traces, no field IDs shown to the rep.
 
-7. **Quote-only job from Lead Finder.** A Lead Finder `lost before` or `in pipeline` line supplies a quote
+7. **Quote-only job from Lead Finder.** A Lead Finder `lost before`, `Close - Multiple Alternative` or `in pipeline (yours)` line supplies a quote
    number for a fictional older job with no opportunity. Expect: Quote Details looks up the quote directly,
    shows its status, total, and line items, and does not invent an opportunity.
