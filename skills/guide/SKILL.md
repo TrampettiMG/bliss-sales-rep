@@ -65,6 +65,7 @@ sheet shows (step 4 for QuickBase, step 6 for lead sources). Never use it or put
 | Counties that aren't yours | The lead-sources key isn't your own | Ask your trainer for your own key | Say "check my setup" |
 | QuickBase tools say they're unavailable | The QuickBase extension isn't installed, or this chat started before it was | Setup sheet step 4, then start a new chat | "check my pipeline" shows your opportunities |
 | "One QuickBase setup file from your trainer is missing" | The QuickBase setup file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
+| Your trainer sent a new QuickBase setup file | The old one is still installed | In the Claude app: Settings → Capabilities → Skills, remove quickbase-usage, upload the new file, then start a new chat | Say "check my setup" |
 | The Lead Finder can't download PDFs | Network access for code execution is off | Setup sheet step 3 | Run the Lead Finder again |
 | Your daily run didn't show up | The Claude app was closed at that time | Open the app (it catches up) | Say "what's scheduled?": you see the Bliss check-ins |
 | A check-in is turned off | It was switched off | Say "turn my check-ins back on" | Say "what's scheduled?" |
@@ -84,7 +85,9 @@ When the rep says "check my setup", or the weekly Setup check runs it, check the
 order. Change nothing.
 
 1. **Lead-sources connection:** the `my_sources`, `read_source` and `lead_scan` tools are available, and
-   `my_sources` lists counties (not "Your territory isn't set up yet").
+   `my_sources` lists counties (not "Your territory isn't set up yet"). When QuickBase is connected, also
+   compare: if none of the `my_sources` counties' states appear in the rep's QuickBase county assignments
+   (following the `quickbase-usage` skill), that's the "Counties that aren't yours" problem.
 2. **QuickBase connection:** its tools are available and one small read works: look the rep up by the
    `QuickBase Name` line in the profile, following the `quickbase-usage` skill (never guess tables or fields).
    A blank QuickBase Name is the profile problem in step 4 (skip this read). A lookup that finds no active

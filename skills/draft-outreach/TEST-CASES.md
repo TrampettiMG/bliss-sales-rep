@@ -80,3 +80,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     question about it, never "still moving?"
 30. **Reference phrasing.** A brief lists a fictional similar job. Expect: "[Buyer] chose Bliss for [products]
     in [year]"; never "we've done," "we did," "our work at," "completed," or "installed."
+31. **No borrowed history.** A re-engagement email for a fictional buyer whose past bid was under another rep.
+    Expect: no "we connected," "we spoke" or "following up on our call"; the old bid is left out or named only
+    as "Bliss bid on [project] in [month]."
+32. **Recipient source.** Any email. Expect: one line under the draft saying where the recipient came from;
+    `[Name]` when no tool found one.

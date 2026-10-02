@@ -114,6 +114,9 @@ review and send/say themselves.
    Keep the existing no-write rule and name-only subject rule.
 4. **Draft, matched to type:**
    **Rules for every email:**
+   - **Never claim an interaction the rep didn't have.** No "we connected," "we spoke," "following up on our
+     call" unless the rep says it happened. A past quote under another rep is mentioned at most as "Bliss bid
+     on [project] in [month]," and usually not at all: the email is about the new signal.
    - **Exactly one question in the body.** One ask, phrased as one question; no second "and who's the
      right person?" or "happy to do a call whenever."
    - **Department mailbox** (purchasing@, parks@, info@ or another shared address, and no named contact
@@ -153,7 +156,8 @@ review and send/say themselves.
    tone, not the facts included.
 5. **Hand it back as plain, paste-ready text.** For an email, always print the full subject line and the
    full body in the reply itself, then any notes below them. A reply with a subject and no body is never
-   acceptable. For a call script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
+   acceptable. Under the draft, say in one line where the recipient came from (the Research Brief contact,
+   the QuickBase record, or a public page with its link); a recipient no tool found becomes `[Name]`. For a call script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
    the Update Logger will draft the QuickBase note." Use the lead's number when the draft came from a Lead
    Finder result; otherwise use the customer's name ("log my update on Cedar Grove Parks").
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.

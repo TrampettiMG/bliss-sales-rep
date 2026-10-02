@@ -105,7 +105,7 @@ across.
 Build the board in code execution with a spreadsheet library (openpyxl is the usual one) and write the
 **whole** board each run: header row, then one row per lead, plain text values, no formulas, merged cells, or
 formatting tricks — so the rep can open it in Excel or Google Sheets, edit any cell, and paste rows wherever
-they're going. Refresh `Last Checked` only on rows you actually checked this run, using the same session date.
+they're going. Refresh `Last Checked` only on rows you actually checked this run, using the same session date. Any row this run changes (a stage move, a Status move such as `new` → `watching`) counts as checked: refresh its Last Checked too.
 Before you tell the rep anything is saved, **read the file back**, confirm the row count, and check the rows
 you changed are the ones you wrote. If the readback doesn't match, say the save didn't fully work — never
 claim a save you haven't confirmed.

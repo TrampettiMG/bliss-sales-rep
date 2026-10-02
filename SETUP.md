@@ -48,7 +48,10 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see the registry connector connected. Lead Finder needs it: without it, Lead Finder says so and stops.
 
 7. Skills
-   Create a Cowork project named Bliss Sales Rep. Drag the private QuickBase file from step 5 into the project. Then, in its message box, paste:
+   Create a Cowork project named Bliss Sales Rep. Drag the private QuickBase file from step 5 into the project.
+   (When your trainer later sends a new version of that file: Settings → Capabilities → Skills, remove
+   quickbase-usage, upload the new file, then start a new chat. Dragging it into the project again doesn't
+   replace the installed one.) Then, in its message box, paste:
 
    ```
    Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md
