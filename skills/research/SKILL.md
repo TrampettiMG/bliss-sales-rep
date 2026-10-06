@@ -188,8 +188,8 @@ matching buyer history exists, say so plainly.
 that match all three filters: the same product categories as the lead's scope from
 the quote line items; the same buyer type; and a total inside the size window above. Open the section with:
 "amounts are Grand Total incl. tax, as stored." If the lead has no known budget, skip the size filter and say so
-in this section. Look at won jobs first
-and add still-open quotes only if fewer than 5 match. If nothing matches all three filters, you may list up
+in this section. Look at won jobs first and add still-open quotes only if fewer than 5 match, with or without a
+known budget. If nothing matches all three filters, you may list up
 to 3 near misses (right size and buyer type, but only some of the product categories), each labeled "near
 miss: [what differs]"; never present a near miss as a match. Two limits to say plainly when they apply:
 QuickBase files site furnishings under play equipment, so a job only counts as a playground when it has
@@ -276,6 +276,9 @@ a full brief. For each lead:
 - **The card, one block per lead:** "#N [Project] · [Buyer]", then: who to call (name, title) · phone ·
   email (only if published) · website · purchasing or bid page link (if found) · one "Why call now" line from
   the lead itself. Each detail carries its source link. A detail not found is left out, not guessed.
+- A card carries the brief's stop lines: for a lead outside the rep's counties, the territory sentence above the
+  card; for a lead the sources show awarded, under contract, built, partly built or not in budget, the matching stop
+  line above the card. Never drop these because it's card mode.
 - No contact found: one line, "#N [Project]: no public contact found — [the page you checked]."
 - **Save to the lead board:** put the contact in `Contact` (name, title) and fill `Phone`, `Email`,
   `Website` and `Contact Source`, **only where those cells are blank**. Never overwrite what the rep typed.
@@ -299,7 +302,9 @@ Keep it tight, in this order:
     if found. A stage read only from a column position is "budgeted (column; not confirmed)". Never silently overwrite
     the Lead Finder stage; show both. A standing contract held by several vendors is a way to buy, not an award: put it
     on the Procurement path line, not here. For partly built, use: "The brief shows [built part] built ([source]);
-    [other part] isn't confirmed. Want an email about [other part] instead?"
+    [other part] isn't confirmed. Want an email about [other part] instead?" A "not in budget (source)" finding makes
+    the outreach stop line: "The brief shows this isn't in the budget ([source]). Want an email about [another open
+    item in the brief] instead?" The Research Brief and Call Prep still run.
   - Procurement path: open bid / co-op (name) / standing contract ([vendors], through [year], [source]) / sole source / not found.
   - Product fit, as the source states it.
 - **QuickBase cross-reference** — for a municipality/agency or named project, the one label (`BLISS

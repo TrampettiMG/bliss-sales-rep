@@ -69,12 +69,18 @@ them.
   - The brief or Lead Finder shows `BLISS INVOLVED` or another rep's open quote or opportunity for this same
     project: check with the rep of record first. Call Prep still runs without the Opener and The ask, and the
     note ends: "Opener and ask held until you've checked."
-  - The brief's Stage check shows it awarded to another vendor, under contract with another vendor, or built:
-    "The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source])." If only part is
-    built: "The brief shows [built part] built ([source]); [other part] isn't confirmed." Call Prep still runs;
-    on an awarded lead, the Opener and The ask are about the open item the stop line names, and say which. On a
-    partly built lead, they are about [other part]. An award or match on the rep's own record is "This one is
-    yours." then route by label.
+  - The brief's Stage check shows it awarded to another vendor: "The brief shows this awarded to [vendors] on [date, or
+    'date not stated'] ([source])."
+    If it shows this under contract with another vendor: "The brief shows this under contract with [vendor] on [date,
+    or 'date not stated'] ([source])."
+    If it shows this built: "The brief shows this built ([source])."
+    If only part is built: "The brief shows [built part] built ([source]); [other part] isn't confirmed."
+    If it shows this isn't in the budget: "The brief shows this isn't in the budget ([source])."
+    "Under contract with another vendor" means a project-specific contract naming the selected vendor. A standing,
+    on-demand, annual, co-op or other multi-vendor contract is a way to buy, not an award: no stop.
+    An award or match on the rep's own record is "This one is yours." then route by label.
+    Call Prep still runs; on an awarded lead, the Opener and The ask are about the open item the stop line names, and
+    say which. On a partly built lead, they are about [other part].
 - **Opener** — one line to start the call, tied to one sourced fact from the brief (a budget line, a meeting
   item, a bid date). It may reuse the brief's suggested opener. Never a fact the brief doesn't carry.
 - **Who you're calling** — contact name, role, and source from the Research Brief's Contacts, plus the

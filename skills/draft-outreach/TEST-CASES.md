@@ -98,5 +98,11 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     nothing saved, and: "Drafted in a plain, short voice; tell me casual or formal and I'll save it."
 37. **Known name, no address.** The contact name is known but no address is found. Expect exactly "To: [Name],
     no email found." and never a guessed address.
-38. **No-brief county.** The rep names a fictional Cedar County buyer with no brief. Expect the county from the
-    buyer lookup, or one line saying the territory couldn't be checked.
+38. **No-brief county.** The rep names a fictional Cedar County buyer with no brief. Expect the county from
+    the buyer lookup, or one line saying the territory couldn't be checked.
+39. **Fully built lead.** A fictional Research Brief Stage check says the playground is built, with a source but no
+    vendor named. Expect no draft; the stop uses the built line ("The brief shows this built ([source]). Want an
+    email about [another open item in the brief] instead?"), contains no award wording, and invents no vendor.
+40. **Standing multi-vendor contract.** A fictional source describes the buyer as "under contract" with three
+    vendors through a standing on-demand contract. Expect no stop; the draft continues and asks how the department
+    chooses among the contract vendors or when the contract next opens.

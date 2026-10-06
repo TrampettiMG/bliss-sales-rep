@@ -59,7 +59,7 @@ whole table. Return only the matching rows (up to 3) — opp #, name, status, cr
 2. Lines per quote: the line-items recipe above (`{14.EX.<quote #>}`).
 Link each quote: `…/table/bhp495xeb/action/dr?rid=<quote #>`.
 
-**Find the customer id from a name** — Customers `bgr44yuh9`: `query_records {where: "{6.CT.'<distinctive name>'}AND{116.EX.'<ST>'}", select: ["3","6","68","115","116"], max_records: 10}`; 3 is the id for `{179.EX.<id>}`. Several records: take the governing entity, and name the record used in the brief.
+**Find the customer id from a name** — Customers `bgr44yuh9`: `query_records {table_id: "bgr44yuh9", where: "{6.CT.'<distinctive name>'}AND{116.EX.'<ST>'}", select: ["3","6","68","115","116"], max_records: 10}`; 3 is the id for `{179.EX.<id>}`. Several records: take the governing entity, and name the record used in the brief.
 
 ## "Past customers with nothing open" (Pipeline Check check-in list)
 
@@ -139,14 +139,14 @@ On a non-Lost status a blank 210 is normal; say nothing. On a Lost row read 210,
   A real customer's quote under a test rep (851 name contains "TEST") stays in buyer history; show
   the rep as "test account". (Rep *reports* still exclude test reps entirely.)
 - **Reason lost = 210 "Reason(s) for Loss"** (populated on Lost quotes). 807 "Bid Lost - Reason" is bid notes
-  only, mostly empty; select both, show whichever has text.
+  only, mostly empty. On a `Lost - Close Quote` row, show 210 Reason(s) for Loss when it has text; if 210 is blank, show 807 Bid Lost - Reason; write "no reason on record" only when both are blank. Any narrower pull of a Lost row re-selects both.
 - 443 Cooperative Contract ("N/A" or a contract name; blank before ~2022). 149 Bid Type (Bid / GC Quote).
   851 "Sales Rep 1" = rep name directly (no join). 73 Grand Total (incl. tax; often 0 on closed alternatives).
 - Opportunity close reason (Opp 104/106) is a picklist link/flag, not the reason text — don't use it.
 - Cost: ~2.5K tokens for a small buyer; a big buyer (25+ quotes) ~7K — keep max_records 25.
 
 **Product categories for a quote** — Quote Lines `bhq88xjum`
-- select `[14,156,134,19]`, where `{14.EX.<quote #>}AND{35.EX.false}AND{40.EX.false}` (drops vendor notes and
+- select `[14,156,134,19,8]`, where `{14.EX.<quote #>}AND{35.EX.false}AND{40.EX.false}` (drops vendor notes and
   freight). For many quotes: `({14.EX.a}OR{14.EX.b}…)` in chunks of ≤30.
 - **156 Product Type** has exactly 8 values: Play Equipment, Shade, Surfacing, Mulch, Shelter, Water, Labor,
   Miscellaneous. Map: Play Equipment → play; Shade → shade; Surfacing + Mulch → surfacing; Shelter → shelters;
@@ -171,17 +171,17 @@ On a non-Lost status a blank 210 is normal; say nothing. On a Lost row read 210,
 
 Size window: half to double the Bliss-relevant scope line if the source states one, otherwise the first-year amount of a multi-year or recurring line, otherwise the whole project budget; name which one you used. A line spread over years where the whole line is the scope: use the whole line. Approved against requested: use approved and say so. Two lines: use the larger and say so.
 
-- a) QP select `[3,179,73,86,191]`, where `{191.OAF.'<today − 24 months>'}AND{73.GTE.<0.5×budget>}AND{73.LTE.<2×budget>}AND({86.EX.'Order Submitted'}OR{86.EX.'Invoiced'}OR{86.EX.'Commission Paid'})`, orderBy `[{fieldId:191,order:DESC}]`, max 150. **Won-only first**
+- a) QP select `[3,179,73,86,191]`, where `{179.XEX.<lead customer id>}AND{191.OAF.'<today − 24 months>'}AND{73.GTE.<0.5×budget>}AND{73.LTE.<2×budget>}AND({86.EX.'Order Submitted'}OR{86.EX.'Invoiced'}OR{86.EX.'Commission Paid'})`, orderBy `[{fieldId:191,order:DESC}]`, max 150. **Won-only first**
   (about 100 rows for a mid-size window); add `{86.EX.'Quoted to Customer'}` only if fewer than 5 matches come back. Widening rows use fid 1 (`{1.OAF.'<today − 24 months>'}`), show fid 1 labelled "quoted", and label each "open quote"; an open-quote row is never a reference or proof line.
   **Loaded directly, 150 rows cost ~20K tokens** — in the main agent use max 60 (select only `[3,179,73,191]`),
   or hand steps a–c to a subagent that returns just the ≤5 survivors.
-  Exclude the lead's own buyer (`{179.XEX.<id>}`). Large results save to a file — tally with a script, don't
-  load them. Sort the won-only pull on Date Order Submitted (191), newest first, filter the 24-month window on 191, and keep the first 30 that pass the size and buyer-type filters. **No budget known:** replace the 73 range with `{73.GTE.50000}` (skips parts / small orders, which otherwise fill all 60 slots within ~3 months), keep won-only, last 24 months, max 60. Always state the date span the returned rows actually cover.
+  Large results save to a file — tally with a script, don't
+  load them. Sort the won-only pull on Date Order Submitted (191), newest first, filter the 24-month window on 191, and keep the first 30 that pass the size and buyer-type filters. **No budget known:** replace the 73 range with `{73.GTE.50000}` (skips parts / small orders, which otherwise fill all 60 slots within ~3 months), keep the lead-customer clause, last 24 months, max 60; the open-quote widening still applies if fewer than 5 won matches. Always state the date span the returned rows actually cover.
 - **Hard cap: 30 candidates reach step c** — after step b, keep the 30 most recent (won first) and stop.
 - b) Customers select `[3,68]`, where `(≤46 {3.EX.id} ORs)AND(<buyer-type set ORs>)` — chunk to stay under the
   **HTTP 413 "Too many criteria" limit (~50 criteria per where)**. Blank buyer type: lead's buyer blank: match candidates on product and size and drop names that look like a contractor or church; lead's buyer typed: drop blank-type candidates.
-- c) QL select `[14]`, where `(≤30 {14.EX.q} ORs)AND{156.EX.'<category>'}AND{35.EX.false}` per required
-  category, intersecting as you go (e.g. Shade, then Play Equipment on the survivors).
+- c) QL select `[14,156,19,8]`, where `(≤30 {14.EX.q} ORs)AND{156.EX.'<category>'}AND{35.EX.false}` per required
+  category, intersecting as you go (e.g. Shade, then Play Equipment on the survivors). Apply the equipment test to every survivor before counting it as play.
 - Then read `[3,1,191,44,171,73,86,851,432]` for the ≤5 survivors to present them (191 = the order date shown; 432 = the state shown; blank means "state not recorded").
 
 **Quote terms (deadlines in the rep's own quote)** — Quote Lines `bhq88xjum`
@@ -190,9 +190,9 @@ Size window: half to double the Bliss-relevant scope line if the source states o
   characters. Report the phrase and date exactly; don't compute a new date.
 
 **Past customers nearby** (1 call, ~1.5K tokens)
-- QP select `[3,191,44,171,73,851,431,432,179]`, where `{431.EX.'<county>'}AND{432.EX.'<ST>'}AND
+- QP select `[3,191,44,171,73,851,431,432,179]`, where `{431.SW.'<county base name>'}AND{432.EX.'<ST>'}AND
   ({86.EX.'Order Submitted'}OR{86.EX.'Invoiced'}OR{86.EX.'Commission Paid'})AND{179.XEX.<own id>}`,
-  orderBy `[{fieldId:191,order:DESC}]`, max 15. When the county yields fewer than 3, keep the county's rows and add same-state rows up to 5, labelled "same state".
+  orderBy `[{fieldId:191,order:DESC}]`, max 15. If fewer than 3 county rows survive the customer-type and equipment filters, rerun the same query with the county clause removed (`{432.EX.'<ST>'}` only), same select, orderBy and max_records; skip rows already kept and add rows up to 5 in all, each labelled "same state".
 - Then one Customers call `select [3,68] where (<the returned 179 ids>)` to drop Contractor (and Architect /
   Landscape Company) customers, and one Quote Lines call `select [14,156,19,8]` for the survivors' product categories (same rules as
   above). Apply the equipment test to every survivor. Keep at most 2 jobs per customer. Test reps are excluded; say so in the opening line.
