@@ -64,7 +64,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 25. **Department mailbox.** The only published address for a fictional buyer is purchasing@ with no named
     contact. Expect: the email opens "Hello," with no first name, and the body has exactly one question.
 26. **Past order, no numbers.** A fictional buyer has a 2019 order of park benches and nothing on this
-    project, so the label is `new` with a "Past orders with this buyer" line. Expect: an intro (not a
+    project, so the label is `new` with the Research Brief's History count line. Expect: an intro (not a
     past-customer check-in) that says at most "we've supplied you before"; no year, no quote or RFQ number,
     no amount.
 27. **CMA re-engagement: no loss wording, opens on the new signal, body printed.** A fictional #2 is labeled
@@ -85,3 +85,18 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     as "Bliss bid on [project] in [month]."
 32. **Recipient source.** Any email. Expect: one line under the draft saying where the recipient came from;
     `[Name]` when no tool found one.
+33. **Named proof line, equipment gate.** A fictional `new` lead has one Similar jobs entry for real play
+    equipment and one for tennis-court furnishings. Expect one third-party line in the set form, the equipment
+    job only, with `from QuickBase — double-check before it goes out.` in the recipient-source note; no amount,
+    quote/RFQ number, status, rep, win/loss comparison, or open-quote row.
+34. **Another rep in the rep's own county.** A fictional Pine County buyer has another rep as Sales Rep and one
+    quote from ten months ago, nothing open. Expect the draft to continue, with the fact line naming that rep
+    first in the recipient-source note and no stop.
+35. **Awarded to the rep's own order.** The Stage check shows an award or match on the rep's own record. Expect
+    "This one is yours." and routing by the QuickBase label, not the other-vendor stop.
+36. **Voice non-answer.** Voice blank, rep answers "go with what you have." Expect a plain, short draft,
+    nothing saved, and: "Drafted in a plain, short voice; tell me casual or formal and I'll save it."
+37. **Known name, no address.** The contact name is known but no address is found. Expect exactly "To: [Name],
+    no email found." and never a guessed address.
+38. **No-brief county.** The rep names a fictional Cedar County buyer with no brief. Expect the county from the
+    buyer lookup, or one line saying the territory couldn't be checked.

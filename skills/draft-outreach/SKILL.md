@@ -25,8 +25,10 @@ use `prep-call` instead.
 
 Check `PROFILE.md` for a **Voice** line. If there isn't one yet, ask the rep one short question **before
 drafting anything** — not after: *"How do you like to sound in emails/calls — casual and short, or more
-formal?"* Wait for their answer, save it as a **Voice** line in `PROFILE.md`, then draft using it — the
-first draft should reflect their voice too, not just future ones. If they later say a draft doesn't sound
+formal?"* Wait for the answer. If it's a voice, save it as a **Voice** line in `PROFILE.md` and draft
+using it — the first draft should reflect their voice too, not just future ones. If it isn't a voice (e.g.
+"go with what you have"), draft plain and short, save nothing, and add one line under the draft: "Drafted
+in a plain, short voice; tell me casual or formal and I'll save it." If they later say a draft doesn't sound
 like them, update the Voice line the same way.
 
 ## What this is not
@@ -52,13 +54,14 @@ review and send/say themselves.
    and record number. Do not ask the rep to repeat it. If a `research` brief or `prep-call` brief is already
    in the conversation, use its sourced contact in the To line or greeting and its Why call now signal as the
    reason for writing. Add at most one proof line from Similar jobs elsewhere or Past customers nearby, only a
-   job that brief lists and never a dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Phrase a reference as "[Buyer] chose Bliss for [products] in [year]"; never "we've done," "we did," "our work at," "completed," or "installed." Call Prep's Open items feed a follow-up. Never add a fact
+   job that brief lists, passes the Research Brief's equipment test, and has no dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Phrase a third-party reference as "[Buyer] chose Bliss for [products] in [year]"; never "we've done," "we did," "our work at," "completed," or "installed." Call Prep's Open items feed a follow-up. Never add a fact
    those tools did not carry.
    **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
    read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill
    for the query. Use the label it gives to choose the type, exactly as the Lead Finder label rules below say
    (including the `BLISS INVOLVED` / other rep's job stop). Offer: "Want the Research Brief first for a
-   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context.
+   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context. Take the county from that
+   lookup (Customers 115 and 116). If it gives none, say once that you couldn't check the territory.
    **For "draft a follow-up after my call,"** use the Call Prep already in the conversation plus what the rep
    says happened; write one clear next step.
    **Then gather what's specific to this prospect:** who they are, what's known about them or their
@@ -81,12 +84,15 @@ review and send/say themselves.
    if QuickBase isn't connected, carry on as above. If a quote-only match is found, use its quote/job details
    without inventing an opportunity. Read only — never write to QuickBase.
    **Stops first.** Before choosing a type, check these, one line each, and don't draft:
-   - The lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This one's in [county], which
-     isn't one of your counties — check with your manager before reaching out." Skip this check while that
-     line is blank or still loading.
-   - The Research Brief's Stage check shows it awarded to another vendor, under contract, or built: "The
-     brief shows this awarded to [vendor] on [date] ([source]). Want an email about [another open item in the
-     brief] instead?" (or "built" / "under contract" wording).
+   - If QuickBase names a rep for the county: "This one's in [county], which isn't one of your counties.
+     QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." If it names none:
+     "This one's in [county], which isn't one of your counties. Check with your manager before reaching out."
+     Skip this check while that line is blank or still loading.
+   - The Research Brief's Stage check shows it awarded to another vendor, under contract with another vendor,
+     or built: "The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
+     email about [another open item in the brief] instead?" If only part is built: "The brief shows [built part]
+     built ([source]); [other part] isn't confirmed. Want an email about [other part] instead?" Don't draft
+     until the rep answers. An award or match on the rep's own record is "This one is yours." then route by label.
    - `BLISS INVOLVED` (a public document that names Bliss, or Play and Park Structures, in connection with
      this lead's project), `in pipeline ([another rep])`, or any label followed by `open quote: [another
      rep]` (another rep's open record for this same project, whatever the label) → say in one line to check
@@ -98,8 +104,9 @@ review and send/say themselves.
      this buyer." / "Past quotes for this buyer were under [rep].") and carry on.
    **When a Lead Finder result arrives with a QuickBase label, use it to choose the type without asking.**
    The label describes **this lead's project or site**: `in pipeline`, `won before`, `lost before` and
-   `Close - Multiple Alternative` apply only to a quote or opportunity for this project or site; anything
-   else is `new`, sometimes followed by "Past orders with this buyer: N, last [year], [categories]."
+   `Close - Multiple Alternative` apply only to a quote or opportunity for this project or site; anything else
+   is `new`; use the Lead Finder's "Past orders with this buyer" line or the Research Brief's History count line,
+   whichever is in the conversation.
    `in pipeline (yours)` → open-quote follow-up referencing the new signal; `lost before` → re-engagement
    around the new signal, never implying the old quote is open; `Close - Multiple Alternative` → the same
    light re-engagement around the new signal, never saying or implying Bliss lost (see Re-engagement email
@@ -108,10 +115,11 @@ review and send/say themselves.
    check-in around that budget line: name the line and ask one question about it (who's leading it, or
    when it starts); `new` → intro.
    A `new` lead with past orders gets a past-customer check-in only when a past order was real play, splash
-   or shade equipment (not parts or furnishings) within the last 5 years; otherwise it's an intro that may
-   say "we've supplied [buyer] before," with no year, amount or number. "Draft an intro for #N" still
+   or shade equipment (the Research Brief's equipment test; not parts or furnishings) within the last 5 years;
+   otherwise it's an intro that may say "we've supplied [buyer] before," with no year, amount or number. "Draft an intro for #N" still
    follows the label (the word "intro" isn't an override); the rep overrides by naming a different type.
-   Keep the existing no-write rule and name-only subject rule.
+   A standing contract is a procurement path, not an awarded stop. Ask how the department chooses among its
+   contract vendors, or when the contract next opens. Keep the existing no-write rule and name-only subject rule.
 4. **Draft, matched to type:**
    **Rules for every email:**
    - **Never claim an interaction the rep didn't have.** No "we connected," "we spoke," "following up on our
@@ -121,9 +129,10 @@ review and send/say themselves.
      right person?" or "happy to do a call whenever."
    - **Department mailbox** (purchasing@, parks@, info@ or another shared address, and no named contact
      for it): open with "Hello," and no first name.
-   - **Never a quote or RFQ number, or an amount,** in the subject or body. A past order is named at most
-     as "we've supplied you before" (or "[Buyer] chose Bliss for [products] in [year]" for a real equipment
-     order), never with another customer's name attached to this buyer.
+   - **Never a quote or RFQ number, or an amount,** in the subject or body. A past order for the recipient is
+     named at most as "we've supplied you before." A third-party proof line may say "[Buyer] chose Bliss for
+     [products] in [year]" only for a real equipment order that passes the Research Brief's equipment test;
+     never include status, rep, win/loss comparison, or an open-quote row.
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
      a site visit, a quick reply) — not a full pitch. Keep it a few short paragraphs at most.
    - **Follow-up email** — references the specific prior interaction the rep described (a call, a meeting,
@@ -157,7 +166,10 @@ review and send/say themselves.
 5. **Hand it back as plain, paste-ready text.** For an email, always print the full subject line and the
    full body in the reply itself, then any notes below them. A reply with a subject and no body is never
    acceptable. Under the draft, say in one line where the recipient came from (the Research Brief contact,
-   the QuickBase record, or a public page with its link); a recipient no tool found becomes `[Name]`. For a call script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
+   the QuickBase record, or a public page with its link). A recipient no tool found becomes `[Name]`. Known
+   name, no address: "To: [Name], no email found." Never a guessed address. If the other-rep fact line fires, put it first in this recipient-source note and
+   name the rep. If a third-party proof line is used, add " from QuickBase — double-check before it goes out."
+   at the end of this note. For a call script, a short bulleted list. After an email draft, add: "After you send it, say 'log my update on #N' and
    the Update Logger will draft the QuickBase note." Use the lead's number when the draft came from a Lead
    Finder result; otherwise use the customer's name ("log my update on Cedar Grove Parks").
 6. If the rep asks for a revision (shorter, different tone, different ask), redraft rather than patching.

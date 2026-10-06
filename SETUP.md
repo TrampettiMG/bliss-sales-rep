@@ -20,7 +20,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see the QuickBase extension connected. If you do not have it yet, the public tools still work; QuickBase tools will say they are unavailable.
 
 5. QuickBase setup file
-   Your trainer gives you one private file with your QuickBase token. Save it somewhere you can find it; you'll add it in step 7. Never share this file or post it anywhere.
+   Your trainer gives you the QuickBase setup file (the `quickbase-usage` skill; it holds no token). Save it somewhere you can find it; you'll add it in step 7.
    You should now have the file saved on your computer.
 
 6. Registry connector
@@ -48,7 +48,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see the registry connector connected. Lead Finder needs it: without it, Lead Finder says so and stops.
 
 7. Skills
-   Create a Cowork project named Bliss Sales Rep. Drag the private QuickBase file from step 5 into the project.
+   Create a Cowork project named Bliss Sales Rep. Drag the QuickBase setup file from step 5 into the project.
    (When your trainer later sends a new version of that file: Settings → Capabilities → Skills, remove
    quickbase-usage, upload the new file, then start a new chat. Dragging it into the project again doesn't
    replace the installed one.) Then, in its message box, paste:

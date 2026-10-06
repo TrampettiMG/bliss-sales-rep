@@ -42,8 +42,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 10. **Recipes, no discovery.** First run with the QuickBase extension connected. Expect: queries come from
     the QuickBase setup skill's recipes — no table listing, no field dump, no ID lookup step — and no ID
     printed into any repo/skill file.
-11. **QuickBase budget.** Any full brief. Expect: about 12 bounded QuickBase queries in all; run in a subagent
-    when one is available, otherwise the same bounded queries run directly.
+11. **QuickBase budget.** Any full brief. Expect: about 16 bounded QuickBase queries in all; run the QuickBase
+    queries directly, with Similar jobs step a in a subagent when one is available.
 12. **Table names only in the skill.** Any run. Expect: the brief and its sources refer to tables by name
     ("Opportunities," "Quote Pipeline"), never by a table ID — no QuickBase ID appears in the output.
 13. **Every call bounded.** Any cross-reference. Expect: every QuickBase call carries `select`, `where`, and
@@ -128,13 +128,13 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     Grand Total incl. tax, QuickBase status exactly as shown, recorded lost reason when present, co-op contract
     when present, and the rep as stored. The pattern line is factual only.
 39. **Similar jobs with all filters.** A fictional lead has a known scope and budget. Expect: at most about 30
-    candidates from the last 24 months are checked, and only up to 5 jobs matching product categories, buyer
+    candidates are checked, with the date span shown, and only up to 5 jobs matching product categories, buyer
     type, and the half-to-double budget range are shown. Totals are labeled Grand Total incl. tax, and the
     pattern line states the observed win history without advice.
 40. **Similar jobs with no budget.** A fictional lead has no known budget. Expect: the size filter is skipped
     and the Similar jobs elsewhere section says so; product-category and buyer-type filters still apply.
 41. **Nearby fallback.** A fictional lead's county has fewer than 3 other-customer wins, but the same state does. Expect:
-    up to 5 won jobs are shown from the state and the section says "fallback: same state"; the lead's own buyer
+    up to 5 won jobs are shown, with same-state rows labelled "same state"; the lead's own buyer
     is excluded. Won means only Order Submitted, Invoiced, or Commission Paid.
 42. **Other rep's history is visible.** A matching buyer has past Bliss jobs owned by another rep. Expect: the
     history and nearby sections show the rep name exactly as QuickBase stores it; they do not hide or rename it.
@@ -165,11 +165,54 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     and "awarded to Maple Play Co., [date], [source]"); outreach isn't drafted; the rep is offered another
     open item from the brief.
 50. **Label scope.** A fictional buyer has a 2014 $300 parts order and nothing on this project. Expect: `new`
-    plus one "Past orders with this buyer: 1, last 2014, [categories]" line; never `won before`.
+    plus the Research Brief History count line; never `won before`.
 51. **Search summary is not a source.** A search result names a parks director, but the linked page doesn't.
-    Expect: the detail is marked "unconfirmed (search summary)", with no link presented as proof.
+    Expect: the role is "not confirmed" with no name, phone or email in the brief, and the unopened page is named
+    in "Not checked:."
 52. **Pattern line honesty.** Five won jobs listed, no lost jobs pulled. Expect: "of the 5 shown…" wording and
     no win rate; no derived dollar math across rows.
+53. **Own county, another rep's customer.** A rep covering fictional Pine and Cedar counties researches a Pine
+    County lead whose buyer has another rep as Sales Rep and one quote from ten months ago, nothing open. Expect:
+    the one fact line naming that rep in the brief and at the top of the email's recipient-source note, and the
+    chain to carry on.
+54. **Standing contract.** Fictional Cedar County buys playground replacements through an on-demand contract held
+    by three vendors, none of them Bliss, term to 2028. Expect: the contract and its vendors on the Procurement path
+    line, no awarded stop, and an email that asks how the department chooses among its vendors.
+55. **Budget.** A buyer with 150 or more quotes. Expect: the brief to end inside about 16 queries, with anything
+    not run named in "Not checked:".
+56. **Excluded line.** A budget message lists a fictional Maple Park splash pad under "Items not included in the
+    budget" while the capital plan shows it in FY27. Expect: the Stage check shows "not in budget" with the page,
+    beside the Lead Finder stage.
+57. **Partly built.** A fictional playground is built, but its restroom is unconfirmed. Expect: the stop to name
+    the built part and offer the unconfirmed part.
+58. **Dates.** A buyer with six quotes, none ordered. Expect: "quoted Mar 2025"-style dates and no "ordered."
+59. **Test-account row.** A `$0` `Close - Multiple Alternative` under a test rep. Expect it in the "N test-account
+    entries not shown" line, outside the headline count.
+60. **No subagent tool.** The Agent tool is unavailable. Expect the QuickBase queries run directly, inside the budget.
+61. **Summary against page.** A fetch returns a summary saying the parks director led a design; the page says
+    "Designer: Studio X." Expect the designer from the page.
+62. **Agenda scope.** An agenda item names a contract, an awardee and an amount only. Expect no scope claim.
+63. **Unopened contact.** A search summary names a purchasing director with a phone number and the page won't open.
+    Expect the role as "not confirmed," with no name or phone in the brief.
+64. **Stop names the owner.** QuickBase lists Rep A for fictional Oak County. Expect the same sentence, naming
+    Rep A, in the brief and the opener/ask held line under the stop.
+65. **Parts and tennis jobs.** Past customers nearby returns a tennis-court resurfacing coded Play Equipment and
+    a replacement-parts order. Expect neither listed as play equipment.
+66. **One count.** A buyer with 12 quotes, 2 of them orders. Expect one count line.
+67. **Card against book.** The card says "$300,000 new"; the book shows $300,000 ($200,000 carried, $100,000 new).
+    Expect the correction in one line.
+68. **Lost row with a reason.** A Lost - Close Quote row whose field 210 names a competitor, pulled through a
+    narrower select. Expect the reason shown, and "no reason on record" only when 210 and 807 are both blank.
+69. **Cancelled same-site quote.** Expect `new` plus the one Cancelled line.
+70. **Page numbers.** The line is on PDF page 40, printed page 38. Expect "p. 40 (printed 38)."
+71. **Cap span.** A metro buyer whose 30 candidates cover four months. Expect the section to show that span and
+    make no "24 months" claim.
+72. **State shown.** Expect every similar-jobs line to carry a state, or say "state not recorded" when 432 is blank.
+73. **Size window and blank type.** A line spread over five years that is the whole scope; a buyer with a blank
+    type. Expect the stated rule applied and named.
+74. **Customer id by name.** The rep names a city with no id. Expect the recipe path, not an improvised search.
+75. **PDF with no shell.** WebFetch can't parse a budget PDF, no code execution. Expect a `read_source` retry, then
+    "PDF not readable here" in "Not checked:".
 
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific

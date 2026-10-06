@@ -74,8 +74,10 @@ review and send themselves.
 
 4. **Draft the content:**
    - **Value-prop one-pager** (as long as the sourced content supports, 400 words at most; scannable): a
-     short headline, 3–4 benefit bullets specific to the named prospect type (why this matters to *them*,
-     not generic marketing copy), a brief why-Bliss paragraph, and a contact block from the profile.
+     short headline, up to 4 benefit bullets, each sourced; fewer is complete, and a page with two sourced
+     bullets and placeholders elsewhere is finished. Make them specific to the named prospect type (why this
+     matters to *them*, not generic marketing copy), then add a brief why-Bliss paragraph and a contact block
+     from the profile.
    - **Bid cover letter** (standard business-letter format): addressed to the agency/point of contact if
      known, references the bid/solicitation number and project title, acknowledges each addendum by number
      if the addenda are known (e.g., from `summarize-bid`) — never guess addendum numbers — one paragraph
@@ -89,11 +91,13 @@ review and send themselves.
 
 5. **Hand it back as plain, paste-ready text** the rep can copy into an email, a document, or print
    directly. Offer a downloadable document only if the rep asks for one.
-   The reply ends with the draft, the placeholder flag (step 6) and at most one next-tool line: no
-   separate sources list, no notes to a trainer, admin or tester, and no description of how it was built.
+   The reply ends with the draft, the placeholder flag (step 6), and, after a one-pager with a lead in the
+   conversation, one line: `Say "draft an email for #N".` Otherwise nothing. No separate sources list, no notes
+   to a trainer, admin or tester, and no description of how it was built.
 
 6. **Flag placeholders clearly** at the end if any were used (e.g., "You'll want to fill in `[years in
-   business]` before sending this") — don't let a bracketed placeholder slip through unnoticed.
+   business]` before sending this") — don't let a bracketed placeholder slip through unnoticed. List each
+   placeholder by its bracket text, one per line, with no count.
 
 7. If the rep asks for a revision (shorter, different tone, different prospect type), redraft rather than
    patching — keep the same discipline about not inventing specifics.
@@ -105,12 +109,16 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
   this same project (whatever the label, including `· open quote: [rep]` after it): say in one line to check
   with the rep of record first. If the brief or the Lead Finder shows the `BLISS INVOLVED` match is your own QuickBase record
   and no other rep has an open record on this project, say "This one is yours." and carry on.
-- **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This
-  one's in [county], which isn't one of your counties — check with your manager before reaching out." Skip
-  this check while that line is blank or still loading.
-- **Awarded, under contract or built:** the Research Brief's Stage check says so: "The brief shows this
-  awarded to [vendor] on [date] ([source]). Want content about [another open item in the brief] instead?"
-  (or "built" / "under contract" wording).
+- **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This one's
+  in [county], which isn't one of your counties. QuickBase lists [rep] for it: check with [rep] or your manager
+  before reaching out." If no rep is named: "This one's in [county], which isn't one of your counties. Check
+  with your manager before reaching out." Skip this check while that line is blank or still loading.
+- **Awarded to another vendor, under contract with another vendor, or built:** the Research Brief's Stage check shows it "awarded to another vendor,
+  under contract with another vendor, or built"; say: "The brief shows this awarded to [vendors] on [date, or
+  'date not stated'] ([source]). Want content about [another open item in the brief] instead?" If only part is
+  built: "The brief shows [built part] built ([source]); [other part] isn't confirmed. Want content about
+  [other part] instead?" An award or match on the rep's own record is "This one is yours." then route by label.
+  A standing multi-vendor contract is a way to buy, not an award: no stop.
 
 ## Chained context and QuickBase proof
 
@@ -120,12 +128,14 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
 - **After Call Prep:** "make a leave-behind" means turn that Call Prep's talking points and references into
   paste-ready leave-behind content. Do not ask the rep to repeat them.
 - **When QuickBase is connected:** for a one-pager or pitch, add 2–3 reference bullets or a factual count,
-  such as "3 school playgrounds in [state] in 2026." If a Research Brief is in the conversation, use only its
-  Similar jobs elsewhere and Past customers nearby. Otherwise run just the Past customers nearby lookup (the
-  county, else the same state), kept to the prospect type; don't run the full Research Brief. Mark each
-  reference on its own line exactly: "from QuickBase — double-check before it goes out." (on every item, not
-  once for the group). Follow the `quickbase-usage` skill (it holds the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If QuickBase is not
-  connected, keep the current `[placeholder]` behavior instead of inventing proof.
+  such as "3 school playgrounds in [state] in 2026." Use won jobs only, and apply the Research Brief's equipment
+  test; a job that fails it is listed as "furnishings" or "parts", or left out. If a Research Brief is in the
+  conversation, use only its Similar jobs elsewhere and Past customers nearby. Otherwise run just the Past
+  customers nearby lookup (the county's rows, plus same-state rows up to 5 when the county has fewer than 3),
+  kept to the prospect type; don't run the full Research Brief. Mark each reference on its own line, ending with "from QuickBase — double-check before it goes
+  out." after the reference's period (on every item, not once for the group). Follow the `quickbase-usage` skill
+  (it holds the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If
+  QuickBase is not connected, keep the current `[placeholder]` behavior instead of inventing proof.
 - **Co-op claims:** if QuickBase or the Research Brief shows the buyer used a co-op, write "available through
   `[co-op]`" as a placeholder the rep fills in once they've confirmed Bliss holds that contract; don't ask a
   confirmation question. Otherwise leave the co-op out.

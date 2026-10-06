@@ -25,7 +25,7 @@ Read these saved project files at the stated step. Their repo paths remain the `
 - **`Lead Finder - Stages and Scoring.md`** (`reference/stage-ladder-and-scoring.md`) — at the **start of every run**, before staging or scoring; F1 ladder and interim F2 rubric.
 - **`Lead Finder - Lead Grading.md`** (`reference/lead-grading.md`) — as soon as `lead_scan` returns hits, before reporting them; REAL/ROUTINE definitions and edge cases.
 - **`Lead Finder - QuickBase Check.md`** (`reference/qb-cross-reference.md`) — before cross-reference; how the queries come from the setup skill's recipes, and the query rules.
-- **`Lead Finder - PDF Fallback.md`** (`reference/pdf-fallback.md`) — when `read_source` returns a scanned-PDF, large-PDF, or unreadable-PDF fallback; download/extract/page-image ladder.
+- **`Lead Finder - PDF Fallback.md`** (`reference/pdf-fallback.md`) — when `read_source` or WebFetch returns a scanned-PDF, large-PDF, unreadable-PDF, binary, "can't parse," or saved-file fallback; download/extract/page-image ladder.
 - **`Lead Finder - Search Terms.md`** (`reference/search-terms.md`) — when choosing literal `read_source` terms, judging relevance, or enriching a lead; keyword groups, query traps, and budget.
 - **`Lead Finder - Lead Board.md`** (`reference/board-reconciliation.md`) — before checking or updating the board; ownership, reconciliation, stage moves, and write verification.
 
@@ -98,7 +98,7 @@ upcoming fiscal year counts as fresh. Write the fiscal year and what it covers (
 2027") when the document shows the fiscal-year dates or the locality's fiscal year is stated; otherwise the
 label alone ("FY27 budget"). Only if a source shows no date and no fiscal year, write "date not visible —
 verify on the page." An amount from a multi-year plan table carries its span ("$2.5M, FY27–28"), never a
-single-year label.
+single-year label. The span rule also covers a carried-over amount beside new money: the digest line carries both, e.g. "$300,000 ($200,000 carried, $100,000 new)", and the span when the source shows one.
 
 ## Grade every hit before it goes any further
 
@@ -179,14 +179,14 @@ QuickBase lookup already done for that lead — no web searches — plus at most
 county. Use this form: "History: 6 quotes since 2019, 1 won (2023 shade, $48K Grand Total incl. tax), last
 closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])".
 History counts every quote for the buyer except obvious test records (a customer or job name like "TEST",
-"Test2", "Testing") — the same count the Research Brief uses. A quote under a test rep account counts, once,
-and shows its rep as "test account" ("6 quotes since 2019, 1 under a test account"); never attribute one to
-the rep. If an earlier tool in this conversation showed a different count, use the newer one and say so in
-one line. It includes the latest win and last closed status exactly as stored, and never calls `Close -
+"Test2", "Testing") — the same count the Research Brief uses. The History line reads "N quotes since [year]
+(plus M test-account entries not shown)"; the collapsed entries are not in N. A quote under a test rep account
+counts once, and shows its rep as "test account"; never attribute it to the rep. If an earlier tool in this
+conversation showed a different count, use the newer one and say so in one line. It includes the latest win and last closed status exactly as stored, and never calls `Close -
 Multiple Alternative` a loss. Nearby means the most recent project-sized won job
 for another customer in the same county: skip parts, replacement-part and small orders (Grand Total incl. tax
-under $10K, or a job name like "parts," "replacement," "hardware"). If there is none, use the same state and
-say "in [state]". Never use the lead's
+under $10K, or a job name like "parts," "replacement," "hardware"). If the county yields fewer than 3, keep
+the county's rows and add same-state rows up to 5, labelled "same state". Never use the lead's
 own buyer. If no buyer history exists, write "History: none on file." If QuickBase isn't connected, write
 "History: unavailable — QuickBase isn't connected." Keep it to one line.
 

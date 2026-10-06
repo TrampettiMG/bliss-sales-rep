@@ -19,8 +19,12 @@ signals is `find-leads`'s job.
 It never invents facts about the target. If public search comes back thin, the brief should look thin and
 say so ("Limited public information found on [target]") rather than padding with generic filler dressed up
 as research. Every finding needs a real source and, where relevant, a real date. A search result is not a
-source: open the page before you cite it. If it can't be opened, write "unconfirmed (search summary)" after
-the detail instead of a link.
+source: open the page before you cite it. A fetch tool may return a summary, not the page. Ask it for the
+exact sentence that names the person, role, awardee, scope or figure, and write only what that sentence says.
+If it can't quote one, the detail is unconfirmed and does not go in the brief. Don't widen a source: an agenda item that names a
+contract, an awardee and an amount supports those three things. What a contract covers needs a page that says
+so; fencing, bleachers and amenities are not playground scope unless it does. A negative (not an open bid, not
+a co-op) needs a source too, or the answer is "not found."
 
 ## Usage budget — most reps are on a standard/basic Claude plan
 
@@ -29,8 +33,7 @@ fetch) is counted separately, so open the pages you'll cite and not every result
 news, official site/announcements), then one or two follow-ups only on the most promising thread. Don't
 chase every tangent. If the budget runs out, present what was found and name what wasn't checked in the one
 "Not checked:" line after the opener, rather than silently stopping partway through. Bliss Library reads
-(about 6 per document) and the QuickBase sections (about 12 bounded queries for the whole brief) don't spend
-the web-search cap.
+(about 6 per document) and the QuickBase sections (about 16 bounded QuickBase queries for the whole brief) don't spend the web-search cap.
 
 ## Flow
 
@@ -50,8 +53,13 @@ the web-search cap.
    Use `read_source` for about 6 reads per document, one literal term per call and never `OR`, before spending
    web searches. These connector reads do not spend the 6–8 web-search budget. For any PDF, registry row or
    not, use `read_source` with a query first, then pages; if it returns no text, follow `Lead Finder - PDF
-   Fallback.md`. If the target is outside the rep's counties, say so in the header ("[County] isn't one of
-   your counties.", plus "QuickBase lists [rep] for this county." when its county assignments show one), then continue with
+   Fallback.md`. If WebFetch returns binary, "can't parse" or a
+   saved-file note for a PDF, run the same URL through `read_source` with a query. If the host is refused, say
+   "PDF not readable here" in the "Not checked:" line; don't use local tools unless the rep has code execution.
+   If the target is outside the rep's counties, say so in the header: "This one's in [county], which isn't one
+   of your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." When
+   no rep is named: "This one's in [county], which isn't one of your counties. Check with your manager before
+   reaching out." Then continue with
    the web flow below. If the connector is unavailable, continue with the web flow below.
    - **Person:** current role/title, organization, and any recent public professional activity (news
      mentions, public statements, project involvement) — not personal/private information.
@@ -94,8 +102,9 @@ contractors are only related notes. Search quote and opportunity names for the p
 matching city or county — never match on a park name alone. Opportunities only exist from about mid-2026, so
 older jobs may be quote-only. Count every quote for the buyer except obvious test records (a customer or job
 name "TEST", "Test2", "Testing"). A real customer's quote entered under a test rep account still counts; show
-its rep as "test account". `$0` Cancelled or Quick Close rows under a test rep collapse into one line ("N
-test-account entries not shown") and are never attributed to the rep. If a count differs from one an earlier
+its rep as "test account". Every `$0` row under a test rep collapses into the one line, whatever its status.
+Collapsed entries are not counted; they show in the Bliss history count line's "(plus T test-account entries not shown)" note. A test-account row with money in it is
+listed and labelled "test account". If a count differs from one an earlier
 tool showed in this conversation, use the newer one and say so in one line.
 
 Before choosing a label, read the matching opportunity and every matching quote, and label exactly as
@@ -106,10 +115,11 @@ alternative was chosen.
 
 **Queries.** The QuickBase IDs live in the QuickBase setup skill (`quickbase-usage`), not in this file. Use
 its recipes; they carry the table and field IDs, so there's nothing to look up first. Never list all tables
-or dump a table's fields (Quote Pipeline has several hundred). Budget: **about 12 bounded QuickBase queries**
-for the whole brief, cross-reference and history sections together. When a subagent is available, the
-QuickBase work may run in one that returns only the rows the brief needs; otherwise run the same bounded
-queries directly.
+or dump a table's fields (Quote Pipeline has several hundred). Budget: **about 16 bounded QuickBase queries**
+for the whole brief, cross-reference and history sections together. Run the QuickBase queries directly. The
+one step worth a subagent, when the session has one, is Similar jobs step a (the 60 to 150 row pull in the
+setup skill's Similar jobs recipe, step a). With no subagent tool, run it directly with max 60. A section that runs out says
+"not run (query budget)" in its "Not checked:" line.
 
 **Rules that always hold:**
 
@@ -127,8 +137,9 @@ queries directly.
 **What the rep sees:** one label for **this lead's project or site** — `in pipeline (yours)` /
 `in pipeline ([rep])` (open opportunity or quote), `Close - Multiple Alternative`, `lost before`, or `won
 before` — with the QuickBase record number the rep can open. These four apply only to a quote or opportunity for
-this project or site. Everything else is `new`, followed (when QuickBase has any) by one line "Past orders
-with this buyer: N, last [year], [categories]." When there's also an open quote on a project Bliss already
+this project or site. A Cancelled quote for this project or site is not a closed label. The label is `new`, with
+one line: "A Cancelled quote exists for this site ([year], [reason, or 'no reason on record'])." An open opportunity that can't be tied to this project by name or site is `new`, with one line naming it. Everything else
+is `new`. When there's also an open quote on a project Bliss already
 won an earlier phase of, the label stays `won before` and one more line names the open quote.
 
 **Bliss already involved.** Public records sometimes name Bliss's own deal — a public document that names
@@ -151,51 +162,58 @@ dollar math (sums, shares, or ranges across line items).
 
 **Rules for the QuickBase sections:**
 
-- **Size window** (Similar jobs): half to double the Bliss-relevant scope line if the source states one,
-  otherwise the first-year amount of a multi-year or recurring line, otherwise the whole project budget.
-  Name which one you used.
-- **Cap:** 30 candidates reach the product check: the most recent 30 left after the status, date, size and
-  buyer-type filters (won first), exactly as the setup skill's Similar jobs recipe runs them.
-- **Equipment test:** a job counts as play, splash or shade equipment only by the QuickBase setup skill's
-  product-type test (its "play" check looks at the vendor and description, because furnishings and bleachers
-  are filed as play equipment). Parts, benches, tables and bleachers don't count.
-- **Blank Customer Type:** match on product and size only, and say so.
-- **Nearby fallback:** go to the same state when the county yields fewer than 3.
-- **Dates:** the date shown is the order date, labelled ("ordered Mar 2025").
+- **Size window and blank Customer Type:** use the QuickBase setup skill's size-window and blank-type rules here; they cover
+  a line spread over years where the whole line is the scope, approved against requested, two lines, and blank buyer type.
+- **Cap:** sort the won-only pull on Date Order Submitted (191), newest first, filter the 24-month window on 191,
+  and keep the first 30 that pass the size and buyer-type filters. The section shows the date span of those 30.
+- **Equipment test:** A job is listed as play, splash or shade only if it passes the equipment test;
+  otherwise list it as 'furnishings' or 'parts', or leave it out. The equipment test itself lives in the
+  QuickBase setup skill.
+- **Nearby fallback:** when the county yields fewer than 3, keep the county's rows and add same-state rows up
+  to 5, labelled "same state".
+- **Dates:** show 191 labelled "ordered" when the row has one, otherwise Date Created (1) labelled "quoted".
 
 **Bliss history with this buyer** — for the matched buyer entity, show up to 8 Bliss quotes or bids, newest
-first. Use the same distinctive-name, own-department, quote-only, and test-record rules as F5. Each line
-has: order date · job name · total (Grand Total incl. tax) · status exactly as shown · recorded reason lost, if
-any · co-op contract, if any · rep. Open the section with the buyer's total count (the same count the Lead
-Finder's History line uses), e.g. "12 quotes since 2019; the 8 newest shown." End with one factual pattern
-line, such as "Of the 8 shown: 2 won, last win 2023." If QuickBase isn't connected, say: "Bliss history with this buyer: QuickBase isn't connected." If no
+first. Use the same distinctive-name, own-department, quote-only, and test-record rules as F5. Open the section
+with: "N quotes since [year], M of them orders (Order Submitted, Invoiced or Commission Paid; last [year]: [categories]); the K newest shown." Amounts are Grand Total incl. tax, as stored.
+Each line has: ordered or quoted date · job name · total ·
+status exactly as shown · recorded reason lost, if any · co-op contract, if any · rep. A job is listed as play,
+splash or shade only if it passes the equipment test; otherwise list it as 'furnishings' or 'parts', or leave it
+out. Collapsed test-account entries are not counted in N; they appear only in the "(plus T test-account entries
+not shown)" note. Add "(plus T test-account entries not shown)" when applicable. End with one factual pattern line, such as "Of the 8 shown:
+2 won, last win 2023." If QuickBase isn't connected, say: "Bliss history with this buyer: QuickBase isn't connected." If no
 matching buyer history exists, say so plainly.
 
-**Similar jobs elsewhere** — check at most 30 candidates (a hard cap, per the rules above) from the last 24
-months, then show up to 5 that match all three filters: the same product categories as the lead's scope from
-the quote line items; the same buyer type; and a total inside the size window above. Use **Grand Total incl.
-tax** for every total. If the lead has no known budget, skip the size filter and say so in this section. Look at won jobs first
+**Similar jobs elsewhere** — check at most 30 candidates (a hard cap, per the rules above), then show up to 5
+that match all three filters: the same product categories as the lead's scope from
+the quote line items; the same buyer type; and a total inside the size window above. Open the section with:
+"amounts are Grand Total incl. tax, as stored." If the lead has no known budget, skip the size filter and say so
+in this section. Look at won jobs first
 and add still-open quotes only if fewer than 5 match. If nothing matches all three filters, you may list up
 to 3 near misses (right size and buyer type, but only some of the product categories), each labeled "near
 miss: [what differs]"; never present a near miss as a match. Two limits to say plainly when they apply:
 QuickBase files site furnishings under play equipment, so a job only counts as a playground when it has
-real playground equipment, not just benches, tables or bleachers (the equipment test above); and many
-customers have no buyer type recorded, so a buyer with none is matched on product and size only. Each line has: buyer · state ·
-order date · product categories · total (Grand Total incl. tax) · status · rep. Add one factual pattern line, such as
+real playground equipment (the Research Brief's equipment test); and many customers have no buyer type
+recorded, so use the blank-type rule above. Each line has: buyer · state · ordered or quoted date · product categories ·
+total · status · rep. Add one factual pattern line, such as
 "Of the 5 shown, 4 won." (or, when only won jobs were pulled, just "5 won jobs shown"). This lookup will move to
 a faster Bliss Library lookup later. If QuickBase isn't connected, say: "Similar jobs elsewhere: QuickBase
 isn't connected."
 
 **Past customers nearby** — find up to 5 won jobs for other customers in the lead's county, at most 2 per
 customer, won in the last 5 years. Won means exactly
-`Order Submitted`, `Invoiced`, or `Commission Paid`. If the county yields fewer than 3, fall back to the same
-state and say "fallback: same state." Never use the lead's own buyer. The county is the customer's billing county, so
+`Order Submitted`, `Invoiced`, or `Commission Paid`. When the county yields fewer than 3, keep the county's rows
+and add same-state rows up to 5, each labelled "same state". Never use the lead's own buyer. The county is the customer's billing county, so
 leave out contractors (their billing county isn't the job site). Skip parts and small orders (Grand Total incl.
-tax under $10K). Don't repeat a job already listed under Similar jobs elsewhere; add "(also listed above)" to
-the count instead. Each line has: customer · product categories · order year · total (Grand Total incl. tax) · rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
+tax under $10K). Open the section with: amounts are Grand Total incl. tax, as stored. A job is listed as play,
+splash or shade only if it passes the equipment test; otherwise list it as 'furnishings' or 'parts', or leave it out.
+Test reps are excluded; say so in the opening line. Don't repeat a job already listed under Similar jobs elsewhere; add "(also listed above)" to
+the count instead. Each line has: customer · product categories · order year · total · rep. If QuickBase isn't connected, say: "Past customers nearby: QuickBase isn't connected."
 
-**Who won their past bids** — first show Bliss's own lost bids to this buyer with the recorded reason lost, then
-use 1–2 web searches for the agency's published bid tabs or award minutes for playground or park bids. Each
+**Who won their past bids** — first show every `Lost - Close Quote` row for the buyer, or say "N shown of M";
+show a reason as stored, and don't call a duplicate a lost bid. Then use 1–2 web searches for the agency's
+published bid tabs or award minutes for playground or park bids. Searches for awards, minutes or bid tabs total
+two, whichever section asks. Each
 line has: date · project · winner · amount if published (Grand Total incl. tax when it is Bliss's amount) ·
 source link. Add a factual pattern line when one is supported, such as "Of the 3 shown, one repeat vendor won
 2." Web searches count toward the existing 6–8 search budget. If QuickBase isn't connected, say:
@@ -205,8 +223,8 @@ bidder."
 
 ## Contact finder (F6)
 
-For a municipality/agency lead, find the **public-role contacts tied to that lead** — the titles that
-actually matter to Bliss's sales process, and only them:
+For a municipality/agency lead, find the **public-role contacts tied to that lead** — start with these; add any
+other staff a page ties to this project (design, construction, engineering), one line each, four contacts at most:
 
 - the **parks director** (or the parks/rec department head);
 - the **purchasing agent** (or procurement officer);
@@ -225,8 +243,9 @@ Rules:
   an agenda or staff report, the firm's own site, a council minute or contract approval, or another public
   page that names the person in the role. If no public page ties a person to the role for this lead,
   don't list the role.
-- **A search result is not a source.** Open the page before you cite it. If it can't be opened, write
-  "unconfirmed (search summary)" after the detail instead of a link.
+- **A search result is not a source.** Open the page before you cite it. If it can't be opened, the detail does
+  not go in the brief. For a contact, write the role as "not confirmed" with no name, phone or email, and name
+  the unopened page in the one "Not checked:" line. Use the same rule for a figure, date or award from a summary.
 - **Public-role contact only.** No home address, no personal phone number, no personal email, and nothing
   that isn't tied to the public role. If a public page publishes a work phone or work email tied to the
   role, it's fine to include; otherwise leave contact details off.
@@ -271,20 +290,26 @@ Keep it tight, in this order:
   guessed). When the county is outside the rep's counties, say so here (with the owning rep if QuickBase's county
   assignment shows one); when a BLISS INVOLVED match is the rep's own, "This one is yours."
 - **Project** — four lines right under the name line. "Not found" is fine on any line; a guess is not.
-  - Amount and fiscal year (page) — an amount from a multi-year plan carries its span ("$2.5M, FY27–28").
-  - Stage check — "Stage: [Lead Finder stage] · sources say: [budgeted / design / bid open (date) / awarded to (vendor,
-    date, source) / built (source) / not in budget (source)]." Never silently overwrite the Lead Finder
-    stage; show both.
-  - Procurement path: open bid / co-op (name) / sole source / not found.
+  - Amount and fiscal year (page) — an amount from a multi-year plan carries its span ("$2.5M, FY27–28"). Cite the page
+    `read_source` opens and add the printed number when they differ: "p. 40 (printed 38)." Open the page before citing it.
+  - Stage check — "Stage: [Lead Finder stage] · sources say: [budgeted / design / bid open (date) / awarded to (vendors,
+    date or 'date not stated', source) / built (source) / not in budget (source) / partly built (what, source; what not
+    confirmed) / proposed or draft book (adoption: date or not confirmed)]." Before writing "budgeted", search the
+    budget message and CIP for "not included" and "conditional funding" next to the project name and give the page
+    if found. A stage read only from a column position is "budgeted (column; not confirmed)". Never silently overwrite
+    the Lead Finder stage; show both. A standing contract held by several vendors is a way to buy, not an award: put it
+    on the Procurement path line, not here. For partly built, use: "The brief shows [built part] built ([source]);
+    [other part] isn't confirmed. Want an email about [other part] instead?"
+  - Procurement path: open bid / co-op (name) / standing contract ([vendors], through [year], [source]) / sole source / not found.
   - Product fit, as the source states it.
 - **QuickBase cross-reference** — for a municipality/agency or named project, the one label (`BLISS
   INVOLVED` first when it applies, then `new` / `in pipeline (yours)` / `in pipeline ([rep])` / `Close -
   Multiple Alternative` / `lost before` / `won before`) with the
-  record number, describing this lead's project or site; a `new` label adds the one "Past orders with this
-  buyer" line when QuickBase has any. If QuickBase isn't connected, this is just the single "QuickBase isn't connected" line.
+  record number, describing this lead's project or site; a `new` label needs no extra line here; the buyer's past
+  orders are in the Bliss history count line below. If QuickBase isn't connected, this is just the single "QuickBase isn't connected" line.
 - **Bliss history with this buyer** — the total count, then up to 8 matching quotes/bids, newest first, then
   one factual pattern line. If QuickBase isn't connected, include its one-line skip notice.
-- **Similar jobs elsewhere** — up to 5 matches from the bounded last-24-month candidate pull, with the size
+- **Similar jobs elsewhere** — up to 5 matches from the bounded candidate pull, with the date span shown, the size
   filter or the explicit no-budget note, then one factual pattern line. Include the one-line QuickBase skip
   notice when needed.
 - **Past customers nearby** — up to 5 other-customer wins in the lead's county, or the same-state fallback
@@ -294,11 +319,12 @@ Keep it tight, in this order:
   when needed.
 - **Contacts** — the public-role contacts found (F6), one line each: role → name → the source page. When
   none could be sourced, say so plainly rather than inventing a title or a name.
-- **Why call now** — a dated, cited bullet list of the most relevant findings, each with one line on
+- **Why call now** — a dated, cited bullet list of the most relevant findings, each bullet one line, with one line on
   why it connects to the rep's product focus (a factual connection, not a pursue/pass verdict or
   timing advice — "design is still open" is a fact; "a good time to pitch" is advice).
 - **Suggested opener** — one short, natural conversation-starter line referencing the findings above,
-  written in the rep's Voice from `PROFILE.md` if set.
+  written in the rep's Voice from `PROFILE.md` if set. Under a territory or another-rep stop, replace the Suggested opener with
+  "Opener and ask held until you've checked." Under an awarded or built stop, make it about the open item the stop line names and say which.
 
 If research comes back thin, keep the same structure but say so honestly in "Why call now" rather than
 inventing content to fill it. **End after the suggested opener.** After it, allow at most one "Not checked:"

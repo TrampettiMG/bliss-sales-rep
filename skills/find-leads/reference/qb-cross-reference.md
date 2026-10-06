@@ -12,8 +12,7 @@ link may carry table IDs inside its URL; never print a bare table or field ID.
 Use the QuickBase setup skill's recipes: they carry the table and field IDs, so there's nothing to look up
 first. Never list all tables or dump a table's fields (Quote Pipeline has several hundred). Keep the
 cross-reference to the bounded queries the recipes give, with `select`, `where` and `max_records` on every
-call. When a subagent is available, the QuickBase work may run in one that returns only the rows needed;
-otherwise run the same bounded queries directly.
+call. Run the queries directly; with a subagent tool, only a large candidate pull is worth handing off.
 
 ## What to search
 
@@ -27,24 +26,27 @@ quote-only.
 
 Jobs are sometimes quoted through a general contractor. Search quote and opportunity names for the park or
 project name, but count it as the same job only when the place also matches by city or county on the quote or
-customer. Park names repeat across states, so never match on a park name alone. Ignore test records: a customer, quote or job name that is
-clearly a test ("TEST", "Test2", "Testing"). A real customer's quote entered under a test rep account still
-counts, once; show its rep as "test account" and never attribute it to the rep. `$0` Cancelled or Quick Close
-rows under a test rep are never listed one by one: collapse them into one line ("2 test-account entries not
-shown"). This is the one counting rule for a buyer's quote history, shared with the Research Brief: count
-every quote for the buyer except those test records. If a count differs from one an earlier tool showed in
+customer. Park names repeat across states, so never match on a park name alone. Ignore test records: a customer,
+quote or job name that is clearly a test ("TEST", "Test2", "Testing"). A real customer's quote entered under a
+test rep account still counts, once; show its rep as "test account" and never attribute it to the rep. Every `$0`
+row under a test rep collapses into one line, whatever its status. A test-account row with money in it is listed
+and labelled "test account". The History count reads "N quotes since [year] (plus M test-account entries not shown)"; the
+collapsed entries are not in N. This is the one counting rule for a buyer's quote history, shared with the Research Brief: count every quote for the buyer except those test records. If a count differs from one an earlier tool showed in
 this conversation, use the newer one and say so in one line.
 
 ## Label scope
 
 The label describes **this lead's project or site**. `in pipeline`, `won before`, `lost before` and `Close -
-Multiple Alternative` apply only to a quote or opportunity for this project or site. Everything else —
-other projects, old parts or furnishings orders with the same buyer — is `new`, followed (when QuickBase has
-any) by one line: "Past orders with this buyer: N, last [year], [categories]." On a lead that gets a History
-line, the History line carries that count instead; never both.
+Multiple Alternative` apply only to a quote or opportunity for this project or site. Everything else — other
+projects, old parts or furnishings orders with the same buyer — is `new`, followed (when QuickBase has any) by
+one line: "Past orders with this buyer: N, last [year], [categories]." On a lead that gets a History line, the
+History line carries that count instead; never both.
 
 ## Rules that always hold
 
+- **Dates:** show fid 191 labelled "ordered" when the row has one; otherwise show Date Created (fid 1) labelled "quoted". The buyer-history select includes fid 191.
+- **Nearby fallback:** when the county yields fewer than 3, keep the county's rows and add same-state rows up to 5, labelled "same state".
+- **Find the customer id from a name:** use the setup skill's 'Find the customer id from a name' recipe, then pass the governing entity's fid 3 into the buyer-history query; do not improvise a whole-table name scan.
 - Every call uses `select`, `where`, and `max_records`. One lead's slice is bounded — pull it directly, never
   scan the whole table.
 - Group reps by the **Sales Rep** link — never "Record Owner".
@@ -52,6 +54,7 @@ line, the History line carries that count instead; never both.
 - **Confidence is only ever one of the five values** the QuickBase field accepts: 0%, 25%, 50%, 75%, 99%
   (stored 0, 0.25, 0.5, 0.75, 0.99). Never round a rep's number to something else, and never invent one.
 - A lead already open in QuickBase is labeled **in pipeline**, never presented as new.
+- A Cancelled quote for this project or site is not a closed label. The label is `new`, with one line: "A Cancelled quote exists for this site ([year], [reason, or 'no reason on record'])." An open opportunity that can't be tied to this project by name or site is `new`, with a line naming it.
 
 ## Status before labeling
 
