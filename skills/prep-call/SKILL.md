@@ -55,16 +55,26 @@ run new web searches, or add new QuickBase lookups on the target.
 
 ## Output shape
 
-Return these items in this order. The whole prep is **30 lines at most**; if it runs longer, cut references
-and objections first. Every item uses only what the brief (or an earlier tool) showed: no job names, park
-names, dates or amounts it didn't show, even when QuickBase has them.
+Return these items in this order. The whole prep is **30 non-blank lines, headings and header notes included**; if it runs longer, cut
+References to one line and Objections to two before anything else. Every item uses only what the brief (or
+an earlier tool) showed: no job names, park names, dates or amounts it didn't show, even when QuickBase has
+them.
 
 - **Header notes** (only when they apply, one line each, above everything else):
-  - The lead's county isn't on your Territory/Counties line: "This one's in [county], which isn't one of
-    your counties — check with your manager before reaching out." Call Prep still runs.
-  - The brief's Stage check shows it awarded to another vendor, under contract, or built: "The brief shows
-    this awarded to [vendor] on [date] ([source])." (or "built" / "under contract" wording). Call Prep still
-    runs; the talking points and the ask are about what's still open, not the awarded job.
+  - The lead's county isn't on your Territory/Counties line: "This one's in [county], which isn't one of your
+    counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." If no rep
+    is named: "This one's in [county], which isn't one of your counties. Check with your manager before
+    reaching out." Call Prep still runs without the Opener and The ask, and the note ends: "Opener and ask held
+    until you've checked."
+  - The brief or Lead Finder shows `BLISS INVOLVED` or another rep's open quote or opportunity for this same
+    project: check with the rep of record first. Call Prep still runs without the Opener and The ask, and the
+    note ends: "Opener and ask held until you've checked."
+  - The brief's Stage check shows it awarded to another vendor, under contract with another vendor, or built:
+    "The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source])." If only part is
+    built: "The brief shows [built part] built ([source]); [other part] isn't confirmed." Call Prep still runs;
+    on an awarded lead, the Opener and The ask are about the open item the stop line names, and say which. On a
+    partly built lead, they are about [other part]. An award or match on the rep's own record is "This one is
+    yours." then route by label.
 - **Opener** — one line to start the call, tied to one sourced fact from the brief (a budget line, a meeting
   item, a bid date). It may reuse the brief's suggested opener. Never a fact the brief doesn't carry.
 - **Who you're calling** — contact name, role, and source from the Research Brief's Contacts, plus the
@@ -75,25 +85,29 @@ names, dates or amounts it didn't show, even when QuickBase has them.
   time-sensitive such as a bid date or design start. If the rep's own quote states a deadline in its terms
   (e.g. "valid through Oct 15" or a free-freight window), include it: it's often the most useful fact for the
   call. Money is the quote's Grand Total incl. tax. Do not add a fact the brief or the quote doesn't carry.
-- **References to mention** — 2–3 lines using only jobs listed in Similar jobs elsewhere or Past customers
-  nearby: buyer, scope, size labeled Grand Total incl. tax, and date. If there are none, write: "No references
-  found in the brief."
+- **References to mention** — 2–3 lines using only won jobs listed in Similar jobs elsewhere or Past customers
+  nearby: buyer, scope, size labeled Grand Total incl. tax, and date. Apply the Research Brief's equipment test;
+  carry the brief's category word, and leave out open-quote rows (labelled "open quote") and anything not a
+  won job. If there are none, write: "No references found in the brief."
 - **Questions to ask** — 3–4 lines only about what the Research Brief could not find, such as design start,
-  bid versus co-op, decision-maker, install date, or whether the budget is confirmed. Never ask for something the
-  brief already answers.
+  bid versus co-op, decision-maker, install date, or whether the budget is confirmed. If the Procurement path
+  is a standing contract, ask how the department chooses among its contract vendors, or when the contract next
+  opens. Never ask for something the brief already answers.
 - **Open items** — 1–3 lines from Bliss history with this buyer and the rep's words: an open quote, a recorded
   past close worth raising, or something the rep owes. Show status and recorded reason exactly as stored; never
   call `Close - Multiple Alternative` a loss. If none: "None found. Ask if anything's outstanding."
 - **Likely objections** — 2–4 lines, each with a short response angle. If Who won their past bids names a past
   winner, use that sourced fact (for example, "They've bought from [vendor] before"). Otherwise label the line
   general. Never assume what the rep's quote contains or what Bliss offers.
-- **The ask** — one concrete next step to ask for before you hang up: a site visit, a 15-minute follow-up
-  call, a spec or plan review, or a copy of the bid documents. One ask only, fitted to the stage.
+- **The ask** — one request the contact can say yes to on this call: a date for a 15-minute call, a site
+  visit, or a copy of one named document. No "once", "when" or "after" clause, no "and", and no question
+  (who's designing it belongs in Questions to ask).
 - Closing line: "Say 'show the full research' for the whole brief, or 'draft an email for #N' for the Email
   Writer." (The Email Writer picks the type from the lead's label.) Use "draft a follow-up" instead only when
   the rep has already been in touch (an open quote or a past call in the conversation), and the customer's
   name when there's no lead number. For a lead to check with another rep first, a lead outside your counties,
-  or one the brief shows awarded, under contract or built, leave the Email Writer offer out.
+  leave the Email Writer offer out. For a lead the brief shows awarded to another vendor, under contract with
+  another vendor, or built, offer: "draft an email about [open item]".
 - **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Talking points about a designer or past quote say what QuickBase shows ("two past $0 quotes
   with this designer"), not what it implies.
 

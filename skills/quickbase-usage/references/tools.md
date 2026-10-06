@@ -4,7 +4,7 @@ Confirmed against the Bliss app (realm `blissproducts.quickbase.com`, app `bgr44
 
 ## Field IDs, not names
 
-Quickbase addresses every field by a numeric **field ID** (fid), not its label. `select`, `where`, `orderBy`, and `groupBy` all take field IDs — you cannot query by label. So before you can query a table meaningfully you need its field map: get it once (via a subagent), store it in `tables.md`, and reuse it. Field `3` is the key (Record ID#) on every table — though its *label* can differ (on Quote Pipeline, field 3 is labeled "Quote #").
+Quickbase addresses every field by a numeric **field ID** (fid), not its label. `select`, `where`, `orderBy`, and `groupBy` all take field IDs — you cannot query by label. So before you can query a table meaningfully you need its field map: get it once (via a subagent), store it in `field-map.md`, and reuse it. Field `3` is the key (Record ID#) on every table — though its *label* can differ (on Quote Pipeline, field 3 is labeled "Quote #").
 
 ## The Quickbase query language (the `where` string)
 
@@ -23,10 +23,10 @@ Common operators:
 | `XCT` | does not contain | `AF` / `OAF` | after / on or after (date) |
 | `SW` | starts with | `IR` | in range (date) |
 
-Examples (Bliss, field IDs illustrative — confirm against `tables.md`):
+Examples (Bliss, field IDs illustrative — confirm against `field-map.md`):
 
 - One quote by Record ID: `{3.EX.<quote #>}` on `bhp495xeb`.
-- Quotes in a status: `{86.EX.'Quoted to Customer'}` (field 86 = Quote Status; see `tables.md` for its real choice values — note "AI Draft Ready" is **not** one of them today).
+- Quotes in a status: `{86.EX.'Quoted to Customer'}` (field 86 = Quote Status; see `field-map.md` for its real choice values — note "AI Draft Ready" is **not** one of them today).
 - Combine: `{<statusFid>.EX.'Bidding'}AND{<dateFid>.OAF.'2026-01-01'}`.
 
 Dates: QB accepts `MM-DD-YYYY` and ISO `YYYY-MM-DD` in queries; results return ISO. Keep date handling explicit.
@@ -81,6 +81,6 @@ Params: `enabled` (bool), `ttl` (number), `clear` (bool). Turns on caching for r
 | `result (N characters) exceeds maximum allowed tokens. Output has been saved to …txt` | A call returned more than the context budget — `list_tables`, an unbounded query, a full field list | Don't read the saved file whole. Re-run the call narrowed (`select`, `where`, `max_records`, `filter`), **or** have a subagent `jq` / `grep` the saved file and return only the slice you need. |
 | Query returns far more than expected | `query_records` with no `select`, or no `max_records` | Add `select` (field IDs) and `max_records`. |
 | `where` matches nothing or errors | label used instead of field ID, lowercase operator, or unquoted spaced value | Use numeric field IDs, uppercase operators, single-quote spaced values. |
-| Need a field ID you don't have | querying by label | Get the field map once via a subagent; store it in `tables.md`. |
+| Need a field ID you don't have | querying by label | Get the field map once via a subagent; store it in `field-map.md`. |
 
 The saved-to-file behavior is a safety net, not a workflow. If you hit it in the main agent you've already paid the context — next time, delegate or narrow up front.

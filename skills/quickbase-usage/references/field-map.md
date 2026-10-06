@@ -31,22 +31,23 @@ Trust: live schema = what exists; history = meaning and rules; transcripts = int
 - 101 Forecast Close Date, 36 Confidence %, 149 Bid Type: legacy-sync formulas (Opportunity value when 697 > 0, else pre-6/26/26 entry). Never write.
 - 697 Related Opportunity: FK to Opportunities. Only 11% of won 2024-09+ quotes carry it.
 - 702 Opp - Count Toward Value (Yes/No formula, already resolves override 921). Filter Yes on every pipeline report.
+- 923 Opportunity Name; 208 Customer - State; 210 Reason(s) for Loss; 431 Billing Postal Code - County; 432 Billing Postal Code - State; 239 Promo Code.
 - 850 Related Sales Rep 1: FK to Sales Reps key fid 9 (not fid 3). The rep grouping field. 842 = rep 2. 851 = name lookup (labels only). Never group by 155 or Record Owner (4).
 - 179 Customer ID#: FK to Customers; 44 Customer Name lookup exists.
 - 169 Bid Due Date: bid population selector (100% on Bid quotes). 385 Bid Submission Status (Submitted / No Bid / Other). 387 Bid Outcome (about 35% filled, never a denominator). 806 Bid Award $ Value: unusable (rarely filled, mostly on lost bids). 807 Bid Lost - Reason.
 - 645 Total Amount $ Invoiced: SUM of non-void Invoice Headers 63; NULL not 0. Outstanding = 73 - Nz(645). 871 Outstanding $ To Invoice: NEVER use (blank when nothing invoiced).
 - 326 # Install Vendor Quote Lines: 0 or empty means product-only.
 - 515 / 516 Construction Complete Forecast / Actual; 610 Vendor Latest Estimated Ship Date (stale placeholders); 1025 Vendor Latest Actual Ship Date (about 42% filled).
-- 927 / 928 PlayCore Order Submitted Period (FK / name, keyed to 191). Quotes have no live created-date period (905 retired 7/10/26; 910 = QTC date).
-- 443 Cooperative Contract (18 choices); 442 FK; real co-op orders are a small share of orders.
+- 927 / 928 PlayCore Order Submitted Period (FK / name, keyed to 191). Quotes have no live created-date period (905 retired 7/10/26; 910 = PlayCore Quote Date, not the Quoted to Customer date).
+- 443 Cooperative Contract is a text formula with 18 values; do not write it. 442 FK; real co-op orders are a small share of orders.
 - 633 Permit Authority Requirements: embedded report link (target is QP itself), not a link to btwte4vj4.
-- 1024 To Be Invoiced Category; 749 Opportunity Value formula; 762 PPS List Price; 1044 Vendor PO records link.
+- 1024 To Be Invoiced Category; 749 Opportunity Value formula; 762 PPS List Price.
 - 28 Quote Identifier (free text, "-Option N"/"Rev"); 171 Opportunity/Quote Name (display); 156 Internal Quote # is NOT a solicitation number.
 - 878 Status - Final/Close Date (closed-set formula); 750/751 Bid QC / override (no "Bid Coordinator" field).
-- Not in live: QP fid 152 (cited as a Sales Team link) and Opportunities fid 942 (an older Bid Type cite).
+- Not in live: QP 1044 (Vendor PO records link); Sales Team 152; Opportunities fid 942 (an older Bid Type cite).
 
 ### Opportunities `bt93rndvw` (141 fields; history from 2026-06-01; 2,128 max rid)
-- 68 Opportunity Status (formula), 46 Opportunity ID, 23 Opportunity Name, 6 Related Customer.
+- 68 Opportunity Status (formula), 46 Opportunity ID, 23 Opportunity Name, 6 Related Customer; 7 Customer; 127 Customer - Sales Rep.
 - 18 Forecast Close Date (DATE, no tz, 94% filled); 143/144 forecast-close PlayCore period FK/name.
 - 20 Confidence % (choices 0/25/50/75/99; returns fraction).
 - 31 Opportunity Value $ = 34 x 20; 34 Subtotal Sell incl. Freight - Opp Value Count=Yes (SUM QP 213 where 702 = Yes). Both $0 for New/Pending/Closed.
@@ -65,7 +66,7 @@ Trust: live schema = what exists; history = meaning and rules; transcripts = int
 - Sales Reps `bvgbefp6g`: 6 name, 9 Record ID# from Sales Team (the key QP 850 / Opp 75 point at), 10 Status (text), 3 record id, 11 QB user, 32 email. 45 max rid; exclude test reps by name (names contain "TEST").
 - Sales Team `bhqpcitdz`: 6 Name, 93 Status (Active/Inactive picklist), 36 Related Sales Territory, 37 Sales Territory, 100 dblink to County Sales Reps. Distinct table from Sales Reps.
 - County Sales Reps `buq6z9c6j`: 7 County, 8 State, 10 Sales Rep - Name (free-text lookup), 9 Related Sales Rep (FK to Sales Team), 6 Related County. Pull select [7,8,10], top 1000, no where. 925 non-blank rows, 13 states.
-- Customers `bgr44yuh9`: 3 key, 6 name, 68 Customer Type (end-market segment, not a channel), 53/54 assigned rep (Sales Team), 115 Billing Postal Code County, 116 Billing Postal Code State (live state), 110 City / 112 Postal Code (labels no longer say RETIRED but are the populated ones), 121 Internal Bliss Customer.
+- Customers `bgr44yuh9`: 3 key, 6 name, 68 Customer Type (end-market segment, not a channel), 53/54 assigned rep (Sales Team), 115 Billing Postal Code County, 116 Billing Postal Code State (live state), 110 City / 112 Postal Code (labels still read 'RETIRED 5/14/26' but both are populated; 160 'Related Billing Address - Address: City' also holds the city), 121 Internal Bliss Customer.
 
 ### Child tables (FK to QP 3)
 - Q/O Status Changes `btiessw29`: 6 Quote #; 1 Date Created (transition time, UTC); 11 Status (NEW status only); 12 GP $; 17 Total Cost; 18 Grand Total Revenue; 20 Subtotal Sell incl. Freight (snapshots often NULL on open rows).
@@ -92,7 +93,7 @@ Trust: live schema = what exists; history = meaning and rules; transcripts = int
 
 **Quote Pipeline 86 Quote Status (12):** Opportunity - New; Opportunity - Pending; Quoted to Customer; Order Submitted; Invoiced; Commission Paid; Lost - Close Quote; Close - Multiple Alternative; Close - Quick Close (no reason); Cancelled; Opp Transition New - For Ref Only; Opp Transition Pending - For Ref Only.
 - Won set: Order Submitted, Invoiced, Commission Paid. Open: Quoted to Customer. Closed (fid 878): Commission Paid, Lost - Close Quote, Close - Multiple Alternative, Close - Quick Close (no reason), Cancelled.
-- Zero live quotes carry Opportunity - New or Pending; Opp Transition pair are legacy restamps. "Expired" and "AI Draft Ready" do not exist anywhere in QB.
+- Opportunity - New has no live quotes; Opportunity - Pending has at least one stray, not counted toward value. Opp Transition pair are legacy restamps. "Expired" and "AI Draft Ready" do not exist anywhere in QB.
 - 24-month census (to 2026-09-24), largest first: Multiple Alternative, Commission Paid, Quoted to Customer, Quick Close, Cancelled, Lost, Opp Transition New, Order Submitted, Opp Transition Pending, Invoiced.
 
 **Opportunities 68 Opportunity Status (formula, first match wins):** Quoted to Customer if # QTC >= 1; Ordered if # Order Submitted/Invoiced >= 1; Closed if close flag set or all quotes Commission Paid/Lost/Cancelled; Pending if # Updates > 0 or a quote is Opp Transition Pending or TODAY Opp Update is non-empty; New if # Quotes = 0.

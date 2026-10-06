@@ -163,19 +163,27 @@ for #2", "break down the bid for #2").
   once, in one line ("Past quotes for this buyer were under [rep]."), and carry on. The same goes when
   QuickBase lists another rep as the customer's Sales Rep. These lines state the fact only: don't add "check
   with [rep] before you call" or end on "talk it through with [rep] first" (that's for a stop). A practical
-  tip is fine, such as asking that rep for a direct contact.
+  tip is fine, such as asking that rep for a direct contact. In an email draft, the line goes first in the
+  note under the draft that says where the recipient came from.
 - **A lead outside the rep's counties** (its county isn't on the profile's Territory/Counties line) stops the
-  chain at outreach: *"This one's in [county], which isn't one of your counties. Check with your manager
-  before reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check
-  while Territory/Counties is blank or still loading.
-- **A lead the sources show is already awarded, under contract, or built** (the Research Brief's Stage check)
-  stops the chain at outreach too: *"The brief shows this awarded to [vendor] on [date] ([source]). Want an email about
-  [another open item in the brief] instead?"* Show the Lead Finder's stage and what the sources say side by
-  side; never silently overwrite the stage.
+  chain at outreach. When QuickBase lists a rep for that county: *"This one's in [county], which isn't one of
+  your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out."* When it
+  lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
+  reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
+  Territory/Counties is blank or still loading.
+- **A lead the sources show is awarded to another vendor, under contract with another vendor, or built** (the
+  Research Brief's Stage check) stops the chain at outreach too: *"The brief shows this awarded to [vendors] on
+  [date, or 'date not stated'] ([source]). Want an email about [another open item in the brief] instead?"* If
+  only part is built, the stop names the built part and offers the rest: *"The brief shows [built part] built
+  ([source]); [other part] isn't confirmed. Want an email about [other part] instead?"* An award to the rep's
+  own record isn't a stop: "This one is yours." and carry on by the QuickBase label. A standing contract held
+  by several vendors (an on-demand or annual contract) is a way to buy, not an award: no stop. Show the Lead
+  Finder's stage and what the sources say side by side; never silently overwrite the stage.
 - **The QuickBase label describes this lead's project or site,** not the buyer. `in pipeline`, `won before`,
   `lost before` and `Close - Multiple Alternative` apply only to a quote or opportunity for this project or
-  site. Anything else is `new`, followed by one line when QuickBase has any: "Past orders with this buyer: N,
-  last [year], [categories]."
+  site. Anything else is `new` (a Cancelled quote for the site is `new` too, with one line saying so). The
+  buyer's past orders show once: the Lead Finder's "Past orders with this buyer: N, last [year],
+  [categories]." line, or the Research Brief's History count line.
 - **`BLISS INVOLVED` means a public document names Bliss (or Play and Park Structures) in connection with this
   lead's project.** If that match turns out in QuickBase to be the rep's own record, and no other rep has an
   open record on this project, it isn't a stop: say "This one is yours." and carry on by the QuickBase label.
@@ -327,7 +335,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-03b**
+**Tools version: 2026-10-07a**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

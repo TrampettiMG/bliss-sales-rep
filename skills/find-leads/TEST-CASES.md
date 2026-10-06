@@ -248,6 +248,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     "This one is yours.", the QuickBase label shown instead of the check-with-the-rep stop, and the lead
     stays in the call-now names. A document naming Bliss on a different procurement doesn't trigger
     BLISS INVOLVED at all.
+78. **Carried-over amount.** The book shows a prior-year balance beside new money. Expect the digest to carry both.
 
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan

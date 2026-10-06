@@ -8,16 +8,18 @@ Read this when `read_source` returns any of these literal strings:
   today)
 - `no readable text` — this is `read_source`'s empty-body result, and the same reason shows up in
   `lead_scan`'s footer as `Couldn't read: <url> - no readable text; open it yourself`.
+- WebFetch returns binary, "can't parse", or a saved-file note for a PDF.
 
-The first three always mean "the server can't parse this one, you try" — before giving up:
+For a WebFetch PDF fallback, first retry the same URL through `read_source` with a query.
 
-1. **Download the PDF and extract its text** (CoWork code execution). Many of these have a text layer the
-   server can't parse, and the extraction works fine.
+1. **If the session has code execution, download the PDF and extract its text.** Many of these have a text layer the
+   server can't parse, and the extraction works fine. If there is no code execution, put the PDF straight on the
+   closing "Couldn't read these, open them yourself" list as "PDF not readable here".
 2. **If the extracted text is empty, read the page images** instead — render the pages and read them.
 3. **Only then** put it on the closing "Couldn't read these, open them yourself" list.
 
 **`no readable text` forks on the link type:**
-- **A PDF link** — treat it exactly like the three above: run the same download → extract → page-image
+- **A PDF link** — treat it exactly like the strings above: run the same download → extract → page-image
   ladder, under the same 3-download cap.
 - **A non-PDF page** (an HTML page with no extractable text) — there's nothing to download or extract; it
   goes straight to the closing "Couldn't read these, open them yourself" list.

@@ -1,13 +1,13 @@
 # Bliss Quickbase — table & field appendix
 
-The durable schema map. Extend it whenever a subagent discovers new IDs — that's how the skill avoids re-exploring. All counts and names verified live 2026-06-24 unless noted.
+The durable schema map. Extend `field-map.md` whenever a subagent discovers new IDs — that's how the skill avoids re-exploring. All counts and names verified live 2026-06-24 unless noted.
 
 ## Connection
 
 - Realm: `blissproducts.quickbase.com`
 - App: `bgr44yubi` — "Bliss Sales & Projects Portal"
 - Auth: read-only user token (env vars). `check_configuration` / `test_connection` confirm it.
-- The app holds **113 tables** — which is why `list_tables` overflows (61,551 chars on the first call). You rarely need the whole list; the IDs below cover the bid pipeline.
+- The app holds **118 tables** — which is why `list_tables` overflows (61,551 chars on the first call). You rarely need the whole list; the IDs below cover the bid pipeline.
 
 > ⚠ The app ID `bgr44yubi` and the Activities table ID `bgr44yuic` differ by two trailing characters. Don't transpose them.
 
@@ -33,7 +33,7 @@ From `get_relationships` on `bhp495xeb`; names resolved against `list_tables` 20
 |---|---|---|
 | `bgr44yuh9` | Customers | 179 |
 | `bvgbefp6g` | Sales Reps | 850 (Rep 1), 842 (Rep 2) |
-| `bhqpcitdz` | Sales Team | 49, 152 |
+| `bhqpcitdz` | Sales Team | 49 |
 | `bt93rndvw` | Opportunities | 697 |
 | `bhtcjajy9` | Customer Contacts | 57 |
 | `bq9thrd25` | Anchor Orders | 401 |
@@ -72,7 +72,7 @@ All verified 2026-06-24 (via `get_table_fields` / `get_field`).
 | 754 | Most Recent Status Change Record ID# | numeric | Q/O Status Changes summary lookup |
 | 822 | Quoted to Customer Max Record ID# | numeric | Q/O Status Changes summary lookup |
 
-**Quote Status (field 86) choice values:** Opportunity - New · Opportunity - Pending · Quoted to Customer · Order Submitted · Invoiced · Commission Paid · Lost - Close Quote · Close - Multiple Alternative · Close - Quick Close · Cancelled.
+**Quote Status (field 86) choice values:** Opportunity - New · Opportunity - Pending · Quoted to Customer · Order Submitted · Invoiced · Commission Paid · Lost - Close Quote · Close - Multiple Alternative · Close - Quick Close (no reason) · Cancelled.
 
 > ⚠ As of 2026-06-24 there is **no** field literally named "Bid Coordinator" (closest is 750 "Bid QC"), and **no** "AI Draft Ready" value anywhere in Quote Pipeline (checked every field label, choice list, and formula). If the bid agent is meant to set an "AI Draft Ready" status, that value/field must be created in QB first — a QuickBase admin task. Don't query for it expecting rows today.
 

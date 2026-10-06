@@ -91,7 +91,18 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     one header line saying so above the Opener; the reply ends with the closing line, no sources list and no
     note to a trainer or tester.
 27. **Only what the brief showed.** The brief lists a fictional similar job as "City of Pine · play, labor ·
-    2026." Expect: the reference keeps exactly that; no park or job name added from QuickBase.
+    year 2026." Expect: the reference keeps exactly that; no park or job name added from QuickBase.
+28. **Call Prep under a stop.** A fictional Oak County lead triggers the territory stop. Expect the canonical
+    territory sentence, no Opener or The ask, and the line: "Opener and ask held until you've checked." On an
+    awarded or built lead, expect Opener and The ask to concern the open item named by the stop line.
+29. **One ask.** Expect one request the contact can say yes to on this call, with no "once," "when," "after,"
+    "and," or question; questions about who owns the work stay under Questions to ask.
+30. **30 lines.** A built-lead header note plus a full item list would otherwise exceed the limit. Expect at most
+    30 non-blank lines, headings and header notes included, with References cut to one line and Objections to two
+    before anything else.
+31. **References are won jobs.** The brief lists an open quote under Similar jobs and a won fictional equipment
+    job. Expect only the won job in References to mention, carrying the brief's category word and no stronger one.
+    The open quote is left out and never used as a proof line.
 
 **What "fails gracefully" means for this tool specifically:** Call Prep is a short synthesis of the Research
 Brief, the rep's words, and the one permitted read-only quote lookup. When those sources are thin, the prep is

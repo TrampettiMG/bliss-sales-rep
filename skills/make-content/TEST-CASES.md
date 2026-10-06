@@ -49,4 +49,12 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    rep's Territory/Counties line, or the brief's Stage check shows it awarded to a fictional vendor. Expect:
    no draft, one stop line.
 
+15. **Thin one-pager.** A fictional prospect has two sourced benefit bullets and placeholders elsewhere. Expect
+   it accepted as finished, with the closing list naming each placeholder by its bracket text, one per line,
+   and no count.
+
+16. **Flag placement and next tool.** A one-pager has three fictional QuickBase references and a lead in the
+   conversation. Expect each reference line to end with the flag after its period, and the only next-tool line
+   to be: `Say "draft an email for #N".`
+
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.
