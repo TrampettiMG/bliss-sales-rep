@@ -113,12 +113,20 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
   in [county], which isn't one of your counties. QuickBase lists [rep] for it: check with [rep] or your manager
   before reaching out." If no rep is named: "This one's in [county], which isn't one of your counties. Check
   with your manager before reaching out." Skip this check while that line is blank or still loading.
-- **Awarded to another vendor, under contract with another vendor, or built:** the Research Brief's Stage check shows it "awarded to another vendor,
-  under contract with another vendor, or built"; say: "The brief shows this awarded to [vendors] on [date, or
-  'date not stated'] ([source]). Want content about [another open item in the brief] instead?" If only part is
-  built: "The brief shows [built part] built ([source]); [other part] isn't confirmed. Want content about
-  [other part] instead?" An award or match on the rep's own record is "This one is yours." then route by label.
-  A standing multi-vendor contract is a way to buy, not an award: no stop.
+- **Awarded to another vendor:** the Research Brief's Stage check says awarded, so say: "The brief shows this awarded to
+  [vendors] on [date, or 'date not stated'] ([source]). Want content about [another open item in the brief]
+  instead?"
+- **Under contract with another vendor:** say: "The brief shows this under contract with [vendor] on [date, or
+  'date not stated'] ([source]). Want content about [another open item in the brief] instead?"
+- **Built:** say: "The brief shows this built ([source]). Want content about [another open item in the brief]
+  instead?"
+- **Partly built:** say: "The brief shows [built part] built ([source]); [other part] isn't confirmed. Want content
+  about [other part] instead?"
+- **Not in the budget:** say: "The brief shows this isn't in the budget ([source]). Want content about [another open
+  item in the brief] instead?"
+- "Under contract with another vendor" means a project-specific contract naming the selected vendor. A standing,
+  on-demand, annual, co-op or other multi-vendor contract is a way to buy, not an award: no stop.
+  An award or match on the rep's own record is "This one is yours." then route by label.
 
 ## Chained context and QuickBase proof
 

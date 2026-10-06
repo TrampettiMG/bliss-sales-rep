@@ -171,14 +171,23 @@ for #2", "break down the bid for #2").
   lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
   reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
   Territory/Counties is blank or still loading.
-- **A lead the sources show is awarded to another vendor, under contract with another vendor, or built** (the
-  Research Brief's Stage check) stops the chain at outreach too: *"The brief shows this awarded to [vendors] on
-  [date, or 'date not stated'] ([source]). Want an email about [another open item in the brief] instead?"* If
-  only part is built, the stop names the built part and offers the rest: *"The brief shows [built part] built
-  ([source]); [other part] isn't confirmed. Want an email about [other part] instead?"* An award to the rep's
-  own record isn't a stop: "This one is yours." and carry on by the QuickBase label. A standing contract held
-  by several vendors (an on-demand or annual contract) is a way to buy, not an award: no stop. Show the Lead
-  Finder's stage and what the sources say side by side; never silently overwrite the stage.
+- **A lead the sources show is awarded to another vendor, under contract with another vendor, built, or not in
+  the budget** (the Research Brief's Stage check) stops the chain at outreach too, with the line for that stage:
+  - Awarded: *"The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
+    email about [another open item in the brief] instead?"*
+  - Under contract: *"The brief shows this under contract with [vendor] on [date, or 'date not stated']
+    ([source]). Want an email about [another open item in the brief] instead?"*
+  - Built: *"The brief shows this built ([source]). Want an email about [another open item in the brief]
+    instead?"* If only part is built: *"The brief shows [built part] built ([source]); [other part] isn't
+    confirmed. Want an email about [other part] instead?"*
+  - Not in the budget: *"The brief shows this isn't in the budget ([source]). Want an email about [another open
+    item in the brief] instead?"*
+
+  "Under contract with another vendor" means a project-specific contract naming the selected vendor. A standing,
+  on-demand, annual, co-op or other multi-vendor contract is a way to buy, not an award: no stop. An award to the
+  rep's own record isn't a stop: "This one is yours." and carry on by the QuickBase label. The Research Brief and
+  Call Prep still run. Show the Lead Finder's stage and what the sources say side by side; never silently
+  overwrite the stage.
 - **The QuickBase label describes this lead's project or site,** not the buyer. `in pipeline`, `won before`,
   `lost before` and `Close - Multiple Alternative` apply only to a quote or opportunity for this project or
   site. Anything else is `new` (a Cancelled quote for the site is `new` too, with one line saying so). The
@@ -335,7 +344,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-07a**
+**Tools version: 2026-10-07b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

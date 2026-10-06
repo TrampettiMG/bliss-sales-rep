@@ -182,7 +182,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     not run named in "Not checked:".
 56. **Excluded line.** A budget message lists a fictional Maple Park splash pad under "Items not included in the
     budget" while the capital plan shows it in FY27. Expect: the Stage check shows "not in budget" with the page,
-    beside the Lead Finder stage.
+    beside the Lead Finder stage, and the Email Writer and Content Builder stop with the not-in-budget line.
 57. **Partly built.** A fictional playground is built, but its restroom is unconfirmed. Expect: the stop to name
     the built part and offer the unconfirmed part.
 58. **Dates.** A buyer with six quotes, none ordered. Expect: "quoted Mar 2025"-style dates and no "ordered."

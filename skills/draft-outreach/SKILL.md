@@ -54,14 +54,17 @@ review and send/say themselves.
    and record number. Do not ask the rep to repeat it. If a `research` brief or `prep-call` brief is already
    in the conversation, use its sourced contact in the To line or greeting and its Why call now signal as the
    reason for writing. Add at most one proof line from Similar jobs elsewhere or Past customers nearby, only a
-   job that brief lists, passes the Research Brief's equipment test, and has no dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Phrase a third-party reference as "[Buyer] chose Bliss for [products] in [year]"; never "we've done," "we did," "our work at," "completed," or "installed." Call Prep's Open items feed a follow-up. Never add a fact
+   job that brief lists, passes the Research Brief's equipment test, and has no dollar amount. **Reference jobs say only what the record shows:** buyer, park or job name, product categories, year. Never add "completed," "just finished," "installed by our team," or anything else about how or when the job was done. Phrase a third-party reference as "[Other buyer] chose Bliss for [products] in [year]"; never "we've done," "we did," "our work at," "completed," or "installed." Call Prep's Open items feed a follow-up. Never add a fact
    those tools did not carry.
    **If there is no brief and the rep names a buyer**, do not run full Research Brief by default. Do the quick,
    read-only QuickBase buyer lookup using the Lead Finder matching rules and follow the `quickbase-usage` skill
    for the query. Use the label it gives to choose the type, exactly as the Lead Finder label rules below say
    (including the `BLISS INVOLVED` / other rep's job stop). Offer: "Want the Research Brief first for a
-   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context. Take the county from that
-   lookup (Customers 115 and 116). If it gives none, say once that you couldn't check the territory.
+   stronger email?" If QuickBase isn't connected, say so once and ask only for the missing context. Take the county
+   from the lookup (Customers 115 and 116). If several Customer records match, follow the QuickBase setup skill's
+   "Find the customer id from a name" recipe: take the governing entity, use its county and state, and name the
+   record used. If no single governing entity stands out, ask the rep one short question before checking territory or
+   drafting. If the lookup gives no county, say once that you couldn't check the territory.
    **For "draft a follow-up after my call,"** use the Call Prep already in the conversation plus what the rep
    says happened; write one clear next step.
    **Then gather what's specific to this prospect:** who they are, what's known about them or their
@@ -88,11 +91,21 @@ review and send/say themselves.
      QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." If it names none:
      "This one's in [county], which isn't one of your counties. Check with your manager before reaching out."
      Skip this check while that line is blank or still loading.
-   - The Research Brief's Stage check shows it awarded to another vendor, under contract with another vendor,
-     or built: "The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
-     email about [another open item in the brief] instead?" If only part is built: "The brief shows [built part]
-     built ([source]); [other part] isn't confirmed. Want an email about [other part] instead?" Don't draft
-     until the rep answers. An award or match on the rep's own record is "This one is yours." then route by label.
+   - The Research Brief's Stage check shows it awarded to another vendor: "The brief shows this awarded to
+     [vendors] on [date, or 'date not stated'] ([source]). Want an email about [another open item in the brief]
+     instead?"
+     If it shows this under contract with another vendor: "The brief shows this under contract with [vendor] on
+     [date, or 'date not stated'] ([source]). Want an email about [another open item in the brief] instead?"
+     If it shows this built: "The brief shows this built ([source]). Want an email about [another open item in
+     the brief] instead?"
+     If only part is built: "The brief shows [built part] built ([source]); [other part] isn't confirmed. Want an
+     email about [other part] instead?"
+     If it shows this isn't in the budget: "The brief shows this isn't in the budget ([source]). Want an email
+     about [another open item in the brief] instead?"
+     "Under contract with another vendor" means a project-specific contract naming the selected vendor. A standing,
+     on-demand, annual, co-op or other multi-vendor contract is a way to buy, not an award: no stop.
+     An award or match on the rep's own record is "This one is yours." then route by label.
+     Don't draft until the rep answers.
    - `BLISS INVOLVED` (a public document that names Bliss, or Play and Park Structures, in connection with
      this lead's project), `in pipeline ([another rep])`, or any label followed by `open quote: [another
      rep]` (another rep's open record for this same project, whatever the label) → say in one line to check
@@ -130,7 +143,7 @@ review and send/say themselves.
    - **Department mailbox** (purchasing@, parks@, info@ or another shared address, and no named contact
      for it): open with "Hello," and no first name.
    - **Never a quote or RFQ number, or an amount,** in the subject or body. A past order for the recipient is
-     named at most as "we've supplied you before." A third-party proof line may say "[Buyer] chose Bliss for
+     named at most as "we've supplied you before." A third-party proof line may say "[Other buyer] chose Bliss for
      [products] in [year]" only for a real equipment order that passes the Research Brief's equipment test;
      never include status, rep, win/loss comparison, or an open-quote row.
    - **Intro email** — short, states who the rep is and why they're reaching out, one clear ask (a call,
