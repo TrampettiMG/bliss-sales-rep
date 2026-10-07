@@ -5,7 +5,7 @@ real rep's full "New" opportunity set (2026-09-22); cases below are the generic 
 not the real data itself. Every case is written as the plain ask a rep would type — one ask, no follow-up
 setup beyond the first-run QuickBase name confirmation.
 
-## The Ron test
+## The first-ask test
 
 1. **"What new leads do I have?"** — a rep's first run, nothing on disk yet. Expect: it pulls the rep's New
    opportunities read-only from QuickBase and creates the lead board in the rep project folder

@@ -56,10 +56,11 @@ so stay tight:
   real multi-quote opportunity that the tool keeps totals separate and shows this warning.)
 
 ## Present it
-- Open with one line naming the tool and the rep ("Here's your Quote Details, Andy — Opp 12345, [customer].").
+- Open with one line naming the tool and the rep ("Here's your Quote Details, Andy — Opp [#], [customer].").
 - Lead with the opportunity or quote and its quote(s): quote number as a clickable link to the record (build the link
   from the record-URL pattern in the `quickbase-usage` skill; do not hardcode the realm/app/table IDs),
-  quote status, and grand total.
+  quote status, and grand total. Link records with the view link the recipes give (`action/dr`), never an edit link
+  (`action/er`).
 - Then the main line items: description, quantity where useful, extended price. Group or trim if there are
   many; the rep wants the shape of the deal, not every note line.
 - Call out any bond or permit related lines separately, with the "identified by description" caveat.

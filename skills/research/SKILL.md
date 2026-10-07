@@ -128,7 +128,7 @@ setup skill's Similar jobs recipe, step a). With no subagent tool, run it direct
 - Group reps by the **Sales Rep** link — never "Record Owner".
 - Convert any UTC timestamp to **Eastern Time** before showing it.
 - Statuses are shown verbatim as stored (e.g. "Close - Quick Close (no reason)").
-- A record link may contain table IDs inside its URL; never print a bare table or field ID.
+- A record link may contain table IDs inside its URL; never print a bare table or field ID. Link records with the view link the recipes give (`action/dr`), never an edit link (`action/er`).
 - **Confidence is only ever one of the five values** the QuickBase field accepts: 0%, 25%, 50%, 75%, 99%
   (stored 0, 0.25, 0.5, 0.75, 0.99). Never round or invent one.
 - If the QuickBase extension isn't connected, say **"QuickBase isn't connected"** once, leave the

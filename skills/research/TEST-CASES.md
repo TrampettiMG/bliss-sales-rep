@@ -105,7 +105,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 
 ## Base-spec gate tests
 
-33. **Ron test.** A rep's first plain ask — "research the city of [X]" — with no further setup. Expect: the
+33. **First-ask test.** A rep's first plain ask — "research the city of [X]" — with no further setup. Expect: the
     full brief completes from that one ask, the only question being the first-run profile fill.
 34. **QB extension unplugged → F5 says so.** The base-spec "QB extension unplugged" gate, applied here.
     Expect: F5 says "QuickBase isn't connected" rather than guessing — never a made-up status.

@@ -14,7 +14,7 @@ bleachers, courts, fitness, and trail amenities, at planning, funding, design, o
 
 Examples (all public records):
 
-- **Spalding County, GA** — a $148,140 sole-source purchase of the Tyus Park playground.
+- **Spalding County, GA** — a sole-source purchase of the Tyus Park playground.
 - **Bossier City, LA** — the Meadowview splash pad.
 - **Alexandria, LA** — the Cheatham Park pavilion bid.
 
