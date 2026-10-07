@@ -109,10 +109,11 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
   this same project (whatever the label, including `· open quote: [rep]` after it): say in one line to check
   with the rep of record first. If the brief or the Lead Finder shows the `BLISS INVOLVED` match is your own QuickBase record
   and no other rep has an open record on this project, say "This one is yours." and carry on.
-- **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: "This one's
-  in [county], which isn't one of your counties. QuickBase lists [rep] for it: check with [rep] or your manager
-  before reaching out." If no rep is named: "This one's in [county], which isn't one of your counties. Check
-  with your manager before reaching out." Skip this check while that line is blank or still loading.
+- **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: say this
+  word for word: "This one's in [county], which isn't one of your counties. QuickBase lists [rep] for it: check
+  with [rep] or your manager before reaching out." If no rep is named, say this word for word: "This one's in
+  [county], which isn't one of your counties. Check with your manager before reaching out." Skip this check while
+  that line is blank or still loading.
 - **Awarded to another vendor:** the Research Brief's Stage check says awarded, so say: "The brief shows this awarded to
   [vendors] on [date, or 'date not stated'] ([source]). Want content about [another open item in the brief]
   instead?"
@@ -140,10 +141,14 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
   test; a job that fails it is listed as "furnishings" or "parts", or left out. If a Research Brief is in the
   conversation, use only its Similar jobs elsewhere and Past customers nearby. Otherwise run just the Past
   customers nearby lookup (the county's rows, plus same-state rows up to 5 when the county has fewer than 3),
-  kept to the prospect type; don't run the full Research Brief. Mark each reference on its own line, ending with "from QuickBase — double-check before it goes
-  out." after the reference's period (on every item, not once for the group). Follow the `quickbase-usage` skill
+  kept to the prospect type; don't run the full Research Brief. For Recent projects, apply the equipment test and
+  name each job by the category word the test confirms ("play", "shade", "furnishings", and so on), never by a
+  job name that names an unconfirmed product. Mark each reference on its own line, then add the separate sentence
+  "From QuickBase — double-check before it goes out." (on every item, not once for the group). Follow the `quickbase-usage` skill
   (it holds the tables and fields; never guess them). Never put customer pricing in prospect-facing content. If
-  QuickBase is not connected, keep the current `[placeholder]` behavior instead of inventing proof.
+  QuickBase is not connected, keep the current `[placeholder]` behavior instead of inventing proof. Never write a
+  capability claim naming multiple products unless a listed reference passes the equipment test for every product
+  named; otherwise use a `[capability: …]` placeholder.
 - **Co-op claims:** if QuickBase or the Research Brief shows the buyer used a co-op, write "available through
   `[co-op]`" as a placeholder the rep fills in once they've confirmed Bliss holds that contract; don't ask a
   confirmation question. Otherwise leave the co-op out.

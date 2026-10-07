@@ -249,6 +249,18 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     BLISS INVOLVED at all.
 78. **Carried-over amount.** The book shows a prior-year balance beside new money. Expect the digest to carry both.
 
+79. **Territory on hold.** The profile's Territory/Counties line starts with "on hold — lead-sources key isn't yours yet."
+    Expect: the run stops with exactly "Your lead-sources connection is showing counties that aren't yours, so I can't scan for leads yet. Ask your trainer for your own key, then say 'refresh my profile'."
+    In the Daily run, expect that line as step 1 and the remaining sections to continue.
+80. **Couldn't-read line shape.** A fictional Pine County council agenda is blocked. Expect exactly
+    "Council agenda, Sep 22 · Pine County · [link] · blocked"; if there is no source, omit only the link.
+81. **No orders, quotes only.** A fictional buyer has quotes but no orders. Expect the QuickBase label to be
+    exactly `new`, with no Past orders line.
+82. **Saved-board wording.** A scan verifies the board write. Expect exactly "Saved your lead board — N leads,
+    M rows changed." and never "A downloadable copy is attached."
+83. **History has no loss reason.** A fictional buyer has a lost quote with a free-text reason. Expect the
+    Lead Finder History line and digest clause to show status and year only, with no reason.
+
 **What "fails gracefully" means for this tool specifically:** every reported lead has a real source link
 and a real date, a stage number, and — when QuickBase is connected — a cross-reference label. If a scan
 can't confirm a link or a date, the item doesn't get reported; silence is better than a plausible-sounding

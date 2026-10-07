@@ -214,6 +214,15 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 75. **PDF with no shell.** WebFetch can't parse a budget PDF, no code execution. Expect a `read_source` retry, then
     "PDF not readable here" in "Not checked:".
 
+76. **History and similar-job dates.** A fictional buyer has quoted Apr 2013 and ordered Jun 2025 jobs. Expect
+    month-and-year dates in both History and Similar jobs lines, and the standalone line "Amounts are Grand Total incl. tax, as stored."
+77. **Stage check shape.** A fictional lead has a staged source finding. Expect one line in the form
+    "Stage: [n] · sources say: …" with Lead Finder's stage preserved.
+78. **County request with no buyer.** Rep says "research Pine County park projects." Expect the county government
+    identified as the buyer in one line, one Research Brief for that government, and no web-built lead list.
+79. **Exact stop wording.** A fictional Oak County lead is outside the territory. Expect the canonical territory
+    stop word for word and "Opener and ask held until you've checked." word for word.
+
 **What "fails gracefully" means for this tool specifically:** a thin, honest brief beats a padded,
 confident-sounding one. Never present a guess or a generic industry assumption as if it were a specific
 finding about this target — and never a guessed contact, status, or email.

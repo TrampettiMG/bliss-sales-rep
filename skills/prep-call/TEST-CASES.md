@@ -34,7 +34,7 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
    is adopted, but does not say who decides or when design starts. Expect questions only about the missing
    decision-maker and design timing, not the answered items.
 10. **Open items from history and the rep.** Bliss history has an open quote and the rep says they owe a
-    follow-up. Expect both as open items, with status and recorded reason exactly as stored; no invented item is
+    follow-up. Expect both as open items, with status and year exactly as stored and no recorded reason; no invented item is
     added. If neither exists, expect "None found. Ask if anything's outstanding."
 11. **Past winner becomes an objection.** Who won their past bids names a fictional vendor that won a prior
     agency bid. Expect an objection line using that sourced fact, such as "They've bought from that vendor
@@ -103,6 +103,12 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 31. **References are won jobs.** The brief lists an open quote under Similar jobs and a won fictional equipment
     job. Expect only the won job in References to mention, carrying the brief's category word and no stronger one.
     The open quote is left out and never used as a proof line.
+
+32. **Equipment category word.** A fictional job named "Splash Pad" has only play lines in the equipment test.
+    Expect References to name it as a play reference, not a splash reference, and to use no unconfirmed product claim.
+33. **Loss reason stays in Research Brief.** A fictional history row has status and year plus a recorded loss reason.
+    Expect Open items to show status and year exactly as stored and never quote the reason.
+34. **Exact held line.** A fictional territory stop expects "Opener and ask held until you've checked." word for word.
 
 **What "fails gracefully" means for this tool specifically:** Call Prep is a short synthesis of the Research
 Brief, the rep's words, and the one permitted read-only quote lookup. When those sources are thin, the prep is

@@ -87,7 +87,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
     `[Name]` when no tool found one.
 33. **Named proof line, equipment gate.** A fictional `new` lead has one Similar jobs entry for real play
     equipment and one for tennis-court furnishings. Expect one third-party line in the set form, the equipment
-    job only, with `from QuickBase — double-check before it goes out.` in the recipient-source note; no amount,
+    job only, with `From QuickBase — double-check before it goes out.` as its own sentence in the recipient-source
+    note; no amount,
     quote/RFQ number, status, rep, win/loss comparison, or open-quote row.
 34. **Another rep in the rep's own county.** A fictional Pine County buyer has another rep as Sales Rep and one
     quote from ten months ago, nothing open. Expect the draft to continue, with the fact line naming that rep
@@ -106,3 +107,9 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 40. **Standing multi-vendor contract.** A fictional source describes the buyer as "under contract" with three
     vendors through a standing on-demand contract. Expect no stop; the draft continues and asks how the department
     chooses among the contract vendors or when the contract next opens.
+
+41. **Other-rep note order.** A fictional Pine County buyer has past quotes under Rep A and no open record. Expect
+    the first line under the draft to name Rep A, above "To: …"; if no address is found, the next line is exactly
+    "To: [Name], no email found." word for word.
+42. **QuickBase flag sentence.** A fictional proof line is used. Expect its note to contain the separate sentence
+    "From QuickBase — double-check before it goes out."

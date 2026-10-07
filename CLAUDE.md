@@ -25,6 +25,11 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
      assigned counties, and those are the counties to use. If it replies "Your territory isn't set up
      yet", tell the rep their territory is still loading, finish the rest of setup, and leave
      Territory/Counties as "loading — say 'refresh my profile' tomorrow". Don't fill it from anywhere else.
+     **Check the key is theirs:** when QuickBase is connected, compare the `my_sources` counties' states with
+     the states of the rep's active county assignments in QuickBase. If none of them match, the key isn't
+     the rep's own: say *"Your lead-sources connection is showing counties that aren't yours. Ask your
+     trainer for your own key, then say 'refresh my profile'."*, finish the rest of setup, and save
+     Territory/Counties as "on hold — lead-sources key isn't yours yet". Never save the key's counties.
      If the connector isn't connected, use every active county assigned to them in QuickBase's county
      sales-team assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
      no assignments, use the counties where their own customers are, most frequent first, labeled
@@ -170,7 +175,7 @@ for #2", "break down the bid for #2").
   your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out."* When it
   lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
   reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
-  Territory/Counties is blank or still loading.
+  Territory/Counties is blank, still loading, or on hold.
 - **A lead the sources show is awarded to another vendor, under contract with another vendor, built, or not in
   the budget** (the Research Brief's Stage check) stops the chain at outreach too, with the line for that stage:
   - Awarded: *"The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
@@ -229,7 +234,8 @@ Use this during first-run setup, and any time the rep says "set up my automatic 
 whether they want them, and don't ask for times: set them up.
 
 1. Create the five tasks below with `create_scheduled_task`, using the task ids, titles, schedules and
-   prompts exactly as written.
+   prompts exactly as written. The schedules are the computer's own local time: use them as written and
+   never convert time zones (here or when the rep changes a time).
 2. Save the Automatic check-ins line of `PROFILE.md` as `on (Daily run weekdays 7:00 AM · Pipeline Mon
    8:00 AM and Fri 5:00 PM · Profile refresh Mon 6:30 AM · Setup check Mon 6:00 AM)`.
 3. Tell the rep in plain words:
@@ -329,7 +335,10 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 1. Look the rep up again the same way first-run setup does: their QuickBase record (by the `QuickBase
    Name` line) for name and contact, and `my_sources` for their counties. If the lead-sources connection
-   isn't there, leave Territory/Counties as it is (don't switch it to QuickBase's assignments).
+   isn't there, leave Territory/Counties as it is (don't switch it to QuickBase's assignments). Check the
+   key is theirs the way first-run setup does: if none of the `my_sources` states match their QuickBase
+   assignments, save Territory/Counties as "on hold — lead-sources key isn't yours yet" and say the same
+   one line setup uses. Once they match again, save the `my_sources` counties as usual.
 2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
    **Territory/Counties**. Fill **Contact** only when it's blank: the rep may have changed their own phone or
    email, so never overwrite it. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
@@ -344,7 +353,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-08a**
+**Tools version: 2026-10-08b**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
