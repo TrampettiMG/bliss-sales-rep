@@ -1,18 +1,15 @@
 ---
 name: quickbase-usage
 description: >
-  Use the read-only Quickbase MCP (mcp__quickbase__*, Bliss's "Sales & Projects Portal"
-  app) without blowing out the main agent's context. Bliss QB tables are huge: Quote
-  Pipeline alone has ~700 fields and tens of thousands of records, so one careless query,
-  or even list_tables, overflows the context limit. The fix: hand exploration and bulk
-  reads to a subagent that returns a compact digest; use select / where / max_records on
-  every call. Use whenever a task touches Quickbase: reading a quote, QC or bid fields,
-  line items or bond amounts, quote status history, permit / jurisdiction history, running
-  a QB report, or exploring tables and fields. Trigger phrases: "Quickbase", "QB", "set yourself up", "who am I", "my counties", "my territory",
-  "my pipeline", "my new leads", "quote details", "what's in this quote", "past customers", "check in with",
-  "mcp__quickbase__", "query_records", "run_report", "get_table_fields", "Quote Pipeline",
-  "Q/O Status Changes", "Quote Lines", "Permit Authority", "bond amount", "bhp495xeb",
-  "blissproducts.quickbase.com".
+  Read Bliss's QuickBase ("Sales & Projects Portal") through the read-only QuickBase MCP without overflowing
+  context. Tables are huge (Quote Pipeline has ~700 fields and tens of thousands of records), so follow the
+  recipes, put select / where / max_records on every call, and never list all tables or dump a table's fields.
+  Use whenever a task touches QuickBase: who the rep is and their counties, pipeline and new leads, quote
+  details, line items or bond amounts, QC or bid fields, quote status history, permit history, past customers,
+  buyer history for a Research Brief, or a QB report. Trigger phrases: "Quickbase", "QB", "set yourself up",
+  "who am I", "my counties", "my territory", "my pipeline", "my new leads", "quote details", "what's in this
+  quote", "past customers", "check in with", "Quote Pipeline", "Quote Lines", "query_records", "run_report",
+  "bhp495xeb".
 ---
 
 # Quickbase MCP usage (Bliss)
