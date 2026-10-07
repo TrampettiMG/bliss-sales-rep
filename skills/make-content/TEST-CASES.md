@@ -16,7 +16,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 
 7. **QuickBase proof points for a prospect type.** With QuickBase connected and a school-district lead in a
    fictional state, expect 2–3 similar-job or nearby-customer references, or a factual count, each marked
-   "from QuickBase — double-check before it goes out." No customer prices appear. With QuickBase unavailable,
+   "From QuickBase — double-check before it goes out." No customer prices appear. With QuickBase unavailable,
    expect the existing `[placeholder]` behavior.
 
 8. **Cover letter from a complete Bid Breakdown.** The breakdown contains a fictional bid number, project title,
@@ -42,8 +42,8 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    claim. Expect: a bold lead-in or heading like "One team for play, shade and surfacing" becomes a
    `[capability]` placeholder; the profile's Product Focus picks what to feature but is never written up as
    "Bliss offers…"; no "across [state]" or "we work with designers and contractors" line unless a source
-   shows that reach; each QuickBase reference carries its own "from QuickBase — double-check before it goes
-   out." flag; a thin draft stays short rather than padded to a word count.
+   shows that reach; each QuickBase reference carries its own separate sentence "From QuickBase — double-check
+   before it goes out."; a thin draft stays short rather than padded to a word count.
 
 14. **Outside county or awarded.** "Make a one-pager for #2" where #2 is in a fictional county not on the
    rep's Territory/Counties line, or the brief's Stage check shows it awarded to a fictional vendor. Expect:
@@ -54,7 +54,12 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
    and no count.
 
 16. **Flag placement and next tool.** A one-pager has three fictional QuickBase references and a lead in the
-   conversation. Expect each reference line to end with the flag after its period, and the only next-tool line
-   to be: `Say "draft an email for #N".`
+    conversation. Expect each reference to have its own separate sentence "From QuickBase — double-check before
+    it goes out." after its period, and the only next-tool line
+    to be: `Say "draft an email for #N".`
+
+17. **Equipment category word.** A fictional Recent projects entry named "Splash Pad" has only play lines in the
+    equipment test. Expect it to be named as play, not splash, and any unsupported capability claim to remain a
+    `[capability: …]` placeholder.
 
 **What "fails gracefully" means for this tool specifically:** never let a fabricated specific slip through unflagged. When in doubt about whether a detail came from the rep vs. was invented to sound good, treat it as invented and placeholder it.

@@ -85,7 +85,9 @@ When the rep says "check my setup", or the weekly Setup check runs it, check the
 order. Change nothing.
 
 1. **Lead-sources connection:** the `my_sources`, `read_source` and `lead_scan` tools are available, and
-   `my_sources` lists counties (not "Your territory isn't set up yet"). When QuickBase is connected, also
+   `my_sources` lists counties (not "Your territory isn't set up yet"). If the profile's Territory/Counties line
+   starts with "on hold" but the key now matches the QuickBase county assignments, say "Your key looks fixed. Say
+   'refresh my profile'." Otherwise, when QuickBase is connected, also
    compare: if none of the `my_sources` counties' states appear in the rep's QuickBase county assignments
    (following the `quickbase-usage` skill), that's the "Counties that aren't yours" problem.
 2. **QuickBase connection:** its tools are available and one small read works: look the rep up by the

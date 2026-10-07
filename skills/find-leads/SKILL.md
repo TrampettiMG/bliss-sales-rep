@@ -57,6 +57,10 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
   appear here."), **stop the run**. Tell the rep plainly that their territory is still loading, that their
   sources will appear once Trampetti finishes, and to try again later today or tomorrow. Do **not** run the
   web-search, do **not** report an empty or thin result, and do **not** write the board.
+- **Territory on hold** — if the profile's `Territory/Counties` line starts with `on hold`, stop the run and
+  say word for word: "Your lead-sources connection is showing counties that aren't yours, so I can't scan for
+  leads yet. Ask your trainer for your own key, then say 'refresh my profile'." Inside the Daily run, this is
+  step 1 and the run carries on with its remaining sections.
 
 1. **`lead_scan` first.** One call over the rep's agenda sources is the cheapest, broadest first pass — run it
    before anything else, with a `since:` about 60 days back (widen it if the rep asks for a longer look). Page
@@ -86,8 +90,9 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
    Skip enrichment when nothing is missing. Report it as "added details from the web for N leads."
 4. **Close with the "Couldn't read these, open them yourself" list** — keep it compact and include governing or
    parks/rec agenda failures, "open it yourself" documents, stale library links, counties with no library
-   sources ("no library sources for [county] yet — tell your trainer"), and connector errors. Retry a connector
-   error once, then give one plain line. Keep irrelevant-board failures out of the list.
+   sources ("no library sources for [county] yet — tell your trainer"), and connector errors. Each line is exactly "[title] · [county] · [link] · [reason]", such as
+   "Council agenda, Sep 22 · Pine County · [link] · blocked"; leave out the link only when there is no
+   source. Retry a connector error once, then give one plain line. Keep irrelevant-board failures out of the list.
 
 ### Dates and currency
 
@@ -159,7 +164,8 @@ Alternative` apply only to a quote or opportunity for this project or site. Ever
 old parts order or a different project with the same buyer never makes it `won before`. When QuickBase has
 other orders with the buyer, follow `new` with "Past orders with this buyer: N, last [year], [categories]"
 (counted the History-line way below). On a lead that gets a History line, that line carries the count
-instead: never both. Nothing on file at all: just `new`. Statuses are shown verbatim as stored, and a record
+instead: never both. If there are no orders, just `new`, with nothing after it; quotes without orders do not
+add a line. Statuses are shown verbatim as stored, and a record
 link may carry table IDs inside its URL, but never print a bare table or field ID.
 If the extension isn't connected, say
 **"QuickBase isn't connected"** once, leave the label off every lead, and never guess a status.
@@ -178,7 +184,8 @@ and keep it callable.
 For the top 5 leads in a normal run, add one line immediately after the QuickBase label. Build it from the
 QuickBase lookup already done for that lead — no web searches — plus at most one bounded nearby lookup per
 county. Use this form: "History: 6 quotes since 2019, 1 won (2023 shade, $48K Grand Total incl. tax), last
-closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])".
+closed 2026 'Close - Multiple Alternative' · Nearby: [customer] bought a playground in 2025 ([rep])". Show
+status and year only from the history rows; never include a recorded loss reason.
 History counts every quote for the buyer except obvious test records (a customer or job name like "TEST",
 "Test2", "Testing") — the same count the Research Brief uses. The History line reads "N quotes since [year]
 (plus M test-account entries not shown)"; the collapsed entries are not in N. A quote under a test rep account
@@ -220,7 +227,7 @@ stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due
    "open it yourself" documents, stale links, counties with no library sources, and connector errors. Include
    title, county, link, and reason when there is a source; mention the download cap if it was hit.
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
-   Say nothing about file types or storage (CSV, Excel, text files): just this line.
+   Say nothing about file types or storage (CSV, Excel, text files), and never mention the downloadable copy: just this line.
 6. **The last line of the scan's results** is the ROUTINE count, and it is count-only — no list, no links, and no
    category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was
    set aside, "Set aside 0 routine items."
@@ -263,11 +270,11 @@ scores, QuickBase labels and the lead board all work the same), except:
        reads "Stage 2 → 4"; for an open bid add "due [date]" after the stage.
      The history clause is the History line's content, shortened, and it is the only place the buyer's
      count appears: no separate History bullet, no "Past orders" line, and no other sub-bullets. If there are
-     more: *"…and N more on your lead board."*
+     more: *"…and N more on your lead board."* Show status and year only; never include a recorded loss reason.
    - The couldn't-read list as a single count line: *"Couldn't read 4 sources. Say 'show what you
      couldn't read' for the list."*
    - The saved-board line exactly as *"Saved your lead board — N leads, M rows changed."* Never mention
-     file types, CSV, Excel, or where or how the file is stored.
+     file types, CSV, Excel, where or how the file is stored, or the downloadable copy.
    - The Set-aside line, as usual. It is the last line of the scan's results. No "Sources:" list, no note to a
      trainer or admin, and no narration of the run.
    - Nothing new at all: one line, *"Nothing new in your counties since [date]."* ([date] is the `since:`

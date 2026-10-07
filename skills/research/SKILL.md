@@ -56,9 +56,12 @@ chase every tangent. If the budget runs out, present what was found and name wha
    Fallback.md`. If WebFetch returns binary, "can't parse" or a
    saved-file note for a PDF, run the same URL through `read_source` with a query. If the host is refused, say
    "PDF not readable here" in the "Not checked:" line; don't use local tools unless the rep has code execution.
-   If the target is outside the rep's counties, say so in the header: "This one's in [county], which isn't one
-   of your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." When
-   no rep is named: "This one's in [county], which isn't one of your counties. Check with your manager before
+   If the target is a county or area with no buyer named (for example, "research Pine County park projects"),
+   treat the county government as the buyer and say so in one line; research that one government target, never a
+   web-built lead list. Web search never creates a lead — Lead Finder does that. If the target is outside the rep's
+   counties, say so in the header word for word: "This one's in [county], which isn't one of your counties.
+   QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." When no rep is named,
+   use word for word: "This one's in [county], which isn't one of your counties. Check with your manager before
    reaching out." Then continue with
    the web flow below. If the connector is unavailable, continue with the web flow below.
    - **Person:** current role/title, organization, and any recent public professional activity (news
@@ -175,8 +178,9 @@ dollar math (sums, shares, or ranges across line items).
 
 **Bliss history with this buyer** — for the matched buyer entity, show up to 8 Bliss quotes or bids, newest
 first. Use the same distinctive-name, own-department, quote-only, and test-record rules as F5. Open the section
-with: "N quotes since [year], M of them orders (Order Submitted, Invoiced or Commission Paid; last [year]: [categories]); the K newest shown." Amounts are Grand Total incl. tax, as stored.
-Each line has: ordered or quoted date · job name · total ·
+with: "N quotes since [year], M of them orders (Order Submitted, Invoiced or Commission Paid; last [year]: [categories]); the K newest shown."
+The next line is exactly: "Amounts are Grand Total incl. tax, as stored."
+Each line has: ordered or quoted month and year (for example, "ordered Jun 2025" or "quoted Apr 2013") · job name · total ·
 status exactly as shown · recorded reason lost, if any · co-op contract, if any · rep. A job is listed as play,
 splash or shade only if it passes the equipment test; otherwise list it as 'furnishings' or 'parts', or leave it
 out. Collapsed test-account entries are not counted in N; they appear only in the "(plus T test-account entries
@@ -194,7 +198,7 @@ to 3 near misses (right size and buyer type, but only some of the product catego
 miss: [what differs]"; never present a near miss as a match. Two limits to say plainly when they apply:
 QuickBase files site furnishings under play equipment, so a job only counts as a playground when it has
 real playground equipment (the Research Brief's equipment test); and many customers have no buyer type
-recorded, so use the blank-type rule above. Each line has: buyer · state · ordered or quoted date · product categories ·
+recorded, so use the blank-type rule above. Each line has: buyer · state · ordered or quoted month and year · product categories ·
 total · status · rep. Add one factual pattern line, such as
 "Of the 5 shown, 4 won." (or, when only won jobs were pulled, just "5 won jobs shown"). This lookup will move to
 a faster Bliss Library lookup later. If QuickBase isn't connected, say: "Similar jobs elsewhere: QuickBase
@@ -295,9 +299,7 @@ Keep it tight, in this order:
 - **Project** — four lines right under the name line. "Not found" is fine on any line; a guess is not.
   - Amount and fiscal year (page) — an amount from a multi-year plan carries its span ("$2.5M, FY27–28"). Cite the page
     `read_source` opens and add the printed number when they differ: "p. 40 (printed 38)." Open the page before citing it.
-  - Stage check — "Stage: [Lead Finder stage] · sources say: [budgeted / design / bid open (date) / awarded to (vendors,
-    date or 'date not stated', source) / built (source) / not in budget (source) / partly built (what, source; what not
-    confirmed) / proposed or draft book (adoption: date or not confirmed)]." Before writing "budgeted", search the
+  - Stage check — one line exactly in this form: "Stage: [Lead Finder stage] · sources say: [budgeted / design / bid open (date) / awarded to (vendors, date or 'date not stated', source) / built (source) / not in budget (source) / partly built (what, source; what not confirmed) / proposed or draft book (adoption: date or not confirmed)]." Before writing "budgeted", search the
     budget message and CIP for "not included" and "conditional funding" next to the project name and give the page
     if found. A stage read only from a column position is "budgeted (column; not confirmed)". Never silently overwrite
     the Lead Finder stage; show both. A standing contract held by several vendors is a way to buy, not an award: put it
@@ -328,8 +330,7 @@ Keep it tight, in this order:
   why it connects to the rep's product focus (a factual connection, not a pursue/pass verdict or
   timing advice — "design is still open" is a fact; "a good time to pitch" is advice).
 - **Suggested opener** — one short, natural conversation-starter line referencing the findings above,
-  written in the rep's Voice from `PROFILE.md` if set. Under a territory or another-rep stop, replace the Suggested opener with
-  "Opener and ask held until you've checked." Under an awarded or built stop, make it about the open item the stop line names and say which.
+  written in the rep's Voice from `PROFILE.md` if set. Under a territory or another-rep stop, replace the Suggested opener with "Opener and ask held until you've checked." word for word. Under an awarded or built stop, make it about the open item the stop line names and say which.
 
 If research comes back thin, keep the same structure but say so honestly in "Why call now" rather than
 inventing content to fill it. **End after the suggested opener.** After it, allow at most one "Not checked:"
