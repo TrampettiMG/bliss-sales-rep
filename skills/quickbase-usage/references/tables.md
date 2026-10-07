@@ -114,7 +114,7 @@ All on Quote Pipeline `bhp495xeb`, verified via field probe + 50-row population 
 
 ## Additions discovered 2026-07-16b (Quote Lines product type)
 
-Quote Lines `bhq88xjum`: **156 "Product Type"** (text, effective value — resolves override-else-vendor; loaded ~7/9, 100% filled by construction), 157 "Product Type Override" (manual multiple-choice), 155 "Vendor - Product Type" (vendor lookup). **14 Quote #** (FK → QP fid 3), **16 Extended Price** (currency; null on note/subtotal lines, negatives = discounts), 8 Description, 9 Qty. Observed type values: Play Equipment / Labor / Miscellaneous / Shade / Shelter / Surfacing / Mulch — "install" = Labor; **Miscellaneous is a catch-all vendor mapping** (freight, bonds, subcontract — $22.2M of the open book), treat as unclassified.
+Quote Lines `bhq88xjum`: **156 "Product Type"** (text, effective value — resolves override-else-vendor; loaded ~7/9, 100% filled by construction), 157 "Product Type Override" (manual multiple-choice), 155 "Vendor - Product Type" (vendor lookup). **14 Quote #** (FK → QP fid 3), **16 Extended Price** (currency; null on note/subtotal lines, negatives = discounts), 8 Description, 9 Qty. Observed type values: Play Equipment / Labor / Miscellaneous / Shade / Shelter / Surfacing / Mulch — "install" = Labor; **Miscellaneous is a catch-all vendor mapping** (freight, bonds, subcontract — a large share of the open book), treat as unclassified.
 
 ## Additions discovered 2026-07-16 (Invoices child table resolved)
 

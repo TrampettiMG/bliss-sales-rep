@@ -112,9 +112,10 @@ items, road resurfacing, judicial courts, legal "exercise", generic park mention
 **Only REAL hits get staged, scored, or cross-referenced.** A ROUTINE hit is set aside silently — it never
 appears as a lead, never gets a score, and never reaches QuickBase.
 
-End every output with **one count-only line** for what was set aside, e.g. "Set aside 11 routine items." Count
+End every scan's results with **one count-only line** for what was set aside, e.g. "Set aside 11 routine items." Count
 only — no list, no links, no detail, and no category, reason, or parenthetical after the number. When nothing
-was set aside, say "Set aside 0 routine items."
+was set aside, say "Set aside 0 routine items." When a closing offer is shown, it comes immediately after this
+line and is the very last line of the scan's output.
 
 ## Stage and score
 
@@ -220,14 +221,15 @@ stage-6 bid lead, put the due date exactly as the documents state it in `Bid Due
    title, county, link, and reason when there is a source; mention the download cap if it was hit.
 5. **"Saved your lead board — N leads, M rows changed."** — only after the write is read back and verified.
    Say nothing about file types or storage (CSV, Excel, text files): just this line.
-6. One closing line offering both next steps: "Want more on one of these? Ask for the Research Brief — for
-   example, 'research #2' for the full history. Or an intro email built around one of them? That's the Email
-   Writer." When the rep picks one, pass that lead (what, when, stage, source) and its QuickBase label plus
-   record number to the Email Writer as known context.
-7. **The last line of the output** is the ROUTINE count, and it is count-only — no list, no links, and no
-   category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was set
-   aside, "Set aside 0 routine items." Nothing follows it: no "Sources:" list, no note to a trainer, admin or
-   tester (even when the person looks like one), and no narration of how the scan ran.
+6. **The last line of the scan's results** is the ROUTINE count, and it is count-only — no list, no links, and no
+   category, reason, or parenthetical after the number: "Set aside 11 routine items." When nothing was
+   set aside, "Set aside 0 routine items."
+7. When at least one lead was shown, put one closing line immediately after the Set-aside line: "Want more on
+   one of these? Ask for the Research Brief — for example, 'research #2' for the full history. Or an intro email
+   built around one of them? That's the Email Writer." When the rep picks one, pass that lead (what, when, stage,
+   source) and its QuickBase label plus record number to the Email Writer as known context. Nothing follows this
+   offer: no "Sources:" list, no note to a trainer, admin or tester (even when the person looks like one), and
+   no narration of how the scan ran.
 
 ## Morning digest mode — the automatic check-in
 
@@ -266,16 +268,17 @@ scores, QuickBase labels and the lead board all work the same), except:
      couldn't read' for the list."*
    - The saved-board line exactly as *"Saved your lead board — N leads, M rows changed."* Never mention
      file types, CSV, Excel, or where or how the file is stored.
-   - The Set-aside line, as usual. No "Sources:" list, no note to a trainer or admin, no narration of the
-     run.
+   - The Set-aside line, as usual. It is the last line of the scan's results. No "Sources:" list, no note to a
+     trainer or admin, and no narration of the run.
    - Nothing new at all: one line, *"Nothing new in your counties since [date]."* ([date] is the `since:`
      date from step 2, the last check, never today), then the saved-board line if any row changed, and skip
-     the step 7 line.
+     the step 7 offer.
    - **Inside the Daily run:** a nothing-new step 1 is an empty section, so leave out the "Nothing new" line
      and the Tip line (keep the saved-board line only if rows changed), and the Set-aside line isn't the last
      line of the message: the Daily run's other sections follow it.
-7. When at least one lead was shown, end with one line: *"Want more on one of these? Ask for the Research Brief — for example, 'research #2' —
-   or the Email Writer."*
+7. When at least one lead was shown, put one line immediately after the Set-aside line: *"Want more on one of
+   these? Ask for the Research Brief — for example, 'research #2' — or the Email Writer."* This is the very
+   last line of the scan's output; nothing follows it.
 
 ## Flow
 

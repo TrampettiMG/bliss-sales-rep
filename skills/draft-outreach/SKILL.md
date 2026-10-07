@@ -75,7 +75,7 @@ review and send/say themselves.
    you ask, don't offer examples drawn from earlier results as if they were the rep's own history — a
    project from `research` or `find-leads` is a lead, not "a quote you already sent." Ask plainly
    ("Which quote is this about?").
-   **For a follow-up on one of the rep's own quotes** ("follow up on the shade quote I sent Henrico
+   **For a follow-up on one of the rep's own quotes** ("follow up on the shade quote I sent Pine County
    Schools") when the QuickBase connection is set up, look it up before asking or drafting: pull the
    rep's open opportunities the way the Pipeline Check tool file does (its "Whose opportunities"
    section), plus the opportunity name and its contact if QuickBase has one (the `quickbase-usage` skill
@@ -191,7 +191,7 @@ review and send/say themselves.
 
 Never write an open-quote follow-up ("still moving?") for an opportunity that already has an ordered
 quote — the customer has bought, so that email would look out of touch. If the rep asks for one (alone
-or in a batch), skip it and say why in one line ("Skipped Opp 12345 — 2 of its quotes are already
+or in a batch), skip it and say why in one line ("Skipped Opp [#] — 2 of its quotes are already
 ordered; its status in QuickBase may need updating."). Check quote statuses the way the Pipeline Check
 tool file does if they aren't already in the conversation.
 
@@ -202,7 +202,7 @@ Check's past-customer list: one short past-customer check-in each, following tho
 last order only as QuickBase shows it, never invent their plans or budget timing). If there are more, say how many are left and offer the next batch. Use the
 Pipeline Check result already in the conversation for each quote's customer, opportunity number and
 name; look up the contact the same way as above, and use `[Name]` where there isn't one. Ask for Voice
-once (if missing), not per email. Put a one-line header above each draft ("Opp 12345 — Henrico County
+once (if missing), not per email. Put a one-line header above each draft ("Opp [#] — Pine County
 Public Schools") so the rep can tell them apart. Every email follows the open-quote follow-up rules
 above: one simple question, "no" or "not this year" easy to say, no invented urgency or discounts. Don't
 copy the same wording into every email word for word — vary the opening line so they don't read as a

@@ -127,7 +127,7 @@ has an opportunity for this owner: pull the rep's opportunities the way the Pipe
 (its "Whose opportunities" section), including Ordered and Closed ones for this check, and match on the
 issuing agency/owner name. Read only — never write to QuickBase. Report it as one line in the gating
 snapshot:
-- one or more matches: "In QuickBase: Opp 12345 — [name], [status]" (up to 3, then "and N more"), so the
+- one or more matches: "In QuickBase: Opp [#] — [name], [status]" (up to 3, then "and N more"), so the
   rep adds to the existing record instead of creating a duplicate customer or opportunity;
 - no match of yours but another rep's record for this owner (from "Bliss and this buyer"): "In QuickBase:
   none of yours — another rep's record is below";
@@ -135,7 +135,8 @@ snapshot:
 - no connection: leave the line out.
 A name match isn't proof it's the same project — say "for this owner," not "for this bid."
 Statuses are shown verbatim as stored (e.g. "Close - Quick Close (no reason)"). A record link may carry
-table IDs inside its URL; never print a bare table or field ID.
+table IDs inside its URL; never print a bare table or field ID. Link records with the view link the recipes give
+(`action/dr`), never an edit link (`action/er`).
 
 ## Bliss and this buyer
 

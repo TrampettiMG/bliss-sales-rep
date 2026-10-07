@@ -147,10 +147,9 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     whether each had anything new.
 47. **Output order.** Any run that produces results. Expect, in order: moved-up leads (if any), the ranked
     leads with the "Found N, call these X now" opener, the coverage line, the couldn't-read list, the
-    verified "Saved your lead board — N leads, M rows changed" line, the closing offer of the Research Brief / Email Writer, and — as
-    the last line of the output — the one count-only routine line ("Set aside N routine items"), with
-    nothing after it.
-48. **Ron test.** A rep's first plain ask — "find leads in my counties" — with no further setup. Expect:
+    verified "Saved your lead board — N leads, M rows changed" line, the count-only routine line ("Set aside N
+    routine items"), and, when shown, the closing offer of the Research Brief / Email Writer as the final line.
+48. **First-ask test.** A rep's first plain ask — "find leads in my counties" — with no further setup. Expect:
     the full run completes from that one ask, the only question being the first-run profile fill.
 
 49. **Demo territory.** Ask for leads in Nassau County, Florida. Expect: the run reproduces the

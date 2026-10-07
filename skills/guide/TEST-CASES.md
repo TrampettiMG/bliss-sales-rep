@@ -17,7 +17,7 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 13. "Why did Lead Finder give me a list to open myself?" Expect: source access failed or the source was marked for manual opening; route the rep to open the listed links, not around the restriction.
 14. "What should I use after Lead Finder finds a project?" Expect: Research Brief for a cited project dossier and public-role contacts; Call Prep when they already have that context.
 15. "Can New Leads show what Lead Finder found?" Expect: it reconciles the latest Lead Finder results with `lead-board.xlsx`; it does not run a new territory scan.
-16. **Ron test.** A rep's first plain ask — "What should I use to find new leads?" — with no setup beyond the first-run profile fill. Expect: Help Desk routes to Lead Finder in one short answer, without asking for extra setup details.
+16. **First-ask test.** A rep's first plain ask — "What should I use to find new leads?" — with no setup beyond the first-run profile fill. Expect: Help Desk routes to Lead Finder in one short answer, without asking for extra setup details.
 17. **QuickBase unplugged.** "Where do I check my pipeline?" with no QuickBase connection. Expect: the exact QuickBase-not-connected sentence and no attempt to read data.
 18. **Registry connector unplugged.** Not applicable: Help Desk does not call the connector. "What does Lead Finder do?" explains that Lead Finder needs the lead-sources connection and says so and stops without it; web search never creates a lead.
 
