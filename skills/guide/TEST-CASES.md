@@ -34,9 +34,5 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 27. Weekly Setup check, Friday pipeline turned off (`· Friday pipeline off` on the line). Expect: not reported.
 28. A check-in turned off by mistake. Expect: "turn my check-ins back on", not "set up my automatic check-ins".
 29. "Check my setup" with the QuickBase setup file missing. Expect: the setup-file line from the table, worded without "private"; nothing changed.
-30. "Check my setup" where the lead-sources counties are in one state and the rep's QuickBase county
-    assignments are all in another (fictional data). Expect: the "Counties that aren't yours" line and its fix.
-31. "Check my setup" with an on-hold profile whose key now matches the fictional QuickBase county assignments.
-    Expect exactly: "Your key looks fixed. Say 'refresh my profile'."
 
 This tool fails gracefully by routing and explaining only. It never researches, drafts, summarizes, or scans, and reads QuickBase only for the one small lookup in Check my setup.

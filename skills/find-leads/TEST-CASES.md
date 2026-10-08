@@ -248,10 +248,6 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
     stays in the call-now names. A document naming Bliss on a different procurement doesn't trigger
     BLISS INVOLVED at all.
 78. **Carried-over amount.** The book shows a prior-year balance beside new money. Expect the digest to carry both.
-
-79. **Territory on hold.** The profile's Territory/Counties line starts with "on hold — lead-sources key isn't yours yet."
-    Expect: the run stops with exactly "Your lead-sources connection is showing counties that aren't yours, so I can't scan for leads yet. Ask your trainer for your own key, then say 'refresh my profile'."
-    In the Daily run, expect that line as step 1 and the remaining sections to continue.
 80. **Couldn't-read line shape.** A fictional Pine County council agenda is blocked. Expect exactly
     "Council agenda, Sep 22 · Pine County · [link] · blocked"; if there is no source, omit only the link.
 81. **No orders, quotes only.** A fictional buyer has quotes but no orders. Expect the QuickBase label to be

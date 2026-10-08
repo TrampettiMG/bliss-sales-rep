@@ -24,25 +24,20 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    - **Their counties:** if the registry connector is connected, call `my_sources`. It lists the rep's
      assigned counties, and those are the counties to use. If it replies "Your territory isn't set up
      yet", tell the rep their territory is still loading, finish the rest of setup, and leave
-     Territory/Counties as "loading — say 'refresh my profile' tomorrow". Don't fill it from anywhere else.
-     **Check the key is theirs:** when QuickBase is connected, compare the `my_sources` counties' states with
-     the states of the rep's active county assignments in QuickBase. If none of them match, the key isn't
-     the rep's own: say *"Your lead-sources connection is showing counties that aren't yours. Ask your
-     trainer for your own key, then say 'refresh my profile'."*, finish the rest of setup, and save
-     Territory/Counties as "on hold — lead-sources key isn't yours yet". Never save the key's counties.
-     If the connector isn't connected, use every active county assigned to them in QuickBase's county
-     sales-team assignments, grouped by state. Page through all of them — some reps have 100+. Only if they have
-     no assignments, use the counties where their own customers are, most frequent first, labeled
-     "based on your customers."
+     Territory/Counties as "loading, say 'refresh my profile' once your lead-sources connection is set up".
+     Don't fill it from anywhere else. Territory/Counties comes from `my_sources` only: never compare it
+     with QuickBase, and never fill or correct it from QuickBase. If the connector isn't connected, or says
+     the territory isn't set up, leave Territory/Counties as "loading, say 'refresh my profile' once your
+     lead-sources connection is set up" and move on.
    Then show the rep what you found in one short message and ask them to confirm or fix it. For a long
    county list, show the count and states rather than every name. Also ask, optionally, for their
    product focus and — if they have more than about 10 counties — which few counties they want lead
    searches to focus on:
-   *"Here's what I found in QuickBase — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
+   *"Here's what I found — Name: … · Contact: … · Counties: 42 across GA and FL. Is that
    right? Optional: the products you focus on, and a few counties you want me to focus lead searches on."*
    If the rep answers the focus question with a region instead of counties ("Richmond metro," "the
-   coast"), don't pick the counties yourself. Reply with the counties **from their own QuickBase
-   assignments** you think they mean and wait for a yes before saving: *"By Richmond metro, do you mean
+   coast"), don't pick the counties yourself. Reply with the counties **from their own `my_sources`
+   counties** you think they mean and wait for a yes before saving: *"By Richmond metro, do you mean
    Chesterfield, Henrico and Richmond city? Anything to add or drop?"* Never add a county they aren't
    assigned unless they name it themselves.
    **If the login doesn't match a rep** (for example, an admin or shared login), ask one question only —
@@ -175,7 +170,7 @@ for #2", "break down the bid for #2").
   your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out."* When it
   lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
   reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
-  Territory/Counties is blank, still loading, or on hold.
+  Territory/Counties is blank or still loading.
 - **A lead the sources show is awarded to another vendor, under contract with another vendor, built, or not in
   the budget** (the Research Brief's Stage check) stops the chain at outreach too, with the line for that stage:
   - Awarded: *"The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
@@ -335,10 +330,8 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 1. Look the rep up again the same way first-run setup does: their QuickBase record (by the `QuickBase
    Name` line) for name and contact, and `my_sources` for their counties. If the lead-sources connection
-   isn't there, leave Territory/Counties as it is (don't switch it to QuickBase's assignments). Check the
-   key is theirs the way first-run setup does: if none of the `my_sources` states match their QuickBase
-   assignments, save Territory/Counties as "on hold — lead-sources key isn't yours yet" and say the same
-   one line setup uses. Once they match again, save the `my_sources` counties as usual.
+   isn't there, leave Territory/Counties as it is (never fill it from QuickBase). Never compare the
+   `my_sources` counties with QuickBase either: save them as they come.
 2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
    **Territory/Counties**. Fill **Contact** only when it's blank: the rep may have changed their own phone or
    email, so never overwrite it. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
@@ -353,7 +346,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-08b**
+**Tools version: 2026-10-08c**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

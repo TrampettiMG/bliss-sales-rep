@@ -2,7 +2,7 @@
 
 Each is the shortest path that keeps table-sized payloads out of the main context. The `SKILL.md` rules still hold: `select` always, bound the rows, push work server-side, delegate exploration and bulk. Field IDs written `<…>` aren't mapped yet — discover them once via a subagent (see `subagents.md`), then record them in `field-map.md`.
 
-## "Who am I and what counties do I cover?" (rep setup / profile)
+## "Who am I?" (rep setup / profile)
 
 Used by the sales-rep setup to fill `PROFILE.md` without asking. Small, bounded reads — direct is fine.
 Verified 2026-09-24 (the `_curuser_` match returns 0 rows on an admin token, as it should — a rep's own
@@ -16,14 +16,8 @@ token returns their record).
    nothing, return "not found" so setup asks the full questions. **Never pick a different rep**, and
    exclude test reps (any rep whose name contains "TEST") unless the trainer is deliberately testing
    as one.
-3. **Counties:** `query_records {table_id: "buq6z9c6j", where: "{9.EX.<rep key>}AND{12.EX.'Active'}", select: ["7","8"], max_records: 200}`
-   → fid 7 county, 8 state. **Page with `skip`** until `hasMore` is false — some reps have 100+ rows.
-   Group by state; dedupe.
-4. **No assignment rows** → fall back to the rep's customers: Customers `bgr44yuh9` where
-   `{53.EX.<rep key>}`, select `["115","116"]`, page and tally county+state, most frequent first; ~12% of
-   customers have a blank county — skip those. Label the result "based on your customers."
-
-Return only: name, email, cell (if any), and the county list (or count + states if long).
+Return only: name, email, cell (if any). Counties are not read from QuickBase: the rep's territory comes
+from the registry connector (`my_sources`) only.
 
 ## "Who covers this county?" (Research Brief outside-county header)
 
