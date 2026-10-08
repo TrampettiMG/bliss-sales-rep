@@ -52,7 +52,7 @@ Work through it one step at a time, one fix at a time:
    cause once, then send the rep to their trainer.
 
 If the rep can't fix it themselves (counties not loaded, the lead-sources service paused, a key that doesn't
-work, counties that aren't theirs), say so in one line and point them to their trainer: Nick Ambrose first,
+work), say so in one line and point them to their trainer: Nick Ambrose first,
 then Mike Trampetti, as the setup sheet says. Never suggest a way around a blocked site, a security check, a
 permission prompt, or a paused connection. If the rep pastes a key, token or password, tell them in one line
 not to share it and to ask their trainer for a new one, then add the new one themselves where the setup
@@ -62,7 +62,6 @@ sheet shows (step 4 for QuickBase, step 6 for lead sources). Never use it or put
 |---|---|---|---|
 | "Your lead-sources connection isn't set up yet" | The lead-sources connection isn't added yet | Setup sheet step 6 | Say "check my setup" |
 | "Your territory isn't set up yet" | Your counties haven't been loaded yet | Tell your trainer | Ask the Lead Finder again tomorrow |
-| Counties that aren't yours | The lead-sources key isn't your own | Ask your trainer for your own key | Say "check my setup" |
 | QuickBase tools say they're unavailable | The QuickBase extension isn't installed, or this chat started before it was | Setup sheet step 4, then start a new chat | "check my pipeline" shows your opportunities |
 | "One QuickBase setup file from your trainer is missing" | The QuickBase setup file isn't in your project | Setup sheet step 7: drag the file into the project | Say "check my setup" |
 | Your trainer sent a new QuickBase setup file | The old one is still installed | In the Claude app: Settings → Capabilities → Skills, remove quickbase-usage, upload the new file, then start a new chat | Say "check my setup" |
@@ -85,11 +84,7 @@ When the rep says "check my setup", or the weekly Setup check runs it, check the
 order. Change nothing.
 
 1. **Lead-sources connection:** the `my_sources`, `read_source` and `lead_scan` tools are available, and
-   `my_sources` lists counties (not "Your territory isn't set up yet"). If the profile's Territory/Counties line
-   starts with "on hold" but the key now matches the QuickBase county assignments, say "Your key looks fixed. Say
-   'refresh my profile'." Otherwise, when QuickBase is connected, also
-   compare: if none of the `my_sources` counties' states appear in the rep's QuickBase county assignments
-   (following the `quickbase-usage` skill), that's the "Counties that aren't yours" problem.
+   `my_sources` lists counties (not "Your territory isn't set up yet").
 2. **QuickBase connection:** its tools are available and one small read works: look the rep up by the
    `QuickBase Name` line in the profile, following the `quickbase-usage` skill (never guess tables or fields).
    A blank QuickBase Name is the profile problem in step 4 (skip this read). A lookup that finds no active

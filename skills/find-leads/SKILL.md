@@ -57,10 +57,6 @@ Work in this order, every run. Steps 1–2 are the registry connector (the tools
   appear here."), **stop the run**. Tell the rep plainly that their territory is still loading, that their
   sources will appear once Trampetti finishes, and to try again later today or tomorrow. Do **not** run the
   web-search, do **not** report an empty or thin result, and do **not** write the board.
-- **Territory on hold** — if the profile's `Territory/Counties` line starts with `on hold`, stop the run and
-  say word for word: "Your lead-sources connection is showing counties that aren't yours, so I can't scan for
-  leads yet. Ask your trainer for your own key, then say 'refresh my profile'." Inside the Daily run, this is
-  step 1 and the run carries on with its remaining sections.
 
 1. **`lead_scan` first.** One call over the rep's agenda sources is the cheapest, broadest first pass — run it
    before anything else, with a `since:` about 60 days back (widen it if the rep asks for a longer look). Page

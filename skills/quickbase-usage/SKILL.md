@@ -4,10 +4,10 @@ description: >
   Read Bliss's QuickBase ("Sales & Projects Portal") through the read-only QuickBase MCP without overflowing
   context. Tables are huge (Quote Pipeline has ~700 fields and tens of thousands of records), so follow the
   recipes, put select / where / max_records on every call, and never list all tables or dump a table's fields.
-  Use whenever a task touches QuickBase: who the rep is and their counties, pipeline and new leads, quote
+  Use whenever a task touches QuickBase: who the rep is, pipeline and new leads, quote
   details, line items or bond amounts, QC or bid fields, quote status history, permit history, past customers,
   buyer history for a Research Brief, or a QB report. Trigger phrases: "Quickbase", "QB", "set yourself up",
-  "who am I", "my counties", "my territory", "my pipeline", "my new leads", "quote details", "what's in this
+  "who am I", "my pipeline", "my new leads", "quote details", "what's in this
   quote", "past customers", "check in with", "Quote Pipeline", "Quote Lines", "query_records", "run_report",
   "bhp495xeb".
 ---
@@ -72,7 +72,7 @@ The main agent stays clean. A subagent does the heavy reads in *its* context and
 `references/recipes.md`.** The recipes carry the table and field IDs they need. Open `field-map.md`,
 `tables.md`, `tools.md` or `subagents.md` only if a call errors or no recipe covers the job — they cost
 ~15K tokens together.
-→ Sequenced flows for the real Bliss jobs — rep setup (who am I + my counties), who covers a county, the rep's open opps with contact / last activity / record links, finding a rep's opp for a customer, quote details for an opp, past customers with nothing open, a quote's QC fields, line items / bond amounts, status history, permit lookup, the Research Brief bid-history lookups (buyer history, similar jobs, nearby customers), the Bid Breakdown lookups, and the Pipeline Check today-mode lookups (quote terms, bid timeline): **read `references/recipes.md`**.
+→ Sequenced flows for the real Bliss jobs — rep setup (who am I), who covers a county, the rep's open opps with contact / last activity / record links, finding a rep's opp for a customer, quote details for an opp, past customers with nothing open, a quote's QC fields, line items / bond amounts, status history, permit lookup, the Research Brief bid-history lookups (buyer history, similar jobs, nearby customers), the Bid Breakdown lookups, and the Pipeline Check today-mode lookups (quote terms, bid timeline): **read `references/recipes.md`**.
 → Known Bliss table IDs and field IDs (so you skip exploration): **read `references/field-map.md` first**, then **`references/tables.md`** for anything the field map doesn't cover (the field map has the full 9/29 map: all 118 tables by group, key fields per table, every status value, query rules, conflicts).
 → ⚠ **Never select or export credential fields:** Permit Authorities `btwte4vj4` fids 16/17/18 and Quote Permits `bsce9f3yv` fids 44/45/46 hold logins and passwords.
 
