@@ -1,10 +1,9 @@
 # Bliss Sales Rep setup
 
-Follow these steps in order. Your trainer provides your QuickBase token and your registry key. Do not share either.
+Follow these steps in order. Your trainer sets you up on a call and gives you your QuickBase token and your registry key then. Do not share either.
 
 1. Account
-   - If your trainer invited you to a Business account, accept the invite.
-   - Otherwise, sign in to your Pro account, turn off "help improve Claude" in settings, and verify it is off.
+   Accept the invite to the Bliss Claude organization from your trainer and sign in with that account.
    You should now see your Claude account home.
 
 2. Desktop app
@@ -12,16 +11,16 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Cowork.
 
 3. Code-execution network access
-   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. Where this setting sits depends on your account type. If you can't find it, tell your trainer.
+   In Cowork settings, enable network access for code execution so Lead Finder can download public PDFs when needed. If you can't find it, tell your trainer.
    You should now see network access enabled for code execution.
 
 4. QuickBase extension
-   Go to Settings → Extensions → Advanced. Install `quickbase-mcpb.mcpb`, then follow its prompts with your own QuickBase user token and realm/app details from your trainer. Start a fresh chat after installation.
+   Go to Settings → Extensions and find QuickBase in your organization's list. Install it, then enter your own QuickBase user token and the realm/app details from your trainer. Start a fresh chat after installation.
    You should now see the QuickBase extension connected. If you do not have it yet, the public tools still work; QuickBase tools will say they are unavailable.
 
-5. QuickBase setup file
-   Your trainer gives you the QuickBase setup file (the `quickbase-usage` skill; it holds no token). Save it somewhere you can find it; you'll add it in step 7.
-   You should now have the file saved on your computer.
+5. QuickBase skill
+   The QuickBase skill (`quickbase-usage`) comes from the Bliss organization. There is nothing to download or install. If Claude later says the QuickBase skill isn't available, tell your trainer.
+   You should now see nothing to do for this step.
 
 6. Registry connector
    1. In Claude Desktop, go to Settings → Connectors → Add custom connector.
@@ -29,14 +28,14 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    3. URL: `https://bliss-lead-registry.trampetti.com/mcp`
    4. Leave every other field blank. Click Add.
    5. Claude opens a web page titled "Bliss Registry: enter your key".
-   6. Paste the key from your trainer. You only do this once.
+   6. Paste the key your trainer gives you during your setup call. You only do this once.
    7. Click Connect.
    8. You land back in Claude with the connector connected.
    9. Test it. Open a new chat and ask Claude: "run my_sources".
    10. You should see the counties you cover.
    11. If you see "Your territory isn't set up yet", tell your trainer.
 
-   The connector gives Claude three tools: `my_sources`, `read_source`, and `lead_scan`.
+   The connector gives Claude its lead tools, including `my_sources`, `read_source` and `lead_scan`.
 
    If something goes wrong:
    - The page says the link expired: start again from step 6.1 above.
@@ -48,10 +47,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see the registry connector connected. Lead Finder needs it: without it, Lead Finder says so and stops.
 
 7. Skills
-   Create a Cowork project named Bliss Sales Rep. Drag the QuickBase setup file from step 5 into the project.
-   (When your trainer later sends a new version of that file: Settings → Capabilities → Skills, remove
-   quickbase-usage, upload the new file, then start a new chat. Dragging it into the project again doesn't
-   replace the installed one.) Then, in its message box, paste:
+   Create a Cowork project named Bliss Sales Rep. Then, in its message box, paste:
 
    ```
    Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md
@@ -60,7 +56,7 @@ Follow these steps in order. Your trainer provides your QuickBase token and your
    You should now see Claude checking your connections and setting up your profile and tools.
 
 8. Profile
-   Confirm your name, contact, counties, and (optionally) your product focus. Counties come from the registry connector when it is connected; otherwise Claude reads your QuickBase county assignments. You only confirm or correct what it found.
+   Confirm your name, contact, counties, and (optionally) your product focus. Counties come from the registry connector. If it says your territory isn't set up yet, Claude leaves counties as loading; say "refresh my profile" once your trainer confirms it's ready. You only confirm or correct what it found.
    You should now see your saved profile.
 
 9. Automatic check-ins

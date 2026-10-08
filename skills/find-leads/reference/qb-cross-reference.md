@@ -3,7 +3,7 @@
 Read before the cross-reference step of any run, and again whenever a call fails because a table or field
 moved. SKILL.md carries the cross-reference behavior; this file carries the procedure and the query rules.
 
-The QuickBase IDs live in the QuickBase setup file (the `quickbase-usage` skill), not here. Tables are
+The QuickBase IDs live in the `quickbase-usage` skill, not here. Tables are
 referenced by **name**, never by ID: Opportunities, Quote Pipeline, Sales Reps, County Sales Reps. A record
 link may carry table IDs inside its URL; never print a bare table or field ID.
 

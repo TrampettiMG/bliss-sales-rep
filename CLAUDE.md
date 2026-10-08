@@ -7,15 +7,15 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 
 0. **Check the two connections first, silently.** The registry connector is connected if the tools
    `my_sources`, `read_source`, and `lead_scan` are available. QuickBase is connected if its tools are.
-   Also check that the QuickBase setup file your trainer gives you (the `quickbase-usage` skill)
-   is in this project. If both connections are there and the file is present, say nothing about it. If
+   Also check that the `quickbase-usage` skill is available (it comes from the rep's organization).
+   If both connections are there and the skill is available, say nothing about it. If
    one is missing, tell the rep in one plain sentence each, without naming files or tools:
    - Registry connector missing: *"Your lead-sources connection isn't set up yet, so Lead Finder won't work
      until it is. Your setup sheet covers adding it."*
    - QuickBase missing: *"Your QuickBase connection isn't set up yet, so the QuickBase tools won't work
      until it is. Your setup sheet covers it."* Then use the fallback questions in step 1.
-   - QuickBase setup file missing: *"One QuickBase setup file from your trainer is missing, so the
-     QuickBase tools can't run yet."* Then use the fallback questions in step 1.
+   - QuickBase skill missing: *"The QuickBase skill from your organization isn't showing up yet, so the
+     QuickBase tools can't run. Tell your trainer."* Then use the fallback questions in step 1.
 1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
    they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
    holds the tables and fields; never guess them). In business terms:
@@ -315,7 +315,7 @@ Start with: *"Good morning, [First name]. Here's your daily run."*
   for it. The PDF and search-terms files are usually only needed on days the library documents are read.
 - Step 2 reads `Research Brief.md` only if there's at least one lead to make a card for.
 - Steps 3 and 4 read `Pipeline Check.md`.
-- From the QuickBase setup file, read its main page and the recipes; open its other reference pages only if
+- From the `quickbase-usage` skill, read its main page and the recipes; open its other reference pages only if
   a lookup fails or a recipe doesn't cover what's needed.
 - Don't re-read a file already read in this run.
 
@@ -346,7 +346,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-08c**
+**Tools version: 2026-10-08d**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.

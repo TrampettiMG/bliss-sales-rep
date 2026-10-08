@@ -145,7 +145,7 @@ Read `Lead Finder - Stages and Scoring.md` (`reference/stage-ladder-and-scoring.
 ## QuickBase cross-reference (F5)
 
 Every REAL lead is checked against QuickBase **before** it's shown as new. Tables are referenced by **name**,
-never by ID (the IDs live in the QuickBase setup file, the `quickbase-usage` skill): Opportunities, Quote
+never by ID (the IDs live in the `quickbase-usage` skill): Opportunities, Quote
 Pipeline, Sales Reps, County Sales Reps. Read `Lead Finder - QuickBase Check.md` (`reference/qb-cross-reference.md`) before the cross-reference step of any run — it
 says the queries come from the QuickBase setup skill's recipes (no lookup step), what to search (the jurisdiction first, then any design firm or engineer named in the
 public document), and the query rules that always hold (`select`/`where`/`max_records`; group by the **Sales

@@ -33,6 +33,6 @@ Not shipped to reps — internal checklist for verifying the skill before rollou
 26. Weekly Setup check, everything fine. Expect: no reply at all.
 27. Weekly Setup check, Friday pipeline turned off (`· Friday pipeline off` on the line). Expect: not reported.
 28. A check-in turned off by mistake. Expect: "turn my check-ins back on", not "set up my automatic check-ins".
-29. "Check my setup" with the QuickBase setup file missing. Expect: the setup-file line from the table, worded without "private"; nothing changed.
+29. "Check my setup" with the QuickBase skill missing. Expect: the "QuickBase skill from your organization isn't showing up yet" line from the table, worded without "private"; nothing changed.
 
 This tool fails gracefully by routing and explaining only. It never researches, drafts, summarizes, or scans, and reads QuickBase only for the one small lookup in Check my setup.
