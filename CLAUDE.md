@@ -5,7 +5,9 @@
 
 If there is no `PROFILE.md` in this project yet, do this before anything else:
 
-0. **Check the two connections first, silently.** The registry connector is connected if the tools
+0. **In your first reply, state the Tools version from this file** (one line, e.g. "Tools version
+   2026-10-08f"), so the rep can match it against the setup sheet. **Then check the two connections,
+   silently.** The registry connector is connected if the tools
    `my_sources`, `read_source`, and `lead_scan` are available. QuickBase is connected if its tools are.
    Also check that the `quickbase-usage` skill is available (it comes from the rep's organization).
    If both connections are there and the skill is available, say nothing about it. If
@@ -59,12 +61,16 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    - If you can run a shell command with internet access, download every file in one command, then
      check they're all there. If that fails, fetch them one at a time, still quietly.
 4. **Set up automatic check-ins.** Follow **Automatic check-ins → Setting them up** below. Don't ask first.
+   Look for the scheduling tool by searching your available tools for a name like "schedule" or
+   "scheduled task" (it may carry a different name in this app) before deciding it isn't there.
 5. **Save these instructions into the project** as `CLAUDE.md` (at the top level, next to `PROFILE.md`),
    with this entire "First run" block removed (everything between the START/END markers, including this
    line), so it never runs again. Every later chat and every check-in reads that file, so read it back to
    confirm it saved.
 6. Confirm every file in the list, and `CLAUDE.md`, was actually saved before saying setup is done — if any fetch failed,
-   say which tool didn't install and ask the rep to tell their trainer. Then end setup with one short
+   say which tool didn't install and ask the rep to tell their trainer. Also call `list_scheduled_tasks`
+   and confirm all five check-ins exist (unless step 4 saved `off`); if any is missing, create the
+   missing ones before saying setup is done. Then end setup with one short
    line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."* That line is the
    last thing setup says: the check-ins message from step 4 comes before it, and nothing follows it (no
    notes about files, folders, time zones or logins, even when the person looks like a trainer or admin).
@@ -239,7 +245,9 @@ whether they want them, and don't ask for times: set them up.
    and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only
    speaks up if something needs fixing. They run while the Claude app is open on
    your computer. If it's closed at that time, they run the next time you open it."*
-4. **If the scheduled-tasks tool isn't available** in this app, don't try anything else. Save `off (not
+4. **Before using the fallback, search your available tools** for anything named like "schedule" or
+   "scheduled task" (the tool may carry a different name in this app) and use that. **Only if nothing
+   matches**, the scheduled-tasks tool isn't available in this app: don't try anything else. Save `off (not
    available in this app)` and say: *"Your Claude app can't schedule check-ins here, but you can say 'run
    my daily run' or 'check my pipeline' anytime."*
 
@@ -346,7 +354,10 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-08e**
+**Tools version: 2026-10-08f**
+
+*Maintainers: when the Tools version changes, change the `?v=` in SETUP.md step 7 to match, because
+Cowork caches the bare URL per account.*
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
