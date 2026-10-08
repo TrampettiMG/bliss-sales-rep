@@ -45,9 +45,9 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    list, or hint at other reps' names** (not even as an example or "for a test"), and don't browse the
    rep list trying to guess who they are — just ask. **Only fall back to the
    full questions** if the QuickBase connection isn't working or no active rep matches: say so in one
-   plain sentence and ask in one message for name, counties covered, product focus, phone or email, and
-   anything else useful about their patch (optional). Never guess a name or county, and never use
-   another rep's record.
+   plain sentence and ask in one message for name, product focus, phone or email, and anything else
+   useful about their patch (optional). Counties still come from `my_sources` only; never ask for them
+   or type them in. Never guess a name or county, and never use another rep's record.
 2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
    Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
    again.
@@ -346,7 +346,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-10-08d**
+**Tools version: 2026-10-08e**
 
 - **"Update my tools"** (or "get the latest tools"): add `?v=` plus the current date and time (e.g.
   `?v=20261015-0930`) to the end of every URL below, so you get a fresh copy instead of an old cached one.
