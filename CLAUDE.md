@@ -315,7 +315,7 @@ Start with: *"Good morning, [First name]. Here's your daily run."*
   for it. The PDF and search-terms files are usually only needed on days the library documents are read.
 - Step 2 reads `Research Brief.md` only if there's at least one lead to make a card for.
 - Steps 3 and 4 read `Pipeline Check.md`.
-- From the QuickBase setup file, read its main page and the recipes; open its other reference pages only if
+- From the `quickbase-usage` skill, read its main page and the recipes; open its other reference pages only if
   a lookup fails or a recipe doesn't cover what's needed.
 - Don't re-read a file already read in this run.
 
