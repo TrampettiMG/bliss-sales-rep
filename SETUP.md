@@ -50,12 +50,12 @@ Follow these steps in order. Your trainer sets you up on a call and gives you yo
    Create a Cowork project named Bliss Sales Rep. Then, in its message box, paste:
 
    ```
-   Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md?v=2026-10-08f
+   Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md?v=2026-11-17a
    ```
 
    You should now see Claude checking your connections and setting up your profile and tools.
 
-   Check Claude's first reply. It should say "Tools version 2026-10-08f". If it asks you five questions, or never mentions a Tools version, Claude read an old copy. Paste the line again, but change the part after `?v=` to today's date and time (for example `?v=20261015-0930`), then tell your trainer.
+   Check Claude's first reply. It should say "Tools version 2026-11-17a". If it asks you five questions, or never mentions a Tools version, Claude read an old copy. Paste the line again, but change the part after `?v=` to today's date and time (for example `?v=20261015-0930`), then tell your trainer.
 
 8. Profile
    Confirm your name, contact, counties, and (optionally) your product focus. Counties come from the registry connector. If it says your territory isn't set up yet, Claude leaves counties as loading; say "refresh my profile" once your trainer confirms it's ready. You only confirm or correct what it found.
@@ -74,6 +74,26 @@ Follow these steps in order. Your trainer sets you up on a call and gives you yo
 10. Smoke test
    Ask: "What's new in my counties?"
    You should now see a short list or "nothing new." If not, check that you are in the Bliss Sales Rep project, the registry connector is connected when you expect it, and your territory has finished loading. If that does not fix it, text your trainer.
+
+## Setting up to assist other reps
+
+If you support more than one rep, make one Bliss Sales Rep project per rep. Do steps 1 to 6 once: the same QuickBase extension and registry connector serve every project, and the registry key is your own. Your trainer adds each rep's QuickBase login to the extension under a short label, usually the rep's first name.
+
+For each rep:
+
+1. Create a new Cowork project and name it for the rep (for example, "Bliss Sales Rep - Andy").
+   You should now see an empty project.
+
+2. Paste the step 7 line into it. When Claude asks whether you are setting up for yourself or to assist another rep, say you are assisting.
+   You should now see Claude asking which rep this project is for.
+
+3. Claude runs `list_reps` to show the reps you assist, and `check_configuration` to show the QuickBase login labels. Pick the rep and that rep's label. To see either list yourself, ask Claude to run it.
+   You should now see the rep's name, contact, and county count for you to confirm.
+
+4. Confirm. Claude saves the rep's profile with three extra lines: who you assist, their registry id, and their QuickBase label.
+   You should now see those lines when you say "show me my profile".
+
+A project works for one rep only. If you ask about a different rep, Claude tells you to open that rep's project. Drafts are written in the rep's name for the rep to send. Anything Claude looks up in Microsoft 365 mail or calendar is your own, not the rep's. No automatic check-ins are set up unless you ask for them.
 
 ## What we do not do
 
