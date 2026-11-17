@@ -81,7 +81,7 @@ If you support more than one rep, make one Bliss Sales Rep project per rep. Do s
 
 For each rep:
 
-1. Create a new Cowork project and name it for the rep (for example, "Bliss Sales Rep - Andy").
+1. Create a new Cowork project and name it for the rep (for example, "Bliss Sales Rep - Sam").
    You should now see an empty project.
 
 2. Paste the step 7 line into it. When Claude asks whether you are setting up for yourself or to assist another rep, say you are assisting.
