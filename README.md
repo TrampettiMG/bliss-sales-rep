@@ -8,7 +8,7 @@ Cowork fetches `CLAUDE.md` directly, then saves the profile and skill files in t
 
 - `CLAUDE.md` — house rules, first-run profile onboarding, connector checks, and tool fetch instructions.
 - `SETUP.md` — the one-page setup path for the rep.
-- `TEST-CASES.md` — internal checklist for assisting mode (one project per rep assisted).
+- `TEST-CASES.md` — internal checklist for assisting mode (one project, every rep assisted).
 - `skills/` — 12 sales-rep tools. Each has a `SKILL.md` and `TEST-CASES.md`.
 
 ## Tools

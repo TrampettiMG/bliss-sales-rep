@@ -50,12 +50,12 @@ Follow these steps in order. Your trainer sets you up on a call and gives you yo
    Create a Cowork project named Bliss Sales Rep. Then, in its message box, paste:
 
    ```
-   Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md?v=2026-11-17a
+   Set yourself up using https://raw.githubusercontent.com/TrampettiMG/bliss-sales-rep/main/CLAUDE.md?v=2026-11-19a
    ```
 
    You should now see Claude checking your connections and setting up your profile and tools.
 
-   Check Claude's first reply. It should say "Tools version 2026-11-17a". If it asks you five questions, or never mentions a Tools version, Claude read an old copy. Paste the line again, but change the part after `?v=` to today's date and time (for example `?v=20261015-0930`), then tell your trainer.
+   Check Claude's first reply. It should say "Tools version 2026-11-19a". If it asks you five questions, or never mentions a Tools version, Claude read an old copy. Paste the line again, but change the part after `?v=` to today's date and time (for example `?v=20261015-0930`), then tell your trainer.
 
 8. Profile
    Confirm your name, contact, counties, and (optionally) your product focus. Counties come from the registry connector. If it says your territory isn't set up yet, Claude leaves counties as loading; say "refresh my profile" once your trainer confirms it's ready. You only confirm or correct what it found.
@@ -77,23 +77,16 @@ Follow these steps in order. Your trainer sets you up on a call and gives you yo
 
 ## Setting up to assist other reps
 
-If you support more than one rep, make one Bliss Sales Rep project per rep. Do steps 1 to 6 once: the same QuickBase extension and registry connector serve every project, and the registry key is your own. Your trainer adds each rep's QuickBase login to the extension under a short label, usually the rep's first name.
+If you support more than one rep, you still make one Bliss Sales Rep project, and it serves every rep you assist. Do steps 1 to 10 once, the same as any rep. The differences:
 
-For each rep:
+- **Step 4, QuickBase extension.** Your trainer enters one QuickBase login per rep you assist, each under the rep's first name as its label (for example, `sam` and `lee`). The registry key in step 6 is your own.
+- **Step 7, Skills.** When Claude asks whether you are setting up for yourself or to assist other reps, say you are assisting.
+  You should now see Claude list the reps you assist and ask you to confirm them.
+- **Step 8, Profile.** Claude shows the QuickBase labels and asks you to confirm which label goes with which rep. Then it shows every rep's name, contact, and county count in one message. Confirm, or correct what's wrong. If a login doesn't match its rep, Claude stops and names the label and the rep; tell your trainer.
+  You should now see one saved profile with a section for each rep.
+- **Step 9, Automatic check-ins.** Claude sets up the same check-ins. Each one covers every rep in turn, under a heading for each.
 
-1. Create a new Cowork project and name it for the rep (for example, "Bliss Sales Rep - Sam").
-   You should now see an empty project.
-
-2. Paste the step 7 line into it. When Claude asks whether you are setting up for yourself or to assist another rep, say you are assisting.
-   You should now see Claude asking which rep this project is for.
-
-3. Claude runs `list_reps` to show the reps you assist, and `check_configuration` to show the QuickBase login labels. Pick the rep and that rep's label. To see either list yourself, ask Claude to run it.
-   You should now see the rep's name, contact, and county count for you to confirm.
-
-4. Confirm. Claude saves the rep's profile with three extra lines: who you assist, their registry id, and their QuickBase label.
-   You should now see those lines when you say "show me my profile".
-
-A project works for one rep only. If you ask about a different rep, Claude tells you to open that rep's project. Drafts are written in the rep's name for the rep to send. Anything Claude looks up in Microsoft 365 mail or calendar is your own, not the rep's. No automatic check-ins are set up unless you ask for them.
+After that, just say who a request is for ("find leads for Sam"), or Claude asks. Claude keeps the reps apart: each request uses that rep's login and counties, and each rep's saved files go in their own folder in the project. Drafts are written in the rep's name for the rep to send. Anything Claude looks up in Microsoft 365 mail or calendar is your own, not a rep's.
 
 ## What we do not do
 

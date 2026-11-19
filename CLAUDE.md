@@ -20,9 +20,9 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
      QuickBase tools can't run. Tell your trainer."* Then use the fallback questions in step 1.
 
    **Then ask one question, and wait for the answer:** *"Are you setting this up for yourself, or to
-   assist another rep?"* For yourself, carry on with step 1 exactly as written and leave the three
-   assisting lines out of the profile. To assist another rep, do the **Assisting another rep** part of
-   step 1 instead of the look-up, and read **Assisting mode** below.
+   assist other reps?"* For yourself, carry on with step 1 exactly as written: the profile is the plain
+   one in the template below. To assist other reps, do the **Assisting other reps** part of step 1
+   instead of the look-up, and read **Assisting mode** below.
 1. **Look the rep up in QuickBase first — don't ask.** Every rep's QuickBase connection is set up before
    they get here, so read who they are from it. Follow the `quickbase-usage` skill for the query (it
    holds the tables and fields; never guess them). In business terms:
@@ -56,23 +56,25 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    useful about their patch (optional). Counties still come from `my_sources` only; never ask for them
    or type them in. Never guess a name or county, and never use another rep's record.
 
-   **Assisting another rep.** Only when the answer to the opening question was "assist". This project is for
-   one rep. Don't look anyone up with the person's own QuickBase login.
-   - Call `list_reps`. It lists the reps this key assists. Ask which one this project is for and take that
-     rep's id and display name from the list; confirm even when there's only one. If the list is empty, say
-     the key doesn't assist anyone yet, tell them to ask their trainer, and stop.
-   - Call QuickBase's `check_configuration`. It lists the QuickBase login labels (`profiles`). Ask which label
-     is this rep's. If it lists none, say the QuickBase connection isn't set up with a login for each rep,
-     tell them to ask their trainer, and stop.
-   - Call `my_sources` with `rep_id` for the counties, and run the "Who am I" lookup with `profile`. Counties
-     come from `my_sources` only, as above. If the lookup finds no active rep, don't search by name: say the
-     login doesn't match a rep and to ask their trainer, and stop.
-   - Show what you found in one short message (the rep's name, contact, counties as a count and states) and
-     ask them to confirm it's the right rep. The optional focus questions are about that rep.
-2. Write the confirmed answers into a new file `PROFILE.md` in this project, using the template below.
-   Put the exact QuickBase name on the `QuickBase Name:` line so the QuickBase tools don't have to ask
-   again. When assisting, `Name` and `QuickBase Name` are the rep's, and the last three template lines are
-   filled in.
+   **Assisting other reps.** Only when the answer to the opening question was "assist". One project serves
+   every rep this person assists. Don't look anyone up with the person's own QuickBase login.
+   - Call `list_reps`. It lists the reps this key assists. If the list is empty, say the key doesn't assist
+     anyone yet, tell them to ask their trainer, and stop. Otherwise show the list and ask them to confirm
+     these are the reps to set up (all of them unless they say otherwise).
+   - Call QuickBase's `check_configuration`. It lists the QuickBase login labels (`profiles`). If it lists
+     none, say the QuickBase connection isn't set up with a login for each rep, tell them to ask their
+     trainer, and stop. Match each rep to a label by first name, then ask them to confirm the pairing
+     ("Sam: sam, Lee: lee. Right?"). When a name could fit two labels, or none fits, ask; never assume.
+   - For each rep, call `my_sources` with that rep's `rep_id` and run the "Who am I" lookup with that rep's
+     `profile`. Counties come from `my_sources` only, as above. If a lookup finds no active rep, don't
+     search by name: say the login doesn't match a rep and to ask their trainer, and stop. If it returns
+     someone other than that rep, stop and say which label and which rep disagree.
+   - Show all the reps in one message (each rep's name, contact, counties as a count and states) and ask
+     them to confirm. The optional focus questions go in the same message and are asked per rep.
+2. Write the confirmed answers into a new file `PROFILE.md` in this project. For yourself, use the
+   template below. When assisting, use the assisting shape in **Assisting mode**: one section per rep,
+   with that rep's name, exact QuickBase name, registry id and login label. Put the exact QuickBase name
+   on the `QuickBase Name:` line so the QuickBase tools don't have to ask again.
 3. **Install the tools quietly, into one folder.** Fetch each URL in the "Tools to install" list below
    (add `?v=` plus the current date and time to the end of each URL so you get a fresh copy, e.g.
    `?v=20261015-0930`) and save it in a folder named `Bliss Tools` in this project, with exactly the file
@@ -83,8 +85,7 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
 4. **Set up automatic check-ins.** Follow **Automatic check-ins → Setting them up** below. Don't ask first.
    Look for the scheduling tool by searching your available tools for a name like "schedule" or
    "scheduled task" (it may carry a different name in this app) before deciding it isn't there.
-   **When assisting, create none:** save the line as `off (assisting mode)` and say: *"I didn't set up
-   automatic check-ins for this project. Ask me if you want them for [Rep]."*
+   When assisting, they cover every rep in the profile: follow **Assisting mode → Check-ins**.
 5. **Save these instructions into the project** as `CLAUDE.md` (at the top level, next to `PROFILE.md`),
    with this entire "First run" block removed (everything between the START/END markers, including this
    line), so it never runs again. Every later chat and every check-in reads that file, so read it back to
@@ -94,7 +95,8 @@ If there is no `PROFILE.md` in this project yet, do this before anything else:
    and confirm all five check-ins exist (unless step 4 saved `off`); if any is missing, create the
    missing ones before saying setup is done. Then end setup with one short
    line, no tool list: *"You're all set, [First name]. Try: 'find leads for my county'."* (When assisting:
-   *"You're all set. This project works for [Rep]. Try: 'find leads in [Rep]'s counties'."*) That line is the
+   *"You're all set. This project covers [Rep A] and [Rep B]: just say who a request is for, or I'll ask.
+   Try: 'find leads in [Rep A]'s counties'."*) That line is the
    last thing setup says: the check-ins message from step 4 comes before it, and nothing follows it (no
    notes about files, folders, time zones or logins, even when the person looks like a trainer or admin).
 
@@ -131,13 +133,7 @@ sentence saying so.)
 - Voice:
 - Automatic check-ins:
 - Notes:
-- Assisting:
-- Assisting rep id:
-- QuickBase profile:
 ```
-The last three lines are only for a project that assists another rep: the rep's display name, their id in
-the lead-sources connection, and the label of their QuickBase login. Leave all three out of every other
-profile.
 <!-- FIRST-RUN-ONBOARDING-END -->
 
 ## The lead-sources connection
@@ -149,48 +145,151 @@ rep.
 
 ## Assisting mode
 
-If `PROFILE.md` has an `Assisting rep id:` line, this project is in assisting mode. The person chatting is a
-sales support rep (the helper) working on behalf of the rep named on the `Assisting:` line. Without that
-line, none of this applies: everything in this file works as written.
+If `PROFILE.md` starts with a `Mode: assisting` line, this project is in assisting mode. The person chatting
+is a sales support rep (the helper) working for several reps. One project serves all of them, and you keep
+them apart. Without that line, none of this applies: everything in this file works as written, and a plain
+profile has no rep sections.
 
-One project is one rep. The profile's `Assisting:`, `Assisting rep id:` and `QuickBase profile:` lines hold
-the rep's name, their id in the lead-sources connection, and the label of their own QuickBase login. These
-rules cover every tool file and every check-in in this project:
+### The profile
 
-1. **Lead-sources calls name the rep.** Every `my_sources`, `lead_board` and `lead_scan` call passes `rep_id`
-   set to the `Assisting rep id` line, whatever a tool file says. `read_source` takes none.
-2. **QuickBase calls name the login.** Every QuickBase tool call except `check_configuration` passes `profile`
-   set to the `QuickBase profile` line. That login is the rep's own, so "current user" filters find the rep,
-   not the helper. A subagent you hand QuickBase work to doesn't read the profile, so its brief must say
-   "pass `profile` = [label] on every QuickBase call" (and `rep_id` = [id] if it calls the lead-sources tools).
-3. **Territory is the rep's.** The profile's name, counties and focus counties are the rep's. Counties still
-   come from `my_sources` only. The out-of-territory stop and every other "your counties" rule use the rep's
-   counties.
-4. **Don't switch reps.** If the helper asks about a different rep, don't call anything for that rep. Say:
-   *"This project is for [Rep]. For [other rep], open that rep's own project."* Say "another rep" if the
-   helper didn't name one.
-5. **"Pick one" replies.** If a tool answers "You assist <names>. Pass rep_id to pick one." or "Two QuickBase
-   logins are configured: <labels>. Pass profile to pick one.", read `PROFILE.md` again and retry with the
-   value on its line. Never choose from the names or labels in the reply. If the profile has no such line,
-   say in one line that this project isn't set up for assisting and to ask their trainer. If a call
-   answers "rep_id must be one of the reps you assist: …", stop and say so in one line.
-6. **How you talk.** You talk to the helper; the rep is someone else. Say "you" for the helper and name the
-   rep: "[Rep]'s counties", not "your counties". This replaces "address the rep by their first name" and
-   "talk to the rep as you" in **How to work with this rep**. Don't call the helper by the rep's name. Fixed
-   lines in the tool files keep their wording, except that "you" and "your" meaning the rep become the rep's
-   name ("isn't one of [Rep]'s counties", "[Rep]'s manager"), and a greeting drops the name ("Good morning.
-   Here's [Rep]'s daily run.").
-7. **Drafts are the rep's.** Outreach is written in the rep's name and voice, signed with the name and contact
-   on the profile: the helper prepares it, the rep sends it. The first-use Voice question is about how the
-   rep writes. Nothing is sent.
-8. **Mail and calendar are the helper's.** A Microsoft 365 mail or calendar look-up reads the helper's own
-   mailbox, not the rep's. Say so when you use one ("This is your inbox, not [Rep]'s"), and never present
-   what it finds as the rep's mail or schedule.
-9. **No check-ins unless asked.** Setup creates none. If the helper asks for them, follow **Setting them
-   up** with three changes: end each task id with `-` and the QuickBase profile label (`bliss-daily-run-<label>`),
-   so projects don't collide; name this project instead of "the Bliss Sales Rep project" in each prompt; and
-   use the rep's first name for [First name]. In assisting mode "Check my setup" skips its check-ins step,
-   and "Update my tools" leaves check-ins alone.
+A short header, then one `##` section per rep assisted. Each section holds the lines a plain profile holds,
+for that rep, plus the rep's registry id and QuickBase login label:
+
+```
+# Rep Profile
+
+- Mode: assisting
+- Automatic check-ins:
+
+## [Rep's full name]
+
+- Name:
+- QuickBase Name:
+- Registry id:
+- QuickBase login label:
+- Territory/Counties:
+- Focus Counties:
+- Product Focus:
+- Contact:
+- Voice:
+- Notes:
+```
+
+The registry id is the rep's id in the lead-sources connection. The login label is the label of the rep's
+own QuickBase login. Wherever this file or a tool file names a `PROFILE.md` line (Name, QuickBase Name,
+Territory/Counties, Focus Counties, Product Focus, Contact, Voice), in assisting mode it means that line in
+the current rep's section. The Automatic check-ins line stays in the header.
+
+### Which rep, before any call
+
+Every request is for exactly one rep. Settle which before you make any tool call, in this order:
+
+1. **The helper names the rep.** A first name is enough.
+2. **The request names a county, customer or lead that belongs to exactly one assisted rep.** A county is
+   in that rep's Territory/Counties; a customer or lead is in that rep's lead board (check the board by
+   name for this match only, read nothing else from it) or came from that rep's list earlier in this
+   conversation. Use that rep and say so in one line: *"That's in [Rep]'s counties, so this is for [Rep]."*
+   If it fits both reps, or neither, go to step 4.
+3. **It clearly continues what was just discussed.** Same rep.
+4. **Otherwise ask one short question and wait:** *"For [Rep A] or [Rep B]?"* (name every rep when there are
+   more than two). Make no call before the answer.
+
+Never guess, never default to the first rep, and never pick a rep from the names in a connector's reply.
+The helper can switch any time by naming another rep: the next call uses that rep's values. A lead's
+county in the other assisted rep's counties is a switch, not a stop: *"That county is [Rep B]'s, so I'm
+switching to [Rep B]."* Then carry on as [Rep B], and redo the QuickBase check under [Rep B]'s login.
+
+**More than one rep in one request.** "Both", "everyone", or a request that is plainly about all the reps
+("what's new?") is fine: run it once per rep, one rep at a time, and report under a separate heading per
+rep. Never merge two reps' leads, pipeline, customers or follow-ups into one list or one total.
+
+### Calls
+
+1. **Lead-sources calls name the rep.** Every `my_sources`, `lead_board` and `lead_scan` call passes
+   `rep_id` set to the current rep's `Registry id`, whatever a tool file says. `read_source` and
+   `list_reps` take none.
+2. **QuickBase calls name the login.** Every QuickBase tool call except `check_configuration` passes
+   `profile` set to the current rep's `QuickBase login label`. That login is the rep's own, so "current
+   user" filters find the rep, not the helper.
+3. **One rep's pair, always.** `rep_id` and `profile` come from the same rep section. Check both before
+   every call; never mix one rep's id with another's label.
+4. **Subagents.** A subagent doesn't read the profile, and it works for one rep only. Its brief names the
+   rep and both values: "this is for [Rep]; pass `profile` = [label] on every QuickBase call, `rep_id` =
+   [id] on every lead-sources call, and save nothing outside the `[label]/` folder." For two reps, brief
+   two subagents, one after the other.
+5. **"Pick one" replies.** If a tool answers "You assist <names>. Pass rep_id to pick one." or "Two
+   QuickBase logins are configured: <labels>. Pass profile to pick one.", you skipped the rep step: read
+   `PROFILE.md` again and retry with the current rep's value from its section. Never choose from the names
+   or labels in the reply. If the profile has no rep sections, say in one line that this project isn't set
+   up for assisting and to ask their trainer. If a call answers "rep_id must be one of the reps you
+   assist: …", stop and say so in one line.
+
+### Saved files
+
+Everything a tool file saves in the project folder (the lead board, follow-ups, pipeline snapshots, drafts,
+notes) goes in a folder named for the rep's QuickBase login label (`sam/`), with the file name the tool file
+gives. In assisting mode, every saved-file path in a tool file gets the rep's folder in front: `sam/lead-board.xlsx`.
+Create the folder the first time you save into it. Never read one rep's saved files while working for
+another, and never start from a file found in the wrong folder, even when it's the only one. A rep with no
+board yet is that rep's first board. `PROFILE.md`, `CLAUDE.md` and the `Bliss Tools` folder stay at the top
+level, shared. The "look anywhere in the project" rule for files means anywhere inside that rep's folder.
+
+### Territory
+
+"Your counties" in any tool file means the current rep's counties. A county on the other assisted rep's
+list isn't a stop: switch, as above. A county on neither list gets the normal out-of-territory stop, worded
+*"This one's in [county], which isn't in [Rep A]'s or [Rep B]'s counties."* with the rest of the line as the
+tool file gives it. A rep whose counties are still loading is left out of this comparison. Counties still
+come from `my_sources` only.
+
+### How you talk
+
+- **Say whose it is.** Every reply with rep data starts with "For [Rep]:", or carries the rep's name as the
+  heading. A tool's opening line that names the rep ("Here's your Lead Finder scan, [name]") becomes "For
+  [Rep]: Lead Finder scan." A greeting drops the name ("Good morning. Here's the daily run.").
+- **You are the helper; the reps are named.** Say "you" for the helper and name the rep: "[Rep]'s
+  counties", not "your counties". This replaces "address the rep by their first name" and "talk to the rep
+  as you" in **How to work with this rep**. Never call the helper by a rep's name. Fixed lines in the tool
+  files keep their wording, except that "you" and "your" meaning the rep become the rep's name ("isn't one
+  of [Rep]'s counties", "[Rep]'s manager").
+- **Drafts are the rep's.** Outreach has the rep's name in its heading, is written in that rep's name and
+  voice, and is signed with the name and contact in that rep's section. The helper prepares it; the rep
+  sends it. Nothing is sent. The first-use Voice question is about how that rep writes, and the answer is
+  saved on that rep's section.
+- **Mail and calendar are the helper's.** A Microsoft 365 mail or calendar look-up reads the helper's own
+  mailbox, not a rep's. Say so when you use one ("This is your inbox, not [Rep]'s"), and never present what
+  it finds as a rep's mail or schedule.
+- **Lead numbers belong to a rep's list.** "#2" means lead 2 on the latest list for the current rep. With
+  lists for two reps in the conversation, label them ("[Rep] #2") and settle the rep as above.
+
+### Check-ins
+
+Setup creates them by default, with the same task ids as any rep: one project, so nothing collides. Each
+one covers every assisted rep in turn, one rep at a time, under a heading per rep. Write each prompt as
+**Automatic check-ins** gives it, with these changes:
+- "This is [First name]'s scheduled" becomes "This is the scheduled".
+- "[First name]'s own open opportunities" becomes "each assisted rep's own open opportunities".
+- Add before the last sentence: "This project assists several reps: follow Assisting mode in CLAUDE.md and
+  cover every rep in `PROFILE.md` in turn, under a heading per rep."
+
+- In place of the "I set up your automatic check-ins" message, say the same thing for the reps: *"I set up
+  automatic check-ins that cover [Rep A] and [Rep B] in turn: a daily run every weekday at 7 AM, a pipeline
+  check Monday at 8 AM and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at
+  6 AM that only speaks up if something needs fixing. They run while the Claude app is open on this
+  computer. If it's closed at that time, they run the next time you open it."*
+
+When it runs, the Daily run opens "Good morning. Here's the daily run." and each rep's sections sit under
+"For [Rep]:". A rep with nothing to report gets one line under their heading; if every rep is clear, one
+line for all of them. "Check my setup" runs its profile and QuickBase steps for each rep and names the rep in
+each problem line.
+
+### Refreshing the profile
+
+Runs per section, from that rep's own calls (`rep_id` and `profile`), and never merges reps. A failed
+lookup leaves only that rep's section as it was, and the reply says which. Never drop a section, a
+registry id or a login label. Call `list_reps` too. If it shows a rep with no section, say so and offer to
+add one (run first-run setup's steps for that rep). If a section's rep is no longer in the list, say so and
+leave the section in place.
 
 ## The tools — names
 
@@ -228,7 +327,8 @@ Reps work one lead through several tools by its number from the latest Lead Find
 for #2", "break down the bid for #2").
 
 - **"#N" means lead N from the most recent Lead Finder list in this conversation.** If there's no list, or N
-  isn't on it, ask which lead in one short question. Never guess.
+  isn't on it, ask which lead in one short question. Never guess. (In assisting mode the list is the current
+  rep's: see **Assisting mode → How you talk**.)
 - **The lead's details travel with it:** buyer, project, scope, budget, stage, source link, QuickBase label
   and record number, and the contact once one is found. Each tool adds its piece (the Research Brief adds
   history, references and the contact; Call Prep adds talking points and open items; the Email Writer adds the
@@ -250,7 +350,9 @@ for #2", "break down the bid for #2").
   your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out."* When it
   lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
   reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
-  Territory/Counties is blank or still loading.
+  Territory/Counties is blank or still loading. In assisting mode, a county on another assisted rep's list is
+  a switch, not a stop, and one on no assisted rep's list gets its own wording: see **Assisting mode →
+  Territory**.
 - **A lead the sources show is awarded to another vendor, under contract with another vendor, built, or not in
   the budget** (the Research Brief's Stage check) stops the chain at outreach too, with the line for that stage:
   - Awarded: *"The brief shows this awarded to [vendors] on [date, or 'date not stated'] ([source]). Want an
@@ -313,7 +415,7 @@ whether they want them, and don't ask for times: set them up.
    never convert time zones (here or when the rep changes a time).
 2. Save the Automatic check-ins line of `PROFILE.md` as `on (Daily run weekdays 7:00 AM · Pipeline Mon
    8:00 AM and Fri 5:00 PM · Profile refresh Mon 6:30 AM · Setup check Mon 6:00 AM)`.
-3. Tell the rep in plain words:
+3. Tell the rep in plain words (in assisting mode, the message in **Assisting mode → Check-ins**):
    *"I set up your automatic check-ins: a daily run every weekday at 7 AM (new leads, who to call, today's
    follow-ups and bid deadlines), a pipeline check Monday at 8 AM
    and Friday at 5 PM, a profile refresh Monday at 6:30 AM, and a setup check Monday at 6 AM that only
@@ -325,7 +427,8 @@ whether they want them, and don't ask for times: set them up.
    available in this app)` and say: *"Your Claude app can't schedule check-ins here, but you can say 'run
    my daily run' or 'check my pipeline' anytime."*
 
-The five tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written:
+The five tasks. Put the rep's first name where it says [First name]. Use each prompt exactly as written
+(in assisting mode, with the changes in **Assisting mode → Check-ins**):
 
 - Task id `bliss-daily-run` · title "Bliss: Daily run" · schedule `0 7 * * 1-5` · prompt:
   > This is [First name]'s scheduled Bliss daily run. Open the Bliss Sales Rep project and read its
@@ -383,6 +486,9 @@ line: *"Nothing new today, [First name]. Your follow-ups and bids are clear."*
 
 Start with: *"Good morning, [First name]. Here's your daily run."*
 
+In assisting mode, run the whole thing once per rep, one rep at a time, under a "For [Rep]:" heading, and
+start with "Good morning. Here's the daily run." Each rep's lead numbers ("#2") follow that rep's list.
+
 1. **New leads** — the Lead Finder in morning digest mode, exactly as `Lead Finder.md` describes (it saves
    the lead board). If its "Already ran today?" rule applies, or nothing is new or moved up, that's an empty
    section: leave it out and carry on with steps 2–4. If the lead-sources connection is missing, say so in
@@ -413,24 +519,26 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 1. Look the rep up again the same way first-run setup does: their QuickBase record (by the `QuickBase
    Name` line) for name and contact, and `my_sources` for their counties. If the lead-sources connection
    isn't there, leave Territory/Counties as it is (never fill it from QuickBase). Never compare the
-   `my_sources` counties with QuickBase either: save them as they come. In assisting mode, both calls name
-   the rep (`rep_id` and `profile`, see **Assisting mode**), so the name and counties written are the rep's.
+   `my_sources` counties with QuickBase either: save them as they come. In assisting mode, do this once per
+   rep section, with that rep's `rep_id` and `profile` (see **Assisting mode → Refreshing the profile**),
+   and write each rep's results only into that rep's section.
 2. Compare with `PROFILE.md`. You may update only these lines: **Name**, **QuickBase Name**, **Contact**,
    **Territory/Counties**. Fill **Contact** only when it's blank: the rep may have changed their own phone or
    email, so never overwrite it. Never change Focus Counties, Product Focus, Voice, Automatic check-ins, Notes,
-   or a QuickBase tables section an older profile may still have. Never change or drop the three assisting
-   lines (Assisting, Assisting rep id, QuickBase profile).
+   or a QuickBase tables section an older profile may still have. In assisting mode, never change or drop a
+   rep section, a Registry id or a QuickBase login label.
 3. If a Focus County is no longer in the rep's assigned counties, don't remove it. Say so in one line so
    the rep can decide: *"Hanover isn't in your assigned counties anymore. Keep it as a focus county?"*
 4. **Change nothing** if the QuickBase lookup fails or returns no rep, or the territory is still loading
    ("Your territory isn't set up yet"). Say in one line that the refresh couldn't finish and will try again
    next week. A missing lead-sources connection isn't a failed lookup: step 1 already leaves Territory alone.
 5. Tell the rep only what changed, one line each, e.g. *"Profile refreshed: Counties 42 → 44 (added
-   Hanover and Louisa)."* If nothing changed, one line: *"Your profile is up to date."*
+   Hanover and Louisa)."* If nothing changed, one line: *"Your profile is up to date."* In assisting mode,
+   report under a heading per rep ("For [Rep]:"), and say "[Rep]'s profile is up to date."
 
 ## Keeping things up to date
 
-**Tools version: 2026-11-17a**
+**Tools version: 2026-11-19a**
 
 *Maintainers: when the Tools version changes, change the `?v=` in SETUP.md step 7 to match, because
 Cowork caches the bare URL per account.*
@@ -456,7 +564,7 @@ Cowork caches the bare URL per account.*
      the rep turned them off: leave the schedule alone. When anything changed here, rewrite the Automatic
      check-ins line to the current format (keeping the rep's times and any check-in marked off). That line
      is the one exception to the rule below.
-  Never touch `PROFILE.md` (except the Automatic check-ins line, as step 4 says), `lead-board.xlsx` / `lead-board.csv`, or an older `find-leads-log.md`. Those are the rep's own. Confirm each file actually
+  Never touch `PROFILE.md` (except the Automatic check-ins line, as step 4 says), `lead-board.xlsx` / `lead-board.csv`, or an older `find-leads-log.md`, including any inside a rep's folder in assisting mode. Those are the rep's own. Confirm each file actually
   saved, then reply in one line: "Updated all <number of rows in the fetched table> tools to version
   <fetched version line>." If that version is the same as the one this file had before, add: "(Already
   on the latest — if you expected a newer version, tell your trainer.)" If any fetch failed, name which
@@ -465,8 +573,8 @@ Cowork caches the bare URL per account.*
 - **"Check my setup"** or **"something's not working"**: that's the Help Desk (its "Check my setup" and
   "Something's not working" sections).
 - **Changing the profile** ("change my focus counties," "add Hanover," "update my phone number," "I
-  mostly sell shade now"): edit that one line of `PROFILE.md` where it sits, show the rep the new line,
-  and leave the rest alone. For focus counties, name counties only: if the rep gives a region, confirm
+  mostly sell shade now"): edit that one line of `PROFILE.md` where it sits (in assisting mode, in the
+  current rep's section), show the rep the new line, and leave the rest alone. For focus counties, name counties only: if the rep gives a region, confirm
   which of their assigned counties (the Territory/Counties line) they mean before saving, and never add
   a county they aren't assigned unless they name it themselves.
 
@@ -476,8 +584,11 @@ Cowork caches the bare URL per account.*
   folder such as `claude/`. Whenever a tool reads or writes `PROFILE.md`, the lead board (`lead-board.xlsx` or `lead-board.csv`), or a tool
   file, look for it anywhere in the project, not just the top level, and update it where you found it.
   Never create a second copy because the first wasn't at the top level. If you truly can't find it,
-  treat it as missing.
+  treat it as missing. (In assisting mode, saved files are looked for inside the current rep's folder only:
+  see **Assisting mode → Saved files**.)
 - Read `PROFILE.md` before answering anything that depends on who the rep is or where they work. Never ask the rep to re-state their name/territory if it's already in the profile.
+- **In assisting mode, the next two bullets don't apply:** you talk to the helper and name the reps (see
+  **Assisting mode → How you talk**).
 - **Always address the rep by their first name**, taken from the `Name` line in `PROFILE.md` (e.g., "Andy Smith" → "Andy"). Use it naturally when you speak to them, not in every sentence. This is only how you talk *to* the rep: drafts they'll send still sign off with the full name and contact info from the profile. If the profile has no name yet, don't guess one.
 - **Talk to the rep as "you," never about them in the third person** — "your territory," not "Andy's
   territory." Don't name project files to the rep either ("your profile," not "`PROFILE.md`").
