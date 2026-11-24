@@ -110,9 +110,8 @@ Prospect-facing content follows the same stops as the Email Writer, one line eac
   with the rep of record first. If the brief or the Lead Finder shows the `BLISS INVOLVED` match is your own QuickBase record
   and no other rep has an open record on this project, say "This one is yours." and carry on.
 - **Outside your counties:** the lead's county isn't on the Territory/Counties line in `PROFILE.md`: say this
-  word for word: "This one's in [county], which isn't one of your counties. QuickBase lists [rep] for it: check
-  with [rep] or your manager before reaching out." If no rep is named, say this word for word: "This one's in
-  [county], which isn't one of your counties. Check with your manager before reaching out." Skip this check while
+  word for word: "This one's in [county], which isn't one of your counties. Check with your manager before
+  reaching out." Skip this check while
   that line is blank or still loading.
 - **Awarded to another vendor:** the Research Brief's Stage check says awarded, so say: "The brief shows this awarded to
   [vendors] on [date, or 'date not stated'] ([source]). Want content about [another open item in the brief]

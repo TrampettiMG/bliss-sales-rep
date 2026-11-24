@@ -346,10 +346,9 @@ for #2", "break down the bid for #2").
   tip is fine, such as asking that rep for a direct contact. In an email draft, the line goes first in the
   note under the draft that says where the recipient came from.
 - **A lead outside the rep's counties** (its county isn't on the profile's Territory/Counties line) stops the
-  chain at outreach. When QuickBase lists a rep for that county: *"This one's in [county], which isn't one of
-  your counties. QuickBase lists [rep] for it: check with [rep] or your manager before reaching out."* When it
-  lists none: *"This one's in [county], which isn't one of your counties. Check with your manager before
-  reaching out."* The Research Brief and Call Prep still run and say so at the top. Skip this check while
+  chain at outreach. Say: *"This one's in [county], which isn't one of your counties. Check with your manager
+  before reaching out."* Never look up or name a covering rep; the registry connector is the only territory
+  source. The Research Brief and Call Prep still run and say so at the top. Skip this check while
   Territory/Counties is blank or still loading. In assisting mode, a county on another assisted rep's list is
   a switch, not a stop, and one on no assisted rep's list gets its own wording: see **Assisting mode →
   Territory**.
@@ -538,7 +537,7 @@ profile matching QuickBase and the Bliss Library without touching anything the r
 
 ## Keeping things up to date
 
-**Tools version: 2026-11-19a**
+**Tools version: 2026-11-24a**
 
 *Maintainers: when the Tools version changes, change the `?v=` in SETUP.md step 7 to match, because
 Cowork caches the bare URL per account.*
