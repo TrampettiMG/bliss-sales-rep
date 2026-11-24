@@ -157,8 +157,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 ## QC round 1 cases
 
 48. **Out of territory.** A rep covering fictional Pine and Cedar counties says "research #1" on a lead in
-    fictional Oak County, where QuickBase's county assignments list another rep for Oak County. Expect: the
-    header says Oak County isn't one of the rep's counties and names that rep; the brief completes; the Email Writer and
+    fictional Oak County. Expect: the
+    header says Oak County isn't one of the rep's counties and to check with the manager, with no rep named and no QuickBase county lookup; the brief completes; the Email Writer and
     Content Builder then stop with one line.
 49. **Awarded since the scan.** The library budget shows a $300K playground line; a council minute two weeks
     later awards the contract to fictional Maple Play Co. Expect: the Stage check shows both (Lead Finder stage
@@ -194,8 +194,8 @@ follow-up setup questions beyond the first-run `PROFILE.md` fill.
 62. **Agenda scope.** An agenda item names a contract, an awardee and an amount only. Expect no scope claim.
 63. **Unopened contact.** A search summary names a purchasing director with a phone number and the page won't open.
     Expect the role as "not confirmed," with no name or phone in the brief.
-64. **Stop names the owner.** QuickBase lists Rep A for fictional Oak County. Expect the same sentence, naming
-    Rep A, in the brief and the opener/ask held line under the stop.
+64. **Stop names no owner.** A fictional Oak County lead is outside the rep's counties. Expect the same
+    sentence (check with the manager), with no rep named and no QuickBase county lookup, in the brief and the opener/ask held line under the stop.
 65. **Parts and tennis jobs.** Past customers nearby returns a tennis-court resurfacing coded Play Equipment and
     a replacement-parts order. Expect neither listed as play equipment.
 66. **One count.** A buyer with 12 quotes, 2 of them orders. Expect one count line.

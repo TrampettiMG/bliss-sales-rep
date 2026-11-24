@@ -60,9 +60,7 @@ chase every tangent. If the budget runs out, present what was found and name wha
    treat the county government as the buyer and say so in one line; research that one government target, never a
    web-built lead list. Web search never creates a lead — Lead Finder does that. If the target is outside the rep's
    counties, say so in the header word for word: "This one's in [county], which isn't one of your counties.
-   QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." When no rep is named,
-   use word for word: "This one's in [county], which isn't one of your counties. Check with your manager before
-   reaching out." Then continue with
+   Check with your manager before reaching out." Then continue with
    the web flow below. If the connector is unavailable, continue with the web flow below.
    - **Person:** current role/title, organization, and any recent public professional activity (news
      mentions, public statements, project involvement) — not personal/private information.
@@ -294,8 +292,7 @@ a full brief. For each lead:
 Keep it tight, in this order:
 
 - **Header** — name, title/role or type, organization, and any public contact info found (never inferred or
-  guessed). When the county is outside the rep's counties, say so here (with the owning rep if QuickBase's county
-  assignment shows one); when a BLISS INVOLVED match is the rep's own, "This one is yours."
+  guessed). When the county is outside the rep's counties, say so here (never name a covering rep); when a BLISS INVOLVED match is the rep's own, "This one is yours."
 - **Project** — four lines right under the name line. "Not found" is fine on any line; a guess is not.
   - Amount and fiscal year (page) — an amount from a multi-year plan carries its span ("$2.5M, FY27–28"). Cite the page
     `read_source` opens and add the printed number when they differ: "p. 40 (printed 38)." Open the page before citing it.

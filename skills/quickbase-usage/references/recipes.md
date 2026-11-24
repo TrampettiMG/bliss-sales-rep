@@ -21,8 +21,9 @@ from the registry connector (`my_sources`) only.
 
 ## "Who covers this county?" (Research Brief outside-county header)
 
-`query_records {table_id: "buq6z9c6j", where: "{7.SW.'<county base name>'}AND{8.EX.'<ST>'}AND{12.EX.'Active'}", select: ["7","8","10"], max_records: 5}`
-→ 10 = the covering rep's name. Skip test reps (name contains "TEST"). No row: say nothing about who covers it.
+Not a QuickBase lookup. Which rep covers a county is answered by the lead registry connector, not QuickBase:
+the rep's own counties come from `my_sources`. A county outside them is another rep's or open territory, so
+the rep asks their sales manager. Do not look it up in County Sales Reps, and do not name a covering rep.
 
 ## "My open opportunities, with contact and last activity" (Pipeline Check, New Leads, Forecast Helper)
 

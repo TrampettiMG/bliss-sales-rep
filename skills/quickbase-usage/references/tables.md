@@ -139,7 +139,7 @@ Supporting tables mapped while building the sales reports:
 - **Sales Reps `bvgbefp6g` extras:** **11 "QB User"** (user type; set on nearly all active reps) — match with
   `{11.EX._curuser_}`; **7 "Email as Text"** (25/25; 32 is a formula copy); **25 Cell #** (12/25);
   **24 Office #** (7/25). No territory/region/county fields on this table.
-- **County Sales Reps `buq6z9c6j`** (live name; older notes say "County Sales Teams") — the territory assignment table, one row per rep per county.
+- **County Sales Reps `buq6z9c6j`** (live name; older notes say "County Sales Teams"; not current, use the registry for territory) — the old territory assignment table, one row per rep per county.
   **9 rep key** (= Sales Reps fid 9), **7 County** (text, e.g. "Baldwin County"), **8 State abbreviation**,
   **11 rep QB User** (user type), **12 Sales Rep - Status** (includes inactive reps — filter 'Active').
   500+ rows; one rep has 100+ counties. States seen: GA, NC, TN, FL, SC, AL.

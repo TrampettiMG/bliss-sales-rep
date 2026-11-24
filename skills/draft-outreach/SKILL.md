@@ -87,9 +87,7 @@ review and send/say themselves.
    if QuickBase isn't connected, carry on as above. If a quote-only match is found, use its quote/job details
    without inventing an opportunity. Read only — never write to QuickBase.
    **Stops first.** Before choosing a type, check these, one line each, and don't draft:
-   - If QuickBase names a rep for the county, say this word for word: "This one's in [county], which isn't one of your counties.
-     QuickBase lists [rep] for it: check with [rep] or your manager before reaching out." If it names none:
-     say this word for word: "This one's in [county], which isn't one of your counties. Check with your manager before reaching out."
+   - If the county isn't on the Territory/Counties line, say this word for word: "This one's in [county], which isn't one of your counties. Check with your manager before reaching out."
      Skip this check while that line is blank or still loading.
    - The Research Brief's Stage check shows it awarded to another vendor: "The brief shows this awarded to
      [vendors] on [date, or 'date not stated'] ([source]). Want an email about [another open item in the brief]
